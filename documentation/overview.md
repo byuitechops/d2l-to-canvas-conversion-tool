@@ -43,7 +43,7 @@ Note: Documentation should be updated as needed, not just on the prescribed step
 
 
 
-## The Process In Depth
+## Tool Conversion Process In Depth
 
 ## Step 1: Download Course from D2L
 
