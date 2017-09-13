@@ -13,18 +13,28 @@ var courseId = '0';
 exports.setCourseId = (id) => {
   courseId = id;
 };
-exports.getCoursId = () => {
+exports.getCourseId = () => {
   return courseId;
 };
 
 // filename (Course ZIP) Get & Set
 var filename = 'default.zip';
-exports.setFileName = (courseFilename) => {
+exports.setFilename = (courseFilename) => {
   filename = courseFilename;
 };
 exports.getFilename = () => {
   return filename;
 };
+
+// filename (Course ZIP) Get & Set
+var courseName = 'FDHUM 110';
+exports.setCourseName = (name) => {
+  courseName = name;
+};
+exports.getCourseName = () => {
+  return courseName;
+};
+
 
 /* Each Step Module of the Conversion Process */
 const steps = [

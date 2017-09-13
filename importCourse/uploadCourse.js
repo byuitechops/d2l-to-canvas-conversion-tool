@@ -9,26 +9,34 @@ const main = require('../main.js'),
     fs = require('fs'),
     request = require('request');
 
-    var returnCallback;
+var returnCallback;
 
 /**************************************
  * GETs the status of the upload ONCE
  *************************************/
 function checkProgress(progressUrl) {
-    request.get(progressUrl, function (err, response, body) {
-        if (err) {
-            console.error(chalk.red(err), 'check progress');
-        } else {
-            try {
-                body = JSON.parse(body);
-            } catch (e) {
-                console.error(chalk.red(e), 'convert progress JSON');
+    var checkLoop = setInterval(() => {
+        request.get(progressUrl, function (err, response, body) {
+            if (err) {
+                console.error(chalk.red(err), 'check progress');
+            } else {
+                try {
+                    body = JSON.parse(body);
+                } catch (e) {
+                    console.error(chalk.red(e), 'convert progress JSON');
+                }
+                // console.log('\n DA PROGRESS:\n', JSON.parse(body));
+                console.log(chalk.blue('Status:'), body.workflow_state);
+                if (body.workflow_state === 'completed') {
+                    clearInterval(checkLoop);
+                    returnCallback();
+                } else if (body.workflow_state === 'failed' || body.workflow_state === 'waiting_for_select') {
+                    clearInterval(checkLoop);
+                    console.log("waiting. Be patient");
+                }
             }
-            // console.log('\n DA PROGRESS:\n', JSON.parse(body));
-            console.log(chalk.blue('Status:'), body.workflow_state);
-            returnCallback();
-        }
-    }).auth(null, null, true, auth.token);
+        }).auth(null, null, true, auth.token);
+    }, 5000);
 }
 
 /*********************************************
@@ -134,7 +142,7 @@ function uploadZip(body, fileName) {
         preAttachment = body.pre_attachment;
 
     preAttachment.upload_params.type = 'multipart/form-data';
-    preAttachment.upload_params.file = fs.createReadStream(fileName);
+    preAttachment.upload_params.file = fs.createReadStream("D2LReady/" + fileName);
 
     postRequest(preAttachment.upload_url, preAttachment.upload_params, false, confirmUpload, migrationId);
 }
@@ -147,7 +155,7 @@ exports.run = (returnCB) => {
     returnCallback = returnCB;
 
     var courseId = main.getCourseId(),
-        fileName = main.getFileName();
+        fileName = main.getFilename();
 
     var postBody = {
             type: 'application/x-www-form-urlencoded', //to be removed if postRequest() isn't used

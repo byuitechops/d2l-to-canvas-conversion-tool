@@ -6,7 +6,8 @@
   "dependencies": {
     "async": "^2.5.0",
     "eslint": "^4.6.1",
-    "eslint-config-google": "^0.9.1"
+    "eslint-config-google": "^0.9.1",
+    "request": "^2.81.0"
   },
   "devDependencies": {},
   "scripts": {
