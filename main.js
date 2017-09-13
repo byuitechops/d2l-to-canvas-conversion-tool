@@ -8,16 +8,22 @@ const buildReport = require('./buildReport/buildReport.js');
 // NPM PACKAGES
 const async = require('async');
 
-// Course ID
+// Course ID (Get and Set)
 var courseId = '0';
-
-// ID Setter and Getter
-exports.setId = (id) => {
+exports.setCourseId = (id) => {
   courseId = id;
 };
-
-exports.getId = () => {
+exports.getCoursId = () => {
   return courseId;
+};
+
+// filename (Course ZIP) Get & Set
+var filename = 'default.zip';
+exports.setFileName = (courseFilename) => {
+  filename = courseFilename;
+};
+exports.getFilename = () => {
+  return filename;
 };
 
 /* Each Step Module of the Conversion Process */
