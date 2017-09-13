@@ -48,6 +48,10 @@ There are 3 layers to the project:
 
 The folder structure for the project will follow that format. A folder for each Step module will be present. Each folder will contain the .js file for that module, along with all children modules for that step.
 
+### Async Operations
+
+In order to run each step one-by-one without stepping on our own toes, the **async library** will be used.
+
 # Tool Conversion Process In Depth
 
 
