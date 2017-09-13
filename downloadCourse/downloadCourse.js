@@ -1,1 +1,7 @@
-/* Download the course and unzip it */
+exports.run = (returnCallback) => {
+
+  /* STEP LOGIC GOES HERE */
+
+  console.log('Step 1: Download Course - Complete');
+  returnCallback();
+};

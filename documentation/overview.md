@@ -28,12 +28,12 @@ The main objective of this tool is to build on top of the native conversion proc
 ## Development Process
 After observing a course's lost content after converting with the tool as is, this process will be followed to help move this project along as quickly and efficiently as possible:
 
-1. A meeting with Zach, Daniel, and Josh to determine the next function/module to be written to remedy a single type of content lost or broken in conversion. 
+1. A meeting with Zach, Daniel, and Josh to determine the next function/module to be written to remedy a single type of content lost or broken in conversion.
 3. Documentation is updated.
 4. A few days are spent focused on that function/module.
-5. When a working version is presented, another meeting happens to determine its success and viability. 
+5. When a working version is presented, another meeting happens to determine its success and viability.
 6. Documentation is updated.
-7. We test the life out of that function until it gives up on its dreams and submits its will to the system (or until it works as perfectly as it possibly can). 
+7. We test the life out of that function until it gives up on its dreams and submits its will to the system (or until it works as perfectly as it possibly can).
 8. Documentation is updated.
 9. Repeat
 
@@ -41,9 +41,15 @@ Note: Documentation should be updated as needed, not just on the prescribed step
 
 ## Tool Architecture
 
+There are 3 layers to the project:
+1. **Main** - Begins the process, sees it all the way through
+2. **Step Modules** - A module for each main step, as described above
+3. **Child Modules** - Modules used within each Step module to complete specific tasks (i.e. fixing quizzes)
 
+The folder structure for the project will follow that format. A folder for each Step module will be present. Each folder will contain the .js file for that module, along with all children modules for that step.
 
-## Tool Conversion Process In Depth
+# Tool Conversion Process In Depth
+
 
 ## Step 1: Download Course from D2L
 
@@ -51,5 +57,10 @@ Note: Documentation should be updated as needed, not just on the prescribed step
 
 Using the tool written by *NAME*, located at *LOCATION URL*, the course will first need to be programmatically downloaded.
 
+## Step 2: Pre-Conversion Alterations
 
+## Step 3: Import Course into Canvas
 
+## Step 4: Post-Conversion Alterations
+
+## Step 5: Build Report
