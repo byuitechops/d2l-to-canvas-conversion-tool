@@ -3,8 +3,8 @@ exports.courseid = 235234;
 exports.run = (returnCallback) => {
 
   // CHILD MODULES
-  const createCourse = require('./createCourse/createCourse.js');
-  const uploadCourse = require('./uploadCourse/uploadCourse.js');
+  const createCourse = require('./importCourse/createCourse.js');
+  const uploadCourse = require('./importCourse/uploadCourse.js');
   const async = require('async');
 
   var childModules = [
