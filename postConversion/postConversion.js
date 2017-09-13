@@ -1,0 +1,2 @@
+/* Alterations to the course made after it has
+been imported into Canvas */

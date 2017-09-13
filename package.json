@@ -1,0 +1,24 @@
+{
+  "name": "d2l-canvas-conversion",
+  "version": "1.0.0",
+  "description": "This tool is used to help convert courses from D2L to Canvas",
+  "main": "main.js",
+  "dependencies": {
+    "eslint": "^4.6.1",
+    "eslint-config-google": "^0.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byuitechops/d2l-to-canvas-conversion-tool.git"
+  },
+  "author": "Zachary Williams & Daniel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/byuitechops/d2l-to-canvas-conversion-tool/issues"
+  },
+  "homepage": "https://github.com/byuitechops/d2l-to-canvas-conversion-tool#readme"
+}
