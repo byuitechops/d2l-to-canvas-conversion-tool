@@ -1,9 +1,9 @@
 // MAIN STEP MODULES
-const downloadCourse = require('./downloadCourse/downloadCourse.js');
-const preConversion = require('./preConversion/preConversion.js');
-const importCourse = require('./importCourse/importCourse.js');
-const postConversion = require('./postConversion/postConversion.js');
-const buildReport = require('./buildReport/buildReport.js');
+const downloadCourse = require('./downloadCourse.js');
+const preConversion = require('./preConversion.js');
+const importCourse = require('./importCourse.js');
+const postConversion = require('./postConversion.js');
+const buildReport = require('./buildReport.js');
 
 // NPM PACKAGES
 const async = require('async');
