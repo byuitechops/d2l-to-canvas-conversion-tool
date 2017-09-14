@@ -26,7 +26,9 @@ exports.run = (returnCallback) => {
             }
         }, function (err, response, body) {
             if (err) {
-                console.log(err);
+                //console.log(err);
+                returnCallback(err);
+                return;
             } else {
                 console.log(chalk.green(courseName + " Successfully created"));
                 body = JSON.parse(body);

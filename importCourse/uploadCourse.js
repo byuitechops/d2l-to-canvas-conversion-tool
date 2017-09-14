@@ -11,6 +11,16 @@ const main = require('../main.js'),
 
 var returnCallback;
 
+/*****************************
+ * passes all fatal errors to 
+ * returnCallback
+ ****************************/
+function throwError(err, message) {
+    //console.log(err, message);
+    returnCallback(err);
+}
+
+
 /**************************************
  * GETs the status of the upload ONCE
  *************************************/
@@ -18,7 +28,8 @@ function checkProgress(progressUrl) {
     var checkLoop = setInterval(() => {
         request.get(progressUrl, function (err, response, body) {
             if (err) {
-                console.error(chalk.red(err), 'check progress');
+                throwError(err, "from checkProgress");
+                return;
             } else {
                 try {
                     body = JSON.parse(body);
@@ -32,7 +43,7 @@ function checkProgress(progressUrl) {
                     returnCallback();
                 } else if (body.workflow_state === 'failed' || body.workflow_state === 'waiting_for_select') {
                     clearInterval(checkLoop);
-                    console.log("waiting. Be patient");
+                    console.log("Something broke");
                 }
             }
         }).auth(null, null, true, auth.token);
@@ -50,19 +61,23 @@ function getMigration(body, migrationId) {
     var url = 'https://byui.instructure.com/api/v1/courses/' + main.getCourseId() + '/content_migrations/' + migrationId;
     request.get(url, function (err, response, body) {
         if (err) {
-            console.error(chalk.red(err), 'getting migration');
+            throwError(err, 'getting migration');
+            return;
         } else {
             console.log(chalk.green('Retrieved migration'));
             try {
                 body = JSON.parse(body);
             } catch (e) {
-                console.error(chalk.red(e), 'convert migration JSON');
+                throwError(e, 'convert migration JSON');
+                return;
             }
 
-            if (body.errors)
-                console.log(chalk.red(JSON.stringify(body.errors.message)));
-            else
+            if (body.errors) {
+                //console.log(chalk.red(JSON.stringify(body.errors.message)));
+                throwError(JSON.stringify(body.errors));
+            } else{
                 checkProgress(body.progress_url);
+            }
 
         }
     }).auth(null, null, true, auth.token);
@@ -92,7 +107,8 @@ function postRequest(url, content, authRequired, cb, custom) {
 
     function postCallback(err, response, body) {
         if (err) {
-            console.error(chalk.red(err, 'postCB'));
+            throwError(err, 'postCB');
+            return;
         } else {
             //console.log('Content Type:', contentType);
             if (contentType === 'multipart/form-data') {
@@ -102,14 +118,13 @@ function postRequest(url, content, authRequired, cb, custom) {
                     body = JSON.parse(body);
                     cb(body, custom);
                 } catch (e) {
-                    console.error(chalk.red(e), 'convert body object');
-                    console.log('da body', body);
+                    //console.log('da body', body);
+                    throwError(e, 'postCB convert body object');
+                    return;
                 }
             }
         }
     }
-    //console.log('\npostOptions:\n', postOptions);
-
     if (authRequired === true)
         request.post(postOptions, postCallback).auth(null, null, true, auth.token);
     else
