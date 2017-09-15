@@ -4,6 +4,7 @@
   "description": "This tool is used to help convert courses from D2L to Canvas",
   "main": "main.js",
   "dependencies": {
+    "adm-zip": "^0.4.7",
     "async": "^2.5.0",
     "eslint": "^4.6.1",
     "eslint-config-google": "^0.9.1",

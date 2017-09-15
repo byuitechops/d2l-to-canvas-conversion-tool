@@ -8,33 +8,6 @@ const buildReport = require('./buildReport.js');
 // NPM PACKAGES
 const async = require('async');
 
-// Course ID (Get and Set)
-var courseId = '0';
-exports.setCourseId = (id) => {
-  courseId = id;
-};
-exports.getCourseId = () => {
-  return courseId;
-};
-
-// filename (Course ZIP) Get & Set
-var filename = 'default.zip';
-exports.setFilename = (courseFilename) => {
-  filename = courseFilename;
-};
-exports.getFilename = () => {
-  return filename;
-};
-
-// filename (Course ZIP) Get & Set
-var courseName = 'FDHUM 110';
-exports.setCourseName = (name) => {
-  courseName = name;
-};
-exports.getCourseName = () => {
-  return courseName;
-};
-
 
 /* Each Step Module of the Conversion Process */
 const steps = [

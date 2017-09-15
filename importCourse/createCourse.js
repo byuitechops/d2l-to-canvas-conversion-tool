@@ -3,18 +3,18 @@
 'use-strict';
 
 
-const main = require('../main.js');
+const variables = require('../variables.js');
 
 
 /*******************************
  * creates a new course in canvas
- * sets courseId in main
+ * sets courseId in variables
  *********************************/
 exports.run = (returnCallback) => {
     var request = require('request'),
         auth = require('../auth.json'),
         chalk = require('chalk'),
-        courseName = main.getCourseName();
+        courseName = variables.getCourseName();
 
         request.post({
             url: "https://byui.instructure.com/api/v1/accounts/1/courses",
@@ -32,8 +32,8 @@ exports.run = (returnCallback) => {
             } else {
                 console.log(chalk.green(courseName + " Successfully created"));
                 body = JSON.parse(body);
-                console.log('\nCourse Number: ', body.id);
-                main.setCourseId(body.id)
+                console.log('Course Number: ', body.id);
+                variables.setCourseId(body.id)
                 returnCallback();
             }
         }).auth(null, null, true, auth.token);
