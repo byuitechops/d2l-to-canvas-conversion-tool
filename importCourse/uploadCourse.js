@@ -157,11 +157,11 @@ function uploadZip(body, fileName) {
  * sets the data for the POST which informs canvas of the upload.
  * sends the request via postRequest with uploadZIP as the callback
  ******************************************************************/
-exports.run = (returnCB) => {
+module.exports = function (course, returnCB) {
     returnCallback = returnCB;
 
-    var courseId = variables.getCourseId(),
-        fileName = variables.getFilename();
+    /*var courseId = variables.getCourseId(),
+        fileName = variables.getFilename();*/
 
     var postBody = {
             type: 'application/x-www-form-urlencoded', //to be removed if postRequest() isn't used

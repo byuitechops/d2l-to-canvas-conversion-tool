@@ -1,7 +1,7 @@
-exports.run = (returnCallback) => {
+module.exports = function (course, returnCallback) {
 
   /* STEP LOGIC GOES HERE */
 
-  console.log('Step 5: Build Report - Complete');
+  console.log('Step 6: Build Report - Complete');
   returnCallback();
 };

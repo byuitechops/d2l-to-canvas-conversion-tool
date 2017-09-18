@@ -1,4 +1,4 @@
-module.exports = function(callback) {
+module.exports = function(course, callback) {
   console.log('ran');
-  callback(null);
+  callback(null, course);
 };
