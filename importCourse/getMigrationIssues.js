@@ -24,6 +24,7 @@ exports.run = (returnCallback) => {
         //console.log("statusCode:", response.statusCode);
         //console.log('migrationIssues:', JSON.stringify(body, null, 3));
         variables.setMigrationIssues(body);
+        returnCallback();
 
     }).auth(null, null, true, auth.token);
 }

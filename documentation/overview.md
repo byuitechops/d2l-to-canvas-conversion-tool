@@ -2,11 +2,13 @@
 
 ### Overview
 The main objective of this tool is to build on top of the native conversion process provided by Canvas when converting a course from D2L (Brightspace) to Canvas. Canvas provides a conversion tool when importing a course from D2L, but it only successfully converts about 40% of the course. The process will follow five steps:
-1. The course is downloaded from Brightspace.
-2. Alterations are made on the course files to help them successfully convert with the native Canvas conversion tool.
-3. The course is converted.
+
+0. Download the course from D2L.
+1. The course is indexed and a JSON copy fo the course is created
+2. Alterations are made on the course JSON to help them successfully convert with the native Canvas conversion tool.
+3. The course is uploaded to the canvas conversion tool.
 4. Alterations are made on the converted version of the course to enable any non-working features that can't be fixed before converting.
-5. The course is added to Canvas.
+5. Clean up unused files and the course as needed. Generate a report of the conversion.
 
 ## Dates & Goals
 - *OCT 30*: Official Decision made on this project
@@ -22,8 +24,8 @@ The main objective of this tool is to build on top of the native conversion proc
 
 *Other Goals:*
 - Build a report when a course is converted of things that must be fixed by hand, errors flagged as the program ran, verbose, overall success, etc.
-- Thoroughly test each and every function, module, and bit of code used by this tool
-- Don't mess up
+- Thoroughly test each and every function, module, and bit of code used by this tool.
+- Don't mess up.
 
 ## Development Process
 After observing a course's lost content after converting with the tool as is, this process will be followed to help move this project along as quickly and efficiently as possible:
@@ -50,7 +52,7 @@ The folder structure for the project will follow that format. A folder for each 
 
 ### Async Operations
 
-In order to run each step one-by-one without stepping on our own toes, the **async library** will be used.
+In order to run each step one-by-one without stepping on our own toes, the **async library** will be used, specifically the async.waterfall method.
 
 ### Compression Operations
 
@@ -59,18 +61,36 @@ Step 2 requires decompressing each course before alterations are made to them. F
 # Tool Conversion Process In Depth
 
 
-## Step 1: Download Course from D2L
+## Step 0: Download Course from D2L
 
-*Who wrote the auto-downloader? Where do we get that from?*
+The Nightmare before Christmas tool will be used to download the courses. It may be integrated into the conversion tool using a CLI if time allows.
 
-Using the tool written by *NAME*, located at *LOCATION URL*, the course will first need to be programmatically downloaded.
+The Nightmare Before Christmas can be found here https://canvas.instructure.com/doc/api/courses.html
+
+## Step 1: Indexing the Course
+
+Save the course files as a massive JSON object. Changes made by the submodules will occure to this object, which will be written the hard drive once all pre-conversion changes are made.
+This reduces stress on the hard drive by only reading the course and saving the course only once.
 
 ## Step 2: Pre-Conversion Alterations
 
-
+Changes to the course are to be determined. It is expected that most fo the course fixes will occur here.
+The course object will be written to the hard drive once all the changes to the course have been made.
+The course will be rezipped in preparation for the upload to Canvas.
 
 ## Step 3: Import Course into Canvas
 
+Create an empty (blueprint?) course in canvas.
+Upload the course to the Canvas conversion tool.
+Get migration issues from Canvas for reporting purposes.
+
 ## Step 4: Post-Conversion Alterations
 
-## Step 5: Build Report
+Use the Canvas API to make additional fixes to the course. Fixes made here are to be determined.
+
+## Step 5: Clean Up
+
+Leftover course files are removed (Unzipped course files for sure. Shoudl we delete the completed zip as well?).
+The Canvas course is deleted (or the content just cleared?) if there were too many errors in the conversion.
+Both these options will be turned off if the debugging flag is included at runtime.
+Generate the final report. (Will this happen here, or will we pass the report object to the cli and let it generate the report?).
