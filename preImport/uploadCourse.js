@@ -3,7 +3,7 @@
 
 'use-strict';
 
-const main = require('../main.js'),
+const variables = require('../variables.js'),
     chalk = require('chalk'),
     auth = require('../auth.json'),
     fs = require('fs'),
@@ -16,15 +16,14 @@ var returnCallback;
  * returnCallback
  ****************************/
 function throwError(err, message) {
-    //console.log(err, message);
     returnCallback(err);
 }
-
 
 /**************************************
  * GETs the status of the upload ONCE
  *************************************/
 function checkProgress(progressUrl) {
+    console.log("Canvas migration status:");
     var checkLoop = setInterval(() => {
         request.get(progressUrl, function (err, response, body) {
             if (err) {
@@ -55,16 +54,15 @@ function checkProgress(progressUrl) {
  * know the progressURL
  *******************************************/
 function getMigration(body, migrationId) {
-    console.log("Retrieving Migration", migrationId);
+    //console.log("Retrieving Migration", migrationId);
 
-
-    var url = 'https://byui.instructure.com/api/v1/courses/' + main.getCourseId() + '/content_migrations/' + migrationId;
+    var url = 'https://byui.instructure.com/api/v1/courses/' + variables.getCourseId() + '/content_migrations/' + migrationId;
     request.get(url, function (err, response, body) {
         if (err) {
             throwError(err, 'getting migration');
             return;
         } else {
-            console.log(chalk.green('Retrieved migration'));
+            //console.log(chalk.green('Retrieved migration'));
             try {
                 body = JSON.parse(body);
             } catch (e) {
@@ -87,12 +85,6 @@ function getMigration(body, migrationId) {
  * Makes all post requests
  **********************************/
 function postRequest(url, content, authRequired, cb, custom) {
-    //console.log('\nURL:\n', url);
-    //console.log('\ncontent:\n', content);
-    //console.log('\nauthRequired:\n', authRequired);
-    //console.log('cb:', typeof cb);
-    //console.log('\nCustom:\n', custom);
-
     var contentType = content.type,
         postOptions = {
             url: url
@@ -118,7 +110,6 @@ function postRequest(url, content, authRequired, cb, custom) {
                     body = JSON.parse(body);
                     cb(body, custom);
                 } catch (e) {
-                    //console.log('da body', body);
                     throwError(e, 'postCB convert body object');
                     return;
                 }
@@ -135,8 +126,7 @@ function postRequest(url, content, authRequired, cb, custom) {
  * Confirms the upload and calls getMigration
  **************************************************/
 function confirmUpload(response, migrationId) {
-    console.log(chalk.yellow('Upload Confirmed. Redirect URL obtained'));
-    /*console.log(response.headers);*/
+    //console.log(chalk.yellow('Upload Confirmed. Redirect URL obtained'));
 
     var redirectUrl = response.headers.location;
 
@@ -150,11 +140,12 @@ function confirmUpload(response, migrationId) {
  * canvas. Calls postRequest with confirmUpload as the callback
  **************************************************************/
 function uploadZip(body, fileName) {
-    console.log(chalk.yellow('Migration Created'));
-
+    //console.log(chalk.yellow('Migration Created'));
 
     var migrationId = body.id,
         preAttachment = body.pre_attachment;
+    
+    variables.setMigrationId(migrationId);
 
     preAttachment.upload_params.type = 'multipart/form-data';
     preAttachment.upload_params.file = fs.createReadStream("D2LReady/" + fileName);
@@ -169,8 +160,8 @@ function uploadZip(body, fileName) {
 exports.run = (returnCB) => {
     returnCallback = returnCB;
 
-    var courseId = main.getCourseId(),
-        fileName = main.getFilename();
+    var courseId = variables.getCourseId(),
+        fileName = variables.getFilename();
 
     var postBody = {
             type: 'application/x-www-form-urlencoded', //to be removed if postRequest() isn't used
