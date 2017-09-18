@@ -3,14 +3,14 @@
 var async = require('async');
 
 /* STEP MODULES */
-var indexer = require('./indexer.js');
-//const preConversion = require('./preConversion').run();
-//const importCourse = require('./importCourse').run();
-//const postConversion = require('./postConversion').run();
+const indexer = require('./indexer/indexer.js');
+const preImport = require('./preImport/preImport.js');
+const importCourse = require('./importCourse/importCourse.js');
+const postImport = require('./postImport/postImport.js');
 
 /* CLEANUP MODULES */
-//const buildReport = require('./buildReport');
-//const cleanUp = require('./cleanUp');
+const buildReport = require('./buildReport/buildReport.js');
+const cleanUp = require('./cleanUp/cleanUp.js');
 
 /* STEP MODULES ARRAY */
 /* This array is where each step module's function is stored
