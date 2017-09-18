@@ -44,13 +44,17 @@ Note: Documentation should be updated as needed, not just on the prescribed step
 There are 3 layers to the project:
 1. **Main** - Begins the process, sees it all the way through
 2. **Step Modules** - A module for each main step, as described above
-3. **Child Modules** - Modules used within each Step module to complete specific tasks (i.e. fixing quizzes)
+3. **Child Modules** - Modules used within each Step module to complete specific tasks (i.e. fixing quizzes). In cases where it is appropriate, there may be child modules for child modules.
 
-The folder structure for the project will follow that format. A folder for each Step module will be present. Each folder will contain the .js file for that module, along with all children modules for that step.
+The folder structure for the project will follow that format. A folder for each Step module will be present. Each folder will contain the children modules for their respective step module. The step modules *.js* files will be located in the main directory, along with *main.js*.
 
 ### Async Operations
 
 In order to run each step one-by-one without stepping on our own toes, the **async library** will be used.
+
+### Compression Operations
+
+Step 2 requires decompressing each course before alterations are made to them. Following those changes, they are compressed again to be imported into Canvas. The **adm-zip** library will be used to perform those functions.
 
 # Tool Conversion Process In Depth
 
@@ -62,6 +66,8 @@ In order to run each step one-by-one without stepping on our own toes, the **asy
 Using the tool written by *NAME*, located at *LOCATION URL*, the course will first need to be programmatically downloaded.
 
 ## Step 2: Pre-Conversion Alterations
+
+
 
 ## Step 3: Import Course into Canvas
 

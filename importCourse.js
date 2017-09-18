@@ -1,11 +1,11 @@
-exports.courseid = 235234;
+// NPM MODULES
+const async = require('async');
 
-exports.run = (returnCallback) => {
+// CHILD MODULES - Modules used by this module to complete its task
+const createCourse = require('./importCourse/createCourse.js');
+const uploadCourse = require('./importCourse/uploadCourse.js');
 
-  // CHILD MODULES
-  const createCourse = require('./importCourse/createCourse.js');
-  const uploadCourse = require('./importCourse/uploadCourse.js');
-  const async = require('async');
+module.exports = (returnCallback) => {
 
   var childModules = [
     createCourse,
@@ -21,7 +21,6 @@ exports.run = (returnCallback) => {
   }, (err) => {
     // If we have an error anywhere in the process, tell us here
     if (err) {
-      console.log('error');
       console.log(err);
       // Let us know when the process is completely finished
     } else {

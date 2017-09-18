@@ -5,9 +5,11 @@
   "main": "main.js",
   "dependencies": {
     "async": "^2.5.0",
+    "async-waterfall": "^0.1.5",
     "eslint": "^4.6.1",
     "eslint-config-google": "^0.9.1",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "waterfall": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
