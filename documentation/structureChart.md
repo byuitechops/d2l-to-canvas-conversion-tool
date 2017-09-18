@@ -2,6 +2,29 @@
 
 <img src="./mermaid-diagram-20170918154208.svg">
 
+Because the above image is obviously way too small to read, we've broken it up into smaller structure charts. We hope your eyes revel in the simplicity.
+
+**On each arrow-line to each function, there is some text. These indicate input/output. The left (input) is the parameter(s) we are passing in. The right is the output. "+=" indicates that the output is the same as the input, but with the described changes.**
+
+# main.js
+<img src="./main-sc.svg">
+
+# indexer.js
+<img src="./main-sc.svg">
+
+# preImport.js
+<img src="./preImport-sc.svg">
+
+# importCourse.js
+<img src="./importCourse-sc.svg">
+
+# postImport.js
+<img src="./postImport-sc.svg">
+
+# cleanUp.js
+<img src="./cleanUp-sc.svg">
+
+
 ### Mermaid input
 graph TD;
 CLI-->|zipDir, Options/report|main.js;
