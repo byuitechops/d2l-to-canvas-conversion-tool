@@ -7,22 +7,22 @@ Because the above image is obviously way too small to read, we've broken it up i
 **On each arrow-line to each function, there is some text. These indicate input/output. The left (input) is the parameter(s) we are passing in. The right is the output. "+=" indicates that the output is the same as the input, but with the described changes.**
 
 # main.js
-<img src="./main-sc.svg">
+<img src="./structureCharts/structureCharts/main-sc.svg">
 
 # indexer.js
-<img src="./main-sc.svg">
+<img src="./structureCharts/main-sc.svg">
 
 # preImport.js
-<img src="./preImport-sc.svg">
+<img src="./structureCharts/preImport-sc.svg">
 
 # importCourse.js
-<img src="./importCourse-sc.svg">
+<img src="./structureCharts/importCourse-sc.svg">
 
 # postImport.js
-<img src="./postImport-sc.svg">
+<img src="./structureCharts/postImport-sc.svg">
 
 # cleanUp.js
-<img src="./cleanUp-sc.svg">
+<img src="./structureCharts/cleanUp-sc.svg">
 
 
 ### Mermaid input
