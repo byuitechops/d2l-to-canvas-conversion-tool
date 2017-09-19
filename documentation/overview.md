@@ -3,7 +3,7 @@
 ### Overview
 The main objective of this tool is to build on top of the native conversion process provided by Canvas when converting a course from D2L (Brightspace) to Canvas. Canvas provides a conversion tool when importing a course from D2L, but it only successfully converts about 40% of the course. The process will follow five steps:
 
-0. Download the course from D2L.
+0. Download the course from D2L. (Handled separately from this program)
 1. The course is indexed and a JSON copy fo the course is created
 2. Alterations are made on the course JSON to help them successfully convert with the native Canvas conversion tool.
 3. The course is uploaded to the canvas conversion tool.
