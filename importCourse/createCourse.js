@@ -10,11 +10,12 @@ const variables = require('../variables.js');
  * creates a new course in canvas
  * sets courseId in variables
  *********************************/
-exports.run = (returnCallback) => {
+module.exports = function (returnCallback) {
     var request = require('request'),
         auth = require('../auth.json'),
         chalk = require('chalk'),
-        courseName = variables.getCourseName();
+        //FIX THIS!
+        //courseName = variables.getCourseName();
 
         request.post({
             url: "https://byui.instructure.com/api/v1/accounts/1/courses",

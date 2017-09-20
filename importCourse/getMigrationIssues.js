@@ -11,7 +11,7 @@ const variables = require('../variables.js'),
 * uses the canvas API to get all migration
 * issues from the given migration
 ******************************************/
-exports.run = (returnCallback) => {
+module.exports = function (returnCallback) {
     var url = "https://byui.instructure.com/api/v1/courses/" + variables.getCourseId() + "/content_migrations/" + variables.getMigrationId() + "/migration_issues";
 
     request.get(url, function (err, response, body) {
@@ -23,7 +23,9 @@ exports.run = (returnCallback) => {
         body = JSON.parse(body);
         //console.log("statusCode:", response.statusCode);
         //console.log('migrationIssues:', JSON.stringify(body, null, 3));
-        variables.setMigrationIssues(body);
+        
+        //FIX THIS
+        //variables.setMigrationIssues(body);
         returnCallback();
 
     }).auth(null, null, true, auth.token);
