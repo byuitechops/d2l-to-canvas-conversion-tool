@@ -8,23 +8,29 @@ const importCourse = require('./importCourse/importCourse.js');
 const postImport = require('./postImport/postImport.js');
 const cleanUp = require('./cleanUp/cleanUp.js');
 
-
 /* STEP MODULES ARRAY */
 /* This array is where each step module's function is stored
 for the async waterfall below. Each of these functions contains
 a main step in the process of converting a course.*/
-const steps = [
+
+/*"async.constant()" is used here and the step modules to pass
+the course object into each level of waterfall. In this case,
+it is used to create the initial course object. */
+const stepModules = [
+    async.constant({}),
     indexer,
-    preConversion,
+    preImport,
     importCourse,
-    postConversion,
+    postImport,
     cleanUp
 ];
 
-async.waterfall(steps, (err, result) => {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log(result);
-    }
+async.waterfall(stepModules, (err, resultCourse) => {
+  if (err) {
+    // If we have an error, log it in our report
+    resultCourse.report.moduleLogs[err.message].fatalErrs.push(err);
+  } else {
+
+  }
+  cleanUp();
 });
