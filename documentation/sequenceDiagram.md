@@ -1,1 +1,1 @@
-<img src="./structureCharts/sequenceDiagram.svg>
+<img src="./structureCharts/sequenceDiagram.svg">
