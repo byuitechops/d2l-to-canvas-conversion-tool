@@ -3,7 +3,7 @@
 ### Overview
 The main objective of this tool is to build on top of the native conversion process provided by Canvas when converting a course from D2L (Brightspace) to Canvas. Canvas provides a conversion tool when importing a course from D2L, but it only successfully converts about 40% of the course. The process will follow five steps:
 
-0. Download the course from D2L.
+0. Download the course from D2L. (Handled separately from this program)
 1. The course is indexed and a JSON copy fo the course is created
 2. Alterations are made on the course JSON to help them successfully convert with the native Canvas conversion tool.
 3. The course is uploaded to the canvas conversion tool.
@@ -11,10 +11,10 @@ The main objective of this tool is to build on top of the native conversion proc
 5. Clean up unused files and the course as needed. Generate a report of the conversion.
 
 ## Dates & Goals
-- *OCT 30*: Official Decision made on this project
 - *SEPT 21*: First working iteration completed, pages successfully converting over cleanly
 - *SEPT 31*: Manual Transition observed by McKinney's team
 - *OCT 15*: 80% of course successfully converted by the tool
+- *OCT 30*: Official Decision made on this project
 - *JAN 1*: Piloting of the completed tool begins (95% conversion success, course usable by students)
 - *JAN 15*: Begin conversions with production build of tool
 - *APRIL 15*: Complete block course conversions
@@ -32,8 +32,8 @@ After observing a course's lost content after converting with the tool as is, th
 
 1. A meeting with Zach, Daniel, and Josh to determine the next function/module to be written to remedy a single type of content lost or broken in conversion.
 3. Documentation is updated.
-4. A few days are spent focused on that function/module.
-5. When a working version is presented, another meeting happens to determine its success and viability.
+4. A few days are spent focused on creating that function/module.
+5. When a working version is completed, another meeting happens to determine its success and viability.
 6. Documentation is updated.
 7. We test the life out of that function until it gives up on its dreams and submits its will to the system (or until it works as perfectly as it possibly can).
 8. Documentation is updated.
@@ -48,13 +48,15 @@ There are 3 layers to the project:
 2. **Step Modules** - A module for each main step, as described above
 3. **Child Modules** - Modules used within each Step module to complete specific tasks (i.e. fixing quizzes). In cases where it is appropriate, there may be child modules for child modules.
 
-The folder structure for the project will follow that format. A folder for each Step module will be present. Each folder will contain the children modules for their respective step module. The step modules *.js* files will be located in the main directory, along with *main.js*.
+**File Tree**
+
+A folder for each Step module will be present. Each folder will contain the children modules for their respective step module. The step modules *.js* files will be located in their respective folders.
 
 ### Async Operations
 
 In order to run each step one-by-one without stepping on our own toes, the **async library** will be used, specifically the async.waterfall method.
 
-### Compression Operations
+### Compression Operations (Zip/Unzip)
 
 Step 2 requires decompressing each course before alterations are made to them. Following those changes, they are compressed again to be imported into Canvas. The **adm-zip** library will be used to perform those functions.
 

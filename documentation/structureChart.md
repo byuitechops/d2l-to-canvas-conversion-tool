@@ -1,13 +1,13 @@
 # Structure Chart
 
-<img src="./mermaid-diagram-20170918154208.svg">
+<img src="./structureCharts/mermaid-diagram-20170918154208.svg">
 
-Because the above image is obviously way too small to read, we've broken it up into smaller structure charts. We hope your eyes revel in the simplicity.
+Because the above image is obviously way too small to read, we've broken it up into smaller structure charts. We hope your eyes revel in the simplicity. It is all black because of some weird deal with SVGs, but fear not, you can click on it to take you to the image, from which you can right-click and select "open image in new tab."
 
 **On each arrow-line to each function, there is some text. These indicate input/output. The left (input) is the parameter(s) we are passing in. The right is the output. "+=" indicates that the output is the same as the input, but with the described changes.**
 
 # main.js
-<img src="./structureCharts/structureCharts/main-sc.svg">
+<img src="./structureCharts/main-sc.svg">
 
 # indexer.js
 <img src="./structureCharts/main-sc.svg">
