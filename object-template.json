@@ -1,0 +1,43 @@
+{
+  "report": {
+    "moduleLogs": {
+      "moduleName": {
+        "fatalErrs": [],
+        "errors": [],
+        "changes": [],
+        "generatedReport": ""
+      }
+    }
+  },
+  "info": {
+    "migrationID": " ",
+    "migrationIssues": [],
+    "fileName": " ",
+    "originalFilepath": " ",
+    "unzippedFilepath": " ",
+    "preparedFilepath": " ",
+    "courseName": " ",
+    "canvasCourseOU": 0,
+    "D2LOU": 0
+  },
+  "settings": {
+    "debug": true,
+    "readAll": true,
+    "platform": " "
+  },
+  "content": {
+    "files": [
+      {
+        "name": "filename.txt",
+        "guts": "contents"
+      }
+    ],
+    "dirs": [
+      {
+        "name": "dirName.txt",
+        "files": [],
+        "dirs": []
+      }
+    ]
+  }
+}
