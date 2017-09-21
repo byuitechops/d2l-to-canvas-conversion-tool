@@ -5,9 +5,9 @@
 
 **Authors:**
 
-Zachary Williams
+*Zachary Williams*
 
-Daniel Greene
+*Daniel Greene*
 
 With a measure of help so large from Josh McKinney that we could probably make it its own Node module, publish it, and be praised.
 
