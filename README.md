@@ -9,7 +9,7 @@
 
 *Daniel Greene*
 
-With a measure of help so large from Josh McKinney that we could probably make it its own Node module, publish it, and be praised.
+With a measure of help so large from Josh McKinney that we've come to trust our own ideas shouldn't be trusted.
 
 ## Purpose
 
