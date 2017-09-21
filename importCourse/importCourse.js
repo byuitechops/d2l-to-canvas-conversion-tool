@@ -1,8 +1,7 @@
 // CHILD MODULES - Modules used by this module to complete its task
-const createCourse = require('./importCourse/createCourse.js');
-const uploadCourse = require('./importCourse/uploadCourse.js');
-const getMigrationIssues = require('./importCourse/getMigrationIssues.js');
-const async = require('async')
+const createCourse = require('./createCourse.js');
+const uploadCourse = require('./uploadCourse.js');
+const getMigrationIssues = require('./getMigrationIssues.js');
 
 
 /* Require any dependencies here */

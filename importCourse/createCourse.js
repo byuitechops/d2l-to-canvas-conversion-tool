@@ -3,14 +3,10 @@
 'use-strict';
 
 
-
-
-
-
-
 /* Put dependencies here */
 
 module.exports = (course, stepCallback) => {
+    console.log('createCourse');
     try {
         /* Code Body */
 
@@ -22,8 +18,8 @@ module.exports = (course, stepCallback) => {
             auth = require('../auth.json'),
             chalk = require('chalk');
 
-        var courseName = course.info.courseName;
-        var courseCode = ''; //FIX ME!!!
+        var courseName = course.info.courseName.match(/\w+/)[0];
+        var courseCode = course.info.courseName.match(/\d+/)[0];
 
         request.post({
             url: "https://byui.instructure.com/api/v1/accounts/1/courses",
@@ -35,28 +31,28 @@ module.exports = (course, stepCallback) => {
             }
         }, function (err, response, body) {
             if (err) {
-                throwError(err);
+                stepCallback(new Error('importCourse'), course);
                 return;
             } else {
-                console.log(chalk.green(courseName + " Successfully created"));
+                //console.log(chalk.green(courseName + " Successfully created"));
+                //console.log('Course Number: ', body.id);
                 body = JSON.parse(body);
-                console.log('Course Number: ', body.id);
-                variables.setCourseId(body.id)
+                
+                //save course id to course object
+                course.info.canvasOU = body.id;
+                
+                // save progress to reports object
+                course.report.moduleLogs['importCourse']
+                    .changes.push('Course successfully created in Canvas');
+                // return to step module
+                console.log("calling sterpCallback");
                 stepCallback(null, course);
             }
         }).auth(null, null, true, auth.token);
+        
+    } catch (e) {
+        e.location = "createCourse";
+        //stepCallback(new Error('importCourse'), course);
+        stepCallback(e, course);
     }
-
-
-    /* end code body*/
-
-    //INCLUDE THIS!!!
-    course.report.moduleLogs['moduleName'].changes.push('');
-    
-    
-} catch (e) {
-    /* If we have an error, throw it back up to its parent module.
-    YOU MUST replace "moduleName" with the name of this module. */
-    stepCallback(new Error('moduleName'), course);
-}
 };
