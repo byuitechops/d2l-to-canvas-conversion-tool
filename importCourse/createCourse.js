@@ -1,8 +1,3 @@
-/*eslint-env node*/
-/*eslint no-console:0*/
-'use-strict';
-
-
 /* Put dependencies here */
 
 module.exports = (course, stepCallback) => {
@@ -13,8 +8,7 @@ module.exports = (course, stepCallback) => {
          * saves courseId to teh course object
          **************************************/
         var request = require('request'),
-            auth = require('../auth.json'),
-            chalk = require('chalk');
+            auth = require('../auth.json');
 
         var courseName = course.info.courseName.match(/\w+/)[0];
         var courseCode = course.info.courseName.match(/\d+/)[0];

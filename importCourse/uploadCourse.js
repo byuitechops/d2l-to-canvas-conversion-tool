@@ -26,9 +26,8 @@ module.exports = function (course, stepCallback) {
                         try {
                             body = JSON.parse(body);
                         } catch (e) {
-                            console.error(chalk.red(e), 'convert progress JSON');
+                            throw e;
                         }
-                        // console.log('\n DA PROGRESS:\n', JSON.parse(body));
                         console.log(chalk.blue('Status:'), body.workflow_state);
                         if (body.workflow_state === 'completed') {
                             clearInterval(checkLoop);
