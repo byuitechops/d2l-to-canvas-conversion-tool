@@ -5,11 +5,10 @@
 const request = require('request'),
     auth = require('../auth.json');
 
-
-/******************************************
- * uses the canvas API to get all migration
- * issues from the given migration
- ******************************************/
+/********************************************
+ * uses the canvas API to GET all migration
+ * issues and save them to the course object
+ ********************************************/
 module.exports = function (course, stepCallback) {
     console.log("getMigrationIssues");
     try {
@@ -20,17 +19,17 @@ module.exports = function (course, stepCallback) {
             if (err) {
                 throw err;
             }
-
             body = JSON.parse(body);
             //console.log("statusCode:", response.statusCode);
             //console.log('migrationIssues:', JSON.stringify(body, null, 3));
 
             course.info.migrationIssues = body;
-
             course.report.moduleLogs['importCourse'].changes.push('Migration issues successfully retrieved');
-            stepCallback(null, course);
 
+            stepCallback(null, course);
+            
         }).auth(null, null, true, auth.token);
+
     } catch (e) {
         e.location = "getMigrationIssues";
         stepCallback(e, course);

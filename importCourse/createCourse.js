@@ -1,14 +1,15 @@
 /* Put dependencies here */
+const request = require('request'),
+    auth = require('../auth.json');
 
+
+/**************************************
+ * creates a new course in canvas
+ * saves canvasOU to the course object
+ **************************************/
 module.exports = (course, stepCallback) => {
     console.log('createCourse');
     try {
-        /**************************************
-         * creates a new course in canvas
-         * saves courseId to teh course object
-         **************************************/
-        var request = require('request'),
-            auth = require('../auth.json');
 
         var courseName = course.info.courseName.match(/\w+/)[0];
         var courseCode = course.info.courseName.match(/\d+/)[0];
@@ -29,15 +30,15 @@ module.exports = (course, stepCallback) => {
                 //console.log(chalk.green(courseName + " Successfully created"));
                 //console.log('Course Number: ', body.id);
                 body = JSON.parse(body);
-                
+
                 course.info.canvasOU = body.id;
-                
+
                 course.report.moduleLogs['importCourse']
                     .changes.push('Course successfully created in Canvas');
                 stepCallback(null, course);
             }
         }).auth(null, null, true, auth.token);
-        
+
     } catch (e) {
         e.location = "createCourse";
         stepCallback(e, course);

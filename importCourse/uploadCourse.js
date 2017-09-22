@@ -8,11 +8,14 @@ const chalk = require('chalk'),
     fs = require('fs'),
     request = require('request');
 
-
+/**************************************
+ * uploads teh zip to a canvas course
+ * saves migrationId to course object
+ **************************************/
 module.exports = function (course, stepCallback) {
     console.log("uploadCourse");
     try {
-        
+
         /**************************************
          * GETs the status of the upload ONCE
          *************************************/
