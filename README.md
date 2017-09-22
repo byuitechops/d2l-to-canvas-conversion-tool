@@ -7,7 +7,7 @@
 
 *Zachary Williams*
 
-*Daniel Greene*
+*Daniel Green*
 
 With a measure of help so large from Josh McKinney that we've come to trust our own ideas shouldn't be trusted.
 
