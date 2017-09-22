@@ -16,6 +16,9 @@ a main step in the process of converting a course.*/
 /*"async.constant()" is used here and the step modules to pass
 the course object into each level of waterfall. In this case,
 it is used to create the initial course object. */
+
+
+
 const stepModules = [
     async.constant({}),
     indexer,
@@ -26,11 +29,13 @@ const stepModules = [
 ];
 
 async.waterfall(stepModules, (err, resultCourse) => {
-  if (err) {
-    // If we have an error, log it in our report
-    resultCourse.report.moduleLogs[err.message].fatalErrs.push(err);
-  } else {
+    if (err) {
+        // If we have an error, log it in our report
 
-  }
-  cleanUp();
+        console.log(err);
+        //resultCourse.report.moduleLogs[err.message].fatalErrs.push(err);
+    } else {
+
+    }
+    cleanUp();
 });

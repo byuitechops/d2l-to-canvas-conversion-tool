@@ -8,12 +8,10 @@
 module.exports = (course, stepCallback) => {
     console.log('createCourse');
     try {
-        /* Code Body */
-
-        /*******************************
+        /**************************************
          * creates a new course in canvas
-         * sets courseId in variables
-         *********************************/
+         * saves courseId to teh course object
+         **************************************/
         var request = require('request'),
             auth = require('../auth.json'),
             chalk = require('chalk');
@@ -31,28 +29,23 @@ module.exports = (course, stepCallback) => {
             }
         }, function (err, response, body) {
             if (err) {
-                stepCallback(new Error('importCourse'), course);
-                return;
+                err.location = "createCourse - API call";
+                throw err;
             } else {
                 //console.log(chalk.green(courseName + " Successfully created"));
                 //console.log('Course Number: ', body.id);
                 body = JSON.parse(body);
                 
-                //save course id to course object
                 course.info.canvasOU = body.id;
                 
-                // save progress to reports object
                 course.report.moduleLogs['importCourse']
                     .changes.push('Course successfully created in Canvas');
-                // return to step module
-                console.log("calling sterpCallback");
                 stepCallback(null, course);
             }
         }).auth(null, null, true, auth.token);
         
     } catch (e) {
         e.location = "createCourse";
-        //stepCallback(new Error('importCourse'), course);
         stepCallback(e, course);
     }
 };
