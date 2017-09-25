@@ -1,26 +1,59 @@
+var courseTemp = require('../courseTemplate.js');
+
 /* Put dependencies here */
+const fs = require('fs'),
+  async = require('async');
 
 module.exports = (course, stepCallback) => {
   try {
 
-    /* SET CONTENT */
-    /* Breaks down the course structure and saves it all, including
-    each file's contents, into our massive course object. */
-    function setContent(XML, callback) {
-      // Say your prayers, this one is gonna hurt
-      callback(null, XML);
+
+    function getGuts(file) {
+      fs.readFile(file, 'utf8', function (err, guts) {
+        if(err){
+          throw err;
+        }
+        return guts;
+      });
     }
 
-   
 
-    /* This line must be included in every child module. Change "moduleName"
-    to match the name of this module. The success message should be included
-    for each item that is fixed/changed/altered/captainamerica'd. Please be
-    specific in the message. */
+
+    fs.readdir(__dirname, function (err, dirContents) {
+      if (err) {
+        throw err;
+      }
+      console.log('dirContents', dirContents.length);
+      async.eachLimit(dirContents, 1, getContents, function (err, stuff) {
+        if (err) {
+          throw err;
+        }
+        stepCallback(null, course);
+      });
+
+
+      function getContents(content) {
+        console.log('running');
+        if (fs.statSync(content).isDirectory()) {
+          course.content.dirs.push({
+            name: content,
+            files: [],
+            dirs: []
+          })
+        } else {
+          console.log('guts', getGuts(content));
+          course.content.files.push({
+            name: content,
+            guts: getGuts(content)
+          });
+        }
+      }
+    });
+
     course.report.moduleLogs['indexCourse']
       .changes.push('Successfully indexed ' + course.info.courseName);
+    //stepCallback(null, course);
 
-    // On completion, return the course object back to its parent module.
   } catch (e) {
     /* If we have an error, throw it back up to its parent module.
     YOU MUST replace "moduleName" with the name of this module. */
@@ -28,3 +61,9 @@ module.exports = (course, stepCallback) => {
     stepCallback(e, course);
   }
 };
+
+module.exports(courseTemp, function (err, course) {
+  console.log(course);
+  console.log(course.content.files);
+  console.log(course.content.dirs);
+});
