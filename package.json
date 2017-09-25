@@ -12,7 +12,9 @@
     "request": "^2.81.0",
     "waterfall": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tap": "^10.7.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

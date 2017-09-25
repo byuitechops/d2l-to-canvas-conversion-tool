@@ -10,7 +10,7 @@ module.exports = (course, stepCallback) => {
     to match the name of this module. The success message should be included
     for each item that is fixed/changed/altered/captainamerica'd. Please be
     specific in the message. */
-    course.report.moduleLogs['indexCourse.js']
+    course.report.moduleLogs['indexCourse']
     .changes.push('Successfully indexed ' + course.info.courseName);
 
     // On completion, return the course object back to its parent module.
@@ -18,6 +18,6 @@ module.exports = (course, stepCallback) => {
   } catch (e) {
     /* If we have an error, throw it back up to its parent module.
     YOU MUST replace "moduleName" with the name of this module. */
-    stepCallback(new Error('indexCourse.js'), course);
+    stepCallback(new Error('indexCourse'), course);
   }
 };
