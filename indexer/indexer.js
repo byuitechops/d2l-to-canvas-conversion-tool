@@ -5,7 +5,6 @@ const indexCourse = require('./indexCourse.js');
 
 /* Our main function, called by main.js*/
 module.exports = (course, mainCallback) => {
-
   /* List child modules in order of of operation */
   const childModules = [
     async.constant(course),
@@ -19,6 +18,7 @@ module.exports = (course, mainCallback) => {
       mainCallback(err, resultCourse);
     } else {
       // If successful, return the course to main.js
+      console.log('Course successfully indexed.');
       mainCallback(null, resultCourse);
     }
   });

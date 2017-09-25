@@ -18,6 +18,7 @@ module.exports = (course, mainCallback) => {
       mainCallback(err, resultCourse);
     } else {
       // If successful, return the course to main.js
+      console.log('All pre-import fixes completed.');
       mainCallback(null, resultCourse);
     }
   });
