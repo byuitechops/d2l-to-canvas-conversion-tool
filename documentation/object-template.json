@@ -1,14 +1,12 @@
 {
-  "report": {
-    "moduleLogs": {
-      "moduleName": {
-        "fatalErrs": [],
-        "errors": [],
-        "changes": [],
-        "generatedReport": ""
-      }
-    }
-  },
+  "report": [
+    {
+		name: "",
+		errors: [],
+		fatalErrors: [],
+		successes: []
+	}
+  ],
   "info": {
     "migrationID": " ",
     "migrationIssues": [],
