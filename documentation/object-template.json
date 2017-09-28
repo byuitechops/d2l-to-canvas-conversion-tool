@@ -1,11 +1,11 @@
 {
   "report": [
     {
-		name: "",
-		errors: [],
-		fatalErrors: [],
-		successes: []
-	}
+	name: "",
+	errors: [],
+	fatalErrors: [],
+	successes: []
+    }
   ],
   "info": {
     "migrationID": " ",
