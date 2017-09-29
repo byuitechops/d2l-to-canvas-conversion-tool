@@ -2,7 +2,7 @@
 const async = require('async'),
   unzip = require('./unzip.js'),
   indexCourse = require('./indexCourse.js'),
-  getCourseName = require('./getCourseName.js');
+  nameTheCourse = require('./nameTheCourse.js');
 
 /* Our main function, called by main.js*/
 module.exports = (course, mainCallback) => {
