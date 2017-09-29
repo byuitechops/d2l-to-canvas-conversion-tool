@@ -22,7 +22,7 @@ module.exports = function (course, stepCallback) {
        * Add location to errs and pass them up
        ***************************************/
       function throwError(err) {
-         err.location = "uploadCourse";
+         course.throwFatalErr("uploadCourse", err);
          stepCallback(err, course);
       }
 
@@ -180,7 +180,7 @@ module.exports = function (course, stepCallback) {
       postRequest(url, postBody, true, uploadZip);
 
    } catch (e) {
-      e.location = "uploadCourse";
+      course.throwFatalErr("uploadCourse", e);
       stepCallback(e, course);
    }
 }
