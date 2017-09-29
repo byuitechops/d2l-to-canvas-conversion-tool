@@ -30,6 +30,7 @@ module.exports = (course, stepCallback) => {
     course.throwErr('moduleName', e);
 
     /* How to throw a fatal error */
+    course.throwFatalErr('moduleName', e);
     stepCallback(e, course);
   }
 };
