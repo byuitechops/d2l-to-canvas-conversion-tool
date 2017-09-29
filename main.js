@@ -1,3 +1,5 @@
+/*eslint-env node, es6*/
+
 /* DEPENDENCIES */
 const async = require('async');
 const courseTemplate = require('./courseTemplate.js');
@@ -13,12 +15,12 @@ const indexer = require('./indexer/indexer.js');
 /* This function sets any given settings from the CLI/UI
 before sending it off to the rest of the Step Modules. */
 var declareCourseObject = (callback) => {
-  courseTemplate.settings.debug = true;
-  courseTemplate.settings.readAll = true;
-  courseTemplate.settings.platform = 'online';
-  courseTemplate.info.fileName = 'test';
-  courseTemplate.info.originalFilepath = './test';
-  callback(null, courseTemplate);
+   courseTemplate.settings.debug = true;
+   courseTemplate.settings.readAll = true;
+   courseTemplate.settings.platform = 'online';
+   courseTemplate.info.fileName = 'test';
+   courseTemplate.info.originalFilepath = './test';
+   callback(null, courseTemplate);
 };
 
 /* STEP MODULES ARRAY */
@@ -35,12 +37,15 @@ const stepModules = [
 ];
 /* Runs through each Step Module one by one */
 async.waterfall(stepModules, (err, resultCourse) => {
-  if (err) {
-    // If we have an error, log it in our report
-    console.log(err.location, err);
-    //resultCourse.report.moduleLogs[err.message].fatalErrs.push(err);
-  } else {
+   if (err) {
+      console.log(err.location, err);
 
-  }
-  //cleanUp();
+      // If we have an error, log it in our report
+      resultCourse.throwFatalErr(err.location, err);
+      //resultCourse.report.moduleLogs[err.message].fatalErrs.push(err);
+   } else {
+      console.log('You made it!');
+      console.log("resultCourse", resultCourse);
+   }
+   //cleanUp();
 });
