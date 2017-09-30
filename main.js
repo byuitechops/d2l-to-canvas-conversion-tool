@@ -11,41 +11,44 @@ const indexer = require('./indexer/indexer.js');
 //const postImport = require('./postImport/postImport.js');
 //const cleanUp = require('./cleanUp/cleanUp.js');
 
-/* DECLARE SETTINGS */
-/* This function sets any given settings from the CLI/UI
-before sending it off to the rest of the Step Modules. */
-var declareCourseObject = (callback) => {
-   courseTemplate.settings.debug = true;
-   courseTemplate.settings.readAll = true;
-   courseTemplate.settings.platform = 'online';
-   courseTemplate.info.fileName = 'test';
-   courseTemplate.info.originalFilepath = './test';
-   callback(null, courseTemplate);
-};
-
 /* STEP MODULES ARRAY */
 /* This array is where each step module's function is stored
 for the async waterfall below. Each of these functions contains
 a main step in the process of converting a course.*/
 const stepModules = [
-    declareCourseObject,
-    indexer,
-    //preImport,
-    //importCourse,
-    //postImport,
-    //cleanUp
+  async.constant('./TestFile.zip', {
+    debug: 'true', readAll: 'true', platform: 'online'
+  }),
+  indexer,
+  //preImport,
+  //importCourse,
+  //postImport,
+  //cleanUp
 ];
+
 /* Runs through each Step Module one by one */
 async.waterfall(stepModules, (err, resultCourse) => {
-   if (err) {
-      console.log(err.location, err);
-
-      // If we have an error, log it in our report
-      resultCourse.throwFatalErr(err.location, err);
-      //resultCourse.report.moduleLogs[err.message].fatalErrs.push(err);
-   } else {
-      console.log('You made it!');
-      console.log("resultCourse", resultCourse);
-   }
-   //cleanUp();
+  if (err) {
+    console.log(err);
+    // If we have an error, log it in our report
+    resultCourse.throwFatalErr('main', err);
+    //resultCourse.report.moduleLogs[err.message].fatalErrs.push(err);
+  } else {
+    resultCourse.report.forEach((ReportModule) => {
+      console.log(`==== Module Report ==== : ${ReportModule.name}`);
+      console.log(`Errors (${ReportModule.errors.length})`);
+      ReportModule.errors.forEach((error) => {
+        console.log(`- ${error}`);
+      });
+      console.log(`Fatal Errors (${ReportModule.fatalErrs.length})`);
+      ReportModule.fatalErrs.forEach((fatalErr) => {
+        console.log(`- ${fatalErr}`);
+      });
+      console.log(`Successes (${ReportModule.changes.length})`);
+      ReportModule.changes.forEach((change) => {
+        console.log(`- ${change}`);
+      });
+    });
+    //cleanUp();
+  }
 });

@@ -6,17 +6,13 @@
   "dependencies": {
     "adm-zip": "^0.4.7",
     "async": "^2.5.0",
-    "async-waterfall": "^0.1.5",
     "eslint": "^4.6.1",
     "eslint-config-google": "^0.9.1",
     "request": "^2.81.0",
     "tap": "^10.7.2",
-    "waterfall": "^1.0.0",
     "xmldom": "^0.1.27"
   },
-  "devDependencies": {
-    "tap": "^10.7.2"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "tap test/*.js"
   },

@@ -2,16 +2,17 @@ const Zip = require('adm-zip');
 const fs = require('fs');
 
 module.exports = (course, stepCallback) => {
+  course.addModuleReport('unzip');
+  course.success('unzip', 'Report Module created for unzip');
   try {
-    /* Code Body */
 
     // FOR TESTING
-    course.info.originalFilepath = './test';
-    course.info.fileName = 'test';
+    // course.info.originalFilepath = './test';
+    course.info.fileName = 'TestCourse';
 
     /* Creates an instance of adm-zip's read-in file, so we can
     access adm-zip's functions (like unzipping!) */
-    var zipFile = new Zip(course.info.originalFilepath + '.zip');
+    var zipFile = new Zip(course.info.originalFilepath);
 
     /* Checks if a directory exists or not. Used to determine if our
     extraction is done or still in progress, and to see if we already
@@ -38,7 +39,7 @@ module.exports = (course, stepCallback) => {
     }
 
     /* Defines where we're going to unzip the file */
-    course.info.unzippedFilepath = setDirectoryName('./D2LReady/' +
+    course.info.unzippedFilepath = setDirectoryName('./D2LProcessing/' +
                                                   course.info.fileName);
 
     /* Extracts the zip into our D2LReady folder. Changing the second
@@ -50,7 +51,7 @@ module.exports = (course, stepCallback) => {
     to match the name of this module. The success message should be included
     for each item that is fixed/changed/altered/captainamerica'd. Please be
     specific in the message. */
-    course.report.moduleLogs['unzip'].changes.push('Successly unzipped' +
+    course.success('unzip', 'Course successfully unzipped');
     /* On completion, return the course object back to its parent module. */
     var waitForUnzip = setInterval(() => {
       if (checkDirectory(course.info.unzippedFilepath)) {
@@ -61,7 +62,6 @@ module.exports = (course, stepCallback) => {
   } catch (e) {
     /* If we have an error, throw it back up to its parent module.
     YOU MUST replace "moduleName" with the name of this module. */
-    e.location = 'unzip.js';
     stepCallback(e, course);
   }
 };

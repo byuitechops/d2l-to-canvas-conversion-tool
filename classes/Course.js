@@ -1,6 +1,11 @@
+const ReportModule = require('./ReportModule.js');
+
 module.exports = class Course {
   constructor(filePath, settings) {
-    this.report = [];
+    this.report = [
+      new ReportModule('main'),
+      new ReportModule('indexer')
+    ];
     this.settings = {
       'debug': settings.debug,
       'readAll': settings.readAll,
@@ -18,7 +23,7 @@ module.exports = class Course {
 
   /* Adds fatal errors to report for given module */
   throwFatalErr(moduleName, err) {
-    var index = this.report.findIndex(findReportModule, moduleName);
+    var index = this.report.findIndex(this.findReportModule, moduleName);
     if (index < 0) {
       console.log(`Report Module was not found: ${moduleName}`);
     } else {
@@ -28,7 +33,7 @@ module.exports = class Course {
 
   /* Adds non-fatal errors to report for given module */
   throwErr(moduleName, err) {
-    var index = this.report.findIndex(findReportModule, moduleName);
+    var index = this.report.findIndex(this.findReportModule, moduleName);
     if (index < 0) {
       console.log(`Report Module was not found: ${moduleName}`);
     } else {
@@ -38,11 +43,11 @@ module.exports = class Course {
 
   /* Adds successful changes to report for given module */
   success(moduleName, message) {
-    var index = this.report.findIndex(findReportModule, moduleName);
+    var index = this.report.findIndex(this.findReportModule, moduleName);
     if (index < 0) {
       console.log(`Report Module was not found: ${moduleName}`);
     } else {
-      this.report[index].changes.push(err);
+      this.report[index].changes.push(message);
     }
   }
 
@@ -53,7 +58,7 @@ module.exports = class Course {
 
   /* Creates a new Report Module */
   addModuleReport(moduleName) {
-    var index = this.report.findIndex(findReportModule, moduleName);
+    var index = this.report.findIndex(this.findReportModule, moduleName);
     if (index > 0) {
       console.log(`Report Module already created: ${moduleName}`);
     } else {
@@ -75,4 +80,4 @@ module.exports = class Course {
     }
     return false;
   }
-}
+};
