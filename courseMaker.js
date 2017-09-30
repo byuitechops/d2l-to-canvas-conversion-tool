@@ -1,180 +1,166 @@
 /*eslint-env node, es6*/
 /*eslint no-unused-vars:0, no-console:0*/
-
 var fs = require('fs'),
-   path = require('path'),
-   asyncLib = require('async');
+    path = require('path'),
+    asyncLib = require('async'),
+    File = require('./classes/File.js'),
+    Dir = require('./classes/Dir.js');
 
 /*********************************
- * not sure what this is here for
+ * Not sure what this is here for
  *********************************/
 function parseTheDom(guts) {
-   return guts;
+    return guts;
 }
-
-/**********************************
- * constructor for the file array
- ***********************************/
-function File(globalPath, guts, dom) {
-   return {
-      name: path.format(globalPath).name,
-      path: globalPath,
-      guts: guts,
-      dom: dom
-   };
-}
-
-/***********************************************
- * adds the hasNumber method to the file object
- * not sure why this is here...
- **********************************************/
-File.prototype.hasNumber = function () {
-   var hasNumber = /\d/;
-   return hasNumber.test(this.guts);
-}
-
-
+var counter = 0;
 /***************************************
- *
+ * This function asynconusly gathers all the stuff that a file needs then calls the File Class
  ***************************************/
 function makeFile(globalPath, makeFileCb) {
-   //read the file
-   fs.readFile(globalPath, function (err, guts) {
-      var file, dom;
-      if (err) {
-         makeFileCb(err)
-         return;
-      }
-      //parse in to dom if we can
-      dom = parseTheDom(guts);
-      file = new File(globalPath, guts, dom)
+    counter += 1;
 
-      makeFileCb(null, file);
-   });
+
+    //read the file
+    fs.readFile(globalPath, 'utf8', function (readFileErr, guts) {
+        var file, dom;
+        if (readFileErr) {
+            makeFileCb(readFileErr)
+            return;
+        }
+
+        //parse in to dom if we can
+        //dom = parseTheDom(guts);
+        file = new File(globalPath, guts, counter);
+
+        makeFileCb(null, file);
+    });
+}
+
+
+/********************************
+ * Filter Function used to keep files of certin types
+ *******************************/
+function toFilesWeWant(filePath) {
+    var ext = path.extname(filePath),
+        keepers = ['.html', '.xml'];
+    return keepers.includes(ext);
 }
 
 /********************************
- *
+ * Sort out dirs and files based on a statobj
  *******************************/
-function Dir(globalPath, arrOfDirs, arrOfFiles) {
-   //getlist of contents
+function keepFilesAndDirsGlobalPaths(items) {
+    //these are the lists
+    var sortedItems = {
+        dirs: [],
+        files: []
+    };
 
-   return {
-      name: path.format(globalPath).name,
-      path: globalPath,
-      dirs: arrOfDirs,
-      files: arrOfFiles
-   };
+    return items.reduce(function (acc, item) {
+        if (item.isDir) {
+            acc.dirs.push(item.path)
+        } else if (item.isFile) {
+            acc.files.push(item.path)
+        }
+        return acc;
+
+    }, sortedItems);
 }
 
-/***************************************
- * this is literally never called....
- **************************************/
+
+/********************************
+ * This gathers all the stuff it needs to make a Dir and then calls the Dir class 
+ *******************************/
 function makeDir(globalPath, makeDirCb) {
 
-}
-
-/********************************
- *
- *******************************/
-function getDir(globalPath, getDirCb) {
-   function aboutFile(name, cb) {
-      var fullPath = path.join(globalPath, name);
-      fs.stat(fullPath, function (err, statObj) {
-         if (err) {
-            cb(err, null);
-            return;
-         }
-
-         cb(null, {
-            path: fullPath,
-            isDir: statObj.isDirectory()
-         });
-      })
-   }
-
-   fs.readdir(globalPath, function (err, dirList) {
-
-      //make list of files and dir
-      asyncLib.map(dirList, aboutFile, function (err, items) {
-         if (err) {
-            getDirCb(err)
-            return;
-         }
-         var sortedItems = {
-            dirs: [],
-            files: []
-         };
-
-         sortedItems = items.reduce(function (acc, item) {
-
-            if (item.isDir) {
-               acc.dirs.push(item.path)
-            } else {
-               acc.files.push(item.path)
-            }
-            return acc;
-
-         }, sortedItems);
-
-         //keep files we want
-         sortedItems.files = sortedItems.files.filter(function (filePath) {
-            var ext = path.extname(filePath),
-               keepers = ['.html', '.xml'];
-            return keepers.includes(ext);
-         })
-
-         //make the files
-         asyncLib.map(sortedItems.files, makeFile, function (err, files) {
-            if (err) {
-               //fix it
-               return
+    /********************************
+     * This makes the filenames global and gets info from stats obj 
+     *******************************/
+    function aboutFile(name, aboutFileCb) {
+        var fullPath = path.join(globalPath, name);
+        //get the stat obj for the item
+        fs.stat(fullPath, function (errStat, statObj) {
+            if (errStat) {
+                aboutFileCb(errStat, null);
+                return;
             }
 
-            //make the dirs
-            asyncLib.map(sortedItems.dirs, getDir, function (err, dirs) {
-               var dirOut;
-               if (err) {
-                  getDirCb(err, null);
-                  return;
-               }
-
-               dirOut = new Dir(globalPath, files, dirs);
-
-               getDirCb(null, dirOut);
+            //send back the info we need
+            aboutFileCb(null, {
+                path: fullPath,
+                isDir: statObj.isDirectory(),
+                isFile: statObj.isFile()
             });
-         });
-      });
-   });
+        })
+    }
+
+
+
+    fs.readdir(globalPath, function (readDirErr, dirList) {
+        //check if err when reading the dir
+        if (readDirErr) {
+            return makeDirCb(readDirErr);
+        }
+
+        //figure out if the item is a file or folder
+        asyncLib.map(dirList, aboutFile, function (aboutFileErr, items) {
+            if (aboutFileErr) {
+                makeDirCb(aboutFileErr);
+                return;
+            }
+
+            //Sort out dirs and files based on a statobj, it just keeps the paths in the two lists
+            var sortedItems = keepFilesAndDirsGlobalPaths(items);
+
+            //keep files we want
+            //sortedItems.files = sortedItems.files.filter(toFilesWeWant)
+
+            //make the files
+            //just to note if this dir doesn't have any files (sortedItems.files = []) then makeFile is not called and files = []
+            asyncLib.map(sortedItems.files, makeFile, function (makeFileErr, files) {
+                if (makeFileErr) {
+                    makeDirCb(makeFileErr);
+                    return;
+                }
+
+                //make the dirs
+                //just to note if this dir doesn't have any dir (sortedItems.dir = []) then makeDir is not called and dirs = []
+                asyncLib.map(sortedItems.dirs, makeDir, function (makeDirErr, dirs) {
+                    var dirOut;
+                    if (makeDirErr) {
+                        makeDirCb(makeDirErr);
+                        return;
+                    }
+
+                    dirOut = new Dir(globalPath, files, dirs);
+                    makeDirCb(null, dirOut);
+                });
+            });
+        });
+    });
 }
 
-/****************************************
- * the constructor for the course object
- ***************************************/
-function Course(globalPath, content) {
-   this.content = content;
-}
+
 
 /********************************
- *
+ * Start Here
  *******************************/
 function indexer(globalPath, cb) {
-   getDir(globalPath, function (err, dir) {
-      if (err) return cb(err);
-      cb(null, dir);
-   });
+    globalPath = path.resolve(globalPath);
+
+    //the path passed in will be a folder path so just use makeDir
+    makeDir(globalPath, function (err, dir) {
+        if (err) return cb(err);
+        cb(null, dir);
+    });
 }
 
-/********************************
- *
- *******************************/
-function makeCourse(globalPath, makeCourseCb) {
+module.exports = indexer;
 
-   indexer(globalPath, function (err, content) {
-      course = new Course(globalPath, content)
-
-      makeCourseCb(null, course);
-   });
-}
-
-console.log(new Course('.'))
+indexer('.', function (err, dir) {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    console.log(dir);
+});

@@ -28,7 +28,7 @@ module.exports = (course, stepCallback) => {
          }
       }, function (err, response, body) {
          if (err) {
-            err.location = "createCourse";
+            course.throwFatalErr("createCourse", err);
             stepCallback(err, course);
             return;
          } else {
@@ -46,7 +46,7 @@ module.exports = (course, stepCallback) => {
       }).auth(null, null, true, auth.token);
 
    } catch (e) {
-      e.location = "createCourse";
+      course.throwFatalErr("createCourse", e);
       stepCallback(e, course);
    }
 };

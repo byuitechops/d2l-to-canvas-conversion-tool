@@ -18,7 +18,7 @@ module.exports = function (course, stepCallback) {
 
       request.get(url, function (err, response, body) {
          if (err) {
-            err.location = "getMigrationIssues";
+            course.throwFatalErr("getMigrationIssues", err);
             stepCallback(err, course);
             return;
          }
@@ -36,7 +36,7 @@ module.exports = function (course, stepCallback) {
       }).auth(null, null, true, auth.token);
 
    } catch (e) {
-      e.location = "getMigrationIssues";
+      course.throwFatalErr("getMigrationIssues", e);
       stepCallback(e, course);
    }
 }
