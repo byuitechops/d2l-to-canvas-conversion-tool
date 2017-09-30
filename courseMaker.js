@@ -3,21 +3,25 @@
 var fs = require('fs'),
     path = require('path'),
     asyncLib = require('async'),
-    File = require('./File.js'),
-    Dir = require('./Dir.js')
+    File = require('./classes/File.js'),
+    Dir = require('./classes/Dir.js');
+
 /*********************************
- * not sure what this is here for
+ * Not sure what this is here for
  *********************************/
 function parseTheDom(guts) {
     return guts;
 }
-
+var counter = 0;
 /***************************************
  * This function asynconusly gathers all the stuff that a file needs then calls the File Class
  ***************************************/
 function makeFile(globalPath, makeFileCb) {
+    counter += 1;
+
+
     //read the file
-    fs.readFile(globalPath, function (readFileErr, guts) {
+    fs.readFile(globalPath, 'utf8', function (readFileErr, guts) {
         var file, dom;
         if (readFileErr) {
             makeFileCb(readFileErr)
@@ -26,7 +30,7 @@ function makeFile(globalPath, makeFileCb) {
 
         //parse in to dom if we can
         //dom = parseTheDom(guts);
-        file = new File(globalPath, guts);
+        file = new File(globalPath, guts, counter);
 
         makeFileCb(null, file);
     });
@@ -90,6 +94,8 @@ function makeDir(globalPath, makeDirCb) {
         })
     }
 
+
+
     fs.readdir(globalPath, function (readDirErr, dirList) {
         //check if err when reading the dir
         if (readDirErr) {
@@ -139,10 +145,22 @@ function makeDir(globalPath, makeDirCb) {
 /********************************
  * Start Here
  *******************************/
-module.exports = function indexer(globalPath, cb) {
+function indexer(globalPath, cb) {
+    globalPath = path.resolve(globalPath);
+
     //the path passed in will be a folder path so just use makeDir
     makeDir(globalPath, function (err, dir) {
         if (err) return cb(err);
         cb(null, dir);
     });
 }
+
+module.exports = indexer;
+
+indexer('.', function (err, dir) {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    console.log(dir);
+});
