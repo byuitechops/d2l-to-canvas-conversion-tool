@@ -1,5 +1,6 @@
 const decompress = require('decompress');
 const fs = require('fs');
+const path = require('path');
 
 module.exports = (course, stepCallback) => {
   try {
@@ -33,7 +34,7 @@ module.exports = (course, stepCallback) => {
 
     /* Set the filepath we will be unzipping to */
     course.info.unzippedFilepath = setDirectoryName(
-      `./D2LProcessing/${course.info.originalFilepath.split('.zip')[0]}`
+      `${course.info.unzippedFilepath}\\${course.info.fileName.split('.zip')[0]}`
     );
 
     /* Unzip the course into a new folder */

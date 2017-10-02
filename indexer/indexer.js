@@ -5,7 +5,6 @@ const async = require('async'),
   unzip = require('./unzip.js'),
   // setInfo = require('./setInfo.js'),
   indexDirectory = require('./indexDirectory.js');
-  zip = require('./zip.js');
 
 /* Our main function, called by main.js*/
 module.exports = (filePath, settings, mainCallback) => {
@@ -16,8 +15,7 @@ module.exports = (filePath, settings, mainCallback) => {
     //nameTheCourse,
     unzip,
     //setInfo,
-    //indexDirectory,
-    zip
+    //indexDirectory
   ];
 
   async.waterfall(childModules, (err, resultCourse) => {

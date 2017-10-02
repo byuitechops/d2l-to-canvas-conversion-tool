@@ -1,4 +1,5 @@
 const ReportModule = require('./ReportModule.js');
+const path = require('path');
 
 module.exports = class Course {
   constructor(filePath, settings) {
@@ -12,7 +13,9 @@ module.exports = class Course {
       'platform': settings.platform
     };
     this.info = {
-      'originalFilepath': filePath,
+      'originalFilepath': path.resolve(filePath),
+      'unzippedFilepath': path.resolve('D2LProcessing'),
+      'zippedFilepath': path.resolve('D2LReady'),
       'fileName': filePath.split('/')[filePath.split('/').length - 1]
     };
     this.content = {};

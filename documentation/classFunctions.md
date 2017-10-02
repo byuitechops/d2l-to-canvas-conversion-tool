@@ -10,11 +10,11 @@ All functions will follow the declaration: `course.functionName(parameters)`
 
 This verifies that the given property exists in either `course.info` or `course.settings`.
 
-### throwErr(moduleName: string, err: Error)
+### throwFatalErr(moduleName: string, err: Error)
 
 Used to throw and record a fatal error. Fatal errors kill the program.
 
-### throwFatalErr(moduleName: string, err: Error)
+### throwErr(moduleName: string, err: Error)
 
 **Only used in Step Modules. This is not meant to be used in child modules.**
 
