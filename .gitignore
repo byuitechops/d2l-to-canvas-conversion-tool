@@ -1,5 +1,5 @@
 *.json
 node_modules/
 D2LReady/
+D2LProcessing/
 D2LOriginal/
-D2LUnzipped/
