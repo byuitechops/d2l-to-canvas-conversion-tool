@@ -1,19 +1,11 @@
-const Zip = require('adm-zip');
+const decompress = require('decompress');
 const fs = require('fs');
 
 module.exports = (course, stepCallback) => {
-  console.log('unzip');
-  course.addModuleReport('unzip');
-  course.success('unzip', 'Report Module created for unzip');
   try {
-
-    // FOR TESTING
-    // course.info.originalFilepath = './test';
-    course.info.fileName = 'TestCourse';
-
-    /* Creates an instance of adm-zip's read-in file, so we can
-    access adm-zip's functions (like unzipping!) */
-    var zipFile = new Zip(course.info.originalFilepath);
+    /* Gimme that module report */
+    course.addModuleReport('unzip');
+    course.success('unzip', 'Report Module created for unzip');
 
     /* Checks if a directory exists or not. Used to determine if our
     extraction is done or still in progress, and to see if we already
@@ -39,30 +31,22 @@ module.exports = (course, stepCallback) => {
       }
     }
 
-    /* Defines where we're going to unzip the file */
-    course.info.unzippedFilepath = setDirectoryName('./D2LProcessing/' +
-      course.info.fileName);
+    /* Set the filepath we will be unzipping to */
+    course.info.unzippedFilepath = setDirectoryName(
+      `./D2LProcessing/${course.info.originalFilepath.split('.zip')[0]}`
+    );
 
-    /* Extracts the zip into our D2LReady folder. Changing the second
-    parameter to true will have it overwrite any existing files in the
-    directory it creates. We prefer false. */
-    zipFile.extractAllTo(course.info.unzippedFilepath, false);
+    /* Unzip the course into a new folder */
+    decompress(course.info.originalFilepath, course.info.unzippedFilepath)
+    .then((files) => {
+      course.success('unzip', 'Course successfully unzipped');
+      stepCallback(null, course);
+    }, (promiseError) => {
+      stepCallback(promiseError, course);
+    });
 
-    /* This line must be included in every child module. Change "moduleName"
-    to match the name of this module. The success message should be included
-    for each item that is fixed/changed/altered/captainamerica'd. Please be
-    specific in the message. */
-    course.success('unzip', 'Course successfully unzipped');
-    /* On completion, return the course object back to its parent module. */
-    var waitForUnzip = setInterval(() => {
-      if (checkDirectory(course.info.unzippedFilepath)) {
-        clearInterval(waitForUnzip);
-        stepCallback(null, course);
-      }
-    }, 100);
   } catch (e) {
-    /* If we have an error, throw it back up to its parent module.
-    YOU MUST replace "moduleName" with the name of this module. */
+    course.throwErr('unzip', e);
     stepCallback(e, course);
   }
 };

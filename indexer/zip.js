@@ -1,4 +1,5 @@
 /*eslint-env node, es6*/
+/*eslint no-console:1*/
 
 const zip = require('zip-dir');
 const fs = require('fs');
@@ -39,14 +40,15 @@ module.exports = (course, stepCallback) => {
 
     /* Defines where we're going to put the zipped folder */
     course.info.zippedFilepath = setDirectoryName('./D2LReady/' +
-      course.info.fileName) + '.zip';
+      course.info.fileName);
 
     /* Zip that file right up */
     console.log(`ZIPPED FILE PATH: ${course.info.zippedFilepath}`);
     console.log(`UNZIPPED FILE PATH: ${course.info.unzippedFilepath}`);
+    console.log(`CURR DIR: ${__dirname}`);
 
-    zip(course.info.unzippedFilepath, {
-      saveTo: course.info.zippedFilePath
+    zip("C:/Users/Danverde/Documents/d2l-to-canvas-conversion-tool/D2LProcessing/testFile", {
+      saveTo: "C:/Users/Danverde/Documents/d2l-to-canvas-conversion-tool/D2LReady/testFile.zip"
     }, function (err, buffer) {
       if (err) {
         stepCallback(err, course);

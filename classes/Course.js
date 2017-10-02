@@ -12,7 +12,8 @@ module.exports = class Course {
       'platform': settings.platform
     };
     this.info = {
-      'originalFilepath': filePath
+      'originalFilepath': filePath,
+      'fileName': filePath.split('/')[filePath.split('/').length - 1]
     };
     this.content = {};
   }
