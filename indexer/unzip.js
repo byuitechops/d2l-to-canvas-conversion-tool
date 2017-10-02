@@ -2,6 +2,7 @@ const Zip = require('adm-zip');
 const fs = require('fs');
 
 module.exports = (course, stepCallback) => {
+  console.log("unzip");
   course.addModuleReport('unzip');
   course.success('unzip', 'Report Module created for unzip');
   try {
@@ -40,7 +41,7 @@ module.exports = (course, stepCallback) => {
 
     /* Defines where we're going to unzip the file */
     course.info.unzippedFilepath = setDirectoryName('./D2LProcessing/' +
-                                                  course.info.fileName);
+      course.info.fileName);
 
     /* Extracts the zip into our D2LReady folder. Changing the second
     parameter to true will have it overwrite any existing files in the

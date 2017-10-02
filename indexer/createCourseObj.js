@@ -4,6 +4,7 @@
 var Course = require('../classes/Course.js');
 
 module.exports = (filePath, settings, stepCallback) => {
+   console.log('createCourseObject');
   try {
     /* Create the course object, give it the original filepath, and settings */
     var course = new Course(filePath, settings);
@@ -17,7 +18,7 @@ module.exports = (filePath, settings, stepCallback) => {
     /* Have the course meet with the missionaries so it can be converted */
     stepCallback(null, course);
   } catch (e) {
-    /* Throw me a non-fatal error */
+    /* Throw me a fatal error */
     stepCallback(e, 'Failed to create course object.');
   }
 };

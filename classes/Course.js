@@ -47,6 +47,7 @@ module.exports = class Course {
     if (index < 0) {
       console.log(`Report Module was not found: ${moduleName}`);
     } else {
+      console.log(`${moduleName}: ${message}`);
       this.report[index].changes.push(message);
     }
   }

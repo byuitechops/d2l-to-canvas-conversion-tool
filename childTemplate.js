@@ -9,6 +9,7 @@ module.exports = (course, stepCallback) => {
     /*create the module object so that we can access it later as needed.
     This MUST be done at the beginning of each child module */
     course.addModuleReport('moduleName');
+    course.success('moduleName', 'Report Module created for moduleName');
 
     /* This line is optional. It is used to save variables so that they can
     be accessed in later modules. The Key is the name of the variable and the
@@ -30,7 +31,7 @@ module.exports = (course, stepCallback) => {
     course.throwErr('moduleName', e);
 
     /* How to throw a fatal error */
-    course.throwFatalErr('moduleName', e);
+    //course.throwFatalErr('moduleName', e);
     stepCallback(e, course);
   }
 };
