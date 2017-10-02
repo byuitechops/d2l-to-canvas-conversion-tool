@@ -45,32 +45,26 @@ module.exports = (course, stepCallback) => {
       course.info.fileName) + '.zip';
 
     /* Zip that file right up */
+    console.log(`ZIPPED FILE PATH: ${course.info.zippedFilepath}`);
     zipFile.writeZip(course.info.zippedFilepath);
 
     /* Adds our now-altered course folder we originally unzipped into
     our zip instance in memory, so we can zip it up. */
     console.log('zippedFilepath', course.info.zippedFilepath);
     console.log('unzippedFilepath', course.info.unzippedFilepath);
-    zipFile.addLocalFolder(
-      course.info.unzippedFilepath, course.info.zippedFilepath
-    );
-
-    console.log('zipFile', zipFile);
-
-
-
-
 
     /* On completion, return the course object back to its parent module. */
     var waitForUnzip = setInterval(() => {
       if (checkDirectory(course.info.zippedFilepath.match(/[\s\S]+(?=.zip)/)[0])) {
         clearInterval(waitForUnzip);
+        zipFile.addLocalFolder(
+          course.info.unzippedFilepath, course.info.zippedFilepath
+        );
+        console.log(zipFile);
         course.success('zip', 'Course successfully zipped.');
         stepCallback(null, course);
       }
     }, 100);
-
-
 
   } catch (e) {
     /* If we have an error, throw it back up to its parent module.

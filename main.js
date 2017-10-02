@@ -16,7 +16,7 @@ const indexer = require('./indexer/indexer.js');
 for the async waterfall below. Each of these functions contains
 a main step in the process of converting a course.*/
 const stepModules = [
-  async.constant('./TestFile.zip', {
+  async.constant('TestFile.zip', {
     debug: 'true', readAll: 'true', platform: 'online'
   }),
   indexer,

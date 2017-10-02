@@ -2,7 +2,7 @@ const Zip = require('adm-zip');
 const fs = require('fs');
 
 module.exports = (course, stepCallback) => {
-  console.log("unzip");
+  console.log('unzip');
   course.addModuleReport('unzip');
   course.success('unzip', 'Report Module created for unzip');
   try {

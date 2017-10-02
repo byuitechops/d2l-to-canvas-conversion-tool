@@ -6,11 +6,15 @@
   "dependencies": {
     "adm-zip": "^0.4.7",
     "async": "^2.5.0",
+    "decompress": "^4.2.0",
+    "easy-zip": "0.0.4",
     "eslint": "^4.6.1",
     "eslint-config-google": "^0.9.1",
+    "extract-zip": "^1.6.5",
     "request": "^2.81.0",
     "tap": "^10.7.2",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.1.27",
+    "zip-local": "^0.3.4"
   },
   "devDependencies": {},
   "scripts": {
