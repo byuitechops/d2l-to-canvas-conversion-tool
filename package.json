@@ -10,7 +10,8 @@
     "eslint-config-google": "^0.9.1",
     "request": "^2.81.0",
     "tap": "^10.7.2",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.1.27",
+    "zip-dir": "^1.0.2"
   },
   "devDependencies": {},
   "scripts": {

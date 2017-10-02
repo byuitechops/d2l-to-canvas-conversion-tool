@@ -1,15 +1,12 @@
 /*eslint-env node, es6*/
 
-const Zip = require('adm-zip');
+const zip = require('zip-dir');
 const fs = require('fs');
 
 module.exports = (course, stepCallback) => {
   course.addModuleReport('zip');
   course.success('zip', 'Report Module created for unzip');
   try {
-
-    /* Creates an instance of adm-zip's class in memory */
-    var zipFile = new Zip();
 
     /* Checks if a directory exists or not. Used to determine if our
     extraction is done or still in progress, and to see if we already
@@ -44,31 +41,30 @@ module.exports = (course, stepCallback) => {
     course.info.zippedFilepath = setDirectoryName('./D2LReady/' +
       course.info.fileName) + '.zip';
 
-    /* Zip that file right up */
-    zipFile.writeZip(course.info.zippedFilepath);
 
-    /* Adds our now-altered course folder we originally unzipped into
-    our zip instance in memory, so we can zip it up. */
     console.log('zippedFilepath', course.info.zippedFilepath);
     console.log('unzippedFilepath', course.info.unzippedFilepath);
-    zipFile.addLocalFolder(
-      course.info.unzippedFilepath, course.info.zippedFilepath
-    );
 
-    console.log('zipFile', zipFile);
-
-
-
+    zip(course.info.unzippedFilepath, {
+      saveTo: course.info.zippedFilePath
+    }, function (err, buffer) {
+      if (err) {
+        stepCallback(err, course);
+        return;
+      }
+      course.success('zip', 'Course successfully zipped.');
+      stepCallback(null, course);
+    });
 
 
     /* On completion, return the course object back to its parent module. */
-    var waitForUnzip = setInterval(() => {
+    /*var waitForUnzip = setInterval(() => {
       if (checkDirectory(course.info.zippedFilepath.match(/[\s\S]+(?=.zip)/)[0])) {
         clearInterval(waitForUnzip);
         course.success('zip', 'Course successfully zipped.');
         stepCallback(null, course);
       }
-    }, 100);
+    }, 100);*/
 
 
 
