@@ -40,7 +40,15 @@ module.exports = {
   },
   'content': {
     // Array of files with two properties: fileName and guts
-    'files': [],
+    'files': [
+      {
+        "name": '',
+        "path": '',
+        "ext": '',
+        "dom": 'DOM',
+        "isBinary": false
+      }
+    ],
     // Array of directory objects, just like this
     'dirs': []
   }

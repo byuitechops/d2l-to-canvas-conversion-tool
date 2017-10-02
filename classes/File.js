@@ -1,7 +1,9 @@
 module.exports = class File {
-  constructor(name, path, ext, guts, doc) {
+  constructor(name, path, ext, dom, binary) {
     this.name = name;
-    this.guts = guts;
-    this.doc = doc;
+    this.path = path;
+    this.ext = ext;
+    this.dom = dom;
+    this.isBinary = binary;
   }
 };
