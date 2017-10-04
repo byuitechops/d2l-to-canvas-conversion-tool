@@ -15,14 +15,14 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tap tests/*.js --cov"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/byuitechops/d2l-to-canvas-conversion-tool.git"
   },
-  "author": "Zachary Williams & Daniel",
-  "license": "ISC",
+  "author": "Zachary Williams & Daniel Green",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/byuitechops/d2l-to-canvas-conversion-tool/issues"
   },

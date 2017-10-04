@@ -67,32 +67,32 @@ Step 2 requires decompressing each course before alterations are made to them. F
 
 The Nightmare before Christmas tool will be used to download the courses. It may be integrated into the conversion tool using a CLI if time allows.
 
-The Nightmare Before Christmas can be found here https://canvas.instructure.com/doc/api/courses.html
+The Nightmare Before Christmas can be found here: https://canvas.instructure.com/doc/api/courses.html
 
 ## Step 1: Indexing the Course
 
-Save the course files as a massive JSON object. Changes made by the submodules will occure to this object, which will be written the hard drive once all pre-conversion changes are made.
-This reduces stress on the hard drive by only reading the course and saving the course only once.
+Save the course files as a massive JSON object. Changes made by the submodules will occur to this object, which will be written the hard drive once all pre-conversion changes are made.
+This reduces stress on the hard drive by only reading and writing the course only once.
 
 ## Step 2: Pre-Conversion Alterations
 
-Changes to the course are to be determined. It is expected that most fo the course fixes will occur here.
+Specific hanges to the course are to be determined. It is expected that most fo the course fixes will occur here.
 The course object will be written to the hard drive once all the changes to the course have been made.
-The course will be rezipped in preparation for the upload to Canvas.
 
 ## Step 3: Import Course into Canvas
 
+It is probable that the changes to the course will be written to the hard drive here. The course will be rezipped in preparation for the upload to Canvas. 
 Create an empty (blueprint?) course in canvas.
 Upload the course to the Canvas conversion tool.
 Get migration issues from Canvas for reporting purposes.
 
 ## Step 4: Post-Conversion Alterations
 
-Use the Canvas API to make additional fixes to the course. Fixes made here are to be determined.
+Use the Canvas API to make additional fixes to the course. Fixes made here are to be determined. A canvas module will be created that abstracts the CRUD operations and any additional API calls that are frequently made.
 
 ## Step 5: Clean Up
 
-Leftover course files are removed (Unzipped course files for sure. Shoudl we delete the completed zip as well?).
-The Canvas course is deleted (or the content just cleared?) if there were too many errors in the conversion.
+Leftover course files are removed (Unzipped course files for sure. Should we delete the completed zip as well?).
+The Canvas course is deleted if there were too many errors in the conversion.
 Both these options will be turned off if the debugging flag is included at runtime.
-Generate the final report. (Will this happen here, or will we pass the report object to the cli and let it generate the report?).
+The final report object will be passed to the CLI/ GUI and the report will be generated there.
