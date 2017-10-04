@@ -22,9 +22,13 @@ module.exports = (course, mainCallback) => {
   async.waterfall(childModules, (err, resultCourse) => {
     if (err) {
       // If we have an error, send it up to main.js
+      resultCourse.throwFatalErr('importCourse', err);
       mainCallback(err, resultCourse);
     } else {
       // If successful, return the course to main.js
+      resultCourse.success(
+        'importCourse', 'Import-Course processes completed successfully.'
+      );
       mainCallback(null, resultCourse);
     }
   });

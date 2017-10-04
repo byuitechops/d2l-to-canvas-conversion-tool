@@ -4,7 +4,7 @@
 var Course = require('../classes/Course.js');
 
 module.exports = (filePath, settings, stepCallback) => {
-   console.log('createCourseObject');
+  console.log('createCourseObject');
   try {
     /* Create the course object, give it the original filepath, and settings */
     var course = new Course(filePath, settings);

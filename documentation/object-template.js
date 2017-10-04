@@ -46,7 +46,7 @@ module.exports = {
         "path": '',
         "ext": '',
         "dom": 'DOM',
-        "isBinary": false
+        "isTextFile": false
       }
     ],
     // Array of directory objects, just like this
