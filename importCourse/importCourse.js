@@ -1,4 +1,5 @@
 // CHILD MODULES - Modules used by this module to complete its task
+const zip = require('./zip.js');
 const createCourse = require('./createCourse.js');
 const uploadCourse = require('./uploadCourse.js');
 const getMigrationIssues = require('./getMigrationIssues.js');
@@ -12,6 +13,7 @@ module.exports = (course, mainCallback) => {
   /* List child modules in order of of operation */
   const childModules = [
     async.constant(course),
+    zip,
     createCourse,
     uploadCourse,
     getMigrationIssues

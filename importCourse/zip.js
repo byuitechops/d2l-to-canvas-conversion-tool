@@ -14,7 +14,7 @@ module.exports = (course, stepCallback) => {
     have a directory of that name before we extract. */
     function checkDirectory(filepath) {
       try {
-        fs.statSync(filepath + '.zip');
+        fs.statSync(filepath);
         return true;
       } catch (e) {
         return false;
@@ -30,7 +30,8 @@ module.exports = (course, stepCallback) => {
       try {
         /* While it already exists, change the name of our filepath */
         while (checkDirectory(filepath)) {
-          filepath += ' - Copy';
+          filepath = filepath.split('.zip')[0];
+          filepath += ' - Copy.zip';
         }
         return filepath;
       } catch (e) {
@@ -39,17 +40,14 @@ module.exports = (course, stepCallback) => {
     }
 
     /* Defines where we're going to put the zipped folder */
-    course.info.zippedFilepath = setDirectoryName('./D2LReady/' +
-      course.info.fileName);
+    course.info.zippedFilepath = setDirectoryName(
+      `${course.info.zippedFilepath}\\${course.info.fileName}`
+    );
 
     /* Zip that file right up */
-    console.log(`ZIPPED FILE PATH: ${course.info.zippedFilepath}`);
-    console.log(`UNZIPPED FILE PATH: ${course.info.unzippedFilepath}`);
-    console.log(`CURR DIR: ${__dirname}`);
-
-    zip("C:/Users/Danverde/Documents/d2l-to-canvas-conversion-tool/D2LProcessing/testFile", {
-      saveTo: "C:/Users/Danverde/Documents/d2l-to-canvas-conversion-tool/D2LReady/testFile.zip"
-    }, function (err, buffer) {
+    zip(course.info.unzippedFilepath, {
+      saveTo: course.info.zippedFilepath
+    }, function(err, buffer) {
       if (err) {
         stepCallback(err, course);
         return;
@@ -58,23 +56,9 @@ module.exports = (course, stepCallback) => {
       stepCallback(null, course);
     });
 
-
-    /* On completion, return the course object back to its parent module. */
-    /*var waitForUnzip = setInterval(() => {
-      if (checkDirectory(course.info.zippedFilepath.match(/[\s\S]+(?=.zip)/)[0])) {
-        clearInterval(waitForUnzip);
-        zipFile.addLocalFolder(
-          course.info.unzippedFilepath, course.info.zippedFilepath
-        );
-        console.log(zipFile);
-        course.success('zip', 'Course successfully zipped.');
-        stepCallback(null, course);
-      }
-    }, 100);*/
-
   } catch (e) {
     /* If we have an error, throw it back up to its parent module.
-    YOU MUST replace "moduleName" with the name of this module. */
+    YOU MUST replace 'moduleName' with the name of this module. */
     stepCallback(e, course);
   }
 };

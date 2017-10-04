@@ -4,6 +4,11 @@
 
 /* Put dependencies here */
 
+
+/* Include this line only if working on a post-import child module */
+var canvas = require('./canvas.js');
+
+
 module.exports = (course, stepCallback) => {
   try {
     /*create the module object so that we can access it later as needed.

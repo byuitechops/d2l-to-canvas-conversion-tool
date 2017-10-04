@@ -1,3 +1,4 @@
+/* eslint-env node, es6 */
 /* Require any dependencies here */
 const asyncLib = require('async'),
     // nameTheCourse = require('./nameTheCourse.js'),
@@ -5,13 +6,11 @@ const asyncLib = require('async'),
     unzip = require('./unzip.js'),
     // setInfo = require('./setInfo.js'),
     indexDirectory = require('./indexDirectory.js');
-zip = require('./zip.js');
 
 
 function runIndexer(course, cb) {
-    //globalPath = path.resolve(globalPath);
     //the path passed in will be a folder path so just use makeDir
-    makeDir(course.info.unzippedFilepath, (makeDirErr, dir) => {
+    indexDirectory(course.info.unzippedFilepath, (makeDirErr, dir) => {
         if (makeDirErr) {
             cb(makeDirErr, course);
             return;
@@ -30,11 +29,10 @@ module.exports = (filePath, settings, mainCallback) => {
     //nameTheCourse,
     unzip,
     //setInfo,
-    //indexDirectory,
-    zip
+    runIndexer
   ];
 
-    async.waterfall(childModules, (err, resultCourse) => {
+    asyncLib.waterfall(childModules, (err, resultCourse) => {
         if (err) {
             /* If we have an error, throw it back up to main.js */
             mainCallback(err, resultCourse);
