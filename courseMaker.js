@@ -12,44 +12,49 @@ var fs = require('fs'),
 function parseTheDom(guts) {
     return guts;
 }
-var counter = 0;
-/***************************************
- * This function asynconusly gathers all the stuff that a file needs then calls the File Class
- ***************************************/
-function makeFile(globalPath, makeFileCb) {
-    counter += 1;
-
-
-    //read the file
-    fs.readFile(globalPath, 'utf8', function (readFileErr, guts) {
-        var file, dom;
-        if (readFileErr) {
-            makeFileCb(readFileErr)
-            return;
-        }
-
-        //parse in to dom if we can
-        //dom = parseTheDom(guts);
-        file = new File(globalPath, guts, counter);
-
-        makeFileCb(null, file);
-    });
-}
 
 
 /********************************
  * Filter Function used to keep files of certin types
  *******************************/
-function toFilesWeWant(filePath) {
+function checkIsTextFile(filePath) {
     var ext = path.extname(filePath),
         keepers = ['.html', '.xml'];
     return keepers.includes(ext);
 }
 
+/***************************************
+ * This function asynconusly gathers all the stuff that a file needs then calls the File Class
+ ***************************************/
+function makeFile(globalPath, makeFileCb) {
+
+    //do we want to read the file?
+    var isTextFile = checkIsTextFile(globalPath),
+        file;
+
+    //if not a text file don't read it in
+    if (!isTextFile) {
+        file = new File(globalPath, '', isTextFile);
+        makeFileCb(null, file);
+    } else {
+        //read the file
+        fs.readFile(globalPath, 'utf8', function (readFileErr, guts) {
+            if (readFileErr) {
+                makeFileCb(readFileErr)
+                return;
+            }
+            file = new File(globalPath, guts, isTextFile);
+            makeFileCb(null, file);
+        });
+    }
+}
+
+
+
 /********************************
  * Sort out dirs and files based on a statobj
  *******************************/
-function keepFilesAndDirsGlobalPaths(items) {
+function filterToFilesAndDirsPaths(items) {
     //these are the lists
     var sortedItems = {
         dirs: [],
@@ -63,7 +68,6 @@ function keepFilesAndDirsGlobalPaths(items) {
             acc.files.push(item.path)
         }
         return acc;
-
     }, sortedItems);
 }
 
@@ -109,12 +113,8 @@ function makeDir(globalPath, makeDirCb) {
                 return;
             }
 
-            //Sort out dirs and files based on a statobj, it just keeps the paths in the two lists
-            var sortedItems = keepFilesAndDirsGlobalPaths(items);
-
-            //keep files we want
-            //sortedItems.files = sortedItems.files.filter(toFilesWeWant)
-
+            //Sort dirs and files into lists based on a statobj, it just keeps the paths in the two lists
+            var sortedItems = filterToFilesAndDirsPaths(items);
             //make the files
             //just to note if this dir doesn't have any files (sortedItems.files = []) then makeFile is not called and files = []
             asyncLib.map(sortedItems.files, makeFile, function (makeFileErr, files) {
@@ -131,7 +131,6 @@ function makeDir(globalPath, makeDirCb) {
                         makeDirCb(makeDirErr);
                         return;
                     }
-
                     dirOut = new Dir(globalPath, files, dirs);
                     makeDirCb(null, dirOut);
                 });
@@ -146,21 +145,17 @@ function makeDir(globalPath, makeDirCb) {
  * Start Here
  *******************************/
 function indexer(globalPath, cb) {
-    globalPath = path.resolve(globalPath);
-
-    //the path passed in will be a folder path so just use makeDir
-    makeDir(globalPath, function (err, dir) {
-        if (err) return cb(err);
-        cb(null, dir);
-    });
+    makeDir(globalPath, cb);
 }
 
 module.exports = indexer;
 
-indexer('.', function (err, dir) {
+
+var globalPath = path.resolve('.');
+indexer(globalPath, function (err, dir) {
     if (err) {
         console.log(err);
         return;
     }
-    console.log(dir);
+    console.log(JSON.stringify(dir, null, 2));
 });

@@ -1,17 +1,31 @@
 /* Require any dependencies here */
-const async = require('async'),
-// nameTheCourse = require('./nameTheCourse.js'),
-  createCourseObj = require('./createCourseObj'),
-  unzip = require('./unzip.js'),
-  // setInfo = require('./setInfo.js'),
-  indexDirectory = require('./indexDirectory.js');
-  zip = require('./zip.js');
+const asyncLib = require('async'),
+    // nameTheCourse = require('./nameTheCourse.js'),
+    createCourseObj = require('./createCourseObj'),
+    unzip = require('./unzip.js'),
+    // setInfo = require('./setInfo.js'),
+    indexDirectory = require('./indexDirectory.js');
+zip = require('./zip.js');
+
+
+function runIndexer(course, cb) {
+    //globalPath = path.resolve(globalPath);
+    //the path passed in will be a folder path so just use makeDir
+    makeDir(course.info.unzippedFilepath, (makeDirErr, dir) => {
+        if (makeDirErr) {
+            cb(makeDirErr, course);
+            return;
+        }
+        course.content = dir;
+        cb(null, course);
+    });
+}
 
 /* Our main function, called by main.js*/
 module.exports = (filePath, settings, mainCallback) => {
-  /* List child modules in order of of operation */
-  const childModules = [
-    async.constant(filePath, settings),
+    /* List child modules in order of of operation */
+    const childModules = [
+    asyncLib.constant(filePath, settings),
     createCourseObj,
     //nameTheCourse,
     unzip,
@@ -20,17 +34,17 @@ module.exports = (filePath, settings, mainCallback) => {
     zip
   ];
 
-  async.waterfall(childModules, (err, resultCourse) => {
-    if (err) {
-      /* If we have an error, throw it back up to main.js */
-      mainCallback(err, resultCourse);
-    } else {
-      /* If successful, head on to the next sub module */
-      resultCourse.success(
-        'indexer', 'Course successfully created and indexed.'
-      );
-      mainCallback(null, resultCourse);
-    }
-  });
+    async.waterfall(childModules, (err, resultCourse) => {
+        if (err) {
+            /* If we have an error, throw it back up to main.js */
+            mainCallback(err, resultCourse);
+        } else {
+            /* If successful, head on to the next sub module */
+            resultCourse.success(
+                'indexer', 'Course successfully created and indexed.'
+            );
+            mainCallback(null, resultCourse);
+        }
+    });
 
 };

@@ -1,9 +1,13 @@
+/*eslint-env node, es6*/
+var path = require('path');
+
 module.exports = class File {
-  constructor(name, path, ext, dom, binary) {
-    this.name = name;
-    this.path = path;
-    this.ext = ext;
-    this.dom = dom;
-    this.isBinary = binary;
-  }
+    constructor(pathIn, guts, isText) {
+        var parsedPath = path.parse(pathIn);
+        this.name = parsedPath.name + parsedPath.ext;
+        this.path = pathIn;
+        this.ext = parsedPath.ext;
+        this.dom = guts;
+        this.isTextFile = isText;
+    }
 };
