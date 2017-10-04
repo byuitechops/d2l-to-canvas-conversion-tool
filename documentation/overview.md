@@ -58,7 +58,7 @@ In order to run each step one-by-one without stepping on our own toes, the **asy
 
 ### Compression Operations (Zip/Unzip)
 
-Step 2 requires decompressing each course before alterations are made to them. Following those changes, they are compressed again to be imported into Canvas. The **adm-zip** library will be used to perform those functions.
+The process requires decompressing each course before alterations are made to them. Following those changes, they are compressed again to be imported into Canvas. The **adm-zip** library will be used to perform those functions.
 
 # Tool Conversion Process In Depth
 
