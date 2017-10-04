@@ -8,14 +8,17 @@ const asyncLib = require('async'),
     indexDirectory = require('./indexDirectory.js');
 
 
-function runIndexer(course, cb) {
+function runIndexDirectory(course, cb) {
+    course.addModuleReport('indexDirectory');
     //the path passed in will be a folder path so just use makeDir
     indexDirectory(course.info.unzippedFilepath, (makeDirErr, dir) => {
         if (makeDirErr) {
+            course.throwFatalErr('indexDirectory', makeDirErr);
             cb(makeDirErr, course);
             return;
         }
         course.content = dir;
+        course.success('indexDirectory', 'Successfully indexed the course');
         cb(null, course);
     });
 }
@@ -29,7 +32,7 @@ module.exports = (filePath, settings, mainCallback) => {
     //nameTheCourse,
     unzip,
     //setInfo,
-    runIndexer
+    runIndexDirectory
   ];
 
     asyncLib.waterfall(childModules, (err, resultCourse) => {
