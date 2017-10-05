@@ -7,27 +7,51 @@ module.exports = (courseObj, callback) => {
     'content'
   ];
 
+  const standardInfoProperties = [
+    'originalFilepath',
+    'unzippedFilepath',
+    'zippedFilepath',
+    'fileName'
+  ];
+
+  const standardSettingsProperties = [
+    'debug',
+    'platform',
+    'readAll'
+  ];
+
   /* Check if it is a Course object */
   if (instanceof courseObj != 'Course') {
     callback('Object provided is not a Course object', courseObj);
   }
 
-  /* Check if object contains properties */
-  if (Object.keys(courseObj).length === 0) {
-    callback('Course object provided is empty', courseObj);
-  }
-
-  /* Check if object contains the four standard properties */
-  staticProperties.forEach((property) => {
+  /* Check if courses top level contains the standard properties */
+  standardProperties.forEach((property) => {
     if (!Object.keys(courseObj).includes(property)) {
       callback(`Course object missing property: ${property}`, courseObj);
     }
   });
 
+  /* Check if Info contains the standard properties */
+  standardInfoProperties.forEach((property) => {
+    if (!Object.keys(courseObj.info).includes(property)) {
+      callback(`Course Info missing property: ${property}`, courseObj);
+    }
+  });
+
+  /* Check if Settings contains the standard properties */
+  standardSettingsProperties.forEach((property) => {
+    if (!Object.keys(courseObj.settings).includes(property)) {
+      callback(`Course Settings missing property: ${property}`, courseObj);
+    }
+  });
+
   /* Check if object contains extra properties */
-  if (Object.keys(courseObj).length > 4) {
-    callback(`Course object provided contains more than the four
-              standard properties at the top level`, courseObj);
+  if (Object.keys(courseObj).length > 4 ||
+      Object.keys(courseObj.info).length > 4 ||
+      Object.keys(courseObj.settings).length > 3) {
+    callback(`Course object provided contains extra
+              properties it should not have`, courseObj);
   }
 
   // Possible unit tests //

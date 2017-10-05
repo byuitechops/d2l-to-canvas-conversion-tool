@@ -3,6 +3,7 @@
 /* DEPENDENCIES */
 const async = require('async');
 const courseTemplate = require('./courseTemplate.js');
+const processOptions = require('./processOptions.js');
 
 /* STEP MODULES */
 const indexer = require('./indexer/indexer.js');
@@ -15,10 +16,11 @@ const indexer = require('./indexer/indexer.js');
 /* This array is where each step module's function is stored
 for the async waterfall below. Each of these functions contains
 a main step in the process of converting a course.*/
+var settings = processOptions();
+console.log(settings);
+
 const stepModules = [
-  async.constant('TestFile.zip', {
-    debug: 'true', readAll: 'true', platform: 'online'
-  }),
+  async.constant('TestFile.zip', processOptions()),
   indexer,
   //preImport,
   //importCourse,

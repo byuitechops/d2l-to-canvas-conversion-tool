@@ -4,10 +4,8 @@
 
 /* Put dependencies here */
 
-
 /* Include this line only if working on a post-import child module */
 var canvas = require('./canvas.js');
-
 
 module.exports = (course, stepCallback) => {
   try {
@@ -36,7 +34,7 @@ module.exports = (course, stepCallback) => {
     course.throwErr('moduleName', e);
 
     /* How to throw a fatal error */
-    //course.throwFatalErr('moduleName', e);
+    course.throwFatalErr('moduleName', e);
     stepCallback(e, course);
   }
 };
