@@ -17,7 +17,7 @@ function parseTheDom(guts) {
 /********************************
  * Filter Function used to keep files of certin types
  *******************************/
-function checkIsTextFile(filePath) {
+function checkcanEdit(filePath) {
     var ext = path.extname(filePath),
         keepers = ['.html', '.xml'];
     return keepers.includes(ext);
@@ -29,12 +29,12 @@ function checkIsTextFile(filePath) {
 function makeFile(globalPath, makeFileCb) {
 
     //do we want to read the file?
-    var isTextFile = checkIsTextFile(globalPath),
+    var canEdit = checkcanEdit(globalPath),
         file;
 
     //if not a text file don't read it in
-    if (!isTextFile) {
-        file = new File(globalPath, '', isTextFile);
+    if (!canEdit) {
+        file = new File(globalPath, '', canEdit);
         makeFileCb(null, file);
     } else {
         //read the file
@@ -43,7 +43,7 @@ function makeFile(globalPath, makeFileCb) {
                 makeFileCb(readFileErr)
                 return;
             }
-            file = new File(globalPath, guts, isTextFile);
+            file = new File(globalPath, guts, canEdit);
             makeFileCb(null, file);
         });
     }

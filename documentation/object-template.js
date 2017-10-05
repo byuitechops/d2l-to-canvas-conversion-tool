@@ -38,18 +38,14 @@ module.exports = {
     // Determines some actions in the process based on platform
     'platform': ''
   },
-  'content': {
-    // Array of files with two properties: fileName and guts
-    'files': [
+  'content': [
       {
         "name": '',
-        "path": '',
+        "newPath": '',
+        "oldPath": '',
         "ext": '',
         "dom": 'DOM',
-        "isBinary": false
+        "isTextFile": false
       }
-    ],
-    // Array of directory objects, just like this
-    'dirs': []
-  }
+  ]
 };
