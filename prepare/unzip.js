@@ -6,7 +6,6 @@ module.exports = (course, stepCallback) => {
   try {
     /* Gimme that module report */
     course.addModuleReport('unzip');
-    course.success('unzip', 'Report Module created for unzip');
 
     /* Checks if a directory exists or not. Used to determine if our
     extraction is done or still in progress, and to see if we already

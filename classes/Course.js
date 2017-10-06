@@ -5,7 +5,7 @@ module.exports = class Course {
   constructor(filePath, settings) {
     this.report = [
       new ReportModule('main'),
-      new ReportModule('indexer')
+      new ReportModule('preparation')
     ];
     this.settings = {
       'debug': settings.debug,
@@ -29,8 +29,9 @@ module.exports = class Course {
   throwFatalErr(moduleName, err) {
     var index = this.report.findIndex(this.findReportModule, moduleName);
     if (index < 0) {
-      console.log(`Report Module was not found: ${moduleName}`);
+      console.log(`|ERROR| Report Module was not found: ${moduleName}`);
     } else {
+      console.log(`|FATALERROR| ${moduleName}: ${err}`);
       this.report[index].fatalErrs.push(err);
     }
   }
@@ -39,8 +40,9 @@ module.exports = class Course {
   throwErr(moduleName, err) {
     var index = this.report.findIndex(this.findReportModule, moduleName);
     if (index < 0) {
-      console.log(`Report Module was not found: ${moduleName}`);
+      console.log(`|ERROR| ERROR: Report Module was not found: ${moduleName}`);
     } else {
+      console.log(`|ERROR| ERROR: ${moduleName}: ${err}`);
       this.report[index].errors.push(err);
     }
   }
@@ -49,9 +51,9 @@ module.exports = class Course {
   success(moduleName, message) {
     var index = this.report.findIndex(this.findReportModule, moduleName);
     if (index < 0) {
-      console.log(`Report Module was not found: ${moduleName}`);
+      console.log(`|ERROR| Report Module was not found: ${moduleName}`);
     } else {
-      console.log(`${moduleName}: ${message}`);
+      console.log(`--- ${moduleName}: ${message}`);
       this.report[index].changes.push(message);
     }
   }
@@ -65,8 +67,9 @@ module.exports = class Course {
   addModuleReport(moduleName) {
     var index = this.report.findIndex(this.findReportModule, moduleName);
     if (index > 0) {
-      console.log(`Report Module already created: ${moduleName}`);
+      console.log(`-=- ERROR: Report Module already created: ${moduleName}`);
     } else {
+      console.log(`--- ${moduleName}: Report Module successfully created.`);
       this.report.push(new ReportModule(moduleName));
     }
   }

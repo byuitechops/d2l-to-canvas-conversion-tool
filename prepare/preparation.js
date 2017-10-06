@@ -10,13 +10,13 @@ const asyncLib = require('async'),
 function runIndexDirectory(course, cb) {
   course.addModuleReport('indexDirectory');
   //the path passed in will be a folder path so just use makeDir
-  indexDirectory(course.info.unzippedFilepath, (makeDirErr, dir) => {
+  indexDirectory(course.info.unzippedFilepath, (makeDirErr, fileList) => {
     if (makeDirErr) {
       course.throwFatalErr('indexDirectory', makeDirErr);
       cb(makeDirErr, course);
       return;
     }
-    course.content = dir;
+    course.content = fileList;
     course.success('indexDirectory', 'Successfully indexed the course');
     cb(null, course);
   });

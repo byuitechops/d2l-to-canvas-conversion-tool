@@ -6,7 +6,6 @@ const fs = require('fs');
 
 module.exports = (course, stepCallback) => {
   course.addModuleReport('zip');
-  course.success('zip', 'Report Module created for unzip');
   try {
 
     /* Checks if a directory exists or not. Used to determine if our

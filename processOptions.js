@@ -13,7 +13,6 @@ module.exports = (callback) => {
     platform: 'online'
   };
 
-  console.log(process.argv);
   count = 0;
   process.argv.forEach((arg, index) => {
     if (index < 2) {

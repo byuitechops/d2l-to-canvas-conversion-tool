@@ -49,3 +49,40 @@ module.exports = {
       }
   ]
 };
+
+// In case of using a flat content array instead of multi-dimensional
+
+// We would just dynamically build folder paths as needed based on each file's path
+
+// Make writing files easier - just shoot them through them one by one
+
+'content': [
+    {
+      "name": '',
+      "path": 'folder1/folder2/folder3/folder4/filename.png',
+      "ext": '',
+      "dom": 'DOM',
+      "isTextFile": false
+    },
+    {
+      "name": '',
+      "path": 'folder1/folder2/filename.png',
+      "ext": '',
+      "dom": 'DOM',
+      "isTextFile": false
+    },
+    {
+      "name": '',
+      "path": 'folder1/filename.png',
+      "ext": '',
+      "dom": 'DOM',
+      "isTextFile": false
+    },
+    {
+      "name": '',
+      "path": 'folder1/folder2/folder3/filename.png',
+      "ext": '',
+      "dom": 'DOM',
+      "isTextFile": false
+    },
+  ]
