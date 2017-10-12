@@ -37,7 +37,7 @@ function makeFile(globalPath, makeFileCb) {
     makeFileCb(null, file);
   } else {
     //read the file
-    fs.readFile(globalPath, 'utf8', function (readFileErr, guts) {
+    fs.readFile(globalPath, 'utf8', function(readFileErr, guts) {
       if (readFileErr) {
         makeFileCb(readFileErr);
         return;
@@ -51,16 +51,27 @@ function makeFile(globalPath, makeFileCb) {
 /********************************
  * Sort out dirs and files based on a statobj
  *******************************/
-function filterToFilePaths(items) {
-  return items
-    .filter(item => item.isFile)
-    .map(item => item.path);
+function filterToFilesAndDirsPaths(items) {
+  //these are the lists
+  var sortedItems = {
+    dirs: [],
+    files: []
+  };
+
+  return items.reduce(function (acc, item) {
+    if (item.isDir) {
+      acc.dirs.push(item.path);
+    } else if (item.isFile) {
+      acc.files.push(item.path);
+    }
+    return acc;
+  }, sortedItems);
 }
 
 /********************************
  * This gathers all the stuff it needs to make a Dir and then calls the Dir class
  *******************************/
-function makeDir(globalPath, fileList, makeDirCb) {
+function getDirFiles(fileListIn, globalPath, getDirFilesCb) {
 
   /********************************
    * This makes the filenames global and gets info from stats obj
@@ -77,6 +88,7 @@ function makeDir(globalPath, fileList, makeDirCb) {
       //send back the info we need
       aboutFileCb(null, {
         path: fullPath,
+        isDir: statObj.isDirectory(),
         isFile: statObj.isFile()
       });
     });
@@ -85,39 +97,39 @@ function makeDir(globalPath, fileList, makeDirCb) {
   fs.readdir(globalPath, function (readDirErr, dirList) {
     //check if err when reading the dir
     if (readDirErr) {
-      return makeDirCb(readDirErr);
+      return getDirFilesCb(readDirErr);
     }
 
     //figure out if the item is a file or folder
     asyncLib.map(dirList, aboutFile, function (aboutFileErr, items) {
       if (aboutFileErr) {
-        makeDirCb(aboutFileErr);
+        getDirFilesCb(aboutFileErr);
         return;
       }
 
       // Give us only files, not directories, give filepaths
-      var sortedItems = filterToFilePaths(items);
+      var sortedItems = filterToFilesAndDirsPaths(items);
       // Make the file objects
       // Just to note if this dir doesn't have any files (sortedItems.files = []) then makeFile is not called and files = []
-      asyncLib.map(sortedItems, makeFile, function (makeFileErr, files) {
+      asyncLib.map(sortedItems.files, makeFile, function (makeFileErr, files) {
         if (makeFileErr) {
-          makeDirCb(makeFileErr);
+          getDirFilesCb(makeFileErr);
           return;
         }
 
         /* Add our list of files to our current list */
-        fileList = [...fileList, ...files];
+        fileListIn = [...fileListIn, ...files];
 
         // Go through remaining directories for their files
         // Just to note if this dir doesn't have any dir (sortedItems.dir = []) then makeDir is not called and dirs = []
-        asyncLib.map(sortedItems.dirs, makeDir, function (makeDirErr, dirs) {
+        asyncLib.reduce(sortedItems.dirs, fileListIn, getDirFiles, function (getDirFilesErr, fileListOut) {
           var dirOut;
-          if (makeDirErr) {
-            makeDirCb(makeDirErr);
+          if (getDirFilesErr) {
+            getDirFilesCb(getDirFilesErr);
             return;
           }
           /* Send our list of files on once we've gone through every directory */
-          makeDirCb(null, fileList);
+          getDirFilesCb(null, fileListOut);
         });
       });
     });
@@ -129,7 +141,7 @@ function makeDir(globalPath, fileList, makeDirCb) {
  *******************************/
 function indexer(globalPath, cb) {
   var fileList = [];
-  makeDir(globalPath, fileList, cb);
+  getDirFiles(fileList, globalPath, cb);
 }
 
 module.exports = indexer;

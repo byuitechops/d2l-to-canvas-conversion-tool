@@ -1,5 +1,6 @@
 const ReportModule = require('./ReportModule.js');
 const path = require('path');
+const chalk = require('chalk');
 
 module.exports = class Course {
   constructor(filePath, settings) {
@@ -29,9 +30,9 @@ module.exports = class Course {
   throwFatalErr(moduleName, err) {
     var index = this.report.findIndex(this.findReportModule, moduleName);
     if (index < 0) {
-      console.log(`|ERROR| Report Module was not found: ${moduleName}`);
+      console.log(chalk.red(`--- Report Module was not found: ${chalk.redBright(moduleName)}`));
     } else {
-      console.log(`|FATALERROR| ${moduleName}: ${err}`);
+      console.log(`--- ${chalk.bgRed(' FATALERROR ')} ${chalk.redBright(moduleName)}: ${chalk.red(err)}`);
       this.report[index].fatalErrs.push(err);
     }
   }
@@ -40,9 +41,9 @@ module.exports = class Course {
   throwErr(moduleName, err) {
     var index = this.report.findIndex(this.findReportModule, moduleName);
     if (index < 0) {
-      console.log(`|ERROR| ERROR: Report Module was not found: ${moduleName}`);
+      console.log(chalk.red(`--- Report Module was not found: ${chalk.redBright(moduleName)}`));
     } else {
-      console.log(`|ERROR| ERROR: ${moduleName}: ${err}`);
+      console.log(`--- ${chalk.redBright(moduleName)}: ${chalk.red(err)}`);
       this.report[index].errors.push(err);
     }
   }
@@ -51,9 +52,9 @@ module.exports = class Course {
   success(moduleName, message) {
     var index = this.report.findIndex(this.findReportModule, moduleName);
     if (index < 0) {
-      console.log(`|ERROR| Report Module was not found: ${moduleName}`);
+      console.log(chalk.red(`Report Module was not found: ${chalk.redBright(moduleName)}`));
     } else {
-      console.log(`--- ${moduleName}: ${message}`);
+      console.log(`--- ${chalk.greenBright(moduleName)}: ${chalk.white(message)}`);
       this.report[index].changes.push(message);
     }
   }
@@ -67,10 +68,10 @@ module.exports = class Course {
   addModuleReport(moduleName) {
     var index = this.report.findIndex(this.findReportModule, moduleName);
     if (index > 0) {
-      console.log(`-=- ERROR: Report Module already created: ${moduleName}`);
+      console.log(chalk.red(`Report Module already created: ${chalk.redBright(moduleName)}`));
     } else {
-      console.log(`--- ${moduleName}: Report Module successfully created.`);
       this.report.push(new ReportModule(moduleName));
+      this.success(moduleName, 'Report Module successfully created.');
     }
   }
 

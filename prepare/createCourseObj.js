@@ -15,6 +15,6 @@ module.exports = (filePath, settings, stepCallback) => {
     stepCallback(null, course);
   } catch (e) {
     /* Throw me a fatal error */
-    stepCallback(e, 'Failed to create course object.');
+    // stepCallback(e, 'Failed to create course object.');
   }
 };

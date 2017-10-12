@@ -5,86 +5,111 @@ var path = require('path'),
   fs = require('fs'),
   asyncLib = require('async');
 
-module.exports = (course, stepCallback) => {
-  var errCount = 0;
-  var directories = [];
+var writeCount = 0;
+var copyCount = 0;
 
-  function buildDirectories(file, callback) {
-    var newPath = file.path.split('D2LProcessing')[1];
-    newPath.split(path.sep);
-    console.log(newPath);
+module.exports = (course, stepCallback) => {
+
+  function writeAllFiles(files, cb1) {
+
+    var checkWriteCount = (error, results) => {
+      writeCount++;
+      if (writeCount < 10 && results.length > 0) {
+        writeAllFiles(results, cb1);
+        return;
+      }
+      if (writeCount === 10) {
+        course.throwErr('writeCourse', 'Reached write file attempt limit (10).');
+        course.throwErr('writeCourse', 'Files not written: ${results}');
+      }
+      if (results.length === 0) {
+        course.success('writeCourse', 'All editable files successfully written.');
+      }
+      /* Errors are never passed through from the filter, since it is a filter */
+      cb1(null);
+    };
+
+    function writeFile(file, cb2) {
+      fs.writeFile(file.path.replace('D2LProcessing', 'D2LProcessed'), 'utf8', writeError => {
+        if (writeError) {
+          cb2(null, true);
+        } else {
+          course.success(
+            'writeCourse', `${file.name} was successfully written.`
+          );
+          cb2(null, false);
+        }
+      });
+    }
+    asyncLib.filter(files, writeFile, checkWriteCount);
   }
 
-  try {
+  function copyAllFiles(files, cb1) {
 
-    function writeFile(file, path, checkCallback) {
-      //checkCallback();
-    }
-
-    function makeDirectory(dir, check2Callback) {
-      fs.mkdir(dir, (err) => {
-        if (err) {
-          errCount++;
-        }
-        if (errCount < 500) {
-          console.log(errCount);
-          course.throwErr('writeCourse', 'Error Count for attempting to make directories hit its limit.');
-          check2Callback();
-        }
-      });
-    }
-
-    function checkDirectory(dir, callback) {
-      fs.stat(dir, (err, stat) => {
-        /* If directory does not exist... */
-        if (err) {
-          callback(false);
-          /* If the directory exists... */
-        } else {
-          callback(true);
-        }
-      });
-    }
-
-    /* If file.canEdit is true, then we will write the file and if it
-    is false, then we will copy the file (images, pdfs, etc.) */
-    function checkIfWriteOrCopy(file, callback) {
-      if (file.canEdit) {
-        var tempPath = file.path.replace('D2LProcessing', 'D2LProcessed')
-                        .split('\\');
-        tempPath.splice(tempPath.length - 2);
-        tempPath = tempPath.join('\\');
-        checkDirectory(tempPath, (exists) => {
-          if (!exists) {
-            makeDirectory(tempPath, () => {
-              checkIfWriteOrCopy(file);
-            });
-          } else {
-            writeFile(file, tempPath, () => {
-              console.log('Writing file...');
-              callback(null);
-            });
-          }
+    var checkCopyCount = (error, results) => {
+      copyCount++;
+      if (copyCount < 10 && results.length > 0) {
+        copyAllFiles(results, cb1);
+        return;
+      }
+      if (copyCount === 10) {
+        course.throwErr('writeCourse', 'Reached copy file attempt limit (10).');
+        results.forEach(file => {
+          course.throwErr('writeCourse', `File not copied: ${file.name}`);
         });
+      }
+      if (results.length === 0) {
+        course.success('writeCourse', 'All binary files successfully copied.');
+      }
+      /* Errors are never passed through from the filter, since it is a filter */
+      cb1(null);
+    };
+
+    function copyFile(file, cb2) {
+      /* COPY FILES HERE */
+      cb2(null, true);
+    }
+    asyncLib.filter(files, copyFile, checkCopyCount);
+  }
+
+  function createDir(dirPath, callback) {
+    fs.mkdir(dirPath, (err) => {
+      if (err) {
+        course.throwErr('writeCourse', err);
+        callback(err);
       } else {
-        //copy the file
-        // See if directory exists
-          // If it doesn't, create dir
-        // Copy file from original path to new path
-        course.success('writeCourse', `${file.name} successfully copied.`);
+        course.success(`writeCourse`, `${dirPath} successfully created.`);
         callback(null);
       }
-    }
-
-    /*start here*/
-    course.addModuleReport('writeCourse');
-    asyncLib.each(course.content, buildDirectories, (err) => {
-      course.success('writeCourse', 'All course files processed.');
-      stepCallback(null, course);
     });
-  } catch (e) {
-    console.log('FAIL');
-    course.throwFatalErr('writeCourse', e);
-    stepCallback(e, course);
   }
+
+  /* Start Here */
+  course.addModuleReport('writeCourse');
+  /* Return array of just our files paths */
+  var pathsToBuild = course.content.map(file => {
+    return path.dirname(file.path).replace('D2LProcessing', 'D2LProcessed');
+  });
+  /* Return just the unique values of our paths,
+  so we know what directories we need to make */
+  pathsToBuild = [...new Set(pathsToBuild)];
+  /* Sort them alphabetically so we make sure we
+  create the right folders first */
+  pathsToBuild = pathsToBuild.sort();
+  /* Create the directories we need, one at a time */
+  asyncLib.eachSeries(pathsToBuild, createDir, createDirErr => {
+    if (createDirErr) {
+      console.log(createDirErr);
+      course.throwFatalErr('writeCourse', createDirErr);
+      stepCallback(createDirErr, course);
+    } else {
+      var writableFiles = course.content.filter(file => file.canEdit);
+      var binaryFiles = course.content.filter(file => !file.canEdit);
+      writeAllFiles(writableFiles, function(nullError1) {
+        copyAllFiles(binaryFiles, (nullError2) => {
+          stepCallback(null, course);
+        });
+      });
+    }
+  });
 };

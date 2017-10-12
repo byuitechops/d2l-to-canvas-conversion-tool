@@ -8,8 +8,8 @@ const processOptions = require('./processOptions.js');
 /* STEP MODULES */
 const prepare = require('./prepare/preparation.js');
 const preImport = require('./preImport/preImport.js');
-//const importCourse = require('./importCourse/importCourse.js');
-//const postImport = require('./postImport/postImport.js');
+const importCourse = require('./importCourse/importCourse.js');
+// const postImport = require('./postImport/postImport.js');
 //const cleanUp = require('./cleanUp/cleanUp.js');
 
 /* STEP MODULES ARRAY */
@@ -19,10 +19,10 @@ a main step in the process of converting a course.*/
 var settings = processOptions();
 
 const stepModules = [
-  async.constant('TestFile.zip', processOptions()),
+  async.constant('TestFile 101.zip', processOptions()),
   prepare,
   preImport,
-  //importCourse,
+  importCourse,
   //postImport,
   //cleanUp
 ];

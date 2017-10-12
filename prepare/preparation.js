@@ -2,9 +2,8 @@
 /* Require any dependencies here */
 const asyncLib = require('async'),
   // nameTheCourse = require('./nameTheCourse.js'),
-  createCourseObj = require('./createCourseObj'),
+  createCourseObj = require('./createCourseObj');
   unzip = require('./unzip.js'),
-  // setInfo = require('./setInfo.js'),
   indexDirectory = require('./indexDirectory.js');
 
 function runIndexDirectory(course, cb) {

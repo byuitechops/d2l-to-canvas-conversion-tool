@@ -20,7 +20,6 @@ module.exports = (course, mainCallback) => {
   async.waterfall(childModules, (err, resultCourse) => {
     if (err) {
       // If we have an error, send it up to main.js
-      resultCourse.throwFatalErr('preImport', err);
       mainCallback(err, resultCourse);
     } else {
       // If successful, return the course to main.js
