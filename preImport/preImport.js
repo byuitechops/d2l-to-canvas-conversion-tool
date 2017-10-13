@@ -2,6 +2,8 @@
 const async = require('async');
 const writeCourse = require('./writeCourse.js');
 const zip = require('./zip.js');
+const insertFunction = require('../insertFunction.js');
+const verify = require('../verify.js');
 // Fix module...
 // Fix module...
 // Fix module...
@@ -11,11 +13,15 @@ module.exports = (course, mainCallback) => {
   course.addModuleReport('preImport');
 
   /* List child modules in order of of operation */
-  const childModules = [
+  var childModules = [
     async.constant(course),
     writeCourse,
     zip
   ];
+
+  if (course.settings.debug) {
+      childModules = insertFunction(childModules, verify);
+  }
 
   async.waterfall(childModules, (err, resultCourse) => {
     if (err) {

@@ -1,18 +1,23 @@
 /* Require any dependencies here */
 const async = require('async');
+const insertFunction = require('../insertFunction.js');
+const verify = require('../verify.js');
 
 /* Our main function, called by main.js*/
 module.exports = (course, mainCallback) => {
 
   /* List child modules in order of of operation */
-  const childModules = [
+  var childModules = [
     async.constant(course),
   ];
+
+  if (course.settings.debug) {
+      childModules = insertFunction(childModules, verify);
+  }
 
   async.waterfall(childModules, (err, resultCourse) => {
     if (err) {
       // If we have an error, send it up to main.js
-      resultCourse.throwFatalErr('postImport', err);
       mainCallback(err, resultCourse);
     } else {
       // If successful, return the course to main.js
