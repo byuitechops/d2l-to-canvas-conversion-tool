@@ -12,8 +12,10 @@
     "fixed-width-string": "^1.0.0",
     "lodash": "^4.17.4",
     "request": "^2.81.0",
+    "rimraf": "^2.6.2",
     "tap": "^10.7.2",
     "xmldom": "^0.1.27",
+    "yargs": "^9.0.1",
     "zip-dir": "^1.0.2"
   },
   "devDependencies": {},
@@ -26,6 +28,9 @@
   },
   "author": "Zachary Williams & Daniel Green",
   "license": "MIT",
+  "bin": {
+    "d2c": "./CLI.js"
+  },
   "bugs": {
     "url": "https://github.com/byuitechops/d2l-to-canvas-conversion-tool/issues"
   },

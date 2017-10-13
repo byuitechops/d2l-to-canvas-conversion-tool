@@ -1,8 +1,8 @@
 /* eslint-env node, es6 */
 /* Require any dependencies here */
 const asyncLib = require('async'),
-  // nameTheCourse = require('./nameTheCourse.js'),
-  createCourseObj = require('./createCourseObj');
+  createCourseObj = require('./createCourseObj'),
+  setFilePaths = require('./setFilePaths.js'),
   unzip = require('./unzip.js'),
   indexDirectory = require('./indexDirectory.js'),
   insertFunction = require('../insertFunction.js'),
@@ -29,6 +29,7 @@ module.exports = (filePath, settings, mainCallback) => {
   var childModules = [
     asyncLib.constant(filePath, settings),
     createCourseObj,
+    setFilePaths,
     unzip,
     runIndexDirectory
   ];
