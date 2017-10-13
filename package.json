@@ -11,7 +11,7 @@
     "eslint-config-google": "^0.9.1",
     "fixed-width-string": "^1.0.0",
     "lodash": "^4.17.4",
-    "request": "^2.81.0",
+    "request": "^2.83.0",
     "tap": "^10.7.2",
     "xmldom": "^0.1.27",
     "zip-dir": "^1.0.2"
