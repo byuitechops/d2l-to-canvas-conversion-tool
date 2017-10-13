@@ -4,7 +4,9 @@ const asyncLib = require('async'),
   // nameTheCourse = require('./nameTheCourse.js'),
   createCourseObj = require('./createCourseObj');
   unzip = require('./unzip.js'),
-  indexDirectory = require('./indexDirectory.js');
+  indexDirectory = require('./indexDirectory.js'),
+  insertFunction = require('../insertFunction.js'),
+  verify = require('../verify.js');
 
 function runIndexDirectory(course, cb) {
   course.addModuleReport('indexDirectory');
@@ -24,17 +26,19 @@ function runIndexDirectory(course, cb) {
 /* Our main function, called by main.js*/
 module.exports = (filePath, settings, mainCallback) => {
   /* List child modules in order of of operation */
-  const childModules = [
+  var childModules = [
     asyncLib.constant(filePath, settings),
     createCourseObj,
     unzip,
     runIndexDirectory
   ];
 
+  if (settings.debug) {
+      childModules = insertFunction(childModules, verify);
+  }
+
   asyncLib.waterfall(childModules, (err, resultCourse) => {
     if (err) {
-      /* If we have an error, throw it back up to main.js */
-      resultCourse.throwFatalErr('preparation', err);
       mainCallback(err, resultCourse);
     } else {
       /* If successful, head on to the next sub module */

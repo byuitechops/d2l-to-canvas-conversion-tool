@@ -15,6 +15,7 @@ module.exports = (course, mainCallback) => {
       mainCallback(err, resultCourse);
     } else {
       // If successful, return the course to main.js
+      success('moduleName', 'Success message! Wooo!');
       mainCallback(null, resultCourse);
     }
   });

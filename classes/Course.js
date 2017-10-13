@@ -6,7 +6,8 @@ module.exports = class Course {
   constructor(filePath, settings) {
     this.report = [
       new ReportModule('main'),
-      new ReportModule('preparation')
+      new ReportModule('preparation'),
+      new ReportModule('verifier')
     ];
     this.settings = {
       'debug': settings.debug,
