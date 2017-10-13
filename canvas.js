@@ -7,6 +7,12 @@ const auth = require('../auth.json');
 
 
 /* Always set per_page? */
+
+/*************************************
+ * handles calls where pagination may
+ * be necessary. returns to cb given
+ * to original function
+ ************************************/
 function paginate(response, caller, data, cb) {
    if (response.headers.link == undefined) {
       // No pagination: no worries
@@ -29,10 +35,10 @@ function paginate(response, caller, data, cb) {
 
 
 /**************************************
- * get operation. returns err, data
+ * GET operation. returns err, data
  *************************************/
 const getRequest = function (url, cb, data) {
-   if(data == undefined) data = [];
+   if (data == undefined) data = [];
    request.get(url, (err, response, body) => {
       if (err) {
          cb(err, response);
@@ -43,20 +49,48 @@ const getRequest = function (url, cb, data) {
    }).auth(null, null, true, auth.token);
 }
 
-const putRequest = function (url, cb) {
-   request.put
+/*******************************************
+ * PUT request. requires a url & putObject
+ * returns err, response
+ ******************************************/
+const putRequest = function (url, putObj, cb) {
+   request.put({
+      url: url,
+      form: putObj
+   }, (err, response, body) => {
+      if (err) {
+         cb(err, response);
+         return;
+      }
+      cb(null, response);
+   }).auth(null, null, true, auth.token);
 }
 
-const postRequest = function (url, body, cb) {
+/****************************************
+ * POST request. takes URL and postObj.
+ * returns err, response
+ ***************************************/
+const postRequest = function (url, postObj, body, cb) {
+   request.post({
+      url: url,
+      form: postObj
+   }, (err, response, body) => {
+      if (err) {
+         cb(err, null);
+         return;
+      }
+      cb(null, response);
+
+   }).auth(null, null, true, auth.token);
 
 }
 
 /************************************************
- * delete operation. returns err, statusCode.
+ * DELETE operation. returns err, statusCode.
  * no pagination
  ************************************************/
 const deleteRequest = function (url, body, cb) {
-   request.delet(url, (err, response, body) => {
+   request.delete(url, (err, response, body) => {
       if (err) {
          cb(err, response);
          return;
@@ -72,15 +106,3 @@ module.exports = {
    post: postRequest,
    delete: deleteRequest
 }
-
-
-/*
-getRequest('https://byui.instructure.com/api/v1/accounts/1/admins', function (err, response) {
-   if (err)
-      console.error(err);
-   else{
-      console.log(response);
-      console.log(response.length);
-   }
-})
-*/
