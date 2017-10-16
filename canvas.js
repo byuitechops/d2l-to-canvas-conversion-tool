@@ -97,9 +97,10 @@ const deleteRequest = function (url, cb) {
          return;
       }
       cb(null, response);
-   });
+   }).auth(null, null, true, auth.token);
 }
 
+console.dir(request);
 
 module.exports = {
    get: getRequest,
