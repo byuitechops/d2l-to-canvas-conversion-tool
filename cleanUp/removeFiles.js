@@ -1,6 +1,5 @@
 /*eslint-env node, es6*/
 
-/* Module Description */
 /* Deletes all created files that aren't to be used by the user.
 In debug mode, the files are not deleted. */
 
@@ -20,7 +19,7 @@ module.exports = (course, stepCallback) => {
     if (!course.settings.keepFiles) {
 
         asyncLib.waterfall([
-            (callback) =>{
+            (callback) => {
                 rimraf(course.info.unzippedFilepath, err => {
                     if (err) {
                         course.throwErr('removeFiles', err);
@@ -31,7 +30,7 @@ module.exports = (course, stepCallback) => {
                 });
             }
             ,
-            (callback) =>{
+            (callback) => {
                 rimraf(course.info.altUnzippedFilepath, err => {
                     if (err) {
                         course.throwErr('removeFiles', err);
@@ -42,7 +41,7 @@ module.exports = (course, stepCallback) => {
                 });
             }
             ,
-            (callback) =>{
+            (callback) => {
                 rimraf(course.info.zippedFilepath, err => {
                     if (err) {
                         course.throwErr('removeFiles', err);

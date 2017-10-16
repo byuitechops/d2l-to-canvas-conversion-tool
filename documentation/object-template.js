@@ -27,7 +27,7 @@ module.exports = {
     'unzippedFilepath': '',
     'preparedFilepath': '',
     'courseName': '',
-    'canvasCourseOU': 0,
+    'canvasOU': 0,
     'D2LOU': 0
   },
   'settings': {
