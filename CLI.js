@@ -9,7 +9,8 @@ var settings = {
     'debug': argv.D ? argv.D : false,
     'readAll': argv.A ? argv.A : false,
     'online': argv.campus ? false : true,
-    'keepFiles': argv.K ? true : false
+    'keepFiles': argv.K ? true : false,
+    'deleteCourse': argv.X ? true : false
 };
 
 main(settings, (finalCourse) => {

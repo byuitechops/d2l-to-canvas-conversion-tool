@@ -20,7 +20,8 @@ module.exports = (courseObj, callback) => {
         'debug',
         'online',
         'readAll',
-        'keepFiles'
+        'keepFiles',
+        'deleteCourse'
     ];
 
     /* Check if courses top level contains the standard properties */

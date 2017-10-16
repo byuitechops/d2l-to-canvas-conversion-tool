@@ -17,6 +17,7 @@ The program can be started with:
  -O   | Currently not useable. Optimizes binary files before uploading.                      |
  -K   | Keeps all files. Skips the part of the cleanup process that deletes temporary files. |
  -C   | Should be used when running on a campus course. Alters behavior of the process.      |
+ -X   | Deletes the Canvas Course as part of the cleanup process. |
 
  All of these settings are off by default.
 
