@@ -3,7 +3,7 @@
 /*eslint no-console:0*/
 
 const request = require('request');
-const auth = require('../auth.json');
+const auth = require('./auth.json');
 
 
 /* Always set per_page? */
@@ -86,16 +86,17 @@ const postRequest = function (url, postObj, body, cb) {
 }
 
 /************************************************
- * DELETE operation. returns err, statusCode.
+ * DELETE operation. returns err, response.
  * no pagination
  ************************************************/
-const deleteRequest = function (url, body, cb) {
+const deleteRequest = function (url, cb) {
+   url = `https://byui.instructure.com${url}`;
    request.delete(url, (err, response, body) => {
       if (err) {
          cb(err, response);
          return;
       }
-      cb(null, response.statusCode);
+      cb(null, response);
    });
 }
 
