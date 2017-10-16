@@ -95,26 +95,43 @@ module.exports = class Course {
         return false;
     }
 
+    /* Returns files of the given extension */
     getFilesByType(extension, callback) {
         var newArr = this.content.filter(file => file.ext === extension);
-        callback(newArr);
+        if (newArr.length < 1) {
+            callback('No files found by extension in course content.');
+        } else {
+            callback(null, newArr);
+        }
     }
 
+    /* Returns files with the given string within their name */
     getFilesByName(string, callback) {
         var newArr = this.content.filter(file => file.name.includes(string));
-        callback(newArr);
+        if (newArr.length < 1) {
+            callback('No files found by filename in course content.');
+        } else {
+            callback(null, newArr);
+        }
+    }
+
+    getFileName(fileName, callback) {
+        var file = this.content.find(fileMember => fileMember.name === fileName);
+        if (file) {
+            callback(null, file);
+        } else {
+            callback('Filename not found in course content.');
+        }
     }
 
     // Use this for CSS Selectors as well?
-    searchFileContent(query, callback) {
-        var newArr = this.content.filter(file => file.dom.toString().includes(query));
-        callback(newArr);
+    getFilesBySelector(selector, callback) {
+        var newArr = this.content.filter(file => {
+            if (file.dom.querySelector(selector)) { ///.....errrrr
+                return true;
+            }
+            return false;
+        });
+        callback(null, newArr);
     }
-
-    // find
-    // SEARCH
-    // find by selector?
-    // find by filetype?
-    // find by file name?
-    // find by...?
 };

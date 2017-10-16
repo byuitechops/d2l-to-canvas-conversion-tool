@@ -11,12 +11,8 @@
     "eslint-config-google": "^0.9.1",
     "fixed-width-string": "^1.0.0",
     "lodash": "^4.17.4",
-<<<<<<< HEAD
     "request": "^2.81.0",
     "rimraf": "^2.6.2",
-=======
-    "request": "^2.83.0",
->>>>>>> 979e5dbb643cdebf5b0b9b33508e6157c3982862
     "tap": "^10.7.2",
     "xmldom": "^0.1.27",
     "yargs": "^9.0.1",

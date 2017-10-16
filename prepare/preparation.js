@@ -8,6 +8,9 @@ const asyncLib = require('async'),
   insertFunction = require('../insertFunction.js'),
   verify = require('../verify.js');
 
+ // TEST DELETE WHEN done
+ const canvasTest = require('./canvasTest.js');
+
 function runIndexDirectory(course, cb) {
   course.addModuleReport('indexDirectory');
   //the path passed in will be a folder path so just use makeDir
@@ -31,7 +34,8 @@ module.exports = (filePath, settings, mainCallback) => {
     createCourseObj,
     setFilePaths,
     unzip,
-    runIndexDirectory
+    runIndexDirectory,
+    canvasTest
   ];
 
   if (settings.debug) {

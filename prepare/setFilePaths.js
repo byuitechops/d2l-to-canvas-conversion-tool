@@ -31,7 +31,6 @@ module.exports = (course, stepCallback) => {
                 stepCallback(err, course);
             } else {
                 if (files.includes(fileName)) {
-                    console.log(fileName.split('.zip')[0] + ' - Copy.zip');
                     setZipPath(filepath, fileName.split('.zip')[0] + ' - Copy.zip', cb);
                 } else {
                     cb(`${filepath}\\${fileName}`);
