@@ -151,8 +151,6 @@ const deleteRequest = function (url, cb) {
     }).auth(null, null, true, auth.token);
 }
 
-console.dir(request);
-
 module.exports = {
     get: getRequest,
     put: putRequest,
