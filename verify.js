@@ -11,14 +11,16 @@ module.exports = (courseObj, callback) => {
     const standardInfoProperties = [
         'originalFilepath',
         'unzippedFilepath',
+        'altUnzippedFilepath',
         'zippedFilepath',
         'fileName'
     ];
 
     const standardSettingsProperties = [
         'debug',
-        'platform',
-        'readAll'
+        'online',
+        'readAll',
+        'keepFiles'
     ];
 
     /* Check if courses top level contains the standard properties */
@@ -46,9 +48,9 @@ module.exports = (courseObj, callback) => {
     });
 
     /* Check if object contains extra properties */
-    if (Object.keys(courseObj).length > 4 ||
-        Object.keys(courseObj.info).length > 4 ||
-        Object.keys(courseObj.settings).length > 3) {
+    if (Object.keys(courseObj).length > standardProperties.length ||
+        Object.keys(courseObj.info).length > standardInfoProperties.length ||
+        Object.keys(courseObj.settings).length > standardSettingsProperties.length) {
         callback(`Course object provided contains extra
               properties it should not have`, courseObj);
         return;
