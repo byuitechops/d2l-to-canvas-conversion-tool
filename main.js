@@ -8,8 +8,8 @@ const insertFunction = require('./insertFunction.js');
 /* STEP MODULES */
 const prepare = require('./prepare/preparation.js');
 const preImport = require('./preImport/preImport.js');
-// const importCourse = require('./importCourse/importCourse.js');
-// const postImport = require('./postImport/postImport.js');
+const importCourse = require('./importCourse/importCourse.js');
+const postImport = require('./postImport/postImport.js');
 const cleanUp = require('./cleanUp/cleanUp.js');
 
 module.exports = (settings, finalCallback) => {
@@ -23,13 +23,11 @@ module.exports = (settings, finalCallback) => {
       async.constant('TestFile 101.zip', settings),
       prepare,
       preImport,
-      // importCourse,
-      //postImport
+      importCourse,
+      postImport
     ];
 
-    if (settings.debug) {
-        stepModules = insertFunction(stepModules, verify);
-    }
+    stepModules = insertFunction(stepModules, verify);
 
     /* Runs through each Step Module one by one */
     async.waterfall(stepModules, (err, resultCourse) => {
@@ -37,10 +35,11 @@ module.exports = (settings, finalCallback) => {
         /* Only fatal errors make it to this point.
          All others are just reported where they happen. */
         resultCourse.throwFatalErr('main', 'A Fatal Error was thrown.');
+        finalCallback(err);
       } else {
         cleanUp(resultCourse, () => {
             resultCourse.success('cleanUp', 'Cleanup process complete');
-            finalCallback(resultCourse);
+            finalCallback(null, resultCourse);
         });
       }
     });

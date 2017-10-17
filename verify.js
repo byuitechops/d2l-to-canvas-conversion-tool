@@ -1,4 +1,5 @@
 const chalk = require('chalk');
+const asyncLib = require('async');
 
 module.exports = (courseObj, callback) => {
     const standardProperties = [
@@ -24,36 +25,56 @@ module.exports = (courseObj, callback) => {
         'deleteCourse'
     ];
 
+    var foundErr = false;
+
     /* Check if courses top level contains the standard properties */
-    standardProperties.forEach((property) => {
-        if (!Object.keys(courseObj).includes(property)) {
-            callback(`Course object missing property: ${property}`, courseObj);
-            return;
-        }
-    });
+    if (!foundErr) {
+        standardProperties.forEach((property) => {
+            if (!Object.keys(courseObj).includes(property)) {
+                callback(`Course object missing property: ${property}`, courseObj);
+                foundErr = true;
+                return false;
+            }
+        });
+    } else {
+        return;
+    }
 
     /* Check if Info contains the standard properties */
-    standardInfoProperties.forEach((property) => {
-        if (!Object.keys(courseObj.info).includes(property)) {
-            callback(`Course Info missing property: ${property}`, courseObj);
-            return;
-        }
-    });
+    if (!foundErr) {
+        standardInfoProperties.forEach((property) => {
+            if (!Object.keys(courseObj.info).includes(property)) {
+                callback(`Course Info missing property: ${property}`, courseObj);
+                foundErr = true;
+                return false;;
+            }
+        });
+    } else {
+        return;
+    }
 
     /* Check if Settings contains the standard properties */
-    standardSettingsProperties.forEach((property) => {
-        if (!Object.keys(courseObj.settings).includes(property)) {
-            callback(`Course Settings missing property: ${property}`, courseObj);
-            return;
-        }
-    });
+    if (!foundErr) {
+        standardSettingsProperties.forEach((property) => {
+            if (!Object.keys(courseObj.settings).includes(property)) {
+                callback(`Course Settings missing property: ${property}`, courseObj);
+                foundErr = true;
+                return false;;
+            }
+        });
+    } else {
+        return;
+    }
 
     /* Check if object contains extra properties */
-    if (Object.keys(courseObj).length > standardProperties.length ||
-        Object.keys(courseObj.info).length > standardInfoProperties.length ||
-        Object.keys(courseObj.settings).length > standardSettingsProperties.length) {
-        callback(`Course object provided contains extra
-              properties it should not have`, courseObj);
+    if (!foundErr) {
+        if (Object.keys(courseObj).length > standardProperties.length ||
+            Object.keys(courseObj.settings).length > standardSettingsProperties.length) {
+            foundErr = true;
+            callback(`Course object provided contains extra properties it should not have`, courseObj);
+            return false;;
+        }
+    } else {
         return;
     }
 

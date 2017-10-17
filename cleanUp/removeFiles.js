@@ -54,5 +54,7 @@ module.exports = (course, stepCallback) => {
         ], () => {
             stepCallback(null, course);
         });
+    } else {
+        stepCallback(null, course);
     }
 };

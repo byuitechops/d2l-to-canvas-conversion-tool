@@ -10,30 +10,28 @@ const verify = require('../verify.js');
 
 /* Our main function, called by main.js*/
 module.exports = (course, mainCallback) => {
-  course.addModuleReport('preImport');
+    course.addModuleReport('preImport');
 
-  /* List child modules in order of of operation */
-  var childModules = [
-    async.constant(course),
-    writeCourse,
-    zip
-  ];
+    /* List child modules in order of of operation */
+    var childModules = [
+        async.constant(course),
+        writeCourse,
+        zip
+    ];
 
-  if (course.settings.debug) {
-      childModules = insertFunction(childModules, verify);
-  }
+    childModules = insertFunction(childModules, verify);
 
-  async.waterfall(childModules, (err, resultCourse) => {
-    if (err) {
-      // If we have an error, send it up to main.js
-      mainCallback(err, resultCourse);
-    } else {
-      // If successful, return the course to main.js
-      resultCourse.success(
-        'preImport', 'Pre-Import processes completed successfully.'
-      );
-      mainCallback(null, resultCourse);
-    }
-  });
+    async.waterfall(childModules, (err, resultCourse) => {
+        if (err) {
+            // If we have an error, send it up to main.js
+            mainCallback(err, resultCourse);
+        } else {
+            // If successful, return the course to main.js
+            resultCourse.success(
+                'preImport', 'Pre-Import processes completed successfully.'
+            );
+            mainCallback(null, resultCourse);
+        }
+    });
 
 };

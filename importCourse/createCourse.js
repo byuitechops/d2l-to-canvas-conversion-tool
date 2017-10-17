@@ -11,7 +11,6 @@ const request = require('request'),
  * saves canvasOU to the course object
  **************************************/
 module.exports = (course, stepCallback) => {
-  console.log('createCourse');
   course.addModuleReport("createCourse");
 
   var courseName = course.info.fileName.match(/\w+/)[0];
@@ -39,7 +38,7 @@ module.exports = (course, stepCallback) => {
       course.newInfo('canvasOU', body.id);
 
       //course.report.moduleLogs['importCourse'].changes.push('Course successfully created in Canvas');
-      course.success("createCourse", "Course successfully created in Canvas")
+      course.success("createCourse", "Course successfully created in Canvas");
       stepCallback(null, course);
     }
   }).auth(null, null, true, auth.token);

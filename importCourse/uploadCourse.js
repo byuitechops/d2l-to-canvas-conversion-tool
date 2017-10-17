@@ -14,7 +14,6 @@ const chalk = require('chalk'),
  * saves migrationId to course object
  **************************************/
 module.exports = function (course, stepCallback) {
-   console.log("uploadCourse");
    course.addModuleReport("uploadCourse");
 
    /****************************************

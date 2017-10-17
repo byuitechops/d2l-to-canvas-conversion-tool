@@ -7,13 +7,15 @@ module.exports = class Course {
         this.report = [
             new ReportModule('main'),
             new ReportModule('preparation'),
-            new ReportModule('verifier')
+            new ReportModule('verifier'),
+            new ReportModule('misc')
         ];
         this.settings = {
             'debug': settings.debug,
             'readAll': settings.readAll,
             'online': settings.online,
-            'keepFiles': settings.keepFiles
+            'keepFiles': settings.keepFiles,
+            'deleteCourse': settings.deleteCourse
         };
         this.info = {
             'originalFilepath': path.resolve(filePath),
@@ -33,7 +35,7 @@ module.exports = class Course {
     throwFatalErr(moduleName, err) {
         var index = this.report.findIndex(this.findReportModule, moduleName);
         if (index < 0) {
-            console.log(chalk.red(`--- Report Module was not found: ${chalk.redBright(moduleName)}`));
+            this.throwErr('misc', chalk.red(`Report Module was not found: ${chalk.redBright(moduleName)}`))
         } else {
             console.log(`--- ${chalk.bgRed(' FATALERROR ')} ${chalk.redBright(moduleName)}: ${chalk.red(err)}`);
             this.report[index].fatalErrs.push(err);
@@ -44,7 +46,7 @@ module.exports = class Course {
     throwErr(moduleName, err) {
         var index = this.report.findIndex(this.findReportModule, moduleName);
         if (index < 0) {
-            console.log(chalk.red(`--- Report Module was not found: ${chalk.redBright(moduleName)}`));
+            this.throwErr('misc', chalk.red(`Report Module was not found: ${chalk.redBright(moduleName)}`))
         } else {
             console.log(`--- ${chalk.redBright(moduleName)}: ${chalk.red(err)}`);
             this.report[index].errors.push(err);
@@ -55,7 +57,7 @@ module.exports = class Course {
     success(moduleName, message) {
         var index = this.report.findIndex(this.findReportModule, moduleName);
         if (index < 0) {
-            console.log(chalk.red(`Report Module was not found: ${chalk.redBright(moduleName)}`));
+            this.throwErr('misc', chalk.red(`Report Module was not found: ${chalk.redBright(moduleName)}`))
         } else {
             if (this.settings.debug) {
                 console.log(`--- ${chalk.greenBright(moduleName)}: ${chalk.white(message)}`);
@@ -73,7 +75,7 @@ module.exports = class Course {
     addModuleReport(moduleName) {
         var index = this.report.findIndex(this.findReportModule, moduleName);
         if (index > 0) {
-            console.log(chalk.red(`Report Module already created: ${chalk.redBright(moduleName)}`));
+            this.throwErr('misc', chalk.red(`Report Module already created: ${chalk.redBright(moduleName)}`))
         } else {
             this.report.push(new ReportModule(moduleName));
             this.success(moduleName, 'Report Module successfully created.');

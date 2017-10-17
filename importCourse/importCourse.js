@@ -21,9 +21,7 @@ module.exports = (course, mainCallback) => {
         getMigrationIssues
     ];
 
-    if (course.settings.debug) {
-        childModules = insertFunction(childModules, verify);
-    }
+    childModules = insertFunction(childModules, verify);
 
     async.waterfall(childModules, (err, resultCourse) => {
         if (err) {

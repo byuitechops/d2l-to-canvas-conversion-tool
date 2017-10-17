@@ -10,7 +10,6 @@ const request = require('request'),
  * issues and save them to the course object
  ********************************************/
 module.exports = function (course, stepCallback) {
-  console.log("getMigrationIssues");
   course.addModuleReport("getMigrationIssues");
 
   var url = "https://byui.instructure.com/api/v1/courses/" + course.info.canvasOU + "/content_migrations/" + course.info.migrationID + "/migration_issues";

@@ -1,6 +1,6 @@
 /*eslint-env node, es6*/
 
-/* Part of clean up. This module deletes the course 
+/* Part of clean up. This module deletes the course
  out of canvas if a fatal error was thrown */
 
 const canvas = require('../canvas.js');
@@ -14,9 +14,8 @@ module.exports = (course, stepCallback) => {
         return;
     }
 
-
     /* Delete Course Here */
-    var url = `/api/v1/courses/${course.info.canvasCourseOU}?event=delete`;
+    var url = `/api/v1/courses/${course.info.canvasOU}?event=delete`;
     canvas.delete(url, (err, body) => {
         if (err) {
             course.throwErr('deleteCourse', err);
