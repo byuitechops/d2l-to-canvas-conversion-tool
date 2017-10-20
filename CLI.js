@@ -1,15 +1,12 @@
-<<<<<<< HEAD
 #! /usr/bin/env node
+/*eslint-env node, es6*/
+/*eslint no-console:0*/
 
 const main = require('./main');
 const chalk = require('chalk');
 const fws = require('fixed-width-string');
 const fs = require('fs');
 
-=======
-/*eslint-env node, es6*/
-/*eslint no-console:0*/
->>>>>>> f9d3bb30e6543c30e7e9d3a394e04bfc9bc34db4
 const argv = require('yargs')
     /*.choices(['debug', 'all', 'delete', 'keep' ,'online'])
     .option('debug', {

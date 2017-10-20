@@ -1,4 +1,5 @@
 /*eslint-env node, es6*/
+/*eslint no-console:0*/
 
 /* DEPENDENCIES */
 const async = require('async');
@@ -34,8 +35,11 @@ module.exports = (settings, finalCallback) => {
         /* Only fatal errors make it to this point.
          All others are just reported where they happen. */
         if (err) {
-            resultCourse.throwFatalErr('main', err);
-            
+            if(resultCourse == undefined){
+                console.error(new Error(`The result Course object is ${resultCourse}`));
+                return;
+            }
+            console.error('The program crashed because of an error. Have a good day! :D');
             /* let deleteCourse know it needs to remove the course*/
             resultCourse.settings.deleteCourse = true;
             cleanUp(resultCourse, (cleanUpErr) => {

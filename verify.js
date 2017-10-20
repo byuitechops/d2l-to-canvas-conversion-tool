@@ -79,6 +79,6 @@ module.exports = (courseObj, callback) => {
         return;
     }
 
-    courseObj.success('verifier', chalk.cyan('Course Object successfully verified!'));
+    courseObj.success('verifier', 'Course Object successfully verified!');
     callback(null, courseObj);
 };
