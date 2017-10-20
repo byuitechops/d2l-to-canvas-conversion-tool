@@ -102,12 +102,25 @@ module.exports = (course, stepCallback) => {
     });
     /* Return just the unique values of our paths,
     so we know what directories we need to make */
-    pathsToBuild = [...new Set(pathsToBuild)];
+//    pathsToBuild = [...new Set(pathsToBuild)];
+    var pathArray =[];
+    pathsToBuild.forEach((filePath) => {
+        filePath.split(path.sep).forEach((fileDir) => {
+            if (!pathArray.includes(fileDir)){
+                pathArray.push(fileDir);
+            }
+        });
+    });
+
+
+
+
     /* Sort them alphabetically so we make sure we
     create the right folders first */
-    pathsToBuild = pathsToBuild.sort();
+    pathArray = pathArray.sort();
+    console.log(pathArray);
     /* Create the directories we need, one at a time */
-    asyncLib.eachSeries(pathsToBuild, createDir, createDirErr => {
+    asyncLib.eachSeries(pathArray, createDir, createDirErr => {
         if (createDirErr) {
             console.log(createDirErr);
             course.throwFatalErr('writeCourse', createDirErr);
