@@ -1,6 +1,12 @@
 #! /usr/bin/env node
+
+const main = require('./main');
+const chalk = require('chalk');
+const fws = require('fixed-width-string');
+const fs = require('fs');
+
 const argv = require('yargs')
-    .choices(['debug', 'all', 'delete', 'keep' ,'online'])
+    /*.choices(['debug', 'all', 'delete', 'keep' ,'online'])
     .option('debug', {
         alias: 'd',
         describe: 'Consoles all successes and errors.',
@@ -20,21 +26,15 @@ const argv = require('yargs')
     .option('online', {
         alias: 'o',
         describe: 'Determines behavior of the process to account for online course standards.',
-    })
+    })*/
     .argv;
-const main = require('./main');
-const chalk = require('chalk');
-const fws = require('fixed-width-string');
-const fs = require('fs');
-
-console.log(argv);
 
 var settings = {
-    'debug': argv.D ? argv.D : false,
-    'readAll': argv.A ? argv.A : false,
-    'online': argv.O ? true : false,
-    'keepFiles': argv.K ? true : false,
-    'deleteCourse': argv.X ? true : false
+    'debug': argv.d || argv.D || argv.debug ? argv.d : false,
+    'readAll': argv.a || argv.A || argv.all ? argv.a : false,
+    'online': argv.o || argv.O || argv.online ? true : false,
+    'keepFiles': argv.k || argv.K || argv.keep ? true : false,
+    'deleteCourse': argv.x || argv.X || argv.delete ? true : false
 };
 
 main(settings, (err, finalCourse) => {

@@ -18,7 +18,7 @@ module.exports = (course, stepCallback) => {
     /* Used to log successful actions */
     course.success('moduleName', 'moduleName successfully ...');
 
-    /* How to throw an error (Replace "moduleName") */
+    /* How to report an error (Replace "moduleName") */
     course.throwErr('moduleName', e);
     /* You should never call the stepCallback with an error. We want the
     whole program to run when testing so we can catch all existing errors */
