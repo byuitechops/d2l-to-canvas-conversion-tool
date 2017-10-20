@@ -13,7 +13,7 @@ const auth = require('./auth.json');
  * url if missing
  ******************************/
 function urlCleaner(url) {
-    if (url.search(/https?:\/\/byui.instructure.com/)) {
+    if (url.search(/https?:\/\/byui.instructure.com/) >= 0) {
         return url;
     } else {
         url = `https://byui.instructure.com${url}`;

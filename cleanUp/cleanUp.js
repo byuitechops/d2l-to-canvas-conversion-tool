@@ -1,3 +1,5 @@
+/*eslint-env node, es6*/
+
 const removeFiles = require('./removeFiles.js');
 const deleteCourse = require('./deleteCourse.js');
 const asyncLib = require('async');

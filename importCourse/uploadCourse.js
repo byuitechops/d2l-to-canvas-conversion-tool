@@ -41,7 +41,7 @@ module.exports = function (course, stepCallback) {
                   throwError(e);
                   return;
                }
-               console.log(chalk.blue('Status:'), body.workflow_state);
+               console.log(chalk.blue('Import Progress:'), body.workflow_state);
                if (body.workflow_state === 'completed') {
                   clearInterval(checkLoop);
                   //course.report.moduleLogs["importCourse"].changes.push('Zip successfully uploaded to Canvas');
@@ -52,7 +52,7 @@ module.exports = function (course, stepCallback) {
                   'waiting_for_select') {
                   clearInterval(checkLoop);
                   throwError(new Error(
-                     "Unknown error occured. Please check teh status of the migration via Canvas UI"
+                     "Unknown error occured. Please check the status of the migration via Canvas UI"
                   ));
                }
             }

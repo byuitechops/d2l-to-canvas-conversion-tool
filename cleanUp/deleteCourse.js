@@ -1,4 +1,5 @@
 /*eslint-env node, es6*/
+/*eslint no-unused-vars:1*/
 
 /* Part of clean up. This module deletes the course
  out of canvas if a fatal error was thrown */

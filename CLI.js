@@ -1,4 +1,5 @@
-#! /usr/bin/env node
+/*eslint-env node, es6*/
+/*eslint no-console:0*/
 const argv = require('yargs')
     .choices(['debug', 'all', 'delete', 'keep' ,'online'])
     .option('debug', {
@@ -48,6 +49,9 @@ main(settings, (err, finalCourse) => {
       console.log(fws(`Successes`, 20, {padding: '.'}) + chalk.greenBright(ReportModule.changes.length));
     });
     fs.writeFile('./report.json', JSON.stringify(finalCourse.report), err => {
+        if (err){
+            console.log(chalk.red('Error writing report to report.json'));
+        }
         console.log('\nFinal report written to report.json');
     });
 });
