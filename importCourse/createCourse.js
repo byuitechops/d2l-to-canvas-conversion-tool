@@ -14,7 +14,7 @@ module.exports = (course, stepCallback) => {
   course.addModuleReport("createCourse");
 
   var courseName = course.info.fileName.match(/\w+/)[0];
-  var courseCode = course.info.fileName.match(/\d+/)[0];
+  var courseCode = course.info.fileName.match(/\d{3}/)[0];
 
   request.post({
     url: "https://byui.instructure.com/api/v1/accounts/1/courses",
