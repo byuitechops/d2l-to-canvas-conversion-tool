@@ -1,10 +1,11 @@
 /*eslint-env node, es6*/
+/*eslint no-console:1*/
 
 /* Put dependencies here */
 var path = require('path'),
     fs = require('fs'),
     asyncLib = require('async'),
-    child = require('child_process').exec;
+    cp = require('cp');
 
 var writeCount = 0;
 var copyCount = 0;
@@ -69,15 +70,11 @@ module.exports = (course, stepCallback) => {
 
         function copyFile(file, cb2) {
             var newPath = file.path.replace('D2LProcessing', 'D2LProcessed');
-            child(`cp "${file.path}" "${newPath}"`,
-            (error, stdout, stderr) => {
-                if (error) {
-                    course.throwErr('writeCourse', `${file.name} could not copy | ${stderr}`);
-                    cb2(null, true);
+            cp(file.path, newPath, (err) => {
+                if (err) {
+                    course.throwErr('writeCourse', `${file.name} could not copy | ${err}`);
                 } else {
-                    course.success(
-                        'writeCourse', `${file.name} was successfully copied.`
-                    );
+                    course.success('writeCourse', `${file.name} was successfully copied.`);
                     cb2(null, false);
                 }
             });

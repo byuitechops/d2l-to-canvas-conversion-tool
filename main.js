@@ -31,16 +31,24 @@ module.exports = (settings, finalCallback) => {
 
     /* Runs through each Step Module one by one */
     async.waterfall(stepModules, (err, resultCourse) => {
-      if (err) {
         /* Only fatal errors make it to this point.
          All others are just reported where they happen. */
-        resultCourse.throwFatalErr('main', 'A Fatal Error was thrown.');
-        finalCallback(err);
-      } else {
-        cleanUp(resultCourse, () => {
-            resultCourse.success('cleanUp', 'Cleanup process complete');
-            finalCallback(null, resultCourse);
-        });
-      }
+        if (err) {
+            resultCourse.throwFatalErr('main', err);
+            
+            /* let deleteCourse know it needs to remove the course*/
+            resultCourse.settings.deleteCourse = true;
+            cleanUp(resultCourse, (cleanUpErr) => {
+                if (cleanUpErr) {
+                    resultCourse.throwFatalErr('main', cleanUpErr);
+                }
+                finalCallback(err, resultCourse);
+            });
+        } else {
+            cleanUp(resultCourse, () => {
+                resultCourse.success('cleanUp', 'Cleanup process complete');
+                finalCallback(null, resultCourse);
+            });
+        }
     });
 }

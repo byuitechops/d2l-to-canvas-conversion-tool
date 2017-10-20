@@ -4,7 +4,6 @@
 In debug mode, the files are not deleted. */
 
 /* Put dependencies here */
-const fs = require('fs');
 const rimraf = require('rimraf');
 const asyncLib = require('async');
 

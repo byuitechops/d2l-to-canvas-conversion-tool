@@ -1,5 +1,6 @@
+/*eslint-env node, es6*/
+
 const chalk = require('chalk');
-const asyncLib = require('async');
 
 module.exports = (courseObj, callback) => {
     const standardProperties = [
@@ -46,7 +47,7 @@ module.exports = (courseObj, callback) => {
             if (!Object.keys(courseObj.info).includes(property)) {
                 callback(`Course Info missing property: ${property}`, courseObj);
                 foundErr = true;
-                return false;;
+                return false;
             }
         });
     } else {
@@ -59,7 +60,7 @@ module.exports = (courseObj, callback) => {
             if (!Object.keys(courseObj.settings).includes(property)) {
                 callback(`Course Settings missing property: ${property}`, courseObj);
                 foundErr = true;
-                return false;;
+                return false;
             }
         });
     } else {
@@ -72,7 +73,7 @@ module.exports = (courseObj, callback) => {
             Object.keys(courseObj.settings).length > standardSettingsProperties.length) {
             foundErr = true;
             callback(`Course object provided contains extra properties it should not have`, courseObj);
-            return false;;
+            return false;
         }
     } else {
         return;

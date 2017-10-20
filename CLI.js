@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #! /usr/bin/env node
 
 const main = require('./main');
@@ -5,6 +6,10 @@ const chalk = require('chalk');
 const fws = require('fixed-width-string');
 const fs = require('fs');
 
+=======
+/*eslint-env node, es6*/
+/*eslint no-console:0*/
+>>>>>>> f9d3bb30e6543c30e7e9d3a394e04bfc9bc34db4
 const argv = require('yargs')
     /*.choices(['debug', 'all', 'delete', 'keep' ,'online'])
     .option('debug', {
@@ -48,6 +53,9 @@ main(settings, (err, finalCourse) => {
       console.log(fws(`Successes`, 20, {padding: '.'}) + chalk.greenBright(ReportModule.changes.length));
     });
     fs.writeFile('./report.json', JSON.stringify(finalCourse.report), err => {
+        if (err){
+            console.log(chalk.red('Error writing report to report.json'));
+        }
         console.log('\nFinal report written to report.json');
     });
 });
