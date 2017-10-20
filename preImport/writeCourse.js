@@ -1,4 +1,5 @@
 /*eslint-env node, es6*/
+/*eslint no-console:1*/
 
 /* Put dependencies here */
 var path = require('path'),
@@ -69,7 +70,7 @@ module.exports = (course, stepCallback) => {
 
         function copyFile(file, cb2) {
             var newPath = file.path.replace('D2LProcessing', 'D2LProcessed');
-            child(`cp "${file.path}" "${newPath}"`,
+            child(`copy "${file.path}" "${newPath}"`,
             (error, stdout, stderr) => {
                 if (error) {
                     course.throwErr('writeCourse', `${file.name} could not copy | ${stderr}`);

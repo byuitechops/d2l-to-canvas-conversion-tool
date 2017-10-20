@@ -1,6 +1,7 @@
+/*eslint-env node, es6*/
+/*eslint no-unused-vars: 1*/
+
 const decompress = require('decompress');
-const fs = require('fs');
-const path = require('path');
 
 module.exports = (course, stepCallback) => {
   try {
