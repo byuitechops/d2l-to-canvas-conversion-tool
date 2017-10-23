@@ -12,13 +12,13 @@ var settings = {
     'online': argv.o || argv.O || argv.online ? true : false,
     'keepFiles': argv.k || argv.K || argv.keep ? true : false,
     'deleteCourse': argv.x || argv.X || argv.delete ? true : false,
-    'useDownloader': argv.e || argv.E || argv.existing ? argv.e : true
+    'useDownloader': argv.e || argv.E || argv.existing ? false : true
 };
 
 if (settings.useDownloader === true) {
     downloader((downloaderResults) => {
         /* Convert list of results to a list of paths */
-        var courses = results.map((downloaderResult) => {
+        var courses = downloaderResults.map((downloaderResult) => {
             return {
                 "settings": settings,
                 "path": downloaderResult.name
@@ -27,8 +27,14 @@ if (settings.useDownloader === true) {
         startConversion(courses);
     });
 } else {
-    fs.readdir(path.resolve('.', 'D2LOriginal/'), (err, dirFiles) => {
-        dirContents.filter()
+    fs.readdir(path.resolve('.', 'D2LOriginal/'), (err, dirContents) => {
+        var zips = dirContents.filter((zip) => {
+            if (zip.includes('.zip'))
+                return true;
+        }).map((zip) => {
+            return {"settings": settings, "path": zip};
+        });
+        startConversion(zips);
     });
 }
 

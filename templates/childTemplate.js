@@ -5,7 +5,7 @@
 /* Put dependencies here */
 
 /* Include this line only if working on a post-import child module */
-const canvas = require('../canvas.js');
+const canvas = require('canvas-wrapper');
 
 /* View available course object functions */
 // https://github.com/byuitechops/d2l-to-canvas-conversion-tool/blob/master/documentation/classFunctions.md
