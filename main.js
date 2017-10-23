@@ -5,6 +5,8 @@
 const async = require('async');
 const verify = require('./verify.js');
 const insertFunction = require('./insertFunction.js');
+const chalk = require('chalk');
+const fws = require('fixed-width-string');
 
 /* STEP MODULES */
 const prepare = require('./prepare/preparation.js');
@@ -21,7 +23,7 @@ module.exports = (settings, finalCallback) => {
     a main step in the process of converting a course.*/
 
     var stepModules = [
-      async.constant(settings.path, settings.settings),
+      async.constant('TestFile 101.zip', settings),
       prepare,
       preImport,
       importCourse,
@@ -29,6 +31,26 @@ module.exports = (settings, finalCallback) => {
     ];
 
     stepModules = insertFunction(stepModules, verify);
+
+    function finalReport(courseObj) {
+        console.log(
+            fws(chalk.cyan('MODULE'), 13),
+            fws(chalk.yellow('WARNINGS'), 10),
+            fws(chalk.red('ERRORS'), 10),
+            fws(chalk.redBright('FATALERRS'), 10),
+            fws(chalk.greenBright('SUCCESSES'), 10)
+        );
+
+        courseObj.report.forEach(report => {
+            console.log(
+                fws(chalk.cyan(report.moduleName), 13),
+                fws(chalk.yellow(report.warnings.length), 10, { align: 'right' }),
+                fws(chalk.red(report.errors.length), 10, { align: 'right' }),
+                fws(chalk.redBright(report.fatalErrs.length), 10, { align: 'right' }),
+                fws(chalk.greenBright(report.changes.length), 10, { align: 'right' })
+            );
+        });
+    }
 
     /* Runs through each Step Module one by one */
     async.waterfall(stepModules, (err, resultCourse) => {
@@ -42,16 +64,21 @@ module.exports = (settings, finalCallback) => {
             console.error('The program crashed because of an error. Have a good day! :D');
             /* let deleteCourse know it needs to remove the course*/
             resultCourse.settings.deleteCourse = true;
-            cleanUp(resultCourse, (cleanUpErr) => {
+            cleanUp(resultCourse, (cleanUpErr, finalCourse) => {
                 if (cleanUpErr) {
-                    resultCourse.throwFatalErr('main', cleanUpErr);
+                    finalCourse.throwFatalErr('main', cleanUpErr);
                 }
-                finalCallback(err, resultCourse);
+                finalReport(finalCourse);
+                finalCallback(err, finalCourse);
             });
         } else {
-            cleanUp(resultCourse, () => {
-                resultCourse.success('cleanUp', 'Cleanup process complete');
-                finalCallback(null, resultCourse);
+            cleanUp(resultCourse, (cleanUpErr, finalCourse) => {
+                if (cleanUpErr) {
+                    finalCourse.throwFatalErr('main', cleanUpErr);
+                }
+                finalCourse.success('cleanUp', 'Cleanup process complete');
+                finalReport(finalCourse);
+                finalCallback(null, finalCourse);
             });
         }
     });
