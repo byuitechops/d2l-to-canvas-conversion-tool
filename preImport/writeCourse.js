@@ -84,6 +84,7 @@ module.exports = (course, stepCallback) => {
     }
 
     function createDir(dirPath, callback) {
+        console.log(dirPath);
         mkdirp(dirPath, (err) => {
             if (err) {
                 course.throwErr('writeCourse', err);
@@ -112,19 +113,19 @@ module.exports = (course, stepCallback) => {
     });
     /* Return just the unique values of our paths,
     so we know what directories we need to make */
-//    pathsToBuild = [...new Set(pathsToBuild)];
-    var pathArray =[];
-    pathsToBuild.forEach((filePath) => {
-        filePath.split(path.sep).forEach((fileDir) => {
-            if (!pathArray.includes(fileDir)){
-                pathArray.push(fileDir);
-            }
-        });
-    });
+// //    pathsToBuild = [...new Set(pathsToBuild)];
+//     var pathArray =[];
+//     pathsToBuild.forEach((filePath) => {
+//         filePath.split(path.sep).forEach((fileDir) => {
+//             if (!pathArray.includes(fileDir)){
+//                 pathArray.push(fileDir);
+//             }
+//         });
+//     });
 
     /* Sort them alphabetically so we make sure we
     create the right folders first */
-    pathArray = pathArray.sort();
+    pathArray = pathsToBuild.sort();
     /* Create the directories we need, one at a time */
     asyncLib.eachSeries(pathArray, createDir, createDirErr => {
         if (createDirErr) {
