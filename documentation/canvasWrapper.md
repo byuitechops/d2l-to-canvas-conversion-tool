@@ -8,7 +8,7 @@ The wrapper allows the user to input the full URL or just the path.
 
 Require the wrapper:
 
-`const canvas = require('../canvas.js')`
+`const canvas = require('canvas-wrapper')`
 
 
 ## GET ##
