@@ -5,6 +5,7 @@
 const ReportModule = require('./ReportModule.js');
 const path = require('path');
 const chalk = require('chalk');
+const fws = require('fixed-width-string');
 
 module.exports = class Course {
     constructor(filePath, settings) {
@@ -41,7 +42,11 @@ module.exports = class Course {
         if (index < 0) {
             this.throwErr('misc', `Report Module was not found: ${moduleName}`);
         } else {
-            console.log(`--- ${chalk.bgRed(' FATALERROR ')} ${chalk.redBright(moduleName)}: ${chalk.red(err)}`);
+            console.log(
+                fws(chalk.cyan(moduleName), 15),
+                fws(chalk.bgRed('FATALERR'), 8, { align: 'right'}),
+                fws(chalk.red(err), 100)
+            );
             this.report[index].fatalErrs.push(err);
         }
     }
@@ -52,7 +57,11 @@ module.exports = class Course {
         if (index < 0) {
             this.throwErr('misc', `Report Module was not found: ${moduleName}`);
         } else {
-            console.log(`--- ${chalk.redBright(moduleName)}: ${chalk.red(err)}`);
+            console.log(
+                fws(chalk.cyan(moduleName), 15),
+                fws(chalk.redBright('ERROR'), 8, { align: 'right'}),
+                fws(chalk.red(err), 100)
+            );
             this.report[index].errors.push(err);
         }
     }
@@ -64,7 +73,11 @@ module.exports = class Course {
             this.throwErr('misc', `Report Module was not found: ${moduleName}`);
         } else {
             if (this.settings.debug) {
-                console.log(`--- ${chalk.greenBright(moduleName)}: ${chalk.white(message)}`);
+                console.log(
+                    fws(chalk.cyan(moduleName), 15),
+                    fws(chalk.greenBright('SUCCESS'), 8, { align: 'right'}),
+                    fws(chalk.white(message), 100)
+                );
             }
             this.report[index].changes.push(message);
         }
@@ -83,7 +96,10 @@ module.exports = class Course {
         } else {
             this.report.push(new ReportModule(moduleName));
             this.success(moduleName, 'Report Module successfully created.');
-            console.log(`--- ${chalk.bgBlue(` ${moduleName} launched `)}`);
+            console.log(
+                fws(chalk.cyan(moduleName), 15),
+                fws(chalk.blueBright('LAUNCHED'), 8, { align: 'right'})
+            );
         }
     }
 
