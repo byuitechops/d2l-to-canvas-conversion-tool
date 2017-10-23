@@ -45,7 +45,7 @@ module.exports = class Course {
             console.log(
                 fws(chalk.cyan(moduleName), 15),
                 fws(chalk.bgRed('FATALERR'), 8, { align: 'right'}),
-                fws(chalk.red(err), 100)
+                chalk.red(err)
             );
             this.report[index].fatalErrs.push(err);
         }
@@ -60,9 +60,24 @@ module.exports = class Course {
             console.log(
                 fws(chalk.cyan(moduleName), 15),
                 fws(chalk.redBright('ERROR'), 8, { align: 'right'}),
-                fws(chalk.red(err), 100)
+                chalk.red(err)
             );
             this.report[index].errors.push(err);
+        }
+    }
+
+    /* Adds warnings to report for given module */
+    throwWarning(moduleName, warning) {
+        var index = this.report.findIndex(this.findReportModule, moduleName);
+        if (index < 0) {
+            this.throwErr('misc', `Report Module was not found: ${moduleName}`);
+        } else {
+            console.log(
+                fws(chalk.cyan(moduleName), 15),
+                fws(chalk.yellow('WARNING'), 8, { align: 'right'}),
+                chalk.yellowBright(warning)
+            );
+            this.report[index].errors.push(warning);
         }
     }
 
@@ -76,7 +91,7 @@ module.exports = class Course {
                 console.log(
                     fws(chalk.cyan(moduleName), 15),
                     fws(chalk.greenBright('SUCCESS'), 8, { align: 'right'}),
-                    fws(chalk.white(message), 100)
+                    chalk.white(message)
                 );
             }
             this.report[index].changes.push(message);
@@ -95,15 +110,13 @@ module.exports = class Course {
             this.throwErr('misc', `Report Module already created: ${moduleName}`);
         } else {
             this.report.push(new ReportModule(moduleName));
-            this.success(moduleName, 'Report Module successfully created.');
             console.log(
                 fws(chalk.cyan(moduleName), 15),
                 fws(chalk.blueBright('LAUNCHED'), 8, { align: 'right'})
             );
+            this.success(moduleName, 'Report Module successfully created.');
         }
     }
-
-    // REWRITE AS SEARCH FUNCTION
 
     /* This will check for properties provided in the propertyArray parameter */
     verifyProperty(propertyName) {
@@ -147,14 +160,5 @@ module.exports = class Course {
         }
     }
 
-    // Use this for CSS Selectors as well?
-    getFilesBySelector(selector, callback) {
-        var newArr = this.content.filter(file => {
-            if (file.dom.querySelector(selector)) { ///.....errrrr
-                return true;
-            }
-            return false;
-        });
-        callback(null, newArr);
-    }
+    // Use cheerio to search by CSS selector as well
 };

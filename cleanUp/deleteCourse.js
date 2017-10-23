@@ -20,6 +20,8 @@ module.exports = (course, stepCallback) => {
             course.success('deleteCourse', 'deleteCourse successfully deleted the course from Canvas');
             stepCallback(null, course);
         });
+    } else if (course.info.canvasOU === undefined) {
+        course.throwWarning('deleteCourse', 'Canvas OU was not defined. Was the course created? (ignore if you skipped course upload)');
     } else {
         course.success('deleteCourse', 'deleteCourse determined the course did not need to be deleted.');
         stepCallback(null, course);

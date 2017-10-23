@@ -6,7 +6,6 @@ const main = require('./main');
 const chalk = require('chalk');
 const fws = require('fixed-width-string');
 const fs = require('fs');
-
 const argv = require('yargs').argv;
 
 
@@ -44,7 +43,8 @@ main(settings, (err, finalCourse) => {
     fs.writeFile('./report.json', JSON.stringify(finalCourse.report), err => {
         if (err){
             console.log(chalk.red('Error writing report to report.json'));
+        } else {
+            console.log('\nFinal report written to report.json');
         }
-        console.log('\nFinal report written to report.json');
     });
 });

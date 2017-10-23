@@ -4,5 +4,6 @@ module.exports = class ReportModule {
     this.fatalErrs = [];
     this.errors = [];
     this.changes = [];
+    this.warnings = [];
   }
 };
