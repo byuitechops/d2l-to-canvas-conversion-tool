@@ -12,9 +12,17 @@ const request = require('request'),
  **************************************/
 module.exports = (course, stepCallback) => {
   course.addModuleReport("createCourse");
+  var courseName = '',
+    courseCode = '';
 
-  var courseName = course.info.fileName.match(/\w+/)[0];
-  var courseCode = course.info.fileName.match(/\d{3}/)[0];
+  /* Get Canvas course name from the fileName */
+  if ((/\d{3}\w?/i).test(course.info.fileName)) {
+    courseCode = course.info.fileName.match(/\d{3}\w?/i)[0];
+    courseName = course.info.fileName.split(/\d{3}\w?/i)[0].trim();
+  } else{
+    courseName = course.info.fileName.split('.zip')[0];
+    coruseCode = '101;'
+  }
 
   request.post({
     url: "https://byui.instructure.com/api/v1/accounts/1/courses",

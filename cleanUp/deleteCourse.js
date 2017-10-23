@@ -3,7 +3,7 @@
 
 /* Part of clean up. This module deletes the course
  out of canvas if a fatal error was thrown */
-const canvas = require('../canvas.js');
+const canvas = require('canvas-wrapper');
 
 module.exports = (course, stepCallback) => {
     course.addModuleReport('deleteCourse');
