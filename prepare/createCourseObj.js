@@ -5,6 +5,12 @@ var Course = require('../classes/Course.js');
 
 module.exports = (filePath, settings, stepCallback) => {
     /* Create the course object, give it the original filepath, and settings */
+
+    /* Check if the filePath contains .ZIP */
+    if (!(/\.zip/i).test(filePath)){
+        filePath += '.zip';
+    }
+
     var course = new Course(filePath, settings);
     /* Create report module for indexer main since course object didn't exist until now */
     course.addModuleReport('createCourseObj');

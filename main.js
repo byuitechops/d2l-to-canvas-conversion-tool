@@ -21,7 +21,7 @@ module.exports = (settings, finalCallback) => {
     a main step in the process of converting a course.*/
 
     var stepModules = [
-      async.constant('TestFile 101.zip', settings),
+      async.constant(settings.path, settings.settings),
       prepare,
       preImport,
       importCourse,

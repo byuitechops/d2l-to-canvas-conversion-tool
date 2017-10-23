@@ -22,11 +22,11 @@ module.exports = class Course {
             'deleteCourse': settings.deleteCourse
         };
         this.info = {
-            'originalFilepath': path.resolve(filePath),
+            'originalFilepath': path.resolve('D2LOriginal', filePath),
             'unzippedFilepath': path.resolve('D2LProcessing'),
             'altUnzippedFilepath': path.resolve('D2LProcessed'),
             'zippedFilepath': path.resolve('D2LReady'),
-            'fileName': filePath.split('/')[filePath.split('/').length - 1]
+            'fileName': filePath.split(path.sep)[filePath.split(path.sep).length - 1]
         };
         this.content = {};
     }

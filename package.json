@@ -7,6 +7,7 @@
     "async": "^2.5.0",
     "chalk": "^2.1.0",
     "cp": "^0.2.0",
+    "d2l-course-downloader": "git+https://github.com/byuitechops/d2l-course-downloader.git",
     "decompress": "^4.2.0",
     "eslint": "^4.6.1",
     "eslint-config-google": "^0.9.1",

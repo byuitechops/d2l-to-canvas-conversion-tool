@@ -13,6 +13,7 @@ module.exports = (course, stepCallback) => {
       course.success('unzip', 'Course successfully unzipped');
       stepCallback(null, course);
     }, (promiseError) => {
+      course.throwFatalErr('unzip', promiseError);
       stepCallback(promiseError, course);
   });
 
