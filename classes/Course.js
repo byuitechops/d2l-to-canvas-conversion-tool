@@ -59,7 +59,7 @@ module.exports = class Course {
         } else {
             console.log(
                 fws(chalk.cyan(moduleName), 15),
-                fws(chalk.redBright('ERROR'), 8, { align: 'left'}),
+                fws(chalk.redBright('ERROR'), 8, { align: 'right'}),
                 fws(chalk.red(err), 100)
             );
             this.report[index].errors.push(err);
@@ -75,7 +75,7 @@ module.exports = class Course {
             if (this.settings.debug) {
                 console.log(
                     fws(chalk.cyan(moduleName), 15),
-                    fws(chalk.greenBright('SUCCESS'), 8, { align: 'left'}),
+                    fws(chalk.greenBright('SUCCESS'), 8, { align: 'right'}),
                     fws(chalk.white(message), 100)
                 );
             }
@@ -98,7 +98,7 @@ module.exports = class Course {
             this.success(moduleName, 'Report Module successfully created.');
             console.log(
                 fws(chalk.cyan(moduleName), 15),
-                fws(chalk.blueBright('LAUNCHED'), 8, { align: 'left'})
+                fws(chalk.blueBright('LAUNCHED'), 8, { align: 'right'})
             );
         }
     }

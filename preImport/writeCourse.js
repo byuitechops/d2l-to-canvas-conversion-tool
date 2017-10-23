@@ -122,13 +122,9 @@ module.exports = (course, stepCallback) => {
         });
     });
 
-
-
-
     /* Sort them alphabetically so we make sure we
     create the right folders first */
     pathArray = pathArray.sort();
-    console.log(pathArray);
     /* Create the directories we need, one at a time */
     asyncLib.eachSeries(pathArray, createDir, createDirErr => {
         if (createDirErr) {

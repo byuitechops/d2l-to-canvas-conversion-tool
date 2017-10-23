@@ -8,7 +8,7 @@ const fws = require('fixed-width-string');
 const fs = require('fs');
 
 const argv = require('yargs').argv;
-    
+
 
 var settings = {
     'debug': argv.d || argv.D || argv.debug ? argv.d : false,
@@ -22,11 +22,24 @@ main(settings, (err, finalCourse) => {
     if (err) {
         console.log(err);
     }
+    console.log(chalk.blueBright('Final Report'));
+    console.log(
+        fws(chalk.cyan('MODULE'), 13, { align: 'right' }),
+        fws(chalk.red('ERRORS'), 13, { align: 'right' }),
+        fws(chalk.red('FATALERRORS'), 13, { align: 'right' }),
+        fws(chalk.green('SUCCESSES'), 13, { align: 'right' })
+    );
     finalCourse.report.forEach((ReportModule) => {
-      console.log(chalk.yellowBright(`\nModule Report: ${chalk.yellow(ReportModule.name)}\n`));
-      console.log(fws(`Errors`, 20, {padding: '.'}) + chalk.red(ReportModule.errors.length));
-      console.log(fws(`Fatal Errors`, 20, {padding: '.'}) + chalk.red(ReportModule.fatalErrs.length));
-      console.log(fws(`Successes`, 20, {padding: '.'}) + chalk.greenBright(ReportModule.changes.length));
+        console.log(
+            fws(chalk.red(ReportModule), 13, { align: 'right' }),
+            fws(chalk.red('ERRORS'), 13, { align: 'right' }),
+            fws(chalk.red('FATALERRORS'), 13, { align: 'right' }),
+            fws(chalk.green('SUCCESSES'), 13, { align: 'right' })
+        );
+      // console.log(chalk.yellowBright(`\nModule Report: ${chalk.yellow(ReportModule.name)}\n`));
+      // console.log(fws(`Errors`, 20, {padding: '.'}) + chalk.red(ReportModule.errors.length));
+      // console.log(fws(`Fatal Errors`, 20, {padding: '.'}) + chalk.red(ReportModule.fatalErrs.length));
+      // console.log(fws(`Successes`, 20, {padding: '.'}) + chalk.greenBright(ReportModule.changes.length));
     });
     fs.writeFile('./report.json', JSON.stringify(finalCourse.report), err => {
         if (err){
