@@ -22,9 +22,9 @@ module.exports = (course, stepCallback) => {
         });
     } else if (course.info.canvasOU === undefined) {
         course.throwWarning('deleteCourse', 'Canvas OU was not defined. Was the course created? (ignore if you skipped course upload)');
+        stepCallback(null, course);
     } else {
         course.success('deleteCourse', 'deleteCourse determined the course did not need to be deleted.');
         stepCallback(null, course);
-        return;
     }
 }
