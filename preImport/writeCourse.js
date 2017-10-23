@@ -5,7 +5,8 @@
 var path = require('path'),
     fs = require('fs'),
     asyncLib = require('async'),
-    cp = require('cp');
+    cp = require('cp'),
+    mkdirp = require('mkdirp');
 
 var writeCount = 0;
 var copyCount = 0;
@@ -83,7 +84,7 @@ module.exports = (course, stepCallback) => {
     }
 
     function createDir(dirPath, callback) {
-        fs.mkdir(dirPath, (err) => {
+        mkdirp(dirPath, (err) => {
             if (err) {
                 course.throwErr('writeCourse', err);
                 callback(err);
@@ -92,6 +93,15 @@ module.exports = (course, stepCallback) => {
                 callback(null);
             }
         });
+        // fs.mkdir(dirPath, (err) => {
+        //     if (err) {
+        //         course.throwErr('writeCourse', err);
+        //         callback(err);
+        //     } else {
+        //         course.success(`writeCourse`, `${dirPath} successfully created.`);
+        //         callback(null);
+        //     }
+        // });
     }
 
     /* Start Here */
