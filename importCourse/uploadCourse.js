@@ -13,8 +13,7 @@ const chalk = require('chalk'),
  * uploads the zip to a canvas course
  * saves migrationId to course object
  **************************************/
-//module.exports = function (course, stepCallback) {
- function useless (course, stepCallback) {
+module.exports = function (course, stepCallback) {
    course.addModuleReport("uploadCourse");
 
    /****************************************
@@ -182,14 +181,4 @@ const chalk = require('chalk'),
       url = 'https://byui.instructure.com/api/v1/courses/' + course.info.canvasOU + '/content_migrations';
 
    postRequest(url, postBody, true, uploadZip);
-}
-
-
-module.exports = (course, stepCb) => {
-    course.addModuleReport('uploadCourse');
-    var err = new Error('a fake testing error in uploadCourse');
-    course.throwFatalErr('uploadCourse', err);
-    stepCb(err, null);
-//    /stepCb(err);
-    
 }
