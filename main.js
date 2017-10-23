@@ -33,17 +33,20 @@ module.exports = (settings, finalCallback) => {
     stepModules = insertFunction(stepModules, verify);
 
     function finalReport(courseObj) {
+
+        console.log('\n' + chalk.bgBlue(' FINAL REPORT '));
+
         console.log(
             fws(chalk.cyan('MODULE'), 13),
-            fws(chalk.yellow('WARNINGS'), 10),
-            fws(chalk.red('ERRORS'), 10),
-            fws(chalk.redBright('FATALERRS'), 10),
-            fws(chalk.greenBright('SUCCESSES'), 10)
+            fws(chalk.yellow('WARNINGS'), 10, { align: 'right' }),
+            fws(chalk.red('ERRORS'), 10, { align: 'right' }),
+            fws(chalk.redBright('FATALERRS'), 10, { align: 'right' }),
+            fws(chalk.greenBright('SUCCESSES'), 10, { align: 'right' })
         );
 
         courseObj.report.forEach(report => {
             console.log(
-                fws(chalk.cyan(report.moduleName), 13),
+                fws(chalk.cyan(report.name), 13),
                 fws(chalk.yellow(report.warnings.length), 10, { align: 'right' }),
                 fws(chalk.red(report.errors.length), 10, { align: 'right' }),
                 fws(chalk.redBright(report.fatalErrs.length), 10, { align: 'right' }),

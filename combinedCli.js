@@ -18,7 +18,7 @@ var settings = {
 if (settings.useDownloader === true) {
     downloader((downloaderResults) => {
         /* Convert list of results to a list of paths */
-        var courses = results.map((downloaderResult) => {
+        var courses = downloaderResults.map((downloaderResult) => {
             return {
                 "settings": settings,
                 "path": downloaderResult.name
