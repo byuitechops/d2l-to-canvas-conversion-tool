@@ -27,7 +27,11 @@ module.exports = function (course, stepCallback) {
             var found = pages.find((page) => {
                 return page.title.toLowerCase().includes('syllabus');
             });
-            callBack(null, found);
+            if (!found) {
+                callBack('No syllabus page was found.');
+            } else {
+                callBack(null, found);
+            }
         });
     }
 
@@ -58,16 +62,19 @@ module.exports = function (course, stepCallback) {
     findSyllabus((error, syllabus) => {
         if (error) {
             course.throwErr('setSyllabus', error);
+            stepCallback(null, course);
             return;
         }
         getSyllabus(syllabus.url, (getSyllabusErr, syllabusHTML) => {
             if (getSyllabusErr) {
                 course.throwErr('setSyllabus', getSyllabusErr);
+                stepCallback(null, course);
                 return;
             }
             putSyllabus(syllabusHTML, (putSyllabusErr) => {
                 if (putSyllabusErr) {
                     course.throwErr('setSyllabus', putSyllabusErr);
+                    stepCallback(null, course);
                     return;
                 }
                 course.success(

@@ -84,7 +84,6 @@ module.exports = (course, stepCallback) => {
     }
 
     function createDir(dirPath, callback) {
-        console.log(dirPath);
         mkdirp(dirPath, (err) => {
             if (err) {
                 course.throwErr('writeCourse', err);

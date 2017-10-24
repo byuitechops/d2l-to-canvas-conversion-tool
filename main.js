@@ -37,7 +37,7 @@ module.exports = (settings, finalCallback) => {
         console.log('\n' + chalk.bgBlue(' FINAL REPORT '));
 
         console.log(
-            fws(chalk.cyan('MODULE'), 13),
+            fws(chalk.cyanBright('MODULE'), 13),
             fws(chalk.yellow('WARNINGS'), 10, { align: 'right' }),
             fws(chalk.red('ERRORS'), 10, { align: 'right' }),
             fws(chalk.redBright('FATALERRS'), 10, { align: 'right' }),
