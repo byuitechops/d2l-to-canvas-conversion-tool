@@ -27,7 +27,11 @@ module.exports = function (course, stepCallback) {
             var found = pages.find((page) => {
                 return page.title.toLowerCase().includes('syllabus');
             });
-            callBack(null, found);
+            if (!found) {
+                callBack('No syllabus page was found.');
+            } else {
+                callBack(null, found);
+            }
         });
     }
 
