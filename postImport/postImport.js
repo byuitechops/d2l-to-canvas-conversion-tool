@@ -2,6 +2,7 @@
 const async = require('async');
 const insertFunction = require('../insertFunction.js');
 const verify = require('../verify.js');
+const setSyllabus = require('./setSyllabus.js');
 
 /* Our main function, called by main.js*/
 module.exports = (course, mainCallback) => {
@@ -10,6 +11,7 @@ module.exports = (course, mainCallback) => {
     /* List child modules in order of of operation */
     var childModules = [
         async.constant(course),
+        setSyllabus
     ];
 
     childModules = insertFunction(childModules, verify);
