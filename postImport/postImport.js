@@ -2,7 +2,7 @@
 const async = require('async');
 const insertFunction = require('../insertFunction.js');
 const verify = require('../verify.js');
-const setSyllabus = require('./setSyllabus.js');
+const setSyllabus = require('set-syllabus');
 
 /* Our main function, called by main.js*/
 module.exports = (course, mainCallback) => {

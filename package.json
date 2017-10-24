@@ -1,43 +1,44 @@
 {
-  "name": "d2l-canvas-conversion",
-  "version": "1.0.0",
-  "description": "This tool is used to help convert courses from D2L to Canvas",
-  "main": "main.js",
-  "dependencies": {
-    "async": "^2.5.0",
-    "canvas-wrapper": "git+https://github.com/byuitechops/Canvas-wrapper.git",
-    "chalk": "^2.1.0",
-    "cp": "^0.2.0",
-    "d2l-course-downloader": "git+https://github.com/byuitechops/d2l-course-downloader.git",
-    "decompress": "^4.2.0",
-    "eslint": "^4.6.1",
-    "eslint-config-google": "^0.9.1",
-    "fixed-width-string": "^1.0.0",
-    "lodash": "^4.17.4",
-    "mkdirp": "^0.5.1",
-    "prompt": "^1.0.0",
-    "request": "^2.81.0",
-    "rimraf": "^2.6.2",
-    "tap": "^10.7.2",
-    "xmldom": "^0.1.27",
-    "yargs": "^9.0.1",
-    "zip-dir": "^1.0.2"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "tap tests/*.js --cov"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/byuitechops/d2l-to-canvas-conversion-tool.git"
-  },
-  "author": "Zachary Williams & Daniel Green",
-  "license": "MIT",
-  "bin": {
-    "d2c": "./CLI.js"
-  },
-  "bugs": {
-    "url": "https://github.com/byuitechops/d2l-to-canvas-conversion-tool/issues"
-  },
-  "homepage": "https://github.com/byuitechops/d2l-to-canvas-conversion-tool#readme"
+    "name": "d2l-canvas-conversion",
+    "version": "1.0.0",
+    "description": "This tool is used to help convert courses from D2L to Canvas",
+    "main": "main.js",
+    "dependencies": {
+        "async": "^2.5.0",
+        "canvas-wrapper": "git+https://github.com/byuitechops/Canvas-wrapper.git",
+        "chalk": "^2.1.0",
+        "cp": "^0.2.0",
+        "d2l-course-downloader": "git+https://github.com/byuitechops/d2l-course-downloader.git",
+        "decompress": "^4.2.0",
+        "eslint": "^4.6.1",
+        "eslint-config-google": "^0.9.1",
+        "fixed-width-string": "^1.0.0",
+        "lodash": "^4.17.4",
+        "mkdirp": "^0.5.1",
+        "prompt": "^1.0.0",
+        "request": "^2.81.0",
+        "rimraf": "^2.6.2",
+        "set-syllabus": "git+https://github.com/byuitechops/set-syllabus.git",
+        "tap": "^10.7.2",
+        "xmldom": "^0.1.27",
+        "yargs": "^9.0.1",
+        "zip-dir": "^1.0.2"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "tap tests/*.js --cov"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/byuitechops/d2l-to-canvas-conversion-tool.git"
+    },
+    "author": "Zachary Williams & Daniel Green",
+    "license": "MIT",
+    "bin": {
+        "d2c": "./CLI.js"
+    },
+    "bugs": {
+        "url": "https://github.com/byuitechops/d2l-to-canvas-conversion-tool/issues"
+    },
+    "homepage": "https://github.com/byuitechops/d2l-to-canvas-conversion-tool#readme"
 }
