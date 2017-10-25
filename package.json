@@ -12,6 +12,7 @@
         "decompress": "^4.2.0",
         "eslint": "^4.6.1",
         "eslint-config-google": "^0.9.1",
+        "file-delete": "git+https://github.com/byuitechops/canvas-pagesandfiles.git",
         "fixed-width-string": "^1.0.0",
         "lodash": "^4.17.4",
         "mkdirp": "^0.5.1",

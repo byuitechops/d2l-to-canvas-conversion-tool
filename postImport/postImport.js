@@ -2,28 +2,18 @@
 const async = require('async');
 const insertFunction = require('../insertFunction.js');
 const verify = require('../verify.js');
-const setSyllabus = require('set-syllabus');
-const removeDuplicates = require('file-delete');
+const agenda = require('../agenda.js');
 
 /* Our main function, called by main.js*/
 module.exports = (course, mainCallback) => {
     course.addModuleReport('postImport');
-
-    /* List child modules in order of of operation */
-    var childModules = [
-        async.constant(course),
-        setSyllabus,
-        removeDuplicates
-    ];
-
-    childModules = insertFunction(childModules, verify);
-
-    async.waterfall(childModules, (err, resultCourse) => {
+    childModules = insertFunction(agenda.postImport, verify);
+    async.waterfall(
+        [async.constant(course), ...agenda.postImport],
+        (err, resultCourse) => {
         if (err) {
-            // If we have an error, send it up to main.js
             mainCallback(err, resultCourse);
         } else {
-            // If successful, return the course to main.js
             resultCourse.success(
                 'postImport', 'Post-Import processes completed successfully.'
             );
