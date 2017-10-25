@@ -77,7 +77,7 @@ module.exports = class Course {
                 fws(chalk.yellow('WARNING'), 8, { align: 'right'}),
                 chalk.yellowBright(warning)
             );
-            this.report[index].errors.push(warning);
+            this.report[index].warnings.push(warning);
         }
     }
 
