@@ -1,21 +1,22 @@
 /*eslint-env node, es6*/
-
-const removeFiles = require('./removeFiles.js');
-const deleteCourse = require('./deleteCourse.js');
 const asyncLib = require('async');
+const insertFunction = require('../insertFunction.js');
+const verify = require('../verify.js');
+const agenda = require('../agenda.js');
 
-module.exports = function (course, mainCallback) {
+module.exports = (course, mainCallback) => {
     course.addModuleReport('cleanUp');
-
-    var cleanUpSteps = [
-        asyncLib.constant(course),
-        removeFiles,
-        deleteCourse
-    ];
-
-    /* STEP LOGIC */
-    asyncLib.waterfall(cleanUpSteps, (err, resultCourse) => {
-        if (err) mainCallback(err, resultCourse);
-        else mainCallback(null, resultCourse);
+    var childModules = insertFunction(agenda.cleanUp, verify);
+    asyncLib.waterfall(
+        [asyncLib.constant(course), ...childModules],
+        (err, resultCourse) => {
+        if (err) {
+            mainCallback(err, resultCourse);
+        } else {
+            resultCourse.success(
+                'cleanUp', 'CleanUp processes completed successfully.'
+            );
+            mainCallback(null, resultCourse);
+        }
     });
 };
