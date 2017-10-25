@@ -3,6 +3,7 @@ const async = require('async');
 const insertFunction = require('../insertFunction.js');
 const verify = require('../verify.js');
 const setSyllabus = require('set-syllabus');
+const removeDuplicates = require('file-delete');
 
 /* Our main function, called by main.js*/
 module.exports = (course, mainCallback) => {
@@ -11,7 +12,8 @@ module.exports = (course, mainCallback) => {
     /* List child modules in order of of operation */
     var childModules = [
         async.constant(course),
-        setSyllabus
+        setSyllabus,
+        removeDuplicates
     ];
 
     childModules = insertFunction(childModules, verify);
