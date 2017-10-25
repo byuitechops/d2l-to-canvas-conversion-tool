@@ -1,11 +1,10 @@
+/*eslint-env node, es6*/
+
 /* Main */
 const prepare = require('./prepare/preparation.js');
 const preImport = require('./preImport/preImport.js');
 const importCourse = require('./importCourse/importCourse.js');
 const postImport = require('./postImport/postImport.js');
-const cleanUp = require('./cleanUp/cleanUp.js');
-const verify = require('./verify.js');
-const insertFunction = require('./insertFunction.js');
 
 /* Prepare */
 const createCourseObj = require('./prepare/createCourseObj');
@@ -59,5 +58,5 @@ module.exports = {
         cleanUp: [
             removeFiles,        // Removes files generated during the process
             deleteCourse        // Deletes the course from Canvas (used in testing)
-        ],
+        ]
 };
