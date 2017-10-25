@@ -28,7 +28,7 @@ module.exports = function (course, stepCallback) {
     * GETs the status of the upload ONCE
     *************************************/
    function checkProgress(progressUrl) {
-      console.log("Canvas migration status:");
+      console.log("\nCanvas migration status:");
       var checkLoop = setInterval(() => {
          request.get(progressUrl, function (err, response, body) {
             if (err) {
