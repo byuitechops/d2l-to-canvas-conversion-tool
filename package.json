@@ -8,7 +8,7 @@
         "canvas-wrapper": "git+https://github.com/byuitechops/Canvas-wrapper.git",
         "chalk": "^2.1.0",
         "cp": "^0.2.0",
-        "d2l-course-downloader": "git+https://github.com/byuitechops/d2l-course-downloader.git",
+        "d2l-course-downloader": "git+https://github.com/byuitechops/d2l-course-downloader.git#semver:^1.0.0",
         "decompress": "^4.2.0",
         "eslint": "^4.6.1",
         "eslint-config-google": "^0.9.1",

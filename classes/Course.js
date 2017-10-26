@@ -159,6 +159,4 @@ module.exports = class Course {
             callback('Filename not found in course content.');
         }
     }
-
-    // Use cheerio to search by CSS selector as well
 };
