@@ -14,7 +14,7 @@ const agenda = require('./agenda.js');
 const preImport = require('./preImport/preImport.js');
 const importCourse = require('./importCourse/importCourse.js');
 const postImport = require('./postImport/postImport.js');*/
-const cleanUp = require('./cleanUp/cleanUp.js');
+const cleanUp = require('./stepModules/cleanUp.js');
 
 module.exports = (settings, finalCallback) => {
 

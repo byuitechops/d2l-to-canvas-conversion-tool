@@ -9,10 +9,11 @@ const agenda = require('../agenda.js');
 /* Our main function, called by main.js */
 module.exports = (course, mainCallback) => {
     course.addModuleReport('postImport');
-    var childModules = insertFunction(agenda.postImport, verify);
-    asyncLib.waterfall(
-        [asyncLib.constant(course), ...childModules],
-        (err, resultCourse) => {
+    var childModules = [
+        asyncLib.constant(course),
+        ...insertFunction(agenda.postImport, verify)
+    ];
+    asyncLib.waterfall(childModules, (err, resultCourse) => {
         if (err) {
             mainCallback(err, resultCourse);
         } else {

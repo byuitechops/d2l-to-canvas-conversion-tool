@@ -47,9 +47,9 @@ if (settings.useDownloader === true) {
 function startConversion(courses) {
     asyncLib.eachSeries(courses, conversion, (err, resultCourses) => {
         if (err) {
-            console.log(chalk.red('Error writing report to report.json'));
+            console.log(chalk.red('\nError writing report to report.json'));
         }
-        console.log(resultCourse);
+        console.log(resultCourses);
         console.log('\nFinal report written to report.json');
     })
 }
