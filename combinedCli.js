@@ -1,3 +1,6 @@
+/*eslint-env node, es6*/
+/*eslint no-console:0*/
+
 const downloader = require('d2l-course-downloader'),
     argv = require('yargs').argv,
     conversion = require('./main.js'),
@@ -32,18 +35,21 @@ if (settings.useDownloader === true) {
             if (zip.includes('.zip'))
                 return true;
         }).map((zip) => {
-            return {"settings": settings, "path": zip};
+            return {
+                "settings": settings,
+                "path": zip
+            };
         });
         startConversion(zips);
     });
 }
 
 function startConversion(courses) {
-    // conversion takes settings & final cb. how to add path...??
-    asyncLib.eachSeries(courses, conversion, (err, resultCourse) => {
+    asyncLib.eachSeries(courses, conversion, (err, resultCourses) => {
         if (err) {
             console.log(chalk.red('Error writing report to report.json'));
         }
+        console.log(resultCourse);
         console.log('\nFinal report written to report.json');
     })
 }
