@@ -3,17 +3,11 @@
 
 /* DEPENDENCIES */
 const async = require('async');
-const verify = require('./verify.js');
+const verify = require('course-object-verifier');
 const insertFunction = require('./insertFunction.js');
 const chalk = require('chalk');
 const fws = require('fixed-width-string');
 const agenda = require('./agenda.js');
-
-/* STEP MODULES */
-/*const prepare = require('./prepare/preparation.js');
-const preImport = require('./preImport/preImport.js');
-const importCourse = require('./importCourse/importCourse.js');
-const postImport = require('./postImport/postImport.js');*/
 const cleanUp = require('./stepModules/cleanUp.js');
 
 module.exports = (settings, finalCallback) => {

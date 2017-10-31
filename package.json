@@ -5,7 +5,10 @@
     "main": "main.js",
     "dependencies": {
         "async": "^2.5.0",
+        "canvas-wrapper": "github:byuitechops/Canvas-wrapper",
         "chalk": "^2.1.0",
+        "cheerio": "^1.0.0-rc.2",
+        "course-object-verifier": "github:byuitechops/course-object-verifier",
         "cp": "^0.2.0",
         "create-course": "github:byuitechops/create-course",
         "create-course-object": "github:byuitechops/create-course-object",

@@ -1,7 +1,7 @@
 /*eslint-env node, es6*/
 const asyncLib = require('async');
 const insertFunction = require('../insertFunction.js');
-const verify = require('../verify.js');
+const verify = require('course-object-verifier');
 const agenda = require('../agenda.js');
 
 module.exports = (course, mainCallback) => {

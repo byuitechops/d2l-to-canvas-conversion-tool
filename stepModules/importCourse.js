@@ -1,7 +1,7 @@
 // CHILD MODULES - Modules used by this module to complete its task
 const asyncLib = require('async');
 const insertFunction = require('../insertFunction.js');
-const verify = require('../verify.js');
+const verify = require('course-object-verifier');
 const agenda = require('../agenda.js');
 
 /* Require any dependencies here */
