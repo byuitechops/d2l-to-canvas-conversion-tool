@@ -1,7 +1,7 @@
 /*eslint-env node, es6*/
 /*eslint no-console:0*/
 
-const downloader = require('d2l-course-downloader'),
+const downloader = require('d2l-course-downloader').multiDownload,
     argv = require('yargs').argv,
     conversion = require('./main.js'),
     asyncLib = require('async'),

@@ -72,6 +72,8 @@ module.exports = (settings, finalCallback) => {
                     finalCourse.throwFatalErr('main', cleanUpErr);
                 }
                 finalCourse.success('cleanUp', 'Cleanup process complete');
+                console.log(finalCourse.getCount());
+                console.log(finalCourse.getCount());
                 finalReport(finalCourse);
                 finalCallback(null, finalCourse);
             });
