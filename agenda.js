@@ -13,7 +13,7 @@ const unzip = require('unzip');
 const indexDirectory = require('index-directory').conversionTool;
 
 /* PreImport */
-const quizFixOverlay = require('../quiz-fix-overlay/main.js');
+const quizFixOverlay = require('quiz-fix-overlay');
 const writeCourse = require('write-course');
 const zip = require('zip');
 
