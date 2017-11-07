@@ -25,7 +25,7 @@ module.exports = (settings, finalCallback) => {
     stepModules = insertFunction(stepModules, verify);
 
     function finalReport(courseObj) {
-
+        console.log(`New Canvas Course: https://byui.instructure.com/courses/${courseObj.info.canvasOU}`);
         console.log('\n' + chalk.bgBlue(' FINAL REPORT '));
 
         console.log(
