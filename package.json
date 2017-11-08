@@ -4,7 +4,7 @@
     "description": "This tool is used to help convert courses from D2L to Canvas",
     "main": "main.js",
     "dependencies": {
-        "async": "^2.5.0",
+        "async": "^2.6.0",
         "canvas-wrapper": "git+https://github.com/byuitechops/Canvas-wrapper.git",
         "chalk": "^2.3.0",
         "cheerio": "^1.0.0-rc.2",
