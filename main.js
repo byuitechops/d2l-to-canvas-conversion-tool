@@ -9,6 +9,7 @@ const chalk = require('chalk');
 const fws = require('fixed-width-string');
 const agenda = require('./agenda.js');
 const cleanUp = require('./stepModules/cleanUp.js');
+const fs = require('fs');
 
 module.exports = (settings, finalCallback) => {
 
@@ -44,6 +45,14 @@ module.exports = (settings, finalCallback) => {
                 fws(chalk.redBright(report.fatalErrs.length), 10, { align: 'right' }),
                 fws(chalk.greenBright(report.changes.length), 10, { align: 'right' })
             );
+        });
+
+        fs.writeFile(`./report${course.info.fileName.split('.zip')[0]}.json`, JSON.stringify(finalCourse.report), err => {
+            if (err){
+                console.log(chalk.red('Error writing report to report.json'));
+            } else {
+                console.log('\nFinal report written to report.json');
+            }
         });
     }
 
