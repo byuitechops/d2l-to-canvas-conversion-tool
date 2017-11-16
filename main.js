@@ -47,7 +47,7 @@ module.exports = (settings, finalCallback) => {
             );
         });
 
-        fs.writeFile(`./report${course.info.fileName.split('.zip')[0]}.json`, JSON.stringify(finalCourse.report), err => {
+        fs.writeFile(`./report${courseObj.info.fileName.split('.zip')[0]}.json`, JSON.stringify(courseObj.report), err => {
             if (err){
                 console.log(chalk.red('Error writing report to report.json'));
             } else {

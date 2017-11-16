@@ -14,6 +14,7 @@ const indexDirectory = require('index-directory').conversionTool;
 
 /* PreImport */
 const quizFixOverlay = require('quiz-fix-overlay');
+const cmFileStructure = require('cm-file-structure');
 const writeCourse = require('write-course');
 const zip = require('zip');
 
