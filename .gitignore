@@ -1,4 +1,7 @@
 *.json
+**/auth.json
+!package-lock.json
+!package.json
 node_modules/
 D2LReady/*
 D2LProcessing/*
@@ -6,3 +9,4 @@ D2LProcessed/*
 D2LOriginal/*
 TestFile 101.zip
 zachSandbox/
+courses.csv
