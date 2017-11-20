@@ -25,6 +25,7 @@
         "mkdirp": "^0.5.1",
         "prompt": "^1.0.0",
         "quiz-fix-overlay": "git+https://github.com/byuitechops/quiz-fix-overlay.git",
+        "quiz-rel-cleaner": "git+https://github.com/byuitechops/quiz-rel-cleaner.git",
         "remove-files": "git+https://github.com/byuitechops/remove-files.git",
         "request": "^2.81.0",
         "rimraf": "^2.6.2",
