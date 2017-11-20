@@ -13,9 +13,13 @@ const unzip = require('unzip');
 const indexDirectory = require('index-directory').conversionTool;
 
 /* PreImport */
+<<<<<<< HEAD
 const quizFixOverlay = require('quiz-fix-overlay');
 const cmFileStructure = require('cm-file-structure');
+=======
+>>>>>>> 33547481b6df8a2875f2637b8eed172c0599d716
 const writeCourse = require('write-course');
+const quizRelCleaner = require('quiz-rel-cleaner');
 const zip = require('zip');
 
 /* ImportCourse */
@@ -24,6 +28,7 @@ const uploadCourse = require('upload-course');
 const getMigrationIssues = require('get-migration-issues');
 
 /* PostImport */
+const quizFixOverlay = require('quiz-fix-overlay');
 const setSyllabus = require('set-syllabus');
 const removeDuplicates = require('file-delete');
 
@@ -45,6 +50,7 @@ exports.prepare = [
 ];
 exports.preImport = [
     writeCourse, // Writes the course object into actual files to be zipped and imported into Canvas
+    quizRelCleaner, // removes rogue rel attributes that break API calls to canvas quiz questions
     zip // Zips the course
 ];
 exports.importCourse = [
