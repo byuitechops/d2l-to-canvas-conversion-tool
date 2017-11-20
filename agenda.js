@@ -13,8 +13,8 @@ const unzip = require('unzip');
 const indexDirectory = require('index-directory').conversionTool;
 
 /* PreImport */
-const writeCourse = require('write-course');
 const quizRelCleaner = require('quiz-rel-cleaner');
+const writeCourse = require('write-course');
 const zip = require('zip');
 
 /* ImportCourse */
@@ -44,8 +44,8 @@ exports.prepare = [
     indexDirectory // Indexes the entire course into a JSON object, added to the course object
 ];
 exports.preImport = [
-    writeCourse, // Writes the course object into actual files to be zipped and imported into Canvas
     quizRelCleaner, // removes rogue rel attributes that break API calls to canvas quiz questions
+    writeCourse, // Writes the course object into actual files to be zipped and imported into Canvas
     zip // Zips the course
 ];
 exports.importCourse = [
