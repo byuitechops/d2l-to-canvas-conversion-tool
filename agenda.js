@@ -13,11 +13,8 @@ const unzip = require('unzip');
 const indexDirectory = require('index-directory').conversionTool;
 
 /* PreImport */
-<<<<<<< HEAD
 const quizFixOverlay = require('quiz-fix-overlay');
 const cmFileStructure = require('cm-file-structure');
-=======
->>>>>>> 33547481b6df8a2875f2637b8eed172c0599d716
 const writeCourse = require('write-course');
 const quizRelCleaner = require('quiz-rel-cleaner');
 const zip = require('zip');
