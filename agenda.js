@@ -13,7 +13,6 @@ const unzip = require('unzip');
 const indexDirectory = require('index-directory').conversionTool;
 
 /* PreImport */
-const cmFileStructure = require('cm-file-structure');
 const quizRelCleaner = require('quiz-rel-cleaner');
 const writeCourse = require('write-course');
 const zip = require('zip');
@@ -26,11 +25,25 @@ const getMigrationIssues = require('get-migration-issues');
 /* PostImport */
 const quizFixOverlay = require('quiz-fix-overlay');
 const setSyllabus = require('set-syllabus');
-const removeDuplicates = require('file-delete');
 
 /* CleanUp */
 const removeFiles = require('remove-files');
 const deleteCourse = require('delete-course');
+
+exports.setChildModules = (list) => {
+    list.forEach(item => {
+        var { childType } = require(`./node_modules/${item}/package.json`);
+        if (childType === 'preImport') {
+            exports.preImport.push(require(item));
+        } else if (childType === 'postImport') {
+            exports.postImport.push(require(item));
+        }
+    });
+    /* Guarantee these run last */
+    exports.preImport.push(writeCourse);
+    exports.preImport.push(zip);
+};
+
 
 exports.main = [
     prepare, // Prepares the course for editing
@@ -44,21 +57,21 @@ exports.prepare = [
     unzip, // Unzips the downloaded course into a new folder
     indexDirectory // Indexes the entire course into a JSON object, added to the course object
 ];
+
 exports.preImport = [
-    quizRelCleaner, // removes rogue rel attributes that break API calls to canvas quiz questions
-    writeCourse, // Writes the course object into actual files to be zipped and imported into Canvas
-    zip // Zips the course
+    quizRelCleaner
 ];
+
 exports.importCourse = [
     createCourse, // Creates the course in Canvas
     uploadCourse, // Uploads our zipped course into our new Canvas Course
     getMigrationIssues // Retrieves any issues that occurred during upload
 ];
+
 exports.postImport = [
-   quizFixOverlay,
-    setSyllabus, // Finds the syllabus Page, deletes it, and puts its content into the Syllabus tool
-    removeDuplicates // Removes duplicate html files where we already have a page
+    quizFixOverlay
 ];
+
 exports.cleanUp = [
     removeFiles, // Removes files generated during the process
     deleteCourse // Deletes the course from Canvas (used in testing)

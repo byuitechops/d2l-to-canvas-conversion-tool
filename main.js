@@ -11,7 +11,9 @@ const agenda = require('./agenda.js');
 const cleanUp = require('./stepModules/cleanUp.js');
 const fs = require('fs');
 
-module.exports = (settings, finalCallback) => {
+module.exports = (courseData, finalCallback) => {
+
+    agenda.setChildModules(courseData.childModules);
 
     /* STEP MODULES ARRAY */
     /* This array is where each step module's function is stored
@@ -19,7 +21,7 @@ module.exports = (settings, finalCallback) => {
     a main step in the process of converting a course.*/
 
     var stepModules = [
-      async.constant(settings.path, settings.settings),
+      async.constant(courseData.path, courseData.settings),
       ...agenda.main
     ];
 

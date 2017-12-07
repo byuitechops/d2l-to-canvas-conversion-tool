@@ -1,50 +1,87 @@
-#! /usr/bin/env node
 /*eslint-env node, es6*/
 /*eslint no-console:0*/
 
-const main = require('./main');
-const chalk = require('chalk');
-const fws = require('fixed-width-string');
-const fs = require('fs');
-const argv = require('yargs').argv;
+const prompt = require('prompt');
 
+const downloader = require('d2l-course-downloader'),
+    argv = require('yargs').argv,
+    conversion = require('./main.js'),
+    asyncLib = require('async'),
+    chalk = require('chalk'),
+    path = require('path'),
+    fs = require('fs');
 
 var settings = {
     'debug': argv.d || argv.D || argv.debug ? argv.d : false,
     'readAll': argv.a || argv.A || argv.all ? argv.a : false,
     'online': argv.o || argv.O || argv.online ? true : false,
     'keepFiles': argv.k || argv.K || argv.keep ? true : false,
-    'deleteCourse': argv.x || argv.X || argv.delete ? true : false
+    'deleteCourse': argv.x || argv.X || argv.delete ? true : false,
+    'useDownloader': argv.e || argv.E || argv.existing ? false : true
 };
 
-main(settings, (err, finalCourse) => {
-    if (err) {
-        console.log(err);
-    }
-    console.log(chalk.blueBright('Final Report'));
-    console.log(
-        fws(chalk.cyan('MODULE'), 13, { align: 'right' }),
-        fws(chalk.red('ERRORS'), 13, { align: 'right' }),
-        fws(chalk.red('FATALERRORS'), 13, { align: 'right' }),
-        fws(chalk.green('SUCCESSES'), 13, { align: 'right' })
-    );
-    finalCourse.report.forEach((ReportModule) => {
-        console.log(
-            fws(chalk.red(ReportModule), 13, { align: 'right' }),
-            fws(chalk.red('ERRORS'), 13, { align: 'right' }),
-            fws(chalk.red('FATALERRORS'), 13, { align: 'right' }),
-            fws(chalk.green('SUCCESSES'), 13, { align: 'right' })
-        );
-      // console.log(chalk.yellowBright(`\nModule Report: ${chalk.yellow(ReportModule.name)}\n`));
-      // console.log(fws(`Errors`, 20, {padding: '.'}) + chalk.red(ReportModule.errors.length));
-      // console.log(fws(`Fatal Errors`, 20, {padding: '.'}) + chalk.red(ReportModule.fatalErrs.length));
-      // console.log(fws(`Successes`, 20, {padding: '.'}) + chalk.greenBright(ReportModule.changes.length));
-    });
-    fs.writeFile('./report.json', JSON.stringify(finalCourse.report), err => {
-        if (err){
-            console.log(chalk.red('Error writing report to report.json'));
-        } else {
+/* Any child modules listed here will run when conversion is ran through the CLI */
+var childModules = [
+    'files-find-used-content',
+    'cm-file-structure',
+    'set-syllabus',
+    'ilearn-3-references'
+];
+
+var getOU = [{
+    name: 'ous',
+    type: 'string',
+    description: chalk.cyanBright('Enter the OU(s) you want to convert:'),
+    required: true,
+    message: 'OU(s) cannot be empty.'
+}];
+
+prompt.get(getOU, (err, result) => {
+    var userData = {
+        ous: [result.ous],
+        downloadLocation: './D2LOriginal',
+    };
+
+    function startConversion(courses) {
+        courses.forEach((course, index) => {
+            course.childModules = childModules;
+        });
+        asyncLib.eachSeries(courses, conversion, (err, resultCourses) => {
+            if (err) {
+                console.log(chalk.red('\nError writing report to report.json'));
+            }
+            console.log(resultCourses);
             console.log('\nFinal report written to report.json');
-        }
-    });
+        })
+    }
+
+    if (settings.useDownloader === true) {
+        downloader(userData, (downloadError, downloaderResults) => {
+            if (downloadError) console.error(downloadError);
+            else {
+                /* Convert list of results to a list of paths */
+                var courses = downloaderResults.map((downloaderResult) => {
+                    return {
+                        "settings": settings,
+                        "path": downloaderResult.name
+                    };
+                });
+                startConversion(courses);
+            }
+        });
+    } else {
+        fs.readdir(path.resolve('.', 'D2LOriginal/'), (err, dirContents) => {
+            var zips = dirContents.filter((zip) => {
+                if (zip.includes('.zip'))
+                    return true;
+            }).map((zip) => {
+                return {
+                    "settings": settings,
+                    "path": zip
+                };
+            });
+            startConversion(zips);
+        });
+    }
+
 });

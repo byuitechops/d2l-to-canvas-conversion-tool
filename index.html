@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <meta name="viewport" charset="utf-8" http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Conversion Tool</title>
+    <link rel="stylesheet" href="./userInterface/material.min.css">
+    <script src="./userInterface/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./userInterface/style.css">
+</head>
+
+<body>
+    <div id="splash">Loading ...</div>
+    <div class="main-container">
+        <div class="col" id="side-bar">
+            <div class="info-container">
+                <div class="header">Brightspace Login</div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label class="mdl-textfield__label" for="username">Username</label>
+                    <input class="mdl-textfield__input" id="username" type="text">
+                </div>
+                <br>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label class="mdl-textfield__label" for="password">Password</label>
+                    <input class="mdl-textfield__input" id="password" type="password">
+                </div>
+            </div>
+
+            <h2>Settings</h2>
+            <div id="settings">
+                <!-- DEBUGMODE -->
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="debug">
+                    <input type="checkbox" id="debug" class="mdl-switch__input" checked>
+                    <span class="mdl-switch__label">Debug Mode</span>
+                </label>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="online">
+                    <input type="checkbox" id="online" class="mdl-switch__input">
+                    <span class="mdl-switch__label">Pathway Course</span>
+                </label>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="keepFiles">
+                    <input type="checkbox" id="keepFiles" class="mdl-switch__input">
+                    <span class="mdl-switch__label">Keep Files</span>
+                </label>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="deleteCourse">
+                    <input type="checkbox" id="deleteCourse" class="mdl-switch__input">
+                    <span class="mdl-switch__label">Delete course</span>
+                </label>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="useDownloader">
+                    <input type="checkbox" id="useDownloader" class="mdl-switch__input" checked>
+                    <span class="mdl-switch__label">Use Downloader</span>
+                </label>
+            </div>
+
+            <!-- READ ALL -->
+            <input style="display:none" class="check" id="readAll" type="checkbox">
+            <label style="display:none" for="readAll">Read All</label>
+
+            <div class="flex-container">
+                <button class="action-btn mdl-button mdl-button--colored mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="startButton" type="button" onclick="runConversion()" disabled>Run Orders</button>
+            </div>
+            <div class="flex-container">
+                <button class="action-btn mdl-button mdl-button--accent mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="sheetButton" type="button" onclick="openSheet('https://docs.google.com/spreadsheets/d/1HSe45VhyXbLLdmYyLWF2tlZXKk6BQFFJ8g3kZtPUvwE/edit#gid=96971044')">Order Sheet</button>
+            </div>
+            <div class="flex-container">
+                <button class="action-btn mdl-button mdl-button--accent mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="orderButton" type="button" onclick="openSheet('https://docs.google.com/forms/d/e/1FAIpQLSc6V5ePh1qfGeFjNwUfVR7u9poXNhItP5e5FkVtZmlqxqIBBw/viewform')">Order Form</button>
+            </div>
+        </div>
+        <div class="process-container">
+
+            <h2>Current Orders</h2>
+            <div class="order-container">
+                <table id="table" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                    <tr id="headers"></tr>
+                </table>
+                <div id="loading"><div class="mdl-spinner mdl-js-spinner is-active"></div></div>
+            </div>
+
+
+        </div>
+
+        <div id="output">
+            <div onclick="openClose()" class="openClose"><i class="material-icons">keyboard_arrow_left</i></div>
+            <h4>Console Output</h4>
+        </div>
+
+    </div>
+
+    <script src="./userInterface/uiInterface.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+label::after {
+    content: "";
+    display: block;
+    margin: 10px 0 0;
+}
+
+table, th, td {
+    padding: 5px 10px;
+    border-collapse: collapse;
+    text-align: center !important;
+}
+
+th {
+    font-size: 14px;
+}
+
+td {
+    min-width: 140px;
+    color: #444;
+}
+
+#sheetButton {
+    background-color: #009375;
+}
+
+#orderButton {
+    background-color: #8342f4 ;
+}
+
+#side-bar {
+    background-color: rgb(96, 125, 139);
+    color: white;
+    height: calc(100% - 80px);
+    padding: 40px 40px;
+    width: 260px;
+}
+
+#settings {
+    margin-bottom: 24px;
+}
+
+#settings>label {
+    margin-bottom: 10px;
+}
+
+#output {
+    background-color: white;
+    box-shadow: 0px 2px 3px -1px #444;
+    height: 100vh;
+    max-height: 100vh;
+    padding: 0 40px;
+    font-family: "Lucida Console", Monaco, Monospace;
+    position: absolute;
+    top: 0;
+    right: -760px;
+    width: 700px;
+    overflow-y: auto;
+}
+
+#splash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(96, 125, 139);
+    text-align: center;
+    line-height: 100vh;
+    z-index: 100;
+    font-size: 36px;
+    color: white;
+}
+
+.main-container, .flex-container {
+    display: flex;
+}
+
+.flex-container {
+    /* justify-content: center; */
+}
+
+.action-btn {
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+.info-container {
+    background-color: white;
+    padding: 20px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.header {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.process-container {
+    background-color: #FAFAFA;
+    width: 100%;
+    padding: 0 40px;
+    overflow-x: auto;
+}
+
+.openClose {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 20px;
+    cursor: pointer;
+    background-color: rgb(96, 125, 139);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.openClose:hover {
+    background-color: rgba(96, 125, 139, .85);
+}
+
+.openClose>i {
+    padding-top:48vh;
+}

@@ -2,12 +2,13 @@
     "name": "d2l-canvas-conversion",
     "version": "1.0.0",
     "description": "This tool is used to help convert courses from D2L to Canvas",
-    "main": "main.js",
+    "main": "userInterface/ui.js",
     "dependencies": {
         "async": "^2.6.0",
         "canvas-wrapper": "git+https://github.com/byuitechops/Canvas-wrapper.git",
         "chalk": "^2.3.0",
         "cheerio": "^1.0.0-rc.2",
+        "cm-file-structure": "git+https://github.com/byuitechops/cm-file-structure.git",
         "course-object-verifier": "git+https://github.com/byuitechops/course-object-verifier.git",
         "cp": "^0.2.0",
         "create-course": "git+https://github.com/byuitechops/create-course.git",
@@ -15,14 +16,18 @@
         "d2l-course-downloader": "git+https://github.com/byuitechops/d2l-course-downloader.git",
         "decompress": "^4.2.0",
         "delete-course": "git+https://github.com/byuitechops/delete-course.git",
-        "eslint": "^4.11.0",
+        "electron": "^1.8.1",
+        "eslint": "^4.12.1",
         "eslint-config-google": "^0.9.1",
-        "file-delete": "github:byuitechops/canvas-pagesandfiles",
+        "files-find-used-content": "github:byuitechops/files-find-used-content",
         "fixed-width-string": "^1.0.0",
         "get-migration-issues": "git+https://github.com/byuitechops/get-migration-issues.git",
+        "https": "^1.0.0",
+        "ilearn-3-references": "github:byuitechops/ilearn-3-references",
         "index-directory": "git+https://github.com/byuitechops/index-directory.git",
         "lodash": "^4.17.4",
         "mkdirp": "^0.5.1",
+        "module-headings": "git+https://github.com/byuitechops/module-headings.git",
         "prompt": "^1.0.0",
         "quiz-fix-overlay": "git+https://github.com/byuitechops/quiz-fix-overlay.git",
         "quiz-rel-cleaner": "git+https://github.com/byuitechops/quiz-rel-cleaner.git",
@@ -42,6 +47,7 @@
     },
     "devDependencies": {},
     "scripts": {
+        "start": "./node_modules/.bin/electron .",
         "test": "tap tests/*.js --cov"
     },
     "repository": {
@@ -51,7 +57,7 @@
     "author": "Zachary Williams & Daniel Green",
     "license": "MIT",
     "bin": {
-        "d2c": "./CLI.js"
+        "d2c": "./node_modules/.bin/electron ."
     },
     "bugs": {
         "url": "https://github.com/byuitechops/d2l-to-canvas-conversion-tool/issues"
