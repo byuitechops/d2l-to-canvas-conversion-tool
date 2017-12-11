@@ -9,6 +9,7 @@
         "chalk": "^2.3.0",
         "cheerio": "^1.0.0-rc.2",
         "cm-file-structure": "git+https://github.com/byuitechops/cm-file-structure.git",
+        "course-file-videos": "github:byuitechops/course-file-videos",
         "course-object-verifier": "git+https://github.com/byuitechops/course-object-verifier.git",
         "cp": "^0.2.0",
         "create-course": "git+https://github.com/byuitechops/create-course.git",
@@ -17,7 +18,7 @@
         "decompress": "^4.2.0",
         "delete-course": "git+https://github.com/byuitechops/delete-course.git",
         "electron": "^1.8.1",
-        "eslint": "^4.12.1",
+        "eslint": "^4.13.0",
         "eslint-config-google": "^0.9.1",
         "files-find-used-content": "github:byuitechops/files-find-used-content",
         "fixed-width-string": "^1.0.0",
@@ -57,7 +58,8 @@
     "author": "Zachary Williams & Daniel Green",
     "license": "MIT",
     "bin": {
-        "d2c": "./node_modules/.bin/electron ."
+        "conversion": "./node_modules/.bin/electron .",
+        "d2c": "./CLI.js"
     },
     "bugs": {
         "url": "https://github.com/byuitechops/d2l-to-canvas-conversion-tool/issues"

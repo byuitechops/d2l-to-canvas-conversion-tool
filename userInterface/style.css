@@ -37,7 +37,7 @@ td {
 #side-bar {
     background-color: rgb(96, 125, 139);
     color: white;
-    height: calc(100% - 80px);
+    min-height: calc(100% - 80px);
     padding: 40px 40px;
     width: 260px;
 }
@@ -46,7 +46,7 @@ td {
     margin-bottom: 24px;
 }
 
-#settings>label {
+#settings>label, .child-mods-container>label {
     margin-bottom: 10px;
 }
 
@@ -57,7 +57,7 @@ td {
     max-height: 100vh;
     padding: 0 40px;
     font-family: "Lucida Console", Monaco, Monospace;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: -760px;
     width: 700px;
@@ -76,6 +76,19 @@ td {
     z-index: 100;
     font-size: 36px;
     color: white;
+}
+
+#course-link>a {
+    color: blue;
+    cursor: pointer;
+}
+
+#course-link>a:hover {
+    color: navy;
+}
+
+.material-icons.blue {
+    color: #0076c6;
 }
 
 .main-container, .flex-container {
@@ -115,7 +128,7 @@ td {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 20px;
     cursor: pointer;
     background-color: rgb(96, 125, 139);

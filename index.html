@@ -26,8 +26,18 @@
                 </div>
             </div>
 
-            <h2>Settings</h2>
+            <h3>Settings</h3>
             <div id="settings">
+                <div class="flex-container">
+                    <button class="action-btn mdl-button mdl-button--colored mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="startButton" type="button" onclick="runConversion()" disabled>Run Orders</button>
+                </div>
+                <div class="flex-container">
+                    <button class="action-btn mdl-button mdl-button--accent mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="sheetButton" type="button" onclick="openSheet('https://docs.google.com/spreadsheets/d/1HSe45VhyXbLLdmYyLWF2tlZXKk6BQFFJ8g3kZtPUvwE/edit#gid=96971044')">Order Sheet</button>
+                </div>
+                <div class="flex-container">
+                    <button class="action-btn mdl-button mdl-button--accent mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="orderButton" type="button" onclick="openSheet('https://docs.google.com/forms/d/e/1FAIpQLSc6V5ePh1qfGeFjNwUfVR7u9poXNhItP5e5FkVtZmlqxqIBBw/viewform')">Order Form</button>
+                </div>
+                <br>
                 <!-- DEBUGMODE -->
                 <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="debug">
                     <input type="checkbox" id="debug" class="mdl-switch__input" checked>
@@ -55,14 +65,34 @@
             <input style="display:none" class="check" id="readAll" type="checkbox">
             <label style="display:none" for="readAll">Read All</label>
 
-            <div class="flex-container">
-                <button class="action-btn mdl-button mdl-button--colored mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="startButton" type="button" onclick="runConversion()" disabled>Run Orders</button>
+            <div class="info-container">
+                <div class="header">Convert a Course</div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label class="mdl-textfield__label" for="courseOU">Course OU</label>
+                    <input class="mdl-textfield__input" id="courseOU" type="text">
+                </div>
             </div>
             <div class="flex-container">
-                <button class="action-btn mdl-button mdl-button--accent mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="sheetButton" type="button" onclick="openSheet('https://docs.google.com/spreadsheets/d/1HSe45VhyXbLLdmYyLWF2tlZXKk6BQFFJ8g3kZtPUvwE/edit#gid=96971044')">Order Sheet</button>
+                <button class="action-btn mdl-button mdl-button--colored mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="runCourse" type="button" onclick="runSingleConversion()" disabled>Convert Course</button>
             </div>
-            <div class="flex-container">
-                <button class="action-btn mdl-button mdl-button--accent mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="orderButton" type="button" onclick="openSheet('https://docs.google.com/forms/d/e/1FAIpQLSc6V5ePh1qfGeFjNwUfVR7u9poXNhItP5e5FkVtZmlqxqIBBw/viewform')">Order Form</button>
+            <h3>Child Modules</h3>
+            <div class="child-mods-container">
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="files-find-used-content">
+                    <input type="checkbox" id="files-find-used-content" class="mdl-switch__input" checked>
+                    <span class="mdl-switch__label">Find Used Content</span>
+                </label>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="cm-file-structure">
+                    <input type="checkbox" id="cm-file-structure" class="mdl-switch__input" checked>
+                    <span class="mdl-switch__label">File Structure</span>
+                </label>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="set-syllabus">
+                    <input type="checkbox" id="set-syllabus" class="mdl-switch__input" checked>
+                    <span class="mdl-switch__label">Set Syllabus</span>
+                </label>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="ilearn-3-references">
+                    <input type="checkbox" id="ilearn-3-references" class="mdl-switch__input" checked>
+                    <span class="mdl-switch__label">I-learn 3 References</span>
+                </label>
             </div>
         </div>
         <div class="process-container">
@@ -75,7 +105,25 @@
                 <div id="loading"><div class="mdl-spinner mdl-js-spinner is-active"></div></div>
             </div>
 
+            <div class="progress-container">
+                <h5>Preparation</h5>
+                <div id="preparing" class="mdl-spinner mdl-js-spinner mdl-spinner--single-color"></div>
 
+                <h5>Pre-Import Modules</h5>
+                <div id="pre-import" class="mdl-spinner mdl-js-spinner mdl-spinner--single-color"></div>
+
+                <h5>Import Progress</h5>
+                <div id="importing" class="mdl-spinner mdl-js-spinner mdl-spinner--single-color"></div>
+
+                <h5>Post-Import Modules</h5>
+                <div id="post-import" class="mdl-spinner mdl-js-spinner mdl-spinner--single-color"></div>
+
+                <h5>Cleanup</h5>
+                <div id="cleanup" class="mdl-spinner mdl-js-spinner mdl-spinner--single-color"></div>
+
+                <br><br>
+                <div id="course-link"></div>
+            </div>
         </div>
 
         <div id="output">
