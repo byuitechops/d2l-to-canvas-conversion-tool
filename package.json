@@ -9,7 +9,10 @@
         "chalk": "^2.3.0",
         "cheerio": "^1.0.0-rc.2",
         "cm-file-structure": "git+https://github.com/byuitechops/cm-file-structure.git",
+<<<<<<< HEAD
         "course-file-videos": "github:byuitechops/course-file-videos",
+=======
+>>>>>>> 550ac21c5d5bd1b97bb5b7d3c5b32b5ba1e69fae
         "course-object-verifier": "git+https://github.com/byuitechops/course-object-verifier.git",
         "cp": "^0.2.0",
         "create-course": "git+https://github.com/byuitechops/create-course.git",
