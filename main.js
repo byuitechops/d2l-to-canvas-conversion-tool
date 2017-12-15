@@ -14,6 +14,8 @@ const fs = require('fs');
 module.exports = (courseData, finalCallback) => {
 
     agenda.setChildModules(courseData.childModules);
+    courseData.settings.D2LOU = courseData.D2LOU;
+    console.log(courseData);
 
     /* STEP MODULES ARRAY */
     /* This array is where each step module's function is stored
@@ -21,7 +23,7 @@ module.exports = (courseData, finalCallback) => {
     a main step in the process of converting a course.*/
 
     var stepModules = [
-      async.constant(courseData.path, courseData.settings),
+      async.constant(courseData),
       ...agenda.main
     ];
 
@@ -40,13 +42,15 @@ module.exports = (courseData, finalCallback) => {
         );
 
         courseObj.report.forEach(report => {
-            console.log(
-                fws(chalk.cyan(report.name), 13),
-                fws(chalk.yellow(report.warnings.length), 10, { align: 'right' }),
-                fws(chalk.red(report.errors.length), 10, { align: 'right' }),
-                fws(chalk.redBright(report.fatalErrs.length), 10, { align: 'right' }),
-                fws(chalk.greenBright(report.changes.length), 10, { align: 'right' })
-            );
+            if (report) {
+                console.log(
+                    fws(chalk.cyan(report.name), 13),
+                    fws(chalk.yellow(report.warnings.length), 10, { align: 'right' }),
+                    fws(chalk.red(report.errors.length), 10, { align: 'right' }),
+                    fws(chalk.redBright(report.fatalErrs.length), 10, { align: 'right' }),
+                    fws(chalk.greenBright(report.changes.length), 10, { align: 'right' })
+                );
+            }
         });
 
         fs.writeFile(`./report${courseObj.info.fileName.split('.zip')[0]}.json`, JSON.stringify(courseObj.report), err => {
@@ -69,7 +73,7 @@ module.exports = (courseData, finalCallback) => {
             }
             console.error('The program crashed because of an error. Have a good day! :D');
             /* let deleteCourse know it needs to remove the course*/
-            resultCourse.settings.deleteCourse = true;
+            // resultCourse.settings.deleteCourse = true;
             cleanUp(resultCourse, (cleanUpErr, finalCourse) => {
                 if (cleanUpErr) {
                     finalCourse.throwFatalErr('main', cleanUpErr);

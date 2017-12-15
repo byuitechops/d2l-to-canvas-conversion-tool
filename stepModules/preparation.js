@@ -6,10 +6,10 @@ const asyncLib = require('async'),
     verify = require('course-object-verifier');
 
 /* Our main function, called by main.js*/
-module.exports = (filePath, settings, mainCallback) => {
+module.exports = (courseData, mainCallback) => {
     /* List child modules in order of of operation */
     var childModules = [
-        asyncLib.constant(filePath, settings),
+        asyncLib.constant(courseData),
         ...insertFunction(agenda.prepare, verify)
     ];
     asyncLib.waterfall(childModules, (err, resultCourse) => {

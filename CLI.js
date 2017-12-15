@@ -22,10 +22,10 @@ var settings = {
 
 /* Any child modules listed here will run when conversion is ran through the CLI */
 var childModules = [
-    'files-find-used-content',
-    'cm-file-structure',
+    'reorganize-file-structure',
     'set-syllabus',
-    'ilearn-3-references'
+    'ilearn-3-references',
+    'module-publish-settings'
 ];
 
 var getOU = [{
@@ -46,12 +46,12 @@ prompt.get(getOU, (err, result) => {
         courses.forEach((course, index) => {
             course.childModules = childModules;
         });
+        console.log(courses);
         asyncLib.eachSeries(courses, conversion, (err, resultCourses) => {
             if (err) {
                 console.log(chalk.red('\nError writing report to report.json'));
             }
             console.log(resultCourses);
-            console.log('\nFinal report written to report.json');
         })
     }
 
@@ -63,7 +63,8 @@ prompt.get(getOU, (err, result) => {
                 var courses = downloaderResults.map((downloaderResult) => {
                     return {
                         "settings": settings,
-                        "path": downloaderResult.name
+                        "path": downloaderResult.name,
+                        "D2LOU": downloaderResult.ou
                     };
                 });
                 startConversion(courses);
