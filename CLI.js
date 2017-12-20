@@ -25,7 +25,11 @@ var childModules = [
     'reorganize-file-structure',
     'set-syllabus',
     'ilearn-3-references',
-    'module-publish-settings'
+    'module-publish-settings',
+    'create-homepage',
+    'set-navigation-tabs',
+    'target-attribute',
+    'web-features-update'
 ];
 
 var getOU = [{
@@ -46,13 +50,11 @@ prompt.get(getOU, (err, result) => {
         courses.forEach((course, index) => {
             course.childModules = childModules;
         });
-        console.log(courses);
         asyncLib.eachSeries(courses, conversion, (err, resultCourses) => {
             if (err) {
                 console.log(chalk.red('\nError writing report to report.json'));
             }
-            console.log(resultCourses);
-        })
+        });
     }
 
     if (settings.useDownloader === true) {

@@ -122,83 +122,13 @@ var template = `<!DOCTYPE html>
                 This list contains information about different changes made to your course.
             </div>
 
-            <ul class="collapsible" data-collapsible="expandable">
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">folder_open</i>Unused Files</div>
-                    <div class="collapsible-body">
-                        <div class="description">
-                            Here is a list of unused files that are currently in your course. They are saved inside the course, but nothing else in the course links to them.
-                        </div>
-                        <div class="data-list">
-                            <ul class="collection">
-                                <li class="collection-item">potato.html</li>
-                                <li class="collection-item">tomato.html</li>
-                                <li class="collection-item">ben.css</li>
-                                <li class="collection-item">daniel.js</li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">forum</i>Deleted Discussion Boards</div>
-                    <div class="collapsible-body">
-                        <div class="description">
-                            These discussion boards have been removed from the Canvas course, since they are no longer needed.
-                        </div>
-                        <div class="data-list">
-                            <ul class="collection">
-                                <li class="collection-item">Questions and Conversations</li>
-                                <li class="collection-item">Questions and Conversations</li>
-                                <li class="collection-item">Questions and Conversations</li>
-                                <li class="collection-item">Questions and Conversations</li>
-                                <li class="collection-item">Questions and Conversations</li>
-                                <li class="collection-item">Questions and Conversations</li>
-                                <li class="collection-item">Questions and Conversations</li>
-                                <li class="collection-item">Questions and Conversations</li>
-                                <li class="collection-item">Questions and Conversations</li>
-                                <li class="collection-item">Questions and Conversations</li>
-                                <li class="collection-item">Questions and Conversations</li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">forum</i>Reorganized File Structure</div>
-                    <div class="collapsible-body">
-                        <div class="description">
-                            We reorganized your file structure for you, cleaning it up as best we could. You can now find all of your course files inside of four different folders. Here's what they are and what they hold:
-                        </div>
-                        <div class="data-list">
-                            <ul class="collection">
-                                <li class="collection-item avatar">
-                                    <i class="material-icons circle teal">folder_shared</i>
-                                    <span class="title">documents</span>
-                                    <p>All document-type files, such as word documents, excel sheets, PDFs, and CSVs.</p>
-                                </li>
-                                <li class="collection-item avatar">
-                                    <i class="material-icons circle blue">perm_media</i>
-                                    <span class="title">media</span>
-                                    <p>This now contains all your images, powerpoints, videos, and similar files.</p>
-                                </li>
-                                <li class="collection-item avatar">
-                                    <i class="material-icons circle red">folder_open</i>
-                                    <span class="title">template</span>
-                                    <p>Files meant for styling the course, or used in template by the course are stored here. This may not apply to campus courses.</p>
-                                </li>
-                                <li class="collection-item avatar">
-                                    <i class="material-icons circle">folder</i>
-                                    <span class="title">archive</span>
-                                    <p>Anything that doesn't fit in the three folders above lands here. You may want to check this folder for any files. You might see some HTML files in there, but they should be ones not used by the course.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
+            <ul id="report-sections" class="collapsible" data-collapsible="expandable">
+
             </ul>
         </div>
     </div>
 
-    <div id="report-container">
+    <!--<div id="report-container">
         <div id="report-blocks">
             <div class="header">Report</div>
             <div class="description">
@@ -221,7 +151,7 @@ var template = `<!DOCTYPE html>
             </ul>
 
         </div>
-    </div>
+    </div>-->
 </body>
 
 </html>

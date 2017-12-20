@@ -15,8 +15,6 @@ module.exports = (courseData, finalCallback) => {
 
     agenda.setChildModules(courseData.childModules);
     courseData.settings.D2LOU = courseData.D2LOU;
-    console.log(courseData);
-
     /* STEP MODULES ARRAY */
     /* This array is where each step module's function is stored
     for the async waterfall below. Each of these functions contains
