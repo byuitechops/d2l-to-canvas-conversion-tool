@@ -22,14 +22,14 @@ var settings = {
 
 /* Any child modules listed here will run when conversion is ran through the CLI */
 var childModules = [
-    'reorganize-file-structure',
+    // 'reorganize-file-structure',
     'set-syllabus',
     'ilearn-3-references',
-    'module-publish-settings',
+    // 'module-publish-settings',
     'create-homepage',
     'set-navigation-tabs',
     'target-attribute',
-    'web-features-update'
+    // 'web-features-update'
 ];
 
 var getOU = [{

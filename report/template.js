@@ -93,6 +93,14 @@ var template = `<!DOCTYPE html>
         .description {
             margin-bottom: 20px;
         }
+
+        .collapsible-header {
+            transition: all .1s ease-in-out;
+        }
+
+        .collapsible-header:hover {
+            background-color: #eee;
+        }
     </style>
 </head>
 
@@ -117,41 +125,18 @@ var template = `<!DOCTYPE html>
     <div id="info-container">
 
         <div id="info-blocks">
-            <div class="header">Information</div>
+            <div class="header">Changes</div>
             <div class="description">
-                This list contains information about different changes made to your course.
+                Here are all the changes and fixes we made to your course.
             </div>
 
             <ul id="report-sections" class="collapsible" data-collapsible="expandable">
 
             </ul>
         </div>
+
     </div>
 
-    <!--<div id="report-container">
-        <div id="report-blocks">
-            <div class="header">Report</div>
-            <div class="description">
-                We've added this section more for the development team's use, but it is available to you if you need it.
-            </div>
-
-            <ul class="collapsible" data-collapsible="expandable">
-                <li>
-                    <div class="collapsible-header red-text"><i class="material-icons">filter_drama</i>Errors</div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-                <li>
-                    <div class="collapsible-header yellow-text orange-text accent-4"><i class="material-icons">place</i>Warnings</div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-                <li>
-                    <div class="collapsible-header green-text accent-3"><i class="material-icons">whatshot</i>Successes</div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-            </ul>
-
-        </div>
-    </div>-->
 </body>
 
 </html>
