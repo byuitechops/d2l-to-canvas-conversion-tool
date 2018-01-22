@@ -3,20 +3,27 @@
 
 /* Any child modules listed here will run when conversion is ran through the CLI */
 var childModules = [
-    // 'reorganize-file-structure',
+    'reorganize-file-structure',
     // 'set-syllabus',
     // 'ilearn-3-references',
     // 'module-publish-settings',
     // 'create-homepage',
     // 'set-navigation-tabs',
     // 'target-attribute',
-    // 'web-features-update'
+    // 'web-features-update',
+    // 'assignments-delete-unwanted',
+    // 'delete-duplicate-files',
+    // 'question-issues-report',
+    // 'check-alt-property', //Not finished
+    // 'lessons-create-discussions',
+    // 'blueprint-lock-items',
 ];
 
 const downloader = require('d2l-course-downloader'),
     prompt = require('prompt'),
     argv = require('yargs').argv,
-    conversion = require('./newMain.js'),
+    main = require('./main.js'),
+    prototype = require('./prototype.js'),
     asyncLib = require('async'),
     chalk = require('chalk'),
     path = require('path'),
@@ -25,19 +32,48 @@ const downloader = require('d2l-course-downloader'),
 var settings = {
     'debug': argv.d || argv.D || argv.debug ? argv.d : false,
     'readAll': argv.a || argv.A || argv.all ? argv.a : false,
-    'online': argv.o || argv.O || argv.online ? true : false,
+    'online': argv.o || argv.O || argv.online ? true : true,
     'keepFiles': argv.k || argv.K || argv.keep ? true : false,
     'deleteCourse': argv.x || argv.X || argv.delete ? true : false,
-    'useDownloader': argv.e || argv.E || argv.existing ? false : true
+    'useDownloader': argv.e || argv.E || argv.existing ? false : true,
+    'prototypeLesson': argv.p || argv.P || argv.prototype ? true : false,
 };
+
+var courseDomain = [{
+    name: 'domain',
+    description: chalk.cyanBright('Is this for Pathway?'),
+    type: 'string',
+    default: 'no',
+    required: true,
+    before: (value) => {
+        if (value.toLowerCase() != 'yes' || value.toLowerCase() != 'y') {
+            return 'byui';
+        } else {
+            return 'pathway';
+        }
+    }
+}];
 
 var getOU = [{
     name: 'ous',
     type: 'string',
     description: chalk.cyanBright('Enter the OU(s) you want to convert:'),
     required: true,
-    message: 'OU(s) cannot be empty.'
+    message: 'OU(s) cannot be empty.',
+    default: '340002'
 }];
+
+var getLessonTitle = [{
+    name: 'lessonTitle',
+    type: 'string',
+    description: chalk.cyanBright('Enter the Lesson Title you want to convert:'),
+    required: true,
+    message: 'Lesson Title cannot be empty.',
+    default: 'Child 10: I-Learn 3 References'
+}];
+
+prompt.message = chalk.whiteBright('');
+prompt.delimiter = chalk.whiteBright('');
 
 function readFile() {
     fs.readdir(path.resolve('.', 'D2LOriginal/'), (err, dirContents) => {
@@ -65,7 +101,7 @@ function readFile() {
     });
 }
 
-function startConversion(courses) {
+function startConversion(courses, conversion) {
     courses.forEach(course => {
         course.courseInfo.childModules = childModules;
     });
@@ -76,36 +112,63 @@ function startConversion(courses) {
     });
 }
 
-if (settings.existing === true) {
-    settings.keepFiles = true;
-}
+/* Get the domain from the user */
+prompt.get(courseDomain, (errDomain, domainData) => {
+    if (errDomain) {
+        console.log(errDomain);
+        return;
+    }
 
-if (settings.useDownloader === false) {
-    readFile();
-} else {
-    prompt.get(getOU, (err, result) => {
-        var userData = {
-            ous: [result.ous],
-            downloadLocation: './D2LOriginal',
-        };
-    
-        downloader(userData, (downloadError, downloaderResults) => {
-            if (downloadError) console.error(downloadError);
-            else {
-                /* Convert list of results to a list of paths */
-                var courses = downloaderResults.map((downloaderResult) => {
-                    return {
-                        'settings': settings,
-                        'courseInfo': {
-                            'path': downloaderResult.name,
-                            'D2LOU': downloaderResult.ou
-                        }
-                    };
+    /* If we we aren't using the downloader, skip the rest and keep the files */
+    if (settings.useDownloader === false) {
+        settings.keepFiles = true;
+        readFile();
+    } else {
+        /* Get the OU from the user */
+        prompt.get(getOU, (errPrompt, result) => {
+            if (errPrompt) {
+                console.log(errPrompt);
+                return;
+            }
+
+            var userData = {
+                ous: [result.ous],
+                downloadLocation: './D2LOriginal',
+                domain: domainData.domain,
+            };
+
+            /* Run the downloader */
+            function startDownloader(conversion) {
+                downloader(userData, (downloadError, downloaderResults) => {
+                    if (downloadError) console.error(downloadError);
+                    else {
+                        /* Convert list of results to a list of paths */
+                        var courses = downloaderResults.map((downloaderResult) => {
+                            return {
+                                'settings': settings,
+                                'courseInfo': {
+                                    'path': downloaderResult.name,
+                                    'D2LOU': downloaderResult.ou
+                                }
+                            };
+                        });
+                        startConversion(courses, conversion);
+                    }
                 });
-                startConversion(courses);
+            }
+
+            /* If we only want one lesson in the download... */
+            if (settings.prototypeLesson) {
+                prompt.get(getLessonTitle, (err, promptData) => {
+                    userData.lessonTitle = promptData.lessonTitle;
+                    startDownloader(prototype);
+                });
+            } else {
+                startDownloader(main);
             }
         });
-    
-    });
-}
+    }
+});
+
+
 
