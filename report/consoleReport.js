@@ -2,8 +2,8 @@ const fs = require('fs');
 const chalk = require('chalk');
 const fws = require('fixed-width-string');
 
-module.exports = (courseObj, callback) => {
-    console.log(`\nNew Canvas Course: https://byui.instructure.com/courses/${courseObj.info.canvasOU}`);
+module.exports = (course, callback) => {
+    console.log(`\nNew Canvas Course: https://byui.instructure.com/courses/${course.info.canvasOU}`);
     console.log('\n' + chalk.bgBlue(' FINAL REPORT '));
 
     console.log(
@@ -14,7 +14,7 @@ module.exports = (courseObj, callback) => {
         fws(chalk.greenBright('SUCCESSES'), 10, { align: 'right' })
     );
 
-    courseObj.report.forEach(report => {
+    course.report.forEach(report => {
         if (report) {
             console.log(
                 fws(chalk.cyan(report.name), 13),
@@ -26,13 +26,5 @@ module.exports = (courseObj, callback) => {
         }
     });
 
-    fs.writeFile(`./report${courseObj.info.fileName.split('.zip')[0]}.json`, JSON.stringify(courseObj.report), err => {
-        if (err) {
-            console.log(chalk.red('Error writing report to report.json'));
-            callback(err);
-        } else {
-            console.log('\nFinal report written to report.json');
-            callback(null);
-        }
-    });
+    callback(null, course);
 }
