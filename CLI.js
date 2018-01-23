@@ -4,15 +4,15 @@
 /* Any child modules listed here will run when conversion is ran through the CLI */
 var childModules = [
     'reorganize-file-structure',
-    // 'set-syllabus',
-    // 'ilearn-3-references',
-    // 'module-publish-settings',
-    // 'create-homepage',
-    // 'set-navigation-tabs',
-    // 'target-attribute',
-    // 'web-features-update',
+    'set-syllabus',
+    'ilearn-3-references',
+    'module-publish-settings',
+    'create-homepage',
+    'set-navigation-tabs',
+    'target-attribute',
+    'web-features-update',
     // 'assignments-delete-unwanted',
-    // 'delete-duplicate-files',
+    'delete-duplicate-files',
     // 'question-issues-report',
     // 'check-alt-property', //Not finished
     // 'lessons-create-discussions',
@@ -97,7 +97,7 @@ function readFile() {
                 console.log(path.basename(zip.courseInfo.path, '.zip'));
             });
         }
-        startConversion(zips);
+        startConversion(zips, main);
     });
 }
 
