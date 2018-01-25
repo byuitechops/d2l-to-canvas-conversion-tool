@@ -21,7 +21,6 @@ const getMigrationIssues = require('get-migration-issues');
 /* PostImport */
 const verifyCourseUpload = require('./verifyCourseUpload.js');
 const quizFixOverlay = require('quiz-fix-overlay');
-const setSyllabus = require('set-syllabus');
 const deleteQnC = require('delete-questions-and-conversations');
 const makeBlueprint = require('course-make-blueprint');
 
@@ -31,10 +30,13 @@ const deleteCourse = require('delete-course');
 const consoleReport = require('./report/consoleReport.js');
 const jsonReport = require('./report/jsonReport.js');
 const htmlReport = require('./report/htmlReport.js');
+const generateTables = require('./report/generateTables.js');
 
 exports.setChildModules = (list) => {
     list.forEach(item => {
-        var { childType } = require(`./node_modules/${item}/package.json`);
+        var {
+            childType
+        } = require(`./node_modules/${item}/package.json`);
         if (childType === 'preImport') {
             exports.preImport.push(require(item));
         } else if (childType === 'postImport') {
@@ -75,7 +77,8 @@ exports.postImport = [
 exports.cleanUp = [
     removeFiles, // Removes files generated during the process
     deleteCourse, // Deletes the course from Canvas (used in testing),
-    // consoleReport, // Generates report in the console
+    consoleReport, // Generates report in the console
+    generateTables,
     jsonReport, // Generates JSON report
     // htmlReport, // Generates HTML report
 ];
