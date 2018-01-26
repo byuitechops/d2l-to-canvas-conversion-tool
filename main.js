@@ -4,7 +4,7 @@ const agenda = require('./agenda.js');
 module.exports = (courseData, finalCallback) => {
     
     agenda.setChildModules(courseData.courseInfo.childModules);
-
+    console.log(agenda);
     const modules = [
         asyncLib.constant(courseData),
         ...agenda.prepare,
@@ -16,4 +16,4 @@ module.exports = (courseData, finalCallback) => {
 
     asyncLib.waterfall(modules, finalCallback);
 
-}
+};

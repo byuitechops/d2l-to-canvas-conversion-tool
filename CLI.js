@@ -90,7 +90,7 @@ function readFile() {
                     'path': path.resolve('.', 'D2LOriginal/', zip),
                     'D2LOU': 'Unavailable'
                 }
-            }
+            };
         });
         if (zips.length == 0) {
             console.log('No zips found in D2LOriginal folder.');
@@ -111,6 +111,8 @@ function startConversion(courses, conversion) {
     asyncLib.eachSeries(courses, conversion, (err, resultCourses) => {
         if (err) {
             console.log(chalk.red('\nError writing report to report.json'));
+        } else {
+            console.log(chalk.blueBright(`${resultCourses.length} courses have been converted.`));
         }
     });
 }
@@ -129,10 +131,6 @@ prompt.get(courseDomain, (errDomain, domainData) => {
     } else {
         /* Get the OU from the user */
         prompt.get(getOU, (errPrompt, result) => {
-            if (errPrompt) {
-                console.log(errPrompt);
-                return;
-            }
 
             var userData = {
                 ous: [result.ous],
@@ -140,13 +138,19 @@ prompt.get(courseDomain, (errDomain, domainData) => {
                 domain: domainData.domain,
             };
 
+            if (errPrompt) {
+                console.log(errPrompt);
+                return;
+            }
+
             /* Run the downloader */
             function startDownloader(conversion) {
                 downloader(userData, (downloadError, downloaderResults) => {
+                    var courses;
                     if (downloadError) console.error(downloadError);
                     else {
                         /* Convert list of results to a list of paths */
-                        var courses = downloaderResults.map((downloaderResult) => {
+                        courses = downloaderResults.map((downloaderResult) => {
                             return {
                                 'settings': settings,
                                 'courseInfo': {

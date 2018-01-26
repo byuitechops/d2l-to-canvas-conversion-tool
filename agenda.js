@@ -29,7 +29,7 @@ const removeFiles = require('remove-files');
 const deleteCourse = require('delete-course');
 const consoleReport = require('./report/consoleReport.js');
 const jsonReport = require('./report/jsonReport.js');
-const htmlReport = require('./report/htmlReport.js');
+// const htmlReport = require('./report/htmlReport.js');
 const generateTables = require('./report/generateTables.js');
 
 exports.setChildModules = (list) => {

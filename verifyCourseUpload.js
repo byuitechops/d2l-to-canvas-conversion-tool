@@ -25,10 +25,10 @@ module.exports = (course, stepCallback) => {
             } else {
                 /* If we get back an empty array or not */
                 if (modules.length != moduleCount) {
-                    course.message(`Course has finished unpacking.`);
+                    course.message('Course has finished unpacking.');
                     callback(null, modules);
                 } else {
-                    course.message(`Course has not finished unpacking. Checking again.`);
+                    course.message('Course has not finished unpacking. Checking again.');
                     callback(new Error('Blank array received'));
                 }
             }
@@ -39,4 +39,4 @@ module.exports = (course, stepCallback) => {
         stepCallback(null, course);
     });
 
-}
+};
