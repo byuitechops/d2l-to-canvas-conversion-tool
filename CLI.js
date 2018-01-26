@@ -79,7 +79,7 @@ prompt.message = chalk.whiteBright('');
 prompt.delimiter = chalk.whiteBright('');
 
 function readFile() {
-    fs.readdir(path.resolve('.', 'D2LOriginal/'), (err, dirContents) => {
+    fs.readdir(path.resolve('.', 'factory', 'originalZip'), (err, dirContents) => {
         var zips = dirContents.filter((zip) => {
             if (zip.includes('.zip'))
                 return true;
@@ -87,13 +87,13 @@ function readFile() {
             return {
                 'settings': settings,
                 'courseInfo': {
-                    'path': path.resolve('.', 'D2LOriginal/', zip),
+                    'path': path.resolve('.', 'factory', 'originalZip', zip),
                     'D2LOU': 'Unavailable'
                 }
             };
         });
         if (zips.length == 0) {
-            console.log('No zips found in D2LOriginal folder.');
+            console.log('No zips found in originalZip folder.');
         } else {
             console.log(`Performing conversion process on ${zips.length} course(s):`);
             zips.forEach(zip => {
@@ -112,7 +112,7 @@ function startConversion(courses, conversion) {
         if (err) {
             console.log(chalk.red('\nError writing report to report.json'));
         } else {
-            console.log(chalk.blueBright(`${resultCourses.length} courses have been converted.`));
+            // console.log(chalk.blueBright(`${resultCourses.length} courses have been converted.`));
         }
     });
 }
@@ -134,7 +134,7 @@ prompt.get(courseDomain, (errDomain, domainData) => {
 
             var userData = {
                 ous: [result.ous],
-                downloadLocation: './D2LOriginal',
+                downloadLocation: './factory/originalZip',
                 domain: domainData.domain,
             };
 

@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="D2L_340002" xmlns:d2l_2p0="http://desire2learn.com/xsd/d2lcp_v2p0" xmlns:scorm_1p2="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1">
+    <organizations default="d2l_orgs">
+        <organization identifier="d2l_org">
+            <item identifier="4994152" identifierref="RES_CONTENT_4994152" d2l_2p0:id="1" d2l_2p0:resource_code="byui_produ-4000" description="" completion_type="2">
+                <title>Welcome</title>
+                <item identifier="4994163" identifierref="RES_CONTENT_4994163" d2l_2p0:id="2" d2l_2p0:resource_code="byui_produ-465301" description="" completion_type="1">
+                    <title>Syllabus</title>
+                </item>
+                <item identifier="4994160" identifierref="RES_CONTENT_4994160" d2l_2p0:id="3" d2l_2p0:resource_code="byui_produ-104291" description="" completion_type="1" resource_type_key="">
+                    <title>University Policies</title>
+                </item>
+                <item identifier="4994164" identifierref="RES_CONTENT_4994164" d2l_2p0:id="4" d2l_2p0:resource_code="byui_produ-465306" description="" completion_type="3" resource_type_key="">
+                    <title>Questions and Conversations</title>
+                </item>
+                <item identifier="4994161" identifierref="RES_CONTENT_4994161" d2l_2p0:id="5" d2l_2p0:resource_code="byui_produ-100882" description="" completion_type="2" resource_type_key="">
+                    <title>Online Support Center</title>
+                </item>
+                <item identifier="4994165" identifierref="RES_CONTENT_4994165" d2l_2p0:id="6" d2l_2p0:resource_code="byui_produ-607793" description="" completion_type="2" resource_type_key="">
+                    <title>Orientation to Online Learning</title>
+                </item>
+                <item identifier="5508280" identifierref="RES_CONTENT_5508280" d2l_2p0:id="7" d2l_2p0:resource_code="byui_production-1746209" description="" completion_type="2" resource_type_key="">
+                    <title>Copyright and Source Information</title>
+                </item>
+                <item identifier="5508281" identifierref="RES_CONTENT_5508281" d2l_2p0:id="8" d2l_2p0:resource_code="byui_production-1746210" description="" completion_type="2" resource_type_key="">
+                    <title>Academic Support Center</title>
+                </item>
+                <item identifier="5508282" identifierref="RES_CONTENT_5508282" d2l_2p0:id="9" d2l_2p0:resource_code="byui_production-1746211" description="" completion_type="2" resource_type_key="">
+                    <title>Library Research Guide</title>
+                </item>
+                <item identifier="5508284" identifierref="RES_CONTENT_5508284" d2l_2p0:id="10" d2l_2p0:resource_code="byui_production-1746213" description="" completion_type="2" resource_type_key="">
+                    <title>Online Support Center</title>
+                </item>
+            </item>
+            <item identifier="4994153" identifierref="RES_CONTENT_4994153" d2l_2p0:id="11" d2l_2p0:resource_code="byui_produ-3942" description="" completion_type="2">
+                <title>Instructor Resources</title>
+                <item identifier="4994158" identifierref="RES_CONTENT_4994158" d2l_2p0:id="12" d2l_2p0:resource_code="byui_produ-13683" description="" completion_type="3" resource_type_key="">
+                    <title>Setup for Course Instructor</title>
+                </item>
+                <item identifier="4994154" identifierref="RES_CONTENT_4994154" d2l_2p0:id="13" d2l_2p0:resource_code="byui_produ-13685" description="" completion_type="3" resource_type_key="">
+                    <title>General Lesson Notes</title>
+                </item>
+                <item identifier="4994162" identifierref="RES_CONTENT_4994162" d2l_2p0:id="14" d2l_2p0:resource_code="byui_produ-466864" description="" completion_type="3" resource_type_key="">
+                    <title>Course Map</title>
+                </item>
+                <item identifier="4994156" identifierref="RES_CONTENT_4994156" d2l_2p0:id="15" d2l_2p0:resource_code="byui_produ-3945" description="" completion_type="3" resource_type_key="">
+                    <title>Teaching Group Directory</title>
+                </item>
+                <item identifier="4994157" identifierref="RES_CONTENT_4994157" d2l_2p0:id="16" d2l_2p0:resource_code="byui_produ-3946" description="" completion_type="3" resource_type_key="">
+                    <title>Online Instructor Community</title>
+                </item>
+                <item identifier="4994155" identifierref="RES_CONTENT_4994155" d2l_2p0:id="17" d2l_2p0:resource_code="byui_produ-3944" description="" completion_type="3">
+                    <title>Course Maintenance Requests</title>
+                </item>
+                <item identifier="4994159" identifierref="RES_CONTENT_4994159" d2l_2p0:id="18" d2l_2p0:resource_code="byui_produ-13686" description="" completion_type="3" resource_type_key="">
+                    <title>Release Notes</title>
+                </item>
+                <item identifier="4994167" identifierref="RES_CONTENT_4994167" d2l_2p0:id="19" d2l_2p0:resource_code="byui_production-1506959" description="" completion_type="3" resource_type_key="">
+                    <title>Instructor Help Guide: Getting Started with Zoom</title>
+                </item>
+                <item identifier="5526070" identifierref="RES_CONTENT_5526070" d2l_2p0:id="20" d2l_2p0:resource_code="byui_production-1759620" description="" completion_type="2" resource_type_key="">
+                    <title>Course Maintenance Log</title>
+                </item>
+                <item identifier="4994168" identifierref="RES_CONTENT_4994168" d2l_2p0:id="21" d2l_2p0:resource_code="byui_production-1669064" description="" completion_type="2">
+                    <title>Course Supprt</title>
+                    <item identifier="4994169" identifierref="RES_CONTENT_4994169" d2l_2p0:id="22" d2l_2p0:resource_code="byui_produ-13684" description="" completion_type="3" resource_type_key="">
+                        <title>Setup Notes for Development Team</title>
+                    </item>
+                </item>
+                <item identifier="4994166" identifierref="RES_CONTENT_4994166" d2l_2p0:id="23" d2l_2p0:resource_code="byui_production-1262699" description="" completion_type="2">
+                    <title>Course Development</title>
+                    <item identifier="4994172" identifierref="RES_CONTENT_4994172" d2l_2p0:id="24" d2l_2p0:resource_code="byui_production-1602016" description="" completion_type="3" resource_type_key="">
+                        <title>Copyediting Style Sheet</title>
+                    </item>
+                    <item identifier="4994173" identifierref="RES_CONTENT_4994173" d2l_2p0:id="25" d2l_2p0:resource_code="byui_production-1602017" description="" completion_type="3" resource_type_key="">
+                        <title>Copyright Permissions</title>
+                    </item>
+                    <item identifier="4994171" identifierref="RES_CONTENT_4994171" d2l_2p0:id="26" d2l_2p0:resource_code="byui_production-1407611" description="" completion_type="3" resource_type_key="">
+                        <title>Guidelines for Buttons</title>
+                    </item>
+                    <item identifier="4994170" identifierref="RES_CONTENT_4994170" d2l_2p0:id="27" d2l_2p0:resource_code="byui_produ-466870" description="" completion_type="3" resource_type_key="">
+                        <title>Course Schedule (Archived)</title>
+                    </item>
+                </item>
+            </item>
+            <item identifier="4852435" identifierref="RES_CONTENT_4852435" d2l_2p0:id="28" description="" completion_type="2">
+                <title>Child 01: Syllabus</title>
+                <item identifier="4854063" identifierref="RES_CONTENT_4854063" d2l_2p0:id="29" d2l_2p0:resource_code="byui_production-1603571" description="" completion_type="2">
+                    <title>Syllabus</title>
+                </item>
+            </item>
+            <item identifier="4853994" identifierref="RES_CONTENT_4853994" d2l_2p0:id="30" d2l_2p0:resource_code="byui_production-1607527" description="" completion_type="2">
+                <title>Child 02: Page Duplicates</title>
+                <item identifier="4854454" identifierref="RES_CONTENT_4854454" d2l_2p0:id="31" d2l_2p0:resource_code="byui_production-1604121" description="" completion_type="2" resource_type_key="">
+                    <title>How to Style your Snake's Hair</title>
+                </item>
+                <item identifier="4854455" identifierref="RES_CONTENT_4854455" d2l_2p0:id="32" d2l_2p0:resource_code="byui_production-1604122" description="" completion_type="2" resource_type_key="">
+                    <title>A Joke for your Ears Only</title>
+                </item>
+                <item identifier="4855045" identifierref="RES_CONTENT_4855045" d2l_2p0:id="33" d2l_2p0:resource_code="byui_production-1604489" description="" completion_type="2" resource_type_key="">
+                    <title>What is going on:?/</title>
+                </item>
+                <item identifier="4854461" identifierref="RES_CONTENT_4854461" d2l_2p0:id="34" d2l_2p0:resource_code="byui_production-1604123" description="" completion_type="2" resource_type_key="">
+                    <title>A Statement on Font Sizes</title>
+                </item>
+                <item identifier="4854865" identifierref="RES_CONTENT_4854865" d2l_2p0:id="35" d2l_2p0:resource_code="byui_production-1604451" description="" completion_type="2" resource_type_key="">
+                    <title>Württemburg </title>
+                </item>
+                <item identifier="4854866" identifierref="RES_CONTENT_4854866" d2l_2p0:id="36" d2l_2p0:resource_code="byui_production-1604452" description="" completion_type="2" resource_type_key="">
+                    <title>László Bíró</title>
+                </item>
+                <item identifier="4854874" identifierref="RES_CONTENT_4854874" d2l_2p0:id="37" d2l_2p0:resource_code="byui_production-1604453" description="" completion_type="2" resource_type_key="">
+                    <title>Me + Socks = Bad idea</title>
+                </item>
+                <item identifier="4856455" identifierref="RES_CONTENT_4856455" d2l_2p0:id="38" d2l_2p0:resource_code="byui_production-1605343" description="" completion_type="2" resource_type_key="">
+                    <title>Linking Course Files</title>
+                </item>
+            </item>
+            <item identifier="4853996" identifierref="RES_CONTENT_4853996" d2l_2p0:id="39" description="" completion_type="2">
+                <title>Child 03: Assignment Grade Item Duplicates</title>
+                <item identifier="4853997" identifierref="RES_CONTENT_4853997" d2l_2p0:id="40" isvisible="False" description="" completion_type="2" resource_type_key="">
+                    <title>Assignment 1 - Do The Thing</title>
+                </item>
+            </item>
+            <item identifier="4860340" identifierref="RES_CONTENT_4860340" d2l_2p0:id="41" description="" completion_type="2">
+                <title>Child 04: Quiz Dialogue Popups</title>
+                <item identifier="4860341" identifierref="RES_CONTENT_4860341" d2l_2p0:id="42" description="" completion_type="2" resource_type_key="">
+                    <title>Dialog (Formerly "Overlay")</title>
+                </item>
+                <item identifier="4876890" identifierref="RES_CONTENT_4876890" d2l_2p0:id="43" description="" completion_type="2" resource_type_key="">
+                    <title>Dialog Popups Round 2</title>
+                </item>
+            </item>
+            <item identifier="4868750" identifierref="RES_CONTENT_4868750" d2l_2p0:id="44" description="" completion_type="2">
+                <title>Child 05: Crawling Content</title>
+                <item identifier="4868752" identifierref="RES_CONTENT_4868752" d2l_2p0:id="45" d2l_2p0:resource_code="byui_production-1613714" description="" completion_type="2" resource_type_key="">
+                    <title>Linking Course Files</title>
+                </item>
+                <item identifier="4868754" identifierref="RES_CONTENT_4868754" d2l_2p0:id="46" d2l_2p0:resource_code="byui_production-1613715" description="" completion_type="2" resource_type_key="">
+                    <title>External Links</title>
+                </item>
+                <item identifier="4878503" identifierref="RES_CONTENT_4878503" d2l_2p0:id="47" d2l_2p0:resource_code="byui_production-1618976" description="" completion_type="2" resource_type_key="">
+                    <title>What is going on</title>
+                </item>
+                <item identifier="4889166" identifierref="RES_CONTENT_4889166" d2l_2p0:id="48" d2l_2p0:resource_code="byui_production-1645943" description="" completion_type="2" resource_type_key="">
+                    <title>This File won't exist</title>
+                </item>
+            </item>
+            <item identifier="4878911" identifierref="RES_CONTENT_4878911" d2l_2p0:id="49" description="" completion_type="2">
+                <title>Child 07: Quiz Rel Cleaner</title>
+                <item identifier="4878904" identifierref="RES_CONTENT_4878904" d2l_2p0:id="50" description="" completion_type="2" date_start="2018-01-13T07:00:00" date_end="2018-01-28T06:00:00" resource_type_key="">
+                    <title>L03 Activity | Extract Information from Genealogical Records</title>
+                </item>
+            </item>
+            <item identifier="4884772" identifierref="RES_CONTENT_4884772" d2l_2p0:id="51" description="&lt;p&gt;This a module heading that turns into a Page in Canvas! We don't want that. Like Leprosy.&lt;/p&gt;" completion_type="2">
+                <title>Child 08: Module Headings to Pages</title>
+            </item>
+            <item identifier="4885781" identifierref="RES_CONTENT_4885781" d2l_2p0:id="52" isvisible="False" description="" completion_type="2">
+                <title>Child 09: Unpublished Items</title>
+                <item identifier="5195607" identifierref="RES_CONTENT_5195607" d2l_2p0:id="53" d2l_2p0:resource_code="byui_production-1675422" description="" completion_type="2" resource_type_key="">
+                    <title>Lesson 01 Notes</title>
+                </item>
+                <item identifier="4885782" identifierref="RES_CONTENT_4885782" d2l_2p0:id="54" d2l_2p0:resource_code="byui_production-1630974" description="" completion_type="2" resource_type_key="">
+                    <title>Published File</title>
+                </item>
+                <item identifier="4885783" identifierref="RES_CONTENT_4885783" d2l_2p0:id="55" isvisible="False" d2l_2p0:resource_code="byui_production-1630975" description="" completion_type="2" resource_type_key="">
+                    <title>Unpublished File (Draft)</title>
+                </item>
+                <item identifier="4907609" identifierref="RES_CONTENT_4907609" d2l_2p0:id="56" d2l_2p0:resource_code="byui_production-1658811" description="" completion_type="2" resource_type_key="">
+                    <title>External Link (published)</title>
+                </item>
+                <item identifier="4905278" identifierref="RES_CONTENT_4905278" d2l_2p0:id="57" isvisible="False" d2l_2p0:resource_code="byui_production-1657957" description="" completion_type="2" resource_type_key="">
+                    <title>External Link (Unpublished)</title>
+                </item>
+                <item identifier="4905279" identifierref="RES_CONTENT_4905279" d2l_2p0:id="58" description="" completion_type="2" resource_type_key="">
+                    <title>Dialog (Formerly "Overlay")</title>
+                </item>
+                <item identifier="4905280" identifierref="RES_CONTENT_4905280" d2l_2p0:id="59" description="" completion_type="2" resource_type_key="">
+                    <title>Discussion Board (Unpublished)</title>
+                </item>
+                <item identifier="4907831" identifierref="RES_CONTENT_4907831" d2l_2p0:id="60" isvisible="False" description="" completion_type="2" resource_type_key="">
+                    <title>Assignment (Unpublished)</title>
+                </item>
+                <item identifier="4907830" identifierref="RES_CONTENT_4907830" d2l_2p0:id="61" description="" completion_type="2" resource_type_key="">
+                    <title>Assignment (Published)</title>
+                </item>
+            </item>
+            <item identifier="4887675" identifierref="RES_CONTENT_4887675" d2l_2p0:id="62" description="" completion_type="2">
+                <title>Child 10: I-Learn 3 References</title>
+                <item identifier="4887676" identifierref="RES_CONTENT_4887676" d2l_2p0:id="63" d2l_2p0:resource_code="byui_production-1643774" description="" completion_type="2" resource_type_key="">
+                    <title>I-Learn 3.0 References #1</title>
+                </item>
+                <item identifier="4887677" identifierref="RES_CONTENT_4887677" d2l_2p0:id="64" d2l_2p0:resource_code="byui_production-1643778" description="" completion_type="2" resource_type_key="">
+                    <title>I-learn 3.0 References #2</title>
+                </item>
+                <item identifier="4887678" identifierref="RES_CONTENT_4887678" d2l_2p0:id="65" d2l_2p0:resource_code="byui_production-1643779" description="" completion_type="2" resource_type_key="">
+                    <title>I-learn 3.0 References #3</title>
+                </item>
+                <item identifier="4889282" identifierref="RES_CONTENT_4889282" d2l_2p0:id="66" d2l_2p0:resource_code="byui_production-1646087" description="" completion_type="2" resource_type_key="">
+                    <title>Google Hangout References</title>
+                </item>
+                <item identifier="4889285" identifierref="RES_CONTENT_4889285" d2l_2p0:id="67" d2l_2p0:resource_code="byui_production-1646089" description="" completion_type="2" resource_type_key="">
+                    <title>Adobe Connect References</title>
+                </item>
+                <item identifier="4889286" identifierref="RES_CONTENT_4889286" d2l_2p0:id="68" d2l_2p0:resource_code="byui_production-1646090" description="" completion_type="2" resource_type_key="">
+                    <title>Brainhoney References</title>
+                </item>
+                <item identifier="4889287" identifierref="RES_CONTENT_4889287" d2l_2p0:id="69" d2l_2p0:resource_code="byui_production-1646091" description="" completion_type="2" resource_type_key="">
+                    <title>Brightspace &amp; D2L References</title>
+                </item>
+                <item identifier="5518911" identifierref="RES_CONTENT_5518911" d2l_2p0:id="70" d2l_2p0:resource_code="byui_production-1752274" description="" completion_type="2" resource_type_key="">
+                    <title>adobe flash reference</title>
+                </item>
+                <item identifier="5518919" identifierref="RES_CONTENT_5518919" d2l_2p0:id="71" d2l_2p0:resource_code="byui_production-1752284" description="" completion_type="2" resource_type_key="">
+                    <title>inline JS reference</title>
+                </item>
+                <item identifier="5518921" identifierref="RES_CONTENT_5518921" d2l_2p0:id="72" d2l_2p0:resource_code="byui_production-1752287" description="" completion_type="2" resource_type_key="">
+                    <title>style reference</title>
+                </item>
+            </item>
+            <item identifier="4892907" identifierref="RES_CONTENT_4892907" d2l_2p0:id="73" description="" completion_type="2">
+                <title>Child 11: Quick Links</title>
+                <item identifier="4892909" identifierref="RES_CONTENT_4892909" d2l_2p0:id="74" d2l_2p0:resource_code="byui_production-1649350" description="" completion_type="2" resource_type_key="">
+                    <title>Quicklink Examples #1</title>
+                </item>
+                <item identifier="5516611" identifierref="RES_CONTENT_5516611" d2l_2p0:id="75" d2l_2p0:resource_code="byui_production-1749990" description="" completion_type="2" resource_type_key="">
+                    <title>Quicklinks - Quizzes</title>
+                </item>
+                <item identifier="5519715" identifierref="RES_CONTENT_5519715" d2l_2p0:id="76" d2l_2p0:resource_code="byui_production-1752932" description="" completion_type="2" resource_type_key="">
+                    <title>Quicklinks - Assignments</title>
+                </item>
+                <item identifier="5527976" identifierref="RES_CONTENT_5527976" d2l_2p0:id="77" d2l_2p0:resource_code="byui_production-1761149" description="" completion_type="2" resource_type_key="">
+                    <title>Quicklinks - Discussion Boards</title>
+                </item>
+            </item>
+            <item identifier="5333260" identifierref="RES_CONTENT_5333260" d2l_2p0:id="78" description="" completion_type="2">
+                <title>Child 12: Target Attribute</title>
+                <item identifier="5333262" identifierref="RES_CONTENT_5333262" d2l_2p0:id="79" d2l_2p0:resource_code="byui_production-1691456" description="" completion_type="2" resource_type_key="">
+                    <title>Target Attribute #1</title>
+                </item>
+            </item>
+            <item identifier="5507824" identifierref="RES_CONTENT_5507824" d2l_2p0:id="80" description="" completion_type="2">
+                <title>Child 13: Delete unwanted assignments</title>
+                <item identifier="5507906" identifierref="RES_CONTENT_5507906" d2l_2p0:id="81" description="" completion_type="2" resource_type_key="">
+                    <title>[CO~1] Demonstrate familiarity with the major concepts theoretical perspectives and empirical findings in psychology.</title>
+                </item>
+            </item>
+            <item identifier="5508706" identifierref="RES_CONTENT_5508706" d2l_2p0:id="82" description="" completion_type="2">
+                <title>Child 14: Check images for alt attribute</title>
+                <item identifier="5508945" identifierref="RES_CONTENT_5508945" d2l_2p0:id="83" d2l_2p0:resource_code="byui_production-1746383" description="" completion_type="2" resource_type_key="">
+                    <title>Empty alt attribute</title>
+                </item>
+                <item identifier="5508976" identifierref="RES_CONTENT_5508976" d2l_2p0:id="84" d2l_2p0:resource_code="byui_production-1746413" description="" completion_type="2" resource_type_key="">
+                    <title>No alt attribute</title>
+                </item>
+            </item>
+            <item identifier="5514545" identifierref="RES_CONTENT_5514545" d2l_2p0:id="85" description="" completion_type="2">
+                <title>Child 15: Prototype Lesson Example</title>
+                <item identifier="5514546" identifierref="RES_CONTENT_5514546" d2l_2p0:id="86" description="" completion_type="2" resource_type_key="">
+                    <title>Assignment (Published)</title>
+                </item>
+                <item identifier="5514547" identifierref="RES_CONTENT_5514547" d2l_2p0:id="87" description="" completion_type="2" resource_type_key="">
+                    <title>Lesson 01: Questions and Conversations</title>
+                </item>
+                <item identifier="5514549" identifierref="RES_CONTENT_5514549" d2l_2p0:id="88" description="" completion_type="2" resource_type_key="">
+                    <title>Properties - Description / Introduction</title>
+                </item>
+                <item identifier="5514550" identifierref="RES_CONTENT_5514550" d2l_2p0:id="89" d2l_2p0:resource_code="byui_production-1749098" description="" completion_type="2" resource_type_key="">
+                    <title>Example Page</title>
+                </item>
+            </item>
+            <item identifier="5518095" identifierref="RES_CONTENT_5518095" d2l_2p0:id="90" description="" completion_type="2">
+                <title>Child 16: blueprint lock items</title>
+                <item identifier="5518096" identifierref="RES_CONTENT_5518096" d2l_2p0:id="91" description="" completion_type="2" resource_type_key="">
+                    <title>Notes From instructor</title>
+                </item>
+            </item>
+            <item identifier="5518196" identifierref="RES_CONTENT_5518196" d2l_2p0:id="92" description="&lt;p&gt;To test locating &quot;Lesson&quot; modules, so we can create discussion boards, etc. in them.&lt;/p&gt;" completion_type="2">
+                <title>Lesson 01: Child 17</title>
+            </item>
+            <item identifier="5525402" identifierref="RES_CONTENT_5525402" d2l_2p0:id="93" description="" completion_type="2">
+                <title>Week 2: Child 18</title>
+                <item identifier="5525406" identifierref="RES_CONTENT_5525406" d2l_2p0:id="94" description="" completion_type="2" resource_type_key="">
+                    <title>Assignment (Published)</title>
+                </item>
+            </item>
+        </organization>
+    </organizations>
+    <resources>
+        <resource identifier="RES_CONTENT_4994152" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4994163" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="https://content.byui.edu/file/fcebfdd2-566c-4f99-96e5-9e9545b89e04/3/psych111syllabus.html" title=""/>
+        <resource identifier="RES_CONTENT_4994160" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="https://content.byui.edu/integ/gen/d24f576f-d34b-47be-a466-d00bd4792fb6/0/universitypolicies.html" title=""/>
+        <resource identifier="RES_CONTENT_4994164" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=discuss&amp;rcode=byui_produ-147656" title=""/>
+        <resource identifier="RES_CONTENT_4994161" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="https://content.byui.edu/integ/gen/8872d2b2-91d5-4953-a357-3097ef2aa5d0/0/byuisupcenter.html" title=""/>
+        <resource identifier="RES_CONTENT_4994165" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="https://content.byui.edu/integ/gen/d24f576f-d34b-47be-a466-d00bd4792fb6/0/orientation.html" title=""/>
+        <resource identifier="RES_CONTENT_5508280" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_blank" href="http://libguides.byui.edu/" title=""/>
+        <resource identifier="RES_CONTENT_5508281" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_blank" href="https://www.byui.edu/academic-support-centers" title=""/>
+        <resource identifier="RES_CONTENT_5508282" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_blank" href="http://libguides.byui.edu/" title=""/>
+        <resource identifier="RES_CONTENT_5508284" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_blank" href="http://www.byui.edu/online/help" title=""/>
+        <resource identifier="RES_CONTENT_4994153" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4994158" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Setup For Course Instructor.html" title=""/>
+        <resource identifier="RES_CONTENT_4994154" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Lesson Notes.html" title=""/>
+        <resource identifier="RES_CONTENT_4994162" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_blank" href="https://docs.google.com/spreadsheets/d/1y9TndHnaQd7J5ZhXh0-8HgwF-9DqsOoyzUs1XA8PC9g/edit?usp=sharing" title=""/>
+        <resource identifier="RES_CONTENT_4994156" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_blank" href="https://onlineadmin.byui.edu/content/app/app.html#/group-directory/oim-directory" title=""/>
+        <resource identifier="RES_CONTENT_4994157" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="http://onlineinstruction.ning.com/" title=""/>
+        <resource identifier="RES_CONTENT_4994155" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="https://content.byui.edu/integ/gen/51e9c23f-dd02-4578-b423-55dfea3f2c8d/0/Final.html" title=""/>
+        <resource identifier="RES_CONTENT_4994159" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Release Notes.html" title=""/>
+        <resource identifier="RES_CONTENT_4994167" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="http://byu-idaho.screenstepslive.com/s/14177/m/55347/l/778779" title=""/>
+        <resource identifier="RES_CONTENT_5526070" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Course Maintenance Log.html" title=""/>
+        <resource identifier="RES_CONTENT_4994168" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4994169" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Setup Notes for Development Team.html" title=""/>
+        <resource identifier="RES_CONTENT_4994166" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4994172" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="https://docs.google.com/a/byui.edu/spreadsheets/d/1MQL_Wj33wLCPgqYzUKDmx8_zo29b186FZdjLXjb-BhM/edit?usp=sharing" title=""/>
+        <resource identifier="RES_CONTENT_4994173" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="https://content.byui.edu/integ/gen/f6f298d8-58dd-4484-b9f1-e40fcdda9ee6/0/" title=""/>
+        <resource identifier="RES_CONTENT_4994171" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Guidelines for Buttons.html" title=""/>
+        <resource identifier="RES_CONTENT_4994170" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Course Schedule (Archived).html" title=""/>
+        <resource identifier="RES_CONTENT_4852435" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4854063" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="https://content.byui.edu/file/73102456-f750-4774-a291-02e8512658c2/13/Syllabus.html%20(4).zip/Syllabus.html" title=""/>
+        <resource identifier="RES_CONTENT_4853994" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4854454" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="How to Style your Snake's Hair.html" title=""/>
+        <resource identifier="RES_CONTENT_4854455" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Wanna hear a joke.html" title=""/>
+        <resource identifier="RES_CONTENT_4855045" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="What is going on.html" title=""/>
+        <resource identifier="RES_CONTENT_4854461" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="A Statement on Font Sizes.html" title=""/>
+        <resource identifier="RES_CONTENT_4854865" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Württemburg.html" title=""/>
+        <resource identifier="RES_CONTENT_4854866" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="László Bíró.html" title=""/>
+        <resource identifier="RES_CONTENT_4854874" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Me + Socks = Bad idea.html" title=""/>
+        <resource identifier="RES_CONTENT_4856455" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Linking Course Files.html" title=""/>
+        <resource identifier="RES_CONTENT_4853996" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4853997" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=dropbox&amp;rCode=byui_production-1603527" title=""/>
+        <resource identifier="RES_CONTENT_4860340" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4860341" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=quiz&amp;rCode=byui_production-1608381" title=""/>
+        <resource identifier="RES_CONTENT_4876890" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=quiz&amp;rcode=byui_production-1609284" title=""/>
+        <resource identifier="RES_CONTENT_4868750" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4868752" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Linking Course Files.html" title=""/>
+        <resource identifier="RES_CONTENT_4868754" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="External Links.html" title=""/>
+        <resource identifier="RES_CONTENT_4878503" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="What is going on.html" title=""/>
+        <resource identifier="RES_CONTENT_4889166" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4878911" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4878904" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=quiz&amp;rcode=byui_produ-130115" title=""/>
+        <resource identifier="RES_CONTENT_4884772" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4885781" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_5195607" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Lesson Notes1.html" title=""/>
+        <resource identifier="RES_CONTENT_4885782" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Published File.html" title=""/>
+        <resource identifier="RES_CONTENT_4885783" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Unpublished File (Draft).html" title=""/>
+        <resource identifier="RES_CONTENT_4907609" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="https://content.byui.edu/file/b7c3e5ed-6947-497f-9d32-4e5b6b397cac/1/CIT 366 course description.pdf" title=""/>
+        <resource identifier="RES_CONTENT_4905278" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="https://content.byui.edu/file/b7c3e5ed-6947-497f-9d32-4e5b6b397cac/1/CIT 366 course description.pdf" title=""/>
+        <resource identifier="RES_CONTENT_4905279" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=quiz&amp;rcode=byui_production-1608381" title=""/>
+        <resource identifier="RES_CONTENT_4905280" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=discuss&amp;rcode=byui_production-1657958" title=""/>
+        <resource identifier="RES_CONTENT_4907831" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=dropbox&amp;rCode=byui_production-1659023" title=""/>
+        <resource identifier="RES_CONTENT_4907830" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=dropbox&amp;rCode=byui_production-1658992" title=""/>
+        <resource identifier="RES_CONTENT_4887675" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4887676" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="I-Learn 3.0 References.html" title=""/>
+        <resource identifier="RES_CONTENT_4887677" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="I-learn 3.0 References #2.html" title=""/>
+        <resource identifier="RES_CONTENT_4887678" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="I-learn 3.0 References #3.html" title=""/>
+        <resource identifier="RES_CONTENT_4889282" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Google Hangout References.html" title=""/>
+        <resource identifier="RES_CONTENT_4889285" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Adobe Connect References.html" title=""/>
+        <resource identifier="RES_CONTENT_4889286" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Brainhoney References.html" title=""/>
+        <resource identifier="RES_CONTENT_4889287" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Brightspace References.html" title=""/>
+        <resource identifier="RES_CONTENT_5518911" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="adobe flash reference.html" title=""/>
+        <resource identifier="RES_CONTENT_5518919" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="inline JS reference.html" title=""/>
+        <resource identifier="RES_CONTENT_5518921" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="style reference.html" title=""/>
+        <resource identifier="RES_CONTENT_4892907" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_4892909" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Quicklink Examples #1.html" title=""/>
+        <resource identifier="RES_CONTENT_5516611" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Quicklinks - Quizzes.html" title=""/>
+        <resource identifier="RES_CONTENT_5519715" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Quicklinks - Assignments.html" title=""/>
+        <resource identifier="RES_CONTENT_5527976" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Quicklinks - Discussion Boards.html" title=""/>
+        <resource identifier="RES_CONTENT_5333260" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_5333262" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Target Attribute #1.html" title=""/>
+        <resource identifier="RES_CONTENT_5507824" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_5507906" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=dropbox&amp;rCode=byui_production-1746147" title=""/>
+        <resource identifier="RES_CONTENT_5508706" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_5508945" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Empty alt attribute.html" title=""/>
+        <resource identifier="RES_CONTENT_5508976" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="No alt attribute.html" title=""/>
+        <resource identifier="RES_CONTENT_5514545" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_5514546" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=dropbox&amp;rcode=byui_production-1658992" title=""/>
+        <resource identifier="RES_CONTENT_5514547" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=discuss&amp;rcode=byui_production-1671825" title=""/>
+        <resource identifier="RES_CONTENT_5514549" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=quiz&amp;rcode=byui_production-1692666" title=""/>
+        <resource identifier="RES_CONTENT_5514550" type="webcontent" d2l_2p0:material_type="content" d2l_2p0:link_target="" href="Example Page.html" title=""/>
+        <resource identifier="RES_CONTENT_5518095" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_5518096" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=discuss&amp;rcode=byui_production-1751730" title=""/>
+        <resource identifier="RES_CONTENT_5518196" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_5525402" type="webcontent" d2l_2p0:material_type="contentmodule" d2l_2p0:link_target="" href="" title=""/>
+        <resource identifier="RES_CONTENT_5525406" type="webcontent" d2l_2p0:material_type="contentlink" d2l_2p0:link_target="_self" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&amp;type=dropbox&amp;rcode=byui_production-1658992" title=""/>
+        <resource identifier="res_syllabus" type="webcontent" d2l_2p0:material_type="d2lsyllabus" d2l_2p0:link_target="" href="syllabus_d2l.xml" title=""/>
+        <resource identifier="res_quiz_702379" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_702379.xml" title="Quiz (Unpublished)"/>
+        <resource identifier="res_quiz_702513" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_702513.xml" title="Dialog Popups Round 2"/>
+        <resource identifier="res_quiz_704289" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_704289.xml" title="Quiz with quicklinks"/>
+        <resource identifier="res_quiz_757187" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_757187.xml" title="Regex Quiz 1"/>
+        <resource identifier="res_quiz_757379" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_757379.xml" title="Regex Quiz 2"/>
+        <resource identifier="res_quiz_763704" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_763704.xml" title="Properties - Description / Introduction"/>
+        <resource identifier="res_quiz_763705" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_763705.xml" title="Properties - Page Header / Footer"/>
+        <resource identifier="res_quiz_763706" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_763706.xml" title="Properties - Optional Advanced Properties"/>
+        <resource identifier="res_quiz_763720" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_763720.xml" title="Restrictions"/>
+        <resource identifier="res_quiz_763739" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_763739.xml" title="Question Types"/>
+        <resource identifier="res_quiz_787146" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_787146.xml" title="Matching Quiz"/>
+        <resource identifier="res_quiz_788007" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_788007.xml" title="Additional Matching Questions"/>
+        <resource identifier="res_quiz_788788" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_788788.xml" title="Empty Quiz"/>
+        <resource identifier="res_quiz_704578" type="webcontent" d2l_2p0:material_type="d2lquiz" d2l_2p0:link_target="" href="quiz_d2l_704578.xml" title="L03 Activity | Extract Information from Genealogical Records"/>
+        <resource identifier="res_discuss_1" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_1.xml" title=""/>
+        <resource identifier="res_discuss_2" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_2.xml" title=""/>
+        <resource identifier="res_discuss_3" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_3.xml" title=""/>
+        <resource identifier="res_discuss_4" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_4.xml" title=""/>
+        <resource identifier="res_discuss_5" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_5.xml" title=""/>
+        <resource identifier="res_discuss_6" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_6.xml" title=""/>
+        <resource identifier="res_discuss_7" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_7.xml" title=""/>
+        <resource identifier="res_discuss_8" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_8.xml" title=""/>
+        <resource identifier="res_discuss_9" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_9.xml" title=""/>
+        <resource identifier="res_discuss_10" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_10.xml" title=""/>
+        <resource identifier="res_discuss_11" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_11.xml" title=""/>
+        <resource identifier="res_discuss_12" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_12.xml" title=""/>
+        <resource identifier="res_discuss_13" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_13.xml" title=""/>
+        <resource identifier="res_discuss_14" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_14.xml" title=""/>
+        <resource identifier="res_discuss_15" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_15.xml" title=""/>
+        <resource identifier="res_discuss_16" type="webcontent" d2l_2p0:material_type="d2ldiscussion" d2l_2p0:link_target="" href="discussion_d2l_16.xml" title=""/>
+        <resource identifier="res_news" type="webcontent" d2l_2p0:material_type="d2lnews" d2l_2p0:link_target="" href="news_d2l.xml" title=""/>
+        <resource identifier="res_dropbox" type="webcontent" d2l_2p0:material_type="d2ldropbox" d2l_2p0:link_target="" href="dropbox_d2l.xml" title=""/>
+        <resource identifier="res_survey_706714" type="webcontent" d2l_2p0:material_type="d2lsurvey" d2l_2p0:link_target="" href="survey_d2l_706714.xml" title="Quicklink Survey"/>
+        <resource identifier="res_chklist" type="webcontent" d2l_2p0:material_type="d2lchecklist" d2l_2p0:link_target="" href="checklist_d2l.xml" title=""/>
+        <resource identifier="res_grades" type="webcontent" d2l_2p0:material_type="d2lgrades" d2l_2p0:link_target="" href="grades_d2l.xml" title=""/>
+        <resource identifier="res_courseimage" type="webcontent" d2l_2p0:material_type="d2lcourseimage" d2l_2p0:link_target="" href="courseimage_d2l.xml" title=""/>
+    </resources>
+</manifest>
