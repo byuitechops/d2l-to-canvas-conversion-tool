@@ -99,7 +99,7 @@ function readFile() {
                 console.log(path.basename(zip.courseInfo.path, '.zip'));
             });
         }
-        startConversion(zips, main);
+        startConversion(zips, conversion);
     });
 }
 
@@ -170,7 +170,7 @@ prompt.get(courseDomain, (errDomain, domainData) => {
                     startDownloader(prototype);
                 });
             } else {
-                startDownloader(main);
+                startDownloader(conversion);
             }
         });
     }
