@@ -15,7 +15,7 @@ var childModules = [
     'assignments-delete-unwanted',
     'question-issues-report',
     'blueprint-lock-items',
-    'check-alt-property', 
+    'check-alt-property',
     'disperse-welcome-folder', // REVIEW
     'match-question-answers', // REVIEW
     'setup-instructor-resources', // REVIEW
@@ -38,7 +38,7 @@ var settings = {
     'keepFiles': argv.k || argv.K || argv.keep ? true : false,
     'deleteCourse': argv.x || argv.X || argv.delete ? true : false,
     'useDownloader': argv.e || argv.E || argv.existing ? false : true,
-    'prototypeLesson': argv.p || argv.P || argv.prototype ? true : false,
+    'lessonFolders': argv.l || argv.L || argv.lessonFolders ? true : false,
 };
 
 var courseDomain = [{
@@ -63,15 +63,6 @@ var getOU = [{
     required: true,
     message: 'OU(s) cannot be empty.',
     default: '340002'
-}];
-
-var getLessonTitle = [{
-    name: 'lessonTitle',
-    type: 'string',
-    description: chalk.cyanBright('Enter the Lesson Title you want to convert:'),
-    required: true,
-    message: 'Lesson Title cannot be empty.',
-    default: 'Child 10: I-Learn 3 References'
 }];
 
 prompt.message = chalk.whiteBright('');
@@ -99,7 +90,7 @@ function readFile() {
                 console.log(path.basename(zip.courseInfo.path, '.zip'));
             });
         }
-        startConversion(zips, main);
+        startConversion(zips, conversion);
     });
 }
 
@@ -111,7 +102,9 @@ function startConversion(courses, conversion) {
         if (err) {
             console.log(chalk.red('\nError writing report to report.json'));
         } else {
-            // console.log(chalk.blueBright(`${resultCourses.length} courses have been converted.`));
+            if (resultCourses.length) {
+                console.log(chalk.blueBright(`${resultCourses.length} courses have been converted.`));
+            }
         }
     });
 }
@@ -162,19 +155,7 @@ prompt.get(courseDomain, (errDomain, domainData) => {
                     }
                 });
             }
-
-            /* If we only want one lesson in the download... */
-            if (settings.prototypeLesson) {
-                prompt.get(getLessonTitle, (err, promptData) => {
-                    userData.lessonTitle = promptData.lessonTitle;
-                    startDownloader(prototype);
-                });
-            } else {
-                startDownloader(main);
-            }
+            startDownloader(conversion);
         });
     }
 });
-
-
-

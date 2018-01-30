@@ -1,15 +1,15 @@
-const fs = require('fs');
 const chalk = require('chalk');
 const fws = require('fixed-width-string');
 
 module.exports = (course, callback) => {
-    console.log(`\nNew Canvas Course: https://byui.instructure.com/courses/${course.info.canvasOU}`);
-
-    console.log('\n' + chalk.bgBlue(' FINAL REPORT '));
 
     var errors = course.logs.filter(log => log.title == 'error');
     var fatalErrors = course.logs.filter(log => log.title == 'fatalError');
     var warnings = course.logs.filter(log => log.title == 'warning');
+
+    console.log(`\nNew Canvas Course: https://byui.instructure.com/courses/${course.info.canvasOU}`);
+
+    console.log('\n' + chalk.bgBlue(' FINAL REPORT '));
 
     console.log(chalk.redBright(fws('ERRORS:', 14) + errors.length));
     // errors.forEach(error => {
@@ -26,7 +26,5 @@ module.exports = (course, callback) => {
     //     console.log(chalk.cyan(fws(warning.location, 15)), warning.data.message);
     // });
 
-    console.log(...course.logs.map(log => log.title));
-
     callback(null, course);
-}
+};
