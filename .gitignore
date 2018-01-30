@@ -3,6 +3,7 @@
 !package-lock.json
 !package.json
 node_modules/
+factory/*
 D2LReady/*
 D2LProcessing/*
 D2LProcessed/*

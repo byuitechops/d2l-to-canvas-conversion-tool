@@ -9,9 +9,9 @@ module.exports = (courseData, finalCallback) => {
         asyncLib.constant(courseData),
         ...agenda.prepare,
         ...agenda.preImport,
-        ...agenda.importCourse,
-        ...agenda.postImport,
-        ...agenda.cleanUp
+        // ...agenda.importCourse,
+        // ...agenda.postImport,
+        // ...agenda.cleanUp
     ];
 
     asyncLib.waterfall(modules, finalCallback);

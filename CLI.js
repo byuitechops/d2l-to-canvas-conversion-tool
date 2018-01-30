@@ -3,23 +3,24 @@
 
 /* Any child modules listed here will run when conversion is ran through the CLI */
 var childModules = [
-    'reorganize-file-structure',
-    'delete-duplicate-files',
-    'set-syllabus',
-    'ilearn-3-references',
-    'module-publish-settings',
-    'create-homepage',
-    'set-navigation-tabs',
-    'target-attribute',
-    'web-features-update',
-    'assignments-delete-unwanted',
-    'question-issues-report',
-    'blueprint-lock-items',
-    'check-alt-property',
-    'disperse-welcome-folder', // REVIEW
-    'match-question-answers', // REVIEW
-    'setup-instructor-resources', // REVIEW
-    'lessons-create-discussions', // REVIEW
+    'find-quiz-regex',
+    // 'reorganize-file-structure',
+    // 'delete-duplicate-files',
+    // 'set-syllabus',
+    // 'ilearn-3-references',
+    // 'module-publish-settings',
+    // 'create-homepage',
+    // 'set-navigation-tabs',
+    // 'target-attribute',
+    // 'web-features-update',
+    // 'assignments-delete-unwanted',
+    // 'question-issues-report',
+    // 'blueprint-lock-items',
+    // 'check-alt-property',
+    // 'disperse-welcome-folder', // REVIEW
+    // 'match-question-answers', // REVIEW
+    // 'setup-instructor-resources', // REVIEW
+    // 'lessons-create-discussions', // REVIEW
 ];
 
 const downloader = require('d2l-course-downloader'),
