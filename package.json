@@ -4,6 +4,7 @@
   "description": "This tool is used to help convert courses from D2L to Canvas",
   "main": "userInterface/ui.js",
   "dependencies": {
+    "Quiz-fix-overlay": "git+https://github.com/byuitechops/quiz-fix-overlay.git",
     "assignments-delete-unwanted": "github:byuitechops/assignments-delete-unwanted",
     "async": "^2.6.0",
     "blueprint-lock-items": "github:byuitechops/blueprint-lock-items",
