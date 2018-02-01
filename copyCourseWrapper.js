@@ -8,12 +8,15 @@ module.exports = (course, stepCallback) => {
     }
     
     /* sourseID, accountID, callback */
-    copyACourse(course.info.canvasOU, 1 , (err, stuff) => {
+    copyACourse(course.info.canvasOU, 1 , (err, newCourse) => {
         if (err) {
             course.fatalError(err);
             stepCallback(err, course);
             return;
         }
+        course.newInfo('prototypeOU', newCourse.id);
+        course.message(`Prototype course copied with new OU of ${newCourse.id}`);
+
         stepCallback(null, course);
     });
 };
