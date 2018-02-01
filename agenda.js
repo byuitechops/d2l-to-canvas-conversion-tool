@@ -17,6 +17,7 @@ const zip = require('zip');
 
 /* ImportCourse */
 const createCourse = require('create-course');
+const copyCourse = require('./copyCourseWrapper.js');
 const uploadCourse = require('upload-course');
 const getMigrationIssues = require('get-migration-issues');
 
@@ -31,6 +32,7 @@ const createHomepage = require('create-homepage');
 const webFeaturesUpdate = require('web-features-update');
 const deleteUnwantedAssignments = require('assignments-delete-unwanted');
 const lessonsCreateDiscussions = require('lessons-create-discussions');
+const publishSettings = require('module-publish-settings');
 
 /* CleanUp */
 const removeFiles = require('remove-files');
@@ -72,6 +74,7 @@ exports.preImport = [
 
 exports.importCourse = [
     createCourse, // SHELL - Creates the course in Canvas
+    copyCourse, // SHELL - Makes a copy of the prototype course
     uploadCourse, // SHELL - Uploads our zipped course into our new Canvas Course
     getMigrationIssues, // SHELL - Retrieves any issues that occurred during upload
 ];
@@ -87,6 +90,7 @@ exports.postImport = [
     webFeaturesUpdate, // REQUIRED FOR ONLINE - Creates and removes specific html for online styling
     deleteUnwantedAssignments, // REQUIRED FOR ONLINE - Removes [CO#] assignments from the course
     lessonsCreateDiscussions, // REQUIRED FOR ONLINE - 
+    publishSettings, // DEFAULT REQUIRED - Publishes/ Unpublishes items according to their settings in D2L
 ];
 
 exports.cleanUp = [

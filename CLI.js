@@ -3,15 +3,16 @@
 
 /* Any child modules listed here will run when conversion is ran through the CLI */
 var childModules = [
-    'find-quiz-regex',
-    // 'delete-duplicate-files',
-    // 'target-attribute',
-    // 'question-issues-report',
-    // 'check-alt-property',
-    // 'disperse-welcome-folder', // REVIEW
+    // 'find-quiz-regex',
+    'delete-duplicate-files',
+    'delete-questions-and-conversations',
+    'target-attribute',
+    'question-issues-report',
+    'check-alt-property',
+    'disperse-welcome-folder', // REVIEW
     // 'match-question-answers', // REVIEW
-    // 'setup-instructor-resources', // REVIEW
-    // 'lessons-create-discussions', // REVIEW
+    'setup-instructor-resources', // REVIEW
+    // 'lessons-create-discussions', // REVIEW - will not check for existing
     // 'blueprint-lock-items', // Should run last, if possible
 ];
 
@@ -48,7 +49,15 @@ var courseDomain = [{
             return 'pathway';
         }
     }
-}];
+},
+{
+    name: 'canvasOU',
+    description: chalk.cyanBright('Do you have an existing Canvas OU?'),
+    type: 'string',
+    default: 'no',
+    required: true
+}
+];
 
 var getOU = [{
     name: 'ous',
