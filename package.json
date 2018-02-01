@@ -4,7 +4,7 @@
   "description": "This tool is used to help convert courses from D2L to Canvas",
   "main": "userInterface/ui.js",
   "dependencies": {
-    "Quiz-fix-overlay": "git+https://github.com/byuitechops/quiz-fix-overlay.git",
+    "Quiz-fix-overlay": "github:byuitechops/quiz-fix-overlay",
     "assignments-delete-unwanted": "github:byuitechops/assignments-delete-unwanted",
     "async": "^2.6.0",
     "blueprint-lock-items": "github:byuitechops/blueprint-lock-items",
@@ -12,7 +12,6 @@
     "chalk": "^2.3.0",
     "check-alt-property": "github:byuitechops/check-alt-property",
     "cheerio": "^1.0.0-rc.2",
-    "child-template": "github:byuitechops/lessons-create-discussions",
     "copy-a-canvas-course": "github:byuitechops/copy-a-canvas-course",
     "course-file-videos": "github:byuitechops/course-file-videos",
     "course-make-blueprint": "github:byuitechops/course-make-blueprint",

@@ -4,23 +4,15 @@
 /* Any child modules listed here will run when conversion is ran through the CLI */
 var childModules = [
     'find-quiz-regex',
-    // 'reorganize-file-structure',
     // 'delete-duplicate-files',
-    // 'set-syllabus',
-    // 'ilearn-3-references',
-    // 'module-publish-settings',
-    // 'create-homepage',
-    // 'set-navigation-tabs',
     // 'target-attribute',
-    // 'web-features-update',
-    // 'assignments-delete-unwanted',
     // 'question-issues-report',
-    // 'blueprint-lock-items',
     // 'check-alt-property',
     // 'disperse-welcome-folder', // REVIEW
     // 'match-question-answers', // REVIEW
     // 'setup-instructor-resources', // REVIEW
     // 'lessons-create-discussions', // REVIEW
+    // 'blueprint-lock-items', // Should run last, if possible
 ];
 
 const downloader = require('d2l-course-downloader'),
@@ -35,11 +27,12 @@ const downloader = require('d2l-course-downloader'),
 var settings = {
     'debug': argv.d || argv.D || argv.debug ? argv.d : false,
     'readAll': argv.a || argv.A || argv.all ? argv.a : false,
-    'online': argv.o || argv.O || argv.online ? true : true,
+    'online': argv.o || argv.O || argv.online ? true : true, // TRUE IN BOTH CASES, MUST BE SWITCHED LATER
     'keepFiles': argv.k || argv.K || argv.keep ? true : false,
     'deleteCourse': argv.x || argv.X || argv.delete ? true : false,
     'useDownloader': argv.e || argv.E || argv.existing ? false : true,
     'lessonFolders': argv.l || argv.L || argv.lessonFolders ? true : false,
+    'ouList': argv.g || argv.G || argv.ouList ? true : false,
 };
 
 var courseDomain = [{
@@ -99,12 +92,12 @@ function startConversion(courses, conversion) {
     courses.forEach(course => {
         course.courseInfo.childModules = childModules;
     });
-    asyncLib.eachSeries(courses, conversion, (err, resultCourses) => {
+    asyncLib.eachSeries(courses, conversion, (err) => {
         if (err) {
             console.log(chalk.red('\nError writing report to report.json'));
         } else {
-            if (resultCourses.length) {
-                console.log(chalk.blueBright(`${resultCourses.length} courses have been converted.`));
+            if (courses.length != undefined) {
+                console.log(chalk.blueBright(`${courses.length} courses have been converted.`));
             }
         }
     });
@@ -112,6 +105,29 @@ function startConversion(courses, conversion) {
 
 /* Get the domain from the user */
 prompt.get(courseDomain, (errDomain, domainData) => {
+    var ous, userData;
+
+    /* Run the downloader */
+    function startDownloader(conversion) {
+        downloader(userData, (downloadError, downloaderResults) => {
+            var courses;
+            if (downloadError) console.error(downloadError);
+            else {
+                /* Convert list of results to a list of paths */
+                courses = downloaderResults.map((downloaderResult) => {
+                    return {
+                        'settings': settings,
+                        'courseInfo': {
+                            'path': downloaderResult.name,
+                            'D2LOU': downloaderResult.ou
+                        }
+                    };
+                });
+                startConversion(courses, conversion);
+            }
+        });
+    }
+
     if (errDomain) {
         console.log(errDomain);
         return;
@@ -121,41 +137,33 @@ prompt.get(courseDomain, (errDomain, domainData) => {
     if (settings.useDownloader === false) {
         settings.keepFiles = true;
         readFile();
+
+    } else if (settings.ouList === true) {
+        /* Get the OUs from the ouList */
+        ous = require('./ouList.js');
+        userData = {
+            ous: ous.split('\n'),
+            downloadLocation: './factory/originalZip',
+            domain: domainData.domain,
+        };
+
+        startDownloader(conversion);
+
     } else {
         /* Get the OU from the user */
         prompt.get(getOU, (errPrompt, result) => {
-
-            var userData = {
-                ous: [result.ous],
-                downloadLocation: './factory/originalZip',
-                domain: domainData.domain,
-            };
 
             if (errPrompt) {
                 console.log(errPrompt);
                 return;
             }
 
-            /* Run the downloader */
-            function startDownloader(conversion) {
-                downloader(userData, (downloadError, downloaderResults) => {
-                    var courses;
-                    if (downloadError) console.error(downloadError);
-                    else {
-                        /* Convert list of results to a list of paths */
-                        courses = downloaderResults.map((downloaderResult) => {
-                            return {
-                                'settings': settings,
-                                'courseInfo': {
-                                    'path': downloaderResult.name,
-                                    'D2LOU': downloaderResult.ou
-                                }
-                            };
-                        });
-                        startConversion(courses, conversion);
-                    }
-                });
-            }
+            userData = {
+                ous: [result.ous],
+                downloadLocation: './factory/originalZip',
+                domain: domainData.domain,
+            };
+
             startDownloader(conversion);
         });
     }
