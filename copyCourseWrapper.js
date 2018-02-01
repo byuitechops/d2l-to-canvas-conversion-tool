@@ -7,8 +7,8 @@ module.exports = (course, stepCallback) => {
         return;
     }
     
-    /* sourseID, accountID, callback */
-    copyACourse(course.info.canvasOU, 1 , (err, newCourse) => {
+    /* sourceID, accountID, callback */
+    copyACourse(course.info.canvasOU, 19 , (err, newCourse) => {
         if (err) {
             course.fatalError(err);
             stepCallback(err, course);
