@@ -7,12 +7,11 @@ var childModules = [
     'delete-duplicate-files',
     'delete-questions-and-conversations',
     'target-attribute',
-    'question-issues-report',
     'check-alt-property',
     'disperse-welcome-folder', // REVIEW
     // 'match-question-answers', // REVIEW
     'setup-instructor-resources', // REVIEW
-    // 'lessons-create-discussions', // REVIEW - will not check for existing
+    'notes-from-instructor', // REVIEW - will not check for existing
     'blueprint-lock-items', // Should run last, if possible
 ];
 
