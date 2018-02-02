@@ -13,7 +13,7 @@ var childModules = [
     // 'match-question-answers', // REVIEW
     'setup-instructor-resources', // REVIEW
     // 'lessons-create-discussions', // REVIEW - will not check for existing
-    // 'blueprint-lock-items', // Should run last, if possible
+    'blueprint-lock-items', // Should run last, if possible
 ];
 
 const downloader = require('d2l-course-downloader'),
@@ -58,7 +58,9 @@ var courseDomain = [{
     required: true,
     before: (value) => {
         if (value === 'no')
-            return undefined;
+            return '';
+        else
+            return value;
     }
 }
 ];

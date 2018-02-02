@@ -18,6 +18,7 @@ const zip = require('zip');
 /* ImportCourse */
 const createCourse = require('create-course');
 const copyCourse = require('./copyCourseWrapper.js');
+// const scrubCourse = require('canvas-course-scrubber');
 const uploadCourse = require('upload-course');
 const getMigrationIssues = require('get-migration-issues');
 
@@ -75,6 +76,7 @@ exports.preImport = [
 exports.importCourse = [
     createCourse, // SHELL - Creates the course in Canvas
     copyCourse, // SHELL - Makes a copy of the prototype course
+    // scrubCourse, // SHELL - Cleans the original prototype course in prep for upload
     uploadCourse, // SHELL - Uploads our zipped course into our new Canvas Course
     getMigrationIssues, // SHELL - Retrieves any issues that occurred during upload
 ];
