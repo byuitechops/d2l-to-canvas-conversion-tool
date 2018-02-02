@@ -55,7 +55,11 @@ var courseDomain = [{
     description: chalk.cyanBright('Do you have an existing Canvas OU?'),
     type: 'string',
     default: 'no',
-    required: true
+    required: true,
+    before: (value) => {
+        if (value === 'no')
+            return undefined;
+    }
 }
 ];
 
