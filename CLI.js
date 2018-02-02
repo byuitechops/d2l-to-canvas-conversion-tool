@@ -71,7 +71,7 @@ var getOU = [{
 prompt.message = chalk.whiteBright('');
 prompt.delimiter = chalk.whiteBright('');
 
-function readFile() {
+function readFile(domainData) {
     fs.readdir(path.resolve('.', 'factory', 'originalZip'), (err, dirContents) => {
         var zips = dirContents.filter((zip) => {
             if (zip.includes('.zip'))
@@ -81,7 +81,8 @@ function readFile() {
                 'settings': settings,
                 'courseInfo': {
                     'path': path.resolve('.', 'factory', 'originalZip', zip),
-                    'D2LOU': 'Unavailable'
+                    'D2LOU': 'Unavailable',
+                    'canvasOU': domainData.canvasOU,
                 }
             };
         });
@@ -128,7 +129,8 @@ prompt.get(courseDomain, (errDomain, domainData) => {
                         'settings': settings,
                         'courseInfo': {
                             'path': downloaderResult.name,
-                            'D2LOU': downloaderResult.ou
+                            'D2LOU': downloaderResult.ou,
+                            'canvasOU': domainData.canvasOU,
                         }
                     };
                 });
@@ -145,7 +147,7 @@ prompt.get(courseDomain, (errDomain, domainData) => {
     /* If we we aren't using the downloader, skip the rest and keep the files */
     if (settings.useDownloader === false) {
         settings.keepFiles = true;
-        readFile();
+        readFile(domainData);
 
     } else if (settings.ouList === true) {
         /* Get the OUs from the ouList */
@@ -154,6 +156,7 @@ prompt.get(courseDomain, (errDomain, domainData) => {
             ous: ous.split('\n'),
             downloadLocation: './factory/originalZip',
             domain: domainData.domain,
+            // canvasOU: domainData.canvasOU,
         };
 
         startDownloader(conversion);
@@ -171,6 +174,7 @@ prompt.get(courseDomain, (errDomain, domainData) => {
                 ous: [result.ous],
                 downloadLocation: './factory/originalZip',
                 domain: domainData.domain,
+                canvasOU: domainData.canvasOU,
             };
 
             startDownloader(conversion);
