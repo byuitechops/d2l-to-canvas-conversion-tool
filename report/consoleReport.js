@@ -1,3 +1,5 @@
+/* eslint no-console:0 */
+
 const chalk = require('chalk');
 const fws = require('fixed-width-string');
 
@@ -8,6 +10,8 @@ module.exports = (course, callback) => {
     var warnings = course.logs.filter(log => log.title == 'warning');
 
     console.log(`\nNew Canvas Course: https://byui.instructure.com/courses/${course.info.canvasOU}`);
+    if (course.info.prototypeOU)
+        console.log(`\nCopy of Original Course: https://byui.instructure.com/courses/${course.info.prototypeOU}`);
 
     console.log('\n' + chalk.bgBlue(' FINAL REPORT '));
 
