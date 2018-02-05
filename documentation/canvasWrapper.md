@@ -81,7 +81,7 @@ canvas.getModules(courseID, (err, modules) => {
 });
 
 ```
-##  Getters
+## Specific Getters
 * getModuleItems
 * getQuizQuestions
 

@@ -26,7 +26,7 @@ const downloader = require('d2l-course-downloader'),
 
 var settings = {
     'debug': argv.d || argv.D || argv.debug ? argv.d : false,
-    'readAll': argv.a || argv.A || argv.all ? argv.a : false,
+    // 'readAll': argv.a || argv.A || argv.all ? argv.a : false,
     'online': argv.o || argv.O || argv.online ? true : true, // TRUE IN BOTH CASES, MUST BE SWITCHED LATER
     'keepFiles': argv.k || argv.K || argv.keep ? true : false,
     'deleteCourse': argv.x || argv.X || argv.delete ? true : false,
@@ -85,6 +85,7 @@ function readFile(domainData) {
             return {
                 'settings': settings,
                 'courseInfo': {
+                    'domain': domainData.domain,
                     'path': path.resolve('.', 'factory', 'originalZip', zip),
                     'D2LOU': 'Unavailable',
                     'canvasOU': domainData.canvasOU,
@@ -133,6 +134,7 @@ prompt.get(courseDomain, (errDomain, domainData) => {
                     return {
                         'settings': settings,
                         'courseInfo': {
+                            'domain': domainData.domain,
                             'path': downloaderResult.name,
                             'D2LOU': downloaderResult.ou,
                             'canvasOU': domainData.canvasOU,
@@ -161,7 +163,6 @@ prompt.get(courseDomain, (errDomain, domainData) => {
             ous: ous.split('\n'),
             downloadLocation: './factory/originalZip',
             domain: domainData.domain,
-            // canvasOU: domainData.canvasOU,
         };
 
         startDownloader(conversion);
@@ -179,7 +180,6 @@ prompt.get(courseDomain, (errDomain, domainData) => {
                 ous: [result.ous],
                 downloadLocation: './factory/originalZip',
                 domain: domainData.domain,
-                canvasOU: domainData.canvasOU,
             };
 
             startDownloader(conversion);
