@@ -77,7 +77,7 @@ exports.importCourse = [
     copyCourse, // SHELL - Makes a copy of the prototype course
     scrubCourse, // SHELL - Cleans the original prototype course in prep for upload
     uploadCourse, // SHELL - Uploads our zipped course into our new Canvas Course
-    getMigrationIssues, // SHELL - Retrieves any issues that occurred during upload
+    // getMigrationIssues, // SHELL - Retrieves any issues that occurred during upload
 ];
 
 exports.postImport = [
