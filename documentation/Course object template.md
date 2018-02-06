@@ -16,7 +16,9 @@ The Logs array needs to be updated, but everything else is up to date
     'unzippedPath': '<string>',     // Absolute filepath to where the course is unzipped to
     'processedPath': '<string>',    // Absolute filepath to where the course files are written to after preImport
     'uploadZipPath': '<string>',    // Absolute filepath to where the unzipped course is zipped to
-    'fileName': '<string>',         // Course name ("FDREL 121 Reference - blah blah")
+    'fileName': '<string>',         // Course name with extension("FDREL 121 Reference - blah blah.zip")
+    'courseName': '<string>'        // Course Name without extension
+    'courseCode': '<string>'        // The course name + the course number.
     'linkCounter': 0,               // A counter used by quiz fix overlay to generate unique Id'savePreferences
     'childModules': '<string>[]'    // Array of the names of each child module that is turned on
     'lessonFolders': '<bool>'       // I am not sure
