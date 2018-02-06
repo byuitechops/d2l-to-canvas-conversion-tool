@@ -9,6 +9,7 @@ The Logs array needs to be updated, but everything else is up to date
 'logs': [],
     /* Stores various information bits that are used by the program, but are not determined by the user */
 'info': { 
+    'path': '<string>'              // byui OR pathway
     'migrationID': '<string>',      // ID for the course import migration
     'fileName': '<string>',         // Name of the downloaded course zip
     'originalZipPath': '<string>',  // Absolute filepath to Where the original downloaded zip is
