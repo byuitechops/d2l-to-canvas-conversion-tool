@@ -3,17 +3,22 @@
 
 /* Any child modules listed here will run when conversion is ran through the CLI */
 var childModules = [
-    // 'find-quiz-regex',
-    'delete-duplicate-files',
-    'delete-questions-and-conversations',
-    'target-attribute',
-    'check-alt-property',
-    'disperse-welcome-folder', // REVIEW
+    // 'delete-duplicate-files',
+    // 'delete-questions-and-conversations',
+    // 'target-attribute',
+    // 'check-alt-property',
+    // 'disperse-welcome-folder', // REVIEW
     // 'match-question-answers', // REVIEW
-    'setup-instructor-resources', // REVIEW
-    'notes-from-instructor', // REVIEW - will not check for existing
-    'blueprint-lock-items', // Should run last, if possible
+    // 'setup-instructor-resources', // REVIEW
+    // 'notes-from-instructor', // REVIEW - will not check for existing
+    // 'blueprint-lock-items', // Should run last, if possible
+    // 'action-series-master',
 ];
+
+var options = {
+    lessonFolders: true,
+    blueprintLockItems: true
+};
 
 const downloader = require('d2l-course-downloader'),
     prompt = require('prompt'),
@@ -36,32 +41,32 @@ var settings = {
 };
 
 var courseDomain = [{
-    name: 'domain',
-    description: chalk.cyanBright('Is this for Pathway?'),
-    type: 'string',
-    default: 'no',
-    required: true,
-    before: (value) => {
-        if (value.toLowerCase() != 'yes' || value.toLowerCase() != 'y') {
-            return 'byui';
-        } else {
-            return 'pathway';
+        name: 'domain',
+        description: chalk.cyanBright('Is this for Pathway?'),
+        type: 'string',
+        default: 'no',
+        required: true,
+        before: (value) => {
+            if (value.toLowerCase() != 'yes' || value.toLowerCase() != 'y') {
+                return 'byui';
+            } else {
+                return 'pathway';
+            }
+        }
+    },
+    {
+        name: 'canvasOU',
+        description: chalk.cyanBright('Do you have an existing Canvas OU?'),
+        type: 'string',
+        default: 'no',
+        required: true,
+        before: (value) => {
+            if (value === 'no')
+                return '';
+            else
+                return value;
         }
     }
-},
-{
-    name: 'canvasOU',
-    description: chalk.cyanBright('Do you have an existing Canvas OU?'),
-    type: 'string',
-    default: 'no',
-    required: true,
-    before: (value) => {
-        if (value === 'no')
-            return '';
-        else
-            return value;
-    }
-}
 ];
 
 var getOU = [{
@@ -107,7 +112,11 @@ function readFile(domainData) {
 function startConversion(courses, conversion) {
     courses.forEach(course => {
         course.courseInfo.childModules = childModules;
+        Object.keys(options).forEach(key => {
+            course.settings[key] = options[key];
+        });
     });
+    console.log(courses);
     asyncLib.eachSeries(courses, conversion, (err) => {
         if (err) {
             console.log(chalk.red('\nError writing report to report.json'));
