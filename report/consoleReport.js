@@ -16,19 +16,25 @@ module.exports = (course, callback) => {
     console.log('\n' + chalk.bgBlue(' FINAL REPORT '));
 
     console.log(chalk.redBright(fws('ERRORS:', 14) + errors.length));
-    // errors.forEach(error => {
-    //     console.log(chalk.cyan(fws(error.location, 15)), error.data);
-    // });
+    if (errors.length > 0) {
+        var errorLocations = [...new Set(errors.map(error => error.location))];
+        console.log(chalk.red('Error Locations:'));
+        errorLocations.forEach(location => console.log(location));
+    }
 
     console.log(chalk.red(fws('FATAL ERRORS:', 14) + fatalErrors.length));
-    // fatalErrors.forEach(fatal => {
-    //     console.log(chalk.cyan(fws(fatal.location, 15)), fatal.data);
-    // });
+    if (fatalErrors.length > 0) {
+        var fatalLocations = [...new Set(errors.map(error => error.location))];
+        console.log(chalk.red('Fatal Error Locations:'));
+        fatalLocations.forEach(location => console.log(location));
+    }
 
     console.log(chalk.yellow(fws('WARNINGS:', 14) + warnings.length));
-    // warnings.forEach(warning => {
-    //     console.log(chalk.cyan(fws(warning.location, 15)), warning.data.message);
-    // });
+    if (warnings.length > 0) {
+        var warningLocations = [...new Set(errors.map(error => error.location))];
+        console.log(chalk.red('Warning Locations:'));
+        warningLocations.forEach(location => console.log(location));
+    }
 
     callback(null, course);
 };

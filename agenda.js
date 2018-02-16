@@ -65,8 +65,8 @@ exports.prepare = [
 ];
 
 exports.preImport = [
-    questionIssuesReport, // DEFAULT REQUIRED - Identifies quiz questions that have known issues
-    quizRelCleaner, // DEFAULT REQUIRED - Identifies and cleans quizzes with CDATA in them (where JS scripts used to be)
+    // questionIssuesReport, // DEFAULT REQUIRED - Identifies quiz questions that have known issues
+    quizRelCleaner, // DEFAULT REQUIRED - Identifies quizzes that have a bad "rel" tag
     courseFileVideos, // DEFAULT REQUIRED - Identifies and saves names of video files in course files, for later review
     filesFindUsedContent, // DEFAULT REQUIRED - Identifies which files are used and which are conversionTool
     references, // REQUIRED FOR ONLINE - Identifies references to outdated technologies
@@ -82,7 +82,7 @@ exports.importCourse = [
 
 exports.postImport = [
     verifyCourseUpload, // DEFAULT REQUIRED - Checks that course has finished unpacking
-    quizFixOverlay, // DEFAULT REQUIRED - Fixes issues with javascript in quiz questions
+    // quizFixOverlay, // DEFAULT REQUIRED - Fixes issues with javascript in quiz questions
     reorganizeFileStructure, // ONLINE ONLY (REQUIRED) - Organizes the course's files into Documents, Media, Archive, and Template
     makeBlueprint, // ONLINE ONLY (REQUIRED) - Makes the course a blueprint course IF it is an online course
     setSyllabus, // REQUIRED FOR ONLINE - Sets the syllabus of a course, if one is available

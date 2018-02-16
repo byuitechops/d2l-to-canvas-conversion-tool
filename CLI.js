@@ -3,7 +3,6 @@
 
 /* Any child modules listed here will run when conversion is ran through the CLI */
 var childModules = [
-    // 'find-quiz-regex',
     'delete-duplicate-files',
     'delete-questions-and-conversations',
     'target-attribute',
@@ -13,7 +12,13 @@ var childModules = [
     'setup-instructor-resources', // REVIEW
     'notes-from-instructor', // REVIEW - will not check for existing
     // 'blueprint-lock-items', // Should run last, if possible
+    'action-series-master',
 ];
+
+var options = {
+    lessonFolders: true,
+    blueprintLockItems: true
+};
 
 const downloader = require('d2l-course-downloader'),
     prompt = require('prompt'),
@@ -107,7 +112,11 @@ function readFile(domainData) {
 function startConversion(courses, conversion) {
     courses.forEach(course => {
         course.courseInfo.childModules = childModules;
+        Object.keys(options).forEach(key => {
+            course.settings[key] = options[key];
+        });
     });
+    console.log(courses);
     asyncLib.eachSeries(courses, conversion, (err) => {
         if (err) {
             console.log(chalk.red('\nError writing report to report.json'));
