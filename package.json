@@ -5,11 +5,12 @@
   "main": "userInterface/ui.js",
   "dependencies": {
     "Quiz-fix-overlay": "github:byuitechops/quiz-fix-overlay",
+    "action-series-master": "git+https://github.com/byuitechops/action-series-master.git",
     "assignments-delete-unwanted": "github:byuitechops/assignments-delete-unwanted",
     "async": "^2.6.0",
     "blueprint-lock-items": "github:byuitechops/blueprint-lock-items",
-    "canvas-wrapper": "git+https://github.com/byuitechops/Canvas-wrapper.git",
     "canvas-course-scrubber": "github:byuitechops/canvas-course-scrubber",
+    "canvas-wrapper": "git+https://github.com/byuitechops/Canvas-wrapper.git",
     "chalk": "^2.3.0",
     "check-alt-property": "github:byuitechops/check-alt-property",
     "cheerio": "^1.0.0-rc.2",
