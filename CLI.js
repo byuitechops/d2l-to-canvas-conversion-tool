@@ -12,7 +12,7 @@ var childModules = [
     // 'match-question-answers', // REVIEW
     'setup-instructor-resources', // REVIEW
     'notes-from-instructor', // REVIEW - will not check for existing
-    'blueprint-lock-items', // Should run last, if possible
+    // 'blueprint-lock-items', // Should run last, if possible
 ];
 
 const downloader = require('d2l-course-downloader'),

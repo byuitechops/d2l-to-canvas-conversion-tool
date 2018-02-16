@@ -20,7 +20,7 @@ const createCourse = require('create-course');
 const copyCourse = require('./copyCourseWrapper.js');
 const scrubCourse = require('canvas-course-scrubber').scrubCourse;
 const uploadCourse = require('upload-course');
-const getMigrationIssues = require('get-migration-issues');
+// const getMigrationIssues = require('get-migration-issues');
 
 /* PostImport */
 const reorganizeFileStructure = require('reorganize-file-structure');
