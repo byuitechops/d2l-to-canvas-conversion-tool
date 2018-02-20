@@ -8,11 +8,12 @@ var childModules = [
     'target-attribute',
     'check-alt-property',
     'disperse-welcome-folder', // REVIEW
-    // 'match-question-answers', // REVIEW
+    'match-question-answers', // REVIEW
     'setup-instructor-resources', // REVIEW
     'notes-from-instructor', // REVIEW - will not check for existing
-    // 'blueprint-lock-items', // Should run last, if possible
+    'blueprint-lock-items', // Should run last, if possible
     'action-series-master',
+    'remove-blank-page-headers'
 ];
 
 var options = {
@@ -116,7 +117,6 @@ function startConversion(courses, conversion) {
             course.settings[key] = options[key];
         });
     });
-    console.log(courses);
     asyncLib.eachSeries(courses, conversion, (err) => {
         if (err) {
             console.log(chalk.red('\nError writing report to report.json'));

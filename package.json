@@ -47,6 +47,7 @@
     "question-issues-report": "github:byuitechops/question-issues-report",
     "quiz-fix-overlay": "git+https://github.com/byuitechops/quiz-fix-overlay.git",
     "quiz-rel-cleaner": "git+https://github.com/byuitechops/quiz-rel-cleaner.git",
+    "remove-blank-page-headers": "git+https://github.com/byuitechops/remove-blank-page-headers.git",
     "remove-files": "git+https://github.com/byuitechops/remove-files.git",
     "reorganize-file-structure": "git+https://github.com/byuitechops/reorganize-file-structure.git",
     "request": "^2.81.0",

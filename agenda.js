@@ -13,6 +13,7 @@ const writeCourse = require('write-course');
 const filesFindUsedContent = require('files-find-used-content');
 const references = require('ilearn-3-references');
 const questionIssuesReport = require('question-issues-report');
+const removeBlankPageHeaders = require('remove-blank-page-headers');
 const zip = require('zip');
 
 /* ImportCourse */
@@ -70,6 +71,7 @@ exports.preImport = [
     courseFileVideos, // DEFAULT REQUIRED - Identifies and saves names of video files in course files, for later review
     filesFindUsedContent, // DEFAULT REQUIRED - Identifies which files are used and which are conversionTool
     references, // REQUIRED FOR ONLINE - Identifies references to outdated technologies
+    removeBlankPageHeaders,
 ];
 
 exports.importCourse = [
@@ -82,7 +84,7 @@ exports.importCourse = [
 
 exports.postImport = [
     verifyCourseUpload, // DEFAULT REQUIRED - Checks that course has finished unpacking
-    // quizFixOverlay, // DEFAULT REQUIRED - Fixes issues with javascript in quiz questions
+    quizFixOverlay, // DEFAULT REQUIRED - Fixes issues with javascript in quiz questions
     reorganizeFileStructure, // ONLINE ONLY (REQUIRED) - Organizes the course's files into Documents, Media, Archive, and Template
     makeBlueprint, // ONLINE ONLY (REQUIRED) - Makes the course a blueprint course IF it is an online course
     setSyllabus, // REQUIRED FOR ONLINE - Sets the syllabus of a course, if one is available
