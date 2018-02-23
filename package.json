@@ -18,6 +18,7 @@
     "course-file-videos": "github:byuitechops/course-file-videos",
     "course-make-blueprint": "github:byuitechops/course-make-blueprint",
     "course-object-verifier": "git+https://github.com/byuitechops/course-object-verifier.git",
+    "course-settings": "git+https://github.com/byuitechops/course-settings.git",
     "cp": "^0.2.0",
     "create-course": "git+https://github.com/byuitechops/create-course.git",
     "create-course-object": "github:byuitechops/create-course-object",

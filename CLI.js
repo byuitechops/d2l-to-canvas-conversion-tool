@@ -12,7 +12,6 @@ var childModules = [
     'setup-instructor-resources', // REVIEW
     'notes-from-instructor', // REVIEW - will not check for existing
     'blueprint-lock-items', // Should run last, if possible
-    'action-series-master',
     'remove-blank-page-headers'
 ];
 
