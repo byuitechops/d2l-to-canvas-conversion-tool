@@ -35,7 +35,7 @@ const webFeaturesUpdate = require('web-features-update');
 const deleteUnwantedAssignments = require('assignments-delete-unwanted');
 const publishSettings = require('module-publish-settings');
 const courseSettings = require('course-settings');
-const actionSeriesMaster = require('action-series-master');
+const actionSeries = require('action-series-master');
 
 /* CleanUp */
 const removeFiles = require('remove-files');
@@ -95,8 +95,8 @@ exports.postImport = [
     webFeaturesUpdate, // REQUIRED FOR ONLINE - Creates and removes specific html for online styling
     deleteUnwantedAssignments, // REQUIRED FOR ONLINE - Removes [CO#] assignments from the course
     publishSettings, // DEFAULT REQUIRED - Publishes/ Unpublishes items according to their settings in D2L
-    courseSettings,
-    actionSeriesMaster,
+    courseSettings, // REQUIRED FOR ONLINE - Sets the course settings as written in this module's documentation
+    actionSeries, // REQUIRED FOR ONLINE - Runs action series model
 ];
 
 exports.cleanUp = [
