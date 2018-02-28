@@ -9,7 +9,8 @@ The Logs array needs to be updated, but everything else is up to date
 'logs': [],
     /* Stores various information bits that are used by the program, but are not determined by the user */
 'info': { 
-    'domain': '<string>'              // byui OR pathway
+    'platform': '<string>'          // Online, Campus, or Pathway
+    'domain': '<string>'            // byui OR pathway
     'migrationID': '<string>',      // ID for the course import migration
     'fileName': '<string>',         // Name of the downloaded course zip
     'originalZipPath': '<string>',  // Absolute filepath to Where the original downloaded zip is
@@ -21,15 +22,12 @@ The Logs array needs to be updated, but everything else is up to date
     'courseCode': '<string>'        // The course name + the course number.
     'linkCounter': 0,               // A counter used by quiz fix overlay to generate unique Id'savePreferences
     'childModules': '<string>[]'    // Array of the names of each child module that is turned on
-    'lessonFolders': '<bool>'       // I am not sure
-    'canvasOU': 0,                  // Canvas ID for the newly created canvas course
+    'lessonFolders': '<bool>'       // Determines whether or not lesson folders are created in media/documents when reorganizing course file structure
+    'canvasOU': 0,                  // Canvas ID for the newly created canvas course (or target course)
     'D2LOU': 0                      // D2L OU number
 },
     /* Stores settings that are determined at runtime. Used to enable/disable features */
 'settings': {
-    'debug': '<bool>',              // Used to determine what kind of output we have
-    'readAll': '<bool>',            // Determines if we read ALL zips in the present working directory
-    'online': '<bool>',             // Determines some actions in the process based on platform
     'deleteCourse': '<bool>',       // Determines if course should be deleted at the end
     'keepFiles': '<bool>'           // determines if files generated in process should be kept
 },

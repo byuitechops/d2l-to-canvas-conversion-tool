@@ -3,12 +3,14 @@
 const asyncLib = require('async');
 const agenda = require('./agenda.js');
 
-module.exports = (courseData, finalCallback) => {
-    
-    agenda.setChildModules(courseData.courseInfo.childModules);
-    
+module.exports = (data, finalCallback) => {
+
+    var childModules = [...data.preImportModules, ...data.postImportModules];
+
+    agenda.setChildModules(childModules);
+
     const modules = [
-        asyncLib.constant(courseData),
+        asyncLib.constant(data),
         ...agenda.prepare,
         ...agenda.preImport,
         ...agenda.importCourse,
