@@ -41,6 +41,7 @@
     "mkdirp": "^0.5.1",
     "module-headings": "git+https://github.com/byuitechops/module-headings.git",
     "module-publish-settings": "github:byuitechops/module-publish-settings",
+    "notes-from-instructor": "git+https://github.com/byuitechops/notes-from-instructor.git",
     "prompt-confirm": "^1.2.0",
     "prompt-list": "^3.1.2",
     "prompt-password": "^1.2.0",
