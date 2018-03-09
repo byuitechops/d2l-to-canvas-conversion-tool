@@ -2,41 +2,38 @@
 
 const asyncLib = require('async');
 const fs = require('fs');
-const getHTML = require('./someFile.js');
-const htmlTemplate = require('./htmlTemplate.js');
+const buildHTML = require('./buildHTML.js');
+const htmlTemplate = require('./HTMLtemplate.js');
 
 module.exports = (course, callback) => {
-    // probably shouldn't split these into separate arrays
-    var errors = [],
-        warnings = [],
-        fatalErrs = [],
-        logs = [],
-        logCategories = [];
 
-    /* split logs into specific categories */
+    if (course == null) {
+        course = {
+            logs: JSON.parse(fs.readFileSync('../reports/reportConversion Test Gauntlet 1.json')),
+            info: {
+                D2LOU: 12345,
+                canvasOU: 12345,
+                fileName: 'potato.zip'
+            }
+        };
+    }
+
+    var logsObject = {
+        'fatalError': [],
+        'error': [],
+        'warning': [],
+        'message': [],
+    };
+
     course.logs.forEach(log => {
-        if (log.title == 'error') errors.push(log);
-        else if (log.title == 'fatalError') fatalErrs.push(log);
-        else if (log.title == 'warning') warnings.push(log);
-        else {
-            logs.push(log);
-
-            if (!logCategories.includes(log.title))
-                logCategories.push(log.title);
+        if (!logsObject[log.title]) {
+            logsObject[log.title] = [];
+        } else {
+            logsObject[log.title].push(log);
         }
     });
 
-    /* turn logCategories into an array of log objects */
-    logCategories = logCategories.map(category => {
-        return logs.filter(log => {
-            return category === log.title;
-        });
-    });
-
-    /* select the order the report appears in. */
-    logCategories = [...fatalErrs, ...errors, ...warnings, ...logCategories];
-
-    asyncLib.mapSeries(logCategories, getHTML, (err, htmlCategories) => {
+    asyncLib.mapSeries(logsObject, buildHTML, (err, htmlCategories) => {
         if (err) {
             console.error(err);
             callback(null, course);
@@ -44,11 +41,14 @@ module.exports = (course, callback) => {
         }
 
         /* generate template guts */
-        var templateGuts = htmlCategories.join('\n'); // idk if joining on a newline will really work...
-        htmlTemplate.replace('REPLACE ME', templateGuts);
-       
+        var templateGuts = htmlCategories.join(''); // idk if joining on a newline will really work...
+
+        course.info.htmlReportGuts = templateGuts;
+
+        var html = htmlTemplate(course);
+
         /* write the report */
-        fs.writeFile(`./reports/report${course.info.fileName.split('.zip')[0]}.html`, htmlTemplate, writeErr => {
+        fs.writeFile(`./reports/report${course.info.fileName.split('.zip')[0]}.html`, html, writeErr => {
             if (writeErr) console.error(writeErr);
             callback(null, course);
         });

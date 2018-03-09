@@ -1,10 +1,11 @@
+module.exports = (course) => `
 <!DOCTYPE html>
 <html>
 
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>${title} Conversion Report</title>
+        <title>${course.info.fileName.split('.zip')[0]} Conversion Report</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--Import Google Icon Font-->
@@ -20,7 +21,7 @@
             }
 
             body {
-                padding: 20px 20%;
+                padding: 20px 10%;
                 margin: 0;
             }
 
@@ -54,6 +55,12 @@
                 font-weight: bold;
             }
 
+            @media (max-width: 1400px) {
+                body {
+                    padding: 20px 20px;
+                }
+            }
+
         </style>
         <script>
 
@@ -69,43 +76,21 @@
                 <span class="header1 right">Canvas</span>
             </div>
             <div>
-                <span class="header3">Course OU: ${brightspaceOU}</span>
-                <span class="header3 right">Course ID: ${canvasID}</span>
+                <span class="header3">Course OU: ${course.info.D2LOU}</span>
+                <span class="header3 right">Course ID: ${course.info.canvasOU}</span>
             </div>
             <div>
-                <a href="${brightspaceLink}">${brightspaceLink}</a>
-                <a href="${canvasLink}" class="right">${canvasLink}</a>
+                <a target="_blank" href="https://byui.brightspace.com/d2l/home/${course.info.D2LOU}">https://byui.brightspace.com/d2l/home/${course.info.D2LOU}</a>
+                <a target="_blank" href="https://byui.instructure.com/courses/${course.info.canvasOU}" class="right">https://byui.instructure.com/courses/${course.info.canvasOU}</a>
             </div>
         </div>
 
         <div class="card">
-
+            <div class="header1">
+                Changes
+            </div>
             <ul class="collapsible" data-collapsible="accordion">
-                <li>
-                    <div class="collapsible-header">
-                        {{Title}}
-                    </div>
-                    <div class="collapsible-body">
-                        {{Content}}
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header">
-                        Second
-                    </div>
-                    <div class="collapsible-body">
-                        <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header">
-                        Third
-                    </div>
-                    <div class="collapsible-body">
-                        asdfasdfasdf
-                        <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                </li>
+                ${course.info.htmlReportGuts}
             </ul>
 
         </div>
@@ -117,4 +102,4 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     </body>
 
-</html>
+</html>`;
