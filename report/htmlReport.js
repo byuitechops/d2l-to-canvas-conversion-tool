@@ -1,5 +1,3 @@
-/* eslint no-console:1 */
-
 const asyncLib = require('async');
 const fs = require('fs');
 const getHTML = require('./logCategoryTemplate.js');
@@ -38,7 +36,7 @@ module.exports = (course, callback) => {
 
     asyncLib.mapSeries(logCategories, getHTML, (err, htmlCategories) => {
         if (err) {
-            console.error(err);
+            course.error(err);
             callback(null, course);
             return;
         }
@@ -49,7 +47,7 @@ module.exports = (course, callback) => {
        
         /* write the report */
         fs.writeFile(`./reports/report${course.info.fileName.split('.zip')[0]}.html`, htmlTemplate, writeErr => {
-            if (writeErr) console.error(writeErr);
+            if (writeErr) course.error(writeErr);
             callback(null, course);
         });
     });
