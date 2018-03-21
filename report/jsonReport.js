@@ -10,7 +10,7 @@ module.exports = (course, callback) => {
             callback(err);
         } else {
             console.log('\nFinal JSON report written to report.json');
-            callback(null);
+            callback(null, course);
         }
     });
 };
