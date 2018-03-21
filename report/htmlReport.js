@@ -2,8 +2,8 @@
 
 const asyncLib = require('async');
 const fs = require('fs');
-const getHTML = require('./someFile.js');
-const htmlTemplate = require('./htmlTemplate.js');
+const getHTML = require('./logCategoryTemplate.js');
+const htmlTemplate = require('./template.js');
 
 module.exports = (course, callback) => {
     // probably shouldn't split these into separate arrays
