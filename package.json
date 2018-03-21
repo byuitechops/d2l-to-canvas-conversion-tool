@@ -9,10 +9,11 @@
     "async": "^2.6.0",
     "blueprint-lock-items": "github:byuitechops/blueprint-lock-items",
     "canvas-course-scrubber": "github:byuitechops/canvas-course-scrubber",
-    "canvas-wrapper": "git+https://github.com/byuitechops/Canvas-wrapper.git",
+    "canvas-wrapper": "github:byuitechops/canvas-wrapper",
     "chalk": "^2.3.0",
     "check-alt-property": "github:byuitechops/check-alt-property",
     "cheerio": "^1.0.0-rc.2",
+    "conversion-reporter": "github:byuitechops/conversion-reporter",
     "copy-a-canvas-course": "github:byuitechops/copy-a-canvas-course",
     "course-make-blueprint": "github:byuitechops/course-make-blueprint",
     "course-object-verifier": "git+https://github.com/byuitechops/course-object-verifier.git",
@@ -61,7 +62,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node ./CLI.js",
-    "test": "tap tests/*.js --cov"
+    "test": "tap ./CLI.js -T"
   },
   "repository": {
     "type": "git",

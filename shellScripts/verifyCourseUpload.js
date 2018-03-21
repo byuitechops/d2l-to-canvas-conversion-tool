@@ -21,7 +21,7 @@ module.exports = (course, stepCallback) => {
         canvas.get(`/api/v1/courses/${course.info.canvasOU}/modules`, (err, modules) => {
             if (err) {
                 course.error(err);
-                callback(err);
+                callback(err, null);
             } else {
                 /* If we get back an empty array or not */
                 if (modules.length != moduleCount) {
@@ -29,12 +29,13 @@ module.exports = (course, stepCallback) => {
                     callback(null, modules);
                 } else {
                     course.message('Course has not finished unpacking. Checking again.');
-                    callback(new Error('Blank array received'));
+                    callback(new Error('Blank array received'), null);
                 }
             }
         });
     }
 
+    //eslint-disable-next-line
     asyncLib.retry(options, checkModules, (err, result) => {
         stepCallback(null, course);
     });
