@@ -20,6 +20,7 @@ exports.setChildModules = (list) => {
     /* Guarantee these run last */
     exports.preImport.push(require('write-course')); // SHELL - Writes/copies files into a new location with preImport changes
     exports.preImport.push(require('zip')); // SHELL - Zips the course up for upload
+    exports.postImport.push(require('action-series-master')); // SHELL - Zips the course up for upload
     exports.postImport.push(require('course-make-backup')); // REQUIRED FOR ALL. MUST RUN LAST
 };
 
@@ -34,8 +35,6 @@ exports.preImport = [
     // require('question-issues-report'), // DEFAULT REQUIRED - Identifies quiz questions that have known issues
     require('quiz-rel-cleaner'), // DEFAULT REQUIRED - Identifies quizzes that have a bad "rel" tag
     require('course-file-videos'), // DEFAULT REQUIRED - Identifies and saves names of video files in course files, for later review
-    // require('files-find-used-content'), // DEFAULT REQUIRED - Identifies which files are used and which are conversionTool
-    require('ilearn-3-references'), // REQUIRED FOR ONLINE - Identifies references to outdated technologies
     require('remove-blank-page-headers'),
 ];
 
@@ -54,10 +53,7 @@ exports.postImport = [
     require('set-syllabus'), // REQUIRED FOR ONLINE - Sets the syllabus of a course, if one is available
     require('set-navigation-tabs'), // REQUIRED FOR ONLINE - Sets the navigation tabs to match the OCT
     require('create-homepage'), // REQUIRED FOR ONLINE - Creates the homepage using the online template
-    require('assignments-delete-unwanted'), // REQUIRED FOR ONLINE - Removes [CO#] assignments from the course
-    require('module-publish-settings'), // DEFAULT REQUIRED - Publishes/ Unpublishes items according to their settings in D2L
     require('course-settings'), // REQUIRED FOR ONLINE - Sets the course settings as written in this module's documentation
-    require('action-series-master'), // REQUIRED FOR ONLINE - Runs action series model
 ];
 
 exports.cleanUp = [
@@ -66,7 +62,10 @@ exports.cleanUp = [
     require('./report/htmlReport.js'), // SHELL - Generates JSON report
 ];
 
-exports.optionalPreImport = [];
+exports.optionalPreImport = [{
+    title: 'quiz-instructions',
+    default: ['online', 'pathway']
+}];
 
 exports.optionalPostImport = [{
     title: 'blueprint-lock-items',
@@ -75,19 +74,12 @@ exports.optionalPostImport = [{
     title: 'disperse-welcome-folder',
     default: ['online', 'pathway']
 }, {
-    title: 'notes-from-instructor',
-    default: ['online', 'pathway']
-}, {
     title: 'setup-instructor-resources',
     default: ['online', 'pathway']
 }, {
     title: 'match-question-answers',
     default: ['online', 'pathway']
-}, {
-    title: 'quiz-instructions',
-    default: ['online', 'pathway']
-}
-];
+}];
 
 exports.optionalCleanup = [
     'remove-files',

@@ -3,8 +3,6 @@
 const canvas = require('canvas-wrapper');
 const asyncLib = require('async');
 
-canvas.changeUser(require('../auth.json').token);
-
 canvas.get('/api/v1/accounts/1/courses?search_term=Gauntlet', (err, gauntlets) => {
     if (err) console.error(err);
     else {

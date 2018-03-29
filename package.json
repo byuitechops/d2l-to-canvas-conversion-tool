@@ -44,6 +44,7 @@
     "prompt-radio": "^1.2.1",
     "question-issues-report": "github:byuitechops/question-issues-report",
     "quiz-fix-overlay": "git+https://github.com/byuitechops/quiz-fix-overlay.git",
+    "quiz-instructions": "github:byuitechops/quiz-instructions",
     "quiz-rel-cleaner": "git+https://github.com/byuitechops/quiz-rel-cleaner.git",
     "remove-blank-page-headers": "git+https://github.com/byuitechops/remove-blank-page-headers.git",
     "remove-files": "git+https://github.com/byuitechops/remove-files.git",
