@@ -35,6 +35,7 @@ exports.prepare = [
 exports.preImport = [
     require('question-issues-report'), // DEFAULT REQUIRED - Identifies quiz questions that have known issues
     require('quiz-rel-cleaner'), // DEFAULT REQUIRED - Identifies quizzes that have a bad "rel" tag
+    require('quiz-instructions'), // DEFAULT REQUIRED - moves all quiz instructions into 1 location. fixes quiz 500 errors
     require('files-find-used-content'), // DEFAULT REQUIRED - Identifies which files are used and which are conversionTool
     require('remove-blank-page-headers'), // Removes blank page headers created from module descriptions in Brightspace
 ];
@@ -63,10 +64,7 @@ exports.cleanUp = [
     require('./report/htmlReport.js'), // SHELL - Generates JSON report
 ];
 
-exports.optionalPreImport = [{
-    title: 'quiz-instructions',
-    default: ['online', 'pathway']
-}];
+exports.optionalPreImport = [];
 
 exports.optionalPostImport = [{
     title: 'blueprint-lock-items',
