@@ -22,7 +22,7 @@ exports.setChildModules = (list) => {
     exports.preImport.push(require('zip')); // SHELL - Zips the course up for upload
     exports.postImport.push(require('action-series-master')); // SHELL - Runs all of the grandchildren
     exports.cleanUp.push(require('./shellScripts/generateReports.js')); // SHELL - Zips the course up for upload
-    // exports.cleanUp.push(require('./shellScripts/endToEndTest.js')); // SHELL - Runs the end-to-end tests
+    exports.cleanUp.push(require('./shellScripts/endToEndTest.js')); // SHELL - Runs the end-to-end tests
 };
 
 exports.prepare = [
@@ -33,10 +33,10 @@ exports.prepare = [
 ];
 
 exports.preImport = [
-    // require('question-issues-report'), // DEFAULT REQUIRED - Identifies quiz questions that have known issues
-    // require('quiz-rel-cleaner'), // DEFAULT REQUIRED - Identifies quizzes that have a bad "rel" tag
-    // require('files-find-used-content'), // DEFAULT REQUIRED - Identifies which files are used and which are conversionTool
-    // require('remove-blank-page-headers'),
+    require('question-issues-report'), // DEFAULT REQUIRED - Identifies quiz questions that have known issues
+    require('quiz-rel-cleaner'), // DEFAULT REQUIRED - Identifies quizzes that have a bad "rel" tag
+    require('files-find-used-content'), // DEFAULT REQUIRED - Identifies which files are used and which are conversionTool
+    require('remove-blank-page-headers'), // Removes blank page headers created from module descriptions in Brightspace
 ];
 
 exports.importCourse = [
@@ -48,13 +48,13 @@ exports.importCourse = [
 
 exports.postImport = [
     require('./shellScripts/verifyCourseUpload.js'), // DEFAULT REQUIRED - Checks that course has finished unpacking
-    // require('quiz-fix-overlay'), // DEFAULT REQUIRED - Fixes issues with javascript in quiz questions
-    require('reorganize-file-structure'), // ONLINE ONLY (REQUIRED) - Organizes the course's files into Documents, Media, Archive, and Template
-    // require('course-make-blueprint'), // ONLINE ONLY (REQUIRED) - Makes the course a blueprint course IF it is an online course
-    // require('set-syllabus'), // REQUIRED FOR ONLINE - Sets the syllabus of a course, if one is available
-    // require('set-navigation-tabs'), // REQUIRED FOR ONLINE - Sets the navigation tabs to match the OCT
-    // require('create-homepage'), // REQUIRED FOR ONLINE - Creates the homepage using the online template
-    // require('course-settings'), // REQUIRED FOR ONLINE - Sets the course settings as written in this module's documentation
+    require('quiz-fix-overlay'), // DEFAULT REQUIRED - Fixes issues with javascript in quiz questions
+    require('reorganize-file-structure'), // ONLINE ONLY (REQUIRED) - Creates the four main folders in a course (documents, media, template, archive)
+    require('course-make-blueprint'), // ONLINE ONLY (REQUIRED) - Makes the course a blueprint course IF it is an online course
+    require('set-syllabus'), // REQUIRED FOR ONLINE - Sets the syllabus of a course, if one is available
+    require('set-navigation-tabs'), // REQUIRED FOR ONLINE - Sets the navigation tabs to match the OCT
+    require('create-homepage'), // REQUIRED FOR ONLINE - Creates the homepage using the online template
+    require('course-settings'), // REQUIRED FOR ONLINE - Sets the course settings as written in this module's documentation
 ];
 
 exports.cleanUp = [
