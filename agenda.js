@@ -21,6 +21,7 @@ exports.setChildModules = (list) => {
     exports.preImport.push(require('write-course')); // SHELL - Writes/copies files into a new location with preImport changes
     exports.preImport.push(require('zip')); // SHELL - Zips the course up for upload
     exports.postImport.push(require('action-series-master')); // SHELL - Runs all of the grandchildren
+    exports.postImport.push(require('course-make-backup'));
     exports.cleanUp.push(require('./shellScripts/generateReports.js')); // SHELL - Zips the course up for upload
     exports.cleanUp.push(require('./shellScripts/endToEndTest.js')); // SHELL - Runs the end-to-end tests
 };
