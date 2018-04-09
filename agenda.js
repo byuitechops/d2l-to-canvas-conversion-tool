@@ -21,9 +21,9 @@ exports.setChildModules = (list) => {
     exports.preImport.push(require('write-course')); // SHELL - Writes/copies files into a new location with preImport changes
     exports.preImport.push(require('zip')); // SHELL - Zips the course up for upload
     exports.postImport.push(require('action-series-master')); // SHELL - Runs all of the grandchildren
-    exports.postImport.push(require('course-make-backup'));
+    // exports.postImport.push(require('course-make-backup'));
     exports.cleanUp.push(require('./shellScripts/generateReports.js')); // SHELL - Zips the course up for upload
-    exports.cleanUp.push(require('./shellScripts/endToEndTest.js')); // SHELL - Runs the end-to-end tests
+    // exports.cleanUp.push(require('./shellScripts/endToEndTest.js')); // SHELL - Runs the end-to-end tests
 };
 
 exports.prepare = [
@@ -50,36 +50,25 @@ exports.importCourse = [
 
 exports.postImport = [
     require('./shellScripts/verifyCourseUpload.js'), // DEFAULT REQUIRED - Checks that course has finished unpacking
-    require('quiz-fix-overlay'), // DEFAULT REQUIRED - Fixes issues with javascript in quiz questions
-    require('reorganize-file-structure'), // ONLINE ONLY (REQUIRED) - Creates the four main folders in a course (documents, media, template, archive)
-    require('course-make-blueprint'), // ONLINE ONLY (REQUIRED) - Makes the course a blueprint course IF it is an online course
-    require('set-syllabus'), // REQUIRED FOR ONLINE - Sets the syllabus of a course, if one is available
-    require('set-navigation-tabs'), // REQUIRED FOR ONLINE - Sets the navigation tabs to match the OCT
-    require('create-homepage'), // REQUIRED FOR ONLINE - Creates the homepage using the online template
-    require('course-settings'), // REQUIRED FOR ONLINE - Sets the course settings as written in this module's documentation
+    require('match-question-answers'), // IS THIS A GRANDCHILD?
 ];
 
 exports.cleanUp = [
-    require('./report/consoleReport.js'), // SHELL - Generates report in the console
-    require('./report/jsonReport.js'), // SHELL - Generates JSON report
-    require('./report/htmlReport.js'), // SHELL - Generates JSON report
 ];
 
 exports.optionalPreImport = [];
 
 exports.optionalPostImport = [{
-    title: 'blueprint-lock-items',
+    title: 'set-syllabus',
     default: ['online', 'pathway']
 }, {
-    title: 'disperse-welcome-folder',
-    default: ['online', 'pathway']
-}, {
-    title: 'setup-instructor-resources',
+    title: 'reorganize-file-structure',
     default: ['online', 'pathway']
 }, {
     title: 'match-question-answers',
-    default: ['online', 'pathway']
-}];
+    default: ['online', 'campus', 'pathway']
+}
+];
 
 exports.optionalCleanup = [
     'remove-files',

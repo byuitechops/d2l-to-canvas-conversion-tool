@@ -1,5 +1,7 @@
 module.exports = (course, stepCallback) => {
-    var headerTemplate = `<div>
+    var headerTemplate = `
+            <h3>${course.info.courseCode}</h3>
+            <div>
                 <span class="header1">Brightspace</span>
                 <span class="header1 right">Canvas</span>
             </div>
