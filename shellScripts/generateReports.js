@@ -30,6 +30,8 @@ module.exports = (course, stepCallback) => {
     course.logger.setTagDescription('Folders Deleted', 'Folders deleted in Course Files in Canvas.');
     course.logger.setTagDescription('', '');
 
+    // Set the report title
+    course.logger.reportTitle = course.info.courseCode;
     // Set the Report Header
     course.setReportHeader(headerTemplate);
     // Generate the Console Report
