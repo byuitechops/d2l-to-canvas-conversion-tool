@@ -7,6 +7,7 @@
  * type, located in their package.json.
  */
 exports.setChildModules = (list) => {
+    /* list is an array of selected optional child modules */
     list.forEach(item => {
         var {
             childType
@@ -21,7 +22,7 @@ exports.setChildModules = (list) => {
     exports.preImport.push(require('write-course')); // SHELL - Writes/copies files into a new location with preImport changes
     exports.preImport.push(require('zip')); // SHELL - Zips the course up for upload
     exports.postImport.push(require('action-series-master')); // SHELL - Runs all of the grandchildren
-    // exports.postImport.push(require('course-make-backup'));
+    exports.postImport.push(require('course-make-backup')); // WARNING REQUIRED for online, DISABLED for campus MUST RUN LAST!
     exports.cleanUp.push(require('./shellScripts/generateReports.js')); // SHELL - Zips the course up for upload
     // exports.cleanUp.push(require('./shellScripts/endToEndTest.js')); // SHELL - Runs the end-to-end tests
 };
@@ -50,25 +51,40 @@ exports.importCourse = [
 
 exports.postImport = [
     require('./shellScripts/verifyCourseUpload.js'), // DEFAULT REQUIRED - Checks that course has finished unpacking
-    require('match-question-answers'), // IS THIS A GRANDCHILD?
+    require('quiz-fix-overlay'), // DEFAULT REQUIRED - Fixes issues with javascript in quiz questions
+    require('course-make-blueprint'), // ONLINE ONLY (REQUIRED) - Makes the course a blueprint course IF it is an online course
+    require('set-navigation-tabs'), // REQUIRED FOR ONLINE - Sets the navigation tabs to match the OCT
+    require('create-homepage'), // REQUIRED FOR ONLINE - Creates the homepage using the online template
+    require('course-settings'), // REQUIRED FOR ONLINE - Sets the course settings as written in this module's documentation
 ];
 
 exports.cleanUp = [
+    require('./report/consoleReport.js'), // SHELL - Generates report in the console
+    require('./report/jsonReport.js'), // SHELL - Generates JSON report
+    require('./report/htmlReport.js'), // SHELL - Generates JSON report
 ];
 
 exports.optionalPreImport = [];
 
 exports.optionalPostImport = [{
-    title: 'set-syllabus',
+    title: 'disperse-welcome-folder',
+    default: ['online', 'pathway']
+}, {
+    title: 'set-syllabus', // REQUIRED FOR ONLINE - Sets the syllabus of a course, if one is available
+    default: ['online', 'pathway']
+}, {
+    title: 'setup-instructor-resources',
+    default: ['online', 'pathway']
+}, {
+    title: 'match-question-answers',
     default: ['online', 'pathway']
 }, {
     title: 'reorganize-file-structure',
     default: ['online', 'pathway']
 }, {
-    title: 'match-question-answers',
-    default: ['online', 'campus', 'pathway']
-}
-];
+    title: 'blueprint-lock-items',
+    default: ['online', 'pathway']
+}];
 
 exports.optionalCleanup = [
     'remove-files',
