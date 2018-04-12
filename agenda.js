@@ -67,6 +67,9 @@ exports.optionalPostImport = [{
     title: 'set-syllabus', // REQUIRED FOR ONLINE - Sets the syllabus of a course, if one is available
     default: ['online', 'pathway']
 }, {
+    title: 'generate-headers',
+    default: ['online', 'pathway']
+}, {
     title: 'disperse-welcome-folder',
     default: ['online', 'pathway']
 }, {

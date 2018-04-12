@@ -13,6 +13,7 @@
     "chalk": "^2.3.0",
     "check-alt-property": "github:byuitechops/check-alt-property",
     "cheerio": "^1.0.0-rc.2",
+    "child-template": "github:byuitechops/generate-headers",
     "conversion-reporter": "github:byuitechops/conversion-reporter",
     "copy-a-canvas-course": "github:byuitechops/copy-a-canvas-course",
     "course-make-backup": "github:byuitechops/course-make-backup",
