@@ -30,6 +30,8 @@ module.exports = (course, stepCallback) => {
     course.logger.setTagDescription('Folders Deleted', 'Folders deleted in Course Files in Canvas.');
     course.logger.setTagDescription('', '');
 
+    console.log(`Course created at: https://byui.instructure.com/accounts/${course.settings.accountID}/courses/${course.info.canvasOU}`);
+
     // Set the report title
     course.logger.reportTitle = course.info.courseCode;
     // Set the Report Header
