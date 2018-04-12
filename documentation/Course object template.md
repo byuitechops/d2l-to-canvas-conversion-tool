@@ -9,7 +9,6 @@ The Logs array needs to be updated, but everything else is up to date
 'logs': [],
     /* Stores various information bits that are used by the program, but are not determined by the user */
 'info': { 
-    'platform': '<string>'          // Online, Campus, or Pathway
     'domain': '<string>'            // byui OR pathway
     'migrationID': '<string>',      // ID for the course import migration
     'fileName': '<string>',         // Name of the downloaded course zip
@@ -28,6 +27,9 @@ The Logs array needs to be updated, but everything else is up to date
 },
     /* Stores settings that are determined at runtime. Used to enable/disable features */
 'settings': {
+    'domain': '<string>'            // byui OR pathway (exists in 2 places, but it shouldn't)
+    'platform': '<string>'          // Online, Campus, or Pathway
+    'accountID': '<string>'         // set to 19
     'deleteCourse': '<bool>',       // Determines if course should be deleted at the end
     'keepFiles': '<bool>'           // determines if files generated in process should be kept
 },
