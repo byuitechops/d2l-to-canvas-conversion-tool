@@ -59,18 +59,15 @@ exports.postImport = [
 ];
 
 exports.cleanUp = [
-    require('./report/consoleReport.js'), // SHELL - Generates report in the console
-    require('./report/jsonReport.js'), // SHELL - Generates JSON report
-    require('./report/htmlReport.js'), // SHELL - Generates JSON report
 ];
 
 exports.optionalPreImport = [];
 
 exports.optionalPostImport = [{
-    title: 'disperse-welcome-folder',
+    title: 'set-syllabus', // REQUIRED FOR ONLINE - Sets the syllabus of a course, if one is available
     default: ['online', 'pathway']
 }, {
-    title: 'set-syllabus', // REQUIRED FOR ONLINE - Sets the syllabus of a course, if one is available
+    title: 'disperse-welcome-folder',
     default: ['online', 'pathway']
 }, {
     title: 'setup-instructor-resources',
