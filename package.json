@@ -24,7 +24,7 @@
     "create-course": "git+https://github.com/byuitechops/create-course.git",
     "create-course-object": "github:byuitechops/create-course-object",
     "create-homepage": "github:byuitechops/create-homepage",
-    "d2l-course-downloader": "git+https://github.com/byuitechops/d2l-course-downloader.git#puppeteer",
+    "d2l-course-downloader": "git+https://github.com/byuitechops/d2l-course-downloader.git",
     "decompress": "^4.2.0",
     "delete-course": "git+https://github.com/byuitechops/delete-course.git",
     "disperse-welcome-folder": "github:byuitechops/disperse-welcome-folder",
