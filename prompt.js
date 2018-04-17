@@ -96,9 +96,9 @@ enquirer.question('lessonFolders', {
     errorMessage: 'Must be "y" or "n"',
     validate: input => /[yn]/.test(input),
     when: (answers) => {
-        return (answers.platform === 'online');
+        return answers.postImportModules.includes('reorganize-file-structure');
     },
-    transform: input => (input === 'y').toString()
+    transform: input => input === 'y'
 });
 
 /* Ask the above questions! */
