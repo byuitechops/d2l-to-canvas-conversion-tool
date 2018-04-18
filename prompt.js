@@ -33,7 +33,7 @@ enquirer.question('D2LOU', 'Brightspace OU:', {
     errorMessage: 'Must be a number!',
     default: '340002',
     validate: (input) => {
-        return /\d+/.test(input);
+        return !isNaN(+input);
     }
 });
 
@@ -90,53 +90,18 @@ enquirer.question('cleanUpModules', {
     choices: agenda.optionalCleanup
 });
 
-enquirer.question('lessonFolders', {
-    type: 'input',
-    message: 'Do you want to create Lesson Folders in media/documents? (y/n)',
-    errorMessage: 'Must be "y" or "n"',
-    validate: input => /[yn]/.test(input),
-    when: (answers) => {
-        return answers.postImportModules.includes('reorganize-file-structure');
-    },
-    transform: input => input === 'y'
+enquirer.question('options', {
+    type: 'checkbox',
+    message: 'Which settings would you like to enable?',
+    choices: agenda.options.map(option => option.description),
+    transform: choices => {
+        return choices.map(choice => {
+            var option = agenda.options.find(option => option.description === choice);
+            return option.name;
+        });
+    }
 });
 
 /* Ask the above questions! */
 module.exports = enquirer.ask()
     .catch(console.error);
-
-
-/** Choice list
- * 
- * SETTINGS
- *      Platform
- *          - Online (default)
- *          - Pathway
- *          - Campus
- *      Existing Canvas ID
- *          (provided by user)
- *      D2L OU
- *          (provided by user)
- *      Username
- *          (provided by user)
- *      Password
- *          (provided by user)
- *      
- * CHILD MODULES
- *      PRE-IMPORT
- *          - Choices pulled from agenda.js
- *          - Defaults determined by platform and agenda.js
- * 
- *      POST-IMPORT
- *          - Choices pulled from agenda.js
- *          - Defaults determined by platform and agenda.js
- * 
- *      CLEANUP
- *          - Choices pulled from agenda.js
- *          - Defaults determined by platform and agenda.js
- * 
- * OPTIONS
- *      Do you want lesson folders created in media/documents?
- *          - Yes/No
- 
- */
