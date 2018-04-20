@@ -6,6 +6,20 @@
  * adds them to the agenda's exports based on each child module's
  * type, located in their package.json.
  */
+
+/* Options for various modules. Each is added to course.settings with its 'name' */
+/* MAKE SURE TO ADD THESE TO THE COURSE OBJECT DEFAULT TO FALSE */
+exports.options = [{
+    name: 'lessonFolders',
+    description: 'LESSON FOLDERS: Creates Lesson Folders in media/documents'
+}, {
+    name: 'blockCourse',
+    description: 'BLOCK COURSE: Runs as a Block Course (will auto-apply if course title contains "block")'
+}, {
+    name: 'disableLogOutput',
+    description: 'DISABLE LOG OUTPUT: Disables course.log and course.message output (warning and error still display)'
+}]
+
 exports.setChildModules = (list) => {
     /* list is an array of selected optional child modules */
     list.forEach(item => {
@@ -18,6 +32,7 @@ exports.setChildModules = (list) => {
             exports.postImport.push(require(item));
         }
     });
+
     /* Guarantee these run last */
     exports.preImport.push(require('write-course')); // SHELL - Writes/copies files into a new location with preImport changes
     exports.preImport.push(require('zip')); // SHELL - Zips the course up for upload
@@ -58,8 +73,7 @@ exports.postImport = [
     require('course-settings'), // REQUIRED FOR ONLINE - Sets the course settings as written in this module's documentation
 ];
 
-exports.cleanUp = [
-];
+exports.cleanUp = [];
 
 exports.optionalPreImport = [];
 
