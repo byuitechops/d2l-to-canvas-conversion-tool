@@ -71,6 +71,7 @@ exports.postImport = [
     require('set-navigation-tabs'), // REQUIRED FOR ONLINE - Sets the navigation tabs to match the OCT
     require('create-homepage'), // REQUIRED FOR ONLINE - Creates the homepage using the online template
     require('course-settings'), // REQUIRED FOR ONLINE - Sets the course settings as written in this module's documentation
+    require('assignment-categories'), // DEFAULT REQUIRED - Does not change anything; just validates if grade weights add up to 100
 ];
 
 exports.cleanUp = [];
