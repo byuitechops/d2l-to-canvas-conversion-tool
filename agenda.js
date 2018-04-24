@@ -11,14 +11,17 @@
 /* MAKE SURE TO ADD THESE TO THE COURSE OBJECT DEFAULT TO FALSE */
 exports.options = [{
     name: 'lessonFolders',
-    description: 'LESSON FOLDERS: Creates Lesson Folders in media/documents'
+    description: 'LESSON FOLDERS: Creates Lesson Folders in media/documents',
+    default: ['online', 'pathway']
 }, {
     name: 'blockCourse',
-    description: 'BLOCK COURSE: Runs as a Block Course (will auto-apply if course title contains "block")'
+    description: 'BLOCK COURSE: Runs as a Block Course (will auto-apply if course title contains "block")',
+    default: []
 }, {
     name: 'disableLogOutput',
-    description: 'DISABLE LOG OUTPUT: Disables course.log and course.message output (warning and error still display)'
-}]
+    description: 'DISABLE LOG OUTPUT: Disables course.log and course.message output (warning and error still display)',
+    default: []
+}];
 
 exports.setChildModules = (list) => {
     /* list is an array of selected optional child modules */

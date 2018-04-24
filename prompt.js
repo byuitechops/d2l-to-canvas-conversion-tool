@@ -93,6 +93,10 @@ enquirer.question('cleanUpModules', {
 enquirer.question('options', {
     type: 'checkbox',
     message: 'Which settings would you like to enable?',
+    default: () => {
+        var defaultMods = agenda.options.filter(item => item.default.includes(enquirer.answers.platform));
+        return defaultMods.map(item => item.description);
+    },
     choices: agenda.options.map(option => option.description),
     transform: choices => {
         return choices.map(choice => {
