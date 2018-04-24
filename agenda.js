@@ -91,9 +91,6 @@ exports.optionalPostImport = [{
     title: 'setup-instructor-resources',
     default: ['online', 'pathway']
 }, {
-    title: 'match-question-answers',
-    default: ['online', 'pathway']
-}, {
     title: 'reorganize-file-structure',
     default: ['online', 'pathway']
 }, {
