@@ -14,6 +14,10 @@ exports.options = [{
     description: 'LESSON FOLDERS: Creates Lesson Folders in media/documents',
     default: ['online', 'pathway']
 }, {
+    name: 'targetAttributes',
+    description: 'TARGET ATTRIBUTES (Grandchild): Enables grandchild that sets all external links to open in a new tab',
+    default: ['online', 'pathway']
+}, {
     name: 'blockCourse',
     description: 'BLOCK COURSE: Runs as a Block Course (will auto-apply if course title contains "block")',
     default: []
