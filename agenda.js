@@ -89,6 +89,9 @@ exports.optionalPostImport = [{
     title: 'set-syllabus', // REQUIRED FOR ONLINE - Sets the syllabus of a course, if one is available
     default: ['online', 'pathway']
 }, {
+    title: 'groups-bridge', // COPIES GROUPS FROM D2L TO CANVAS
+    default: ['online', 'pathway', 'campus']
+}, {
     title: 'generate-headers',
     default: ['online', 'pathway']
 }, {

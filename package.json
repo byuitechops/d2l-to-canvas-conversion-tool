@@ -27,6 +27,7 @@
     "files-find-used-content": "github:byuitechops/files-find-used-content",
     "fixed-width-string": "^1.0.0",
     "generate-headers": "github:byuitechops/generate-headers",
+    "groups-bridge": "github:byuitechops/groups-bridge",
     "index-directory": "git+https://github.com/byuitechops/index-directory.git",
     "match-question-answers": "github:byuitechops/match-question-answers",
     "prompt-confirm": "^1.2.0",
