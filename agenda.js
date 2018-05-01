@@ -93,7 +93,7 @@ exports.optionalPostImport = [{
     default: ['online', 'pathway', 'campus']
 }, {
     title: 'generate-headers',
-    default: ['online', 'pathway']
+    default: []
 }, {
     title: 'disperse-welcome-folder',
     default: ['online', 'pathway']
