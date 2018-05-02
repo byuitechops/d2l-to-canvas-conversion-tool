@@ -79,6 +79,7 @@ exports.postImport = [
     require('create-homepage'), // REQUIRED FOR ONLINE - Creates the homepage using the online template
     require('course-settings'), // REQUIRED FOR ONLINE - Sets the course settings as written in this module's documentation
     require('assignment-categories'), // DEFAULT REQUIRED - Does not change anything; just validates if grade weights add up to 100
+    require('course-description'), // DEFAULT REQUIRED - Uses Puppeteer to retrieve the course description from byui.edu (does not work for pathway)
 ];
 
 exports.cleanUp = [];
@@ -92,9 +93,6 @@ exports.optionalPostImport = [{
     title: 'groups-bridge', // COPIES GROUPS FROM D2L TO CANVAS
     default: ['online', 'pathway', 'campus']
 }, {
-    title: 'generate-headers',
-    default: ['online', 'pathway']
-}, {
     title: 'disperse-welcome-folder',
     default: ['online', 'pathway']
 }, {
@@ -106,6 +104,9 @@ exports.optionalPostImport = [{
 }, {
     title: 'blueprint-lock-items',
     default: ['online', 'pathway']
+}, {
+    title: 'generate-headers',
+    default: []
 }];
 
 exports.optionalCleanup = [
