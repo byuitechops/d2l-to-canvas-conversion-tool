@@ -5,7 +5,7 @@
   "main": "CLI.js",
   "dependencies": {
     "Quiz-fix-overlay": "github:byuitechops/quiz-fix-overlay",
-    "action-series-master": "git+https://github.com/byuitechops/action-series-master.git",
+    "action-series-master": "github:byuitechops/action-series-master",
     "assignment-categories": "github:byuitechops/assignment-categories",
     "async": "^2.6.0",
     "blueprint-lock-items": "github:byuitechops/blueprint-lock-items",
@@ -42,6 +42,7 @@
     "remove-blank-page-headers": "git+https://github.com/byuitechops/remove-blank-page-headers.git",
     "remove-files": "git+https://github.com/byuitechops/remove-files.git",
     "reorganize-file-structure": "git+https://github.com/byuitechops/reorganize-file-structure.git",
+    "report-html-tags": "github:byuitechops/report-html-tags",
     "set-file-paths": "github:byuitechops/set-file-paths",
     "set-navigation-tabs": "github:byuitechops/set-navigation-tabs",
     "set-syllabus": "git+https://github.com/byuitechops/set-syllabus.git",
