@@ -6,6 +6,7 @@
   "dependencies": {
     "Quiz-fix-overlay": "github:byuitechops/quiz-fix-overlay",
     "action-series-master": "github:byuitechops/action-series-master",
+    "add-course-maintenance-log": "github:byuitechops/add-course-maintenance-log",
     "assignment-categories": "github:byuitechops/assignment-categories",
     "async": "^2.6.0",
     "blueprint-lock-items": "github:byuitechops/blueprint-lock-items",
