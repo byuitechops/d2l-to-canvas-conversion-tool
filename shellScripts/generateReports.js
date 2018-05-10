@@ -31,6 +31,8 @@ module.exports = (course, stepCallback) => {
     course.logger.setTagDescription('', '');
 
     console.log(`Course created at: https://byui.instructure.com/accounts/${course.settings.accountID}/courses/${course.info.canvasOU}`);
+    if (course.info.backupOU) console.log(`Backup course created at: https://byui.instructure.com/accounts/${course.settings.accountID}/courses/${course.info.backupOU}`);
+    if (course.info.prototypeOU) console.log(`PrototypeOU used: https://byui.instructure.com/accounts/${course.settings.accountID}/courses/${course.info.prototypeOU}`);
 
     // Set the report title
     course.logger.reportTitle = course.info.courseCode;
