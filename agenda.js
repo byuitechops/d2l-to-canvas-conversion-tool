@@ -45,6 +45,7 @@ exports.setChildModules = (list) => {
     exports.preImport.push(require('zip')); // SHELL - Zips the course up for upload
     exports.postImport.push(require('action-series-master')); // SHELL - Runs all of the grandchildren
     exports.postImport.push(require('add-course-maintenance-log')); // CM - Must run after action-series, since action-series deletes the maintenance log
+    exports.postImport.push(require('pin-discussion-boards')); // CM - Must run after action-series, since action-series deletes the maintenance log
     exports.postImport.push(require('course-make-backup')); // SHELL - WARNING REQUIRED for online, DISABLED for campus MUST RUN LAST!
     exports.cleanUp.push(require('./shellScripts/generateReports.js')); // SHELL - Zips the course up for upload
     // exports.cleanUp.push(require('./shellScripts/endToEndTest.js')); // SHELL - Runs the end-to-end tests
