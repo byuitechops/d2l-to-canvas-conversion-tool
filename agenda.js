@@ -33,6 +33,10 @@ exports.options = [{
     name: 'disableLogOutput',
     description: 'DISABLE LOG OUTPUT: Disables course.log and course.message output (warning and error still display)',
     default: []
+}, {
+    name: 'pinDiscussionBoards',
+    description: 'Pin default discussion boards to teh top',
+    default: ['online', 'pathway', 'campus']
 }];
 
 exports.setChildModules = (list) => {
@@ -120,6 +124,9 @@ exports.optionalPostImport = [{
 }, {
     title: 'generate-headers', // Generates beginning, mid, and end of week subheaders.
     default: []
+}, {
+    title: 'add-course-maintenance-log',
+    default: ['online', 'pathway']
 }];
 
 exports.optionalCleanup = [
