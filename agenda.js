@@ -33,10 +33,6 @@ exports.options = [{
     name: 'disableLogOutput',
     description: 'DISABLE LOG OUTPUT: Disables course.log and course.message output (warning and error still display)',
     default: []
-}, {
-    name: 'pinDiscussionBoards',
-    description: 'Pin default discussion boards to teh top',
-    default: ['online', 'pathway', 'campus']
 }];
 
 exports.setChildModules = (list) => {
