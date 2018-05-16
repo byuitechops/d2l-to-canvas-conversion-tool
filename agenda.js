@@ -8,7 +8,7 @@
  */
 
 /* Options for various modules. Each is added to course.settings with its 'name' */
-/* MAKE SURE TO ADD THESE TO THE COURSE OBJECT DEFAULT TO FALSE */
+/* MAKE SURE TO ADD THESE TO THE COURSE OBJECT, DEFAULT TO FALSE */
 exports.options = [{
     name: 'lessonFolders',
     description: 'LESSON FOLDERS: Creates Lesson Folders in media/documents',
@@ -16,6 +16,14 @@ exports.options = [{
 }, {
     name: 'targetAttributes',
     description: 'TARGET ATTRIBUTES (Grandchild): Enables grandchild that sets all external links to open in a new tab',
+    default: ['online', 'pathway']
+}, {
+    name: 'pinDiscussionBoards', // This is technically an optional child module, but it needs to run after action-series
+    description: 'PIN DISCUSSION BOARDS: Pins discussion boards in the discussions view in order, as long as they are a module item as well.',
+    default: ['online', 'pathway']
+}, {
+    name: 'blueprintLockItems', // Runs last, since it needs to run after everything has been made
+    description: 'BLUEPRINT LOCK ITEMS: Locks items on the blueprint master course.',
     default: ['online', 'pathway']
 }, {
     name: 'blockCourse',
@@ -45,6 +53,8 @@ exports.setChildModules = (list) => {
     exports.preImport.push(require('zip')); // SHELL - Zips the course up for upload
     exports.postImport.push(require('action-series-master')); // SHELL - Runs all of the grandchildren
     exports.postImport.push(require('add-course-maintenance-log')); // CM - Must run after action-series, since action-series deletes the maintenance log
+    exports.postImport.push(require('blueprint-lock-items')); // CM - Pins discussion boards in order, as long as they are a child module
+    exports.postImport.push(require('pin-discussion-boards')); // CM - Pins discussion boards in order, as long as they are a child module
     exports.postImport.push(require('course-make-backup')); // SHELL - WARNING REQUIRED for online, DISABLED for campus MUST RUN LAST!
     exports.cleanUp.push(require('./shellScripts/generateReports.js')); // SHELL - Zips the course up for upload
     // exports.cleanUp.push(require('./shellScripts/endToEndTest.js')); // SHELL - Runs the end-to-end tests
@@ -64,6 +74,7 @@ exports.preImport = [
     require('files-find-used-content'), // DEFAULT REQUIRED - Identifies which files are used and which are conversionTool
     require('remove-blank-page-headers'), // Removes blank page headers created from module descriptions in Brightspace
     require('report-html-tags'), // Reports any script or style tags present in an HTML page
+    require('find-quiz-regex'), // Reports any script or style tags present in an HTML page
 ];
 
 exports.importCourse = [
@@ -95,19 +106,19 @@ exports.optionalPostImport = [{
     title: 'groups-bridge', // COPIES GROUPS FROM D2L TO CANVAS
     default: ['online', 'pathway', 'campus']
 }, {
-    title: 'disperse-welcome-folder',
+    title: 'disperse-welcome-folder', // Sets up student resources module and removes the welcome module
     default: ['online', 'pathway']
 }, {
-    title: 'setup-instructor-resources',
+    title: 'setup-instructor-resources', // Sets up the instructor resources folder and remove the resources module (if present)
     default: ['online', 'pathway']
 }, {
-    title: 'reorganize-file-structure',
+    title: 'reorganize-file-structure', // Moves all files to top level, deletes all folders, creates documents, media, template, archive folders
     default: ['online', 'pathway']
 }, {
-    title: 'blueprint-lock-items',
+    title: 'icebreaker-discussion', // Creates the Icebreaker discussion board if needed
     default: ['online', 'pathway']
 }, {
-    title: 'generate-headers',
+    title: 'generate-headers', // Generates beginning, mid, and end of week subheaders.
     default: []
 }];
 
