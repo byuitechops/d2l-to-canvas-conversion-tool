@@ -16,7 +16,7 @@ exports.options = [{
 }, {
     name: 'targetAttributes',
     description: 'TARGET ATTRIBUTES (Grandchild): Enables grandchild that sets all external links to open in a new tab',
-    default: ['online', 'pathway']
+    default: ['online', 'pathway', 'campus']
 }, {
     name: 'pinDiscussionBoards', // This is technically an optional child module, but it needs to run after action-series
     description: 'PIN DISCUSSION BOARDS: Pins discussion boards in the discussions view in order, as long as they are a module item as well.',
@@ -24,6 +24,26 @@ exports.options = [{
 }, {
     name: 'blueprintLockItems', // Runs last, since it needs to run after everything has been made
     description: 'BLUEPRINT LOCK ITEMS: Locks items on the blueprint master course.',
+    default: ['online', 'pathway']
+}, {
+    name: 'moveFiles',
+    description: 'MOVE FILES: Moves all files into the newly created four main folders.',
+    default: ['online', 'pathway']
+}, {
+    name: 'moveUnusedIntoArchive',
+    description: 'MOVE UNUSED FILES INTO ARCHIVE: Moves all unused files into Archive. Otherwise, they are left alone.',
+    default: ['online', 'pathway']
+}, {
+    name: 'renameFiles',
+    description: 'RENAME FILES: Renames files according to the Online Learning naming convention.',
+    default: ['online', 'pathway']
+}, {
+    name: 'moduleItemNamingConventions',
+    description: 'MODULE ITEM NAMING CONVENTIONS: Allows the grandchild that handles naming conventions for module items to run.',
+    default: ['online', 'pathway']
+}, {
+    name: 'moduleNamingConventions',
+    description: 'MODULE NAMING CONVENTIONS: Allows the grandchild that handles naming conventions for modules to run.',
     default: ['online', 'pathway']
 }, {
     name: 'blockCourse',
@@ -72,7 +92,6 @@ exports.preImport = [
     require('quiz-rel-cleaner'), // DEFAULT REQUIRED - Identifies quizzes that have a bad "rel" tag
     require('quiz-instructions'), // DEFAULT REQUIRED - moves all quiz instructions into 1 location. fixes quiz 500 errors
     require('files-find-used-content'), // DEFAULT REQUIRED - Identifies which files are used and which are conversionTool
-    require('remove-blank-page-headers'), // Removes blank page headers created from module descriptions in Brightspace
     require('report-html-tags'), // Reports any script or style tags present in an HTML page
     require('find-quiz-regex'), // Reports any script or style tags present in an HTML page
 ];
@@ -97,13 +116,16 @@ exports.postImport = [
 
 exports.cleanUp = [];
 
-exports.optionalPreImport = [];
+exports.optionalPreImport = [{
+    title: 'remove-blank-page-headers', // REQUIRED FOR ONLINE - Removes module description pages, and if they are less than 6 words, changes the module title
+    default: ['online', 'pathway', 'campus']
+}];
 
 exports.optionalPostImport = [{
     title: 'set-syllabus', // REQUIRED FOR ONLINE - Sets the syllabus of a course, if one is available
     default: ['online', 'pathway']
 }, {
-    title: 'groups-bridge', // COPIES GROUPS FROM D2L TO CANVAS
+    title: 'groups-bridge', // Copies groups from D2L to canvas
     default: ['online', 'pathway', 'campus']
 }, {
     title: 'disperse-welcome-folder', // Sets up student resources module and removes the welcome module

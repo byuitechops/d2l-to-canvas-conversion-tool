@@ -3,21 +3,12 @@
 const asyncLib = require('async');
 const agenda = require('./agenda.js');
 
-module.exports = (data, finalCallback) => {
-
-    var childModules = [...data.preImportModules, ...data.postImportModules];
-
-    agenda.setChildModules(childModules);
-
-    const modules = [
-        asyncLib.constant(data),
-        ...agenda.prepare,
-        ...agenda.preImport,
-        ...agenda.importCourse,
-        ...agenda.postImport,
-        ...agenda.cleanUp
-    ];
-
-    asyncLib.waterfall(modules, finalCallback);
-
+module.exports = (data) => {
+    return new Promise((resolve, reject) => {
+        let modules = data.fullAgenda.map(module => module.run);
+        asyncLib.waterfall([asyncLib.constant(data), ...modules], (err, results) => {
+            if (err) return reject(err);
+            resolve(results);
+        });
+    });
 };
