@@ -8,5 +8,4 @@ const main = require('./main.js');
 prompt()
     .then(downloader)
     .then(main)
-    .then(console.log)
     .catch(console.error);

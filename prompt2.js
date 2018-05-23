@@ -22,31 +22,55 @@ function getDefaultModules(modules) {
 }
 
 function buildFullAgenda(answers) {
-    let allModules = [
-        ...agenda.preparation,
-        ...agenda.preImport,
-        ...agenda.import,
-        ...agenda.postImport,
-        ...agenda.cleanUp
-    ];
+    return new Promise(async (resolve, reject) => {
 
-    let moduleList = allModules.filter(module => {
-        if (module.platform[answers.platform] === 'required') {
-            return true;
-        } else if (module.platform[answers.platform] === 'disabled') {
-            return false;
-        } else if (answers[module.type].includes(module.name)) {
-            return true;
+        let allModules = [
+            ...agenda.preparation,
+            ...agenda.preImport,
+            ...agenda.import,
+            ...agenda.postImport,
+            ...agenda.cleanUp
+        ];
+
+        let moduleList = allModules.filter(module => {
+            if (module.platform[answers.platform] === 'required') {
+                return true;
+            } else if (module.platform[answers.platform] === 'disabled') {
+                return false;
+            } else if (answers[module.type].includes(module.name)) {
+                return true;
+            }
+        });
+
+        /* Remove any modules that do not have their required modules running before them */
+        moduleList = moduleList.filter(module => module.requiredModules.every(requiredModule => moduleList.map(m => m.name).includes(requiredModule)));
+
+        /* Gather options to prompt the user about */
+        answers.options = [];
+        for (var x = 0; x < moduleList.length; x++) {
+            for (var i = 0; i < moduleList[x].options.length; i++) {
+                enquirer.question(moduleList[x].options[i].name, {
+                    type: 'confirm',
+                    message: `${moduleList[x].name} | ${moduleList[x].options[i].name}`,
+                    default: moduleList[x].options[i][answers.platform],
+                });
+
+                await enquirer.ask(moduleList[x].options[i].name)
+                    .then(answer => {
+                        answers.options.push({
+                            name: moduleList[x].options[i].name,
+                            value: answer[moduleList[x].options[i].name]
+                        });
+                    })
+                    .catch(console.error);
+            }
         }
-    });
 
-    moduleList = moduleList.map(module => {
-        module.run = require('module');
-        return module;
-    });
+        moduleList.forEach(module => module.run = require(module.name));
 
-    answers.fullAgenda = moduleList;
-    return answers;
+        answers.fullAgenda = moduleList;
+        resolve(answers);
+    });
 }
 
 /* Register Question Types */
@@ -134,9 +158,7 @@ module.exports = async () => {
         validate: (input) => {
             return input != '';
         },
-        when: () => {
-            return !process.argv.includes('-e');
-        }
+        when: (answers) => answers.postImport.includes('groups-bridge') || !process.argv.includes('-e')
     });
 
     /* User Password */
@@ -147,9 +169,7 @@ module.exports = async () => {
         validate: (input) => {
             return input != '';
         },
-        when: () => {
-            return !process.argv.includes('-e');
-        }
+        when: (answers) => answers.postImport.includes('groups-bridge') || !process.argv.includes('-e')
     });
 
     await enquirer.ask('preparation');
@@ -158,8 +178,9 @@ module.exports = async () => {
     await enquirer.ask('postImport');
     await enquirer.ask('actionSeries');
     await enquirer.ask('cleanUp');
+    await buildFullAgenda(enquirer.answers);
     await enquirer.ask('username');
     await enquirer.ask('password');
 
-    return buildFullAgenda(enquirer.answers);
+    return enquirer.answers;
 };
