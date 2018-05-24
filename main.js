@@ -1,7 +1,6 @@
 /* eslint-env node, es6 */
 
 const asyncLib = require('async');
-const agenda = require('./agenda.js');
 
 module.exports = (data) => {
     return new Promise((resolve, reject) => {
