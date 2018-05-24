@@ -213,30 +213,30 @@ module.exports.postImport = [{
     description: 'Restructures the folders in the course files.',
     requiredModules: [],
     options: [{
-            name: 'Create Archive Folder',
-            online: true,
-            pathway: true,
-            campus: false
-        },
-        {
-            name: 'Create Lesson Folders',
-            online: false,
-            pathway: false,
-            campus: false
-        },
-        {
-            name: 'Move Files/Folders to Top',
-            online: true,
-            pathway: true,
-            campus: false
-        }
+        name: 'Create Archive Folder',
+        online: true,
+        pathway: true,
+        campus: false
+    },
+    {
+        name: 'Create Lesson Folders',
+        online: false,
+        pathway: false,
+        campus: false
+    },
+    {
+        name: 'Move Files/Folders to Top',
+        online: true,
+        pathway: true,
+        campus: false
+    }
     ]
 }, {
     name: 'set-navigation-tabs',
     type: 'postImport',
     platform: {
-        online: 'default',
-        pathway: 'default',
+        online: 'required',
+        pathway: 'required',
         campus: 'default'
     },
     description: 'Sets the navigation tabs in Canvas to the standard.',
