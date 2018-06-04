@@ -167,6 +167,15 @@ module.exports = async () => {
         when: (answers) => getOptionalModules(agenda.cleanUp).length > 0
     });
 
+    /* Instructor Full Name for Campus */
+    enquirer.question('instructorName', 'Instructor Full Name:', {
+        errorMessage: 'Cannot be blank!',
+        validate: (input) => {
+            return input != '';
+        },
+        when: (answers) => answers.platform === 'campus'
+    });
+
     /* User Username */
     enquirer.question('username', 'Username:', {
         errorMessage: 'Cannot be blank!',
@@ -194,6 +203,7 @@ module.exports = async () => {
     await enquirer.ask('actionSeries');
     await enquirer.ask('cleanUp');
     await buildFullAgenda(enquirer.answers);
+    await enquirer.ask('instructorName');
     await enquirer.ask('username');
     await enquirer.ask('password');
 

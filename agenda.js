@@ -1,3 +1,4 @@
+// NOTE - PREPARATION
 module.exports.preparation = [{
     name: 'create-course-object',
     type: 'preparation',
@@ -44,6 +45,7 @@ module.exports.preparation = [{
     options: []
 }];
 
+// NOTE - PREIMPORT
 module.exports.preImport = [{
     name: 'question-issues-report',
     type: 'preImport',
@@ -145,6 +147,7 @@ module.exports.preImport = [{
     options: []
 }];
 
+// NOTE - IMPORT
 module.exports.import = [{
     name: 'create-course',
     type: 'import',
@@ -169,6 +172,7 @@ module.exports.import = [{
     options: []
 }];
 
+// NOTE - POSTIMPORT
 module.exports.postImport = [{
     name: './shellScripts/verifyCourseUpload.js',
     type: 'postImport',
@@ -394,6 +398,17 @@ module.exports.postImport = [{
         campus: 'optional'
     },
     description: 'Pins all discussion boards in order, so they stay in order.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'textbook-access',
+    type: 'postImport',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'default'
+    },
+    description: 'Creates a module called "Textbook Access."',
     requiredModules: [],
     options: []
 }, {
