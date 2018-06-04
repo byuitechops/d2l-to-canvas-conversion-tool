@@ -53,6 +53,7 @@
     "set-syllabus": "git+https://github.com/byuitechops/set-syllabus.git",
     "setup-instructor-resources": "github:byuitechops/setup-instructor-resources",
     "tap": "^10.7.3",
+    "textbook-access": "github:byuitechops/textbook-access",
     "unzip": "github:byuitechops/unzip",
     "upload-course": "git+https://github.com/byuitechops/upload-course.git",
     "write-course": "git+https://github.com/byuitechops/write-course.git",
