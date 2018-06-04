@@ -1,6 +1,6 @@
+var agenda = require('./agenda.js');
 var Enquirer = require('enquirer');
 var enquirer = new Enquirer();
-var agenda = require('./agenda2.js');
 
 /* Returns the optional modules for a category */
 function getOptionalModules(modules) {
@@ -45,6 +45,19 @@ function buildFullAgenda(answers) {
         /* Remove any modules that do not have their required modules running before them */
         moduleList = moduleList.filter(module => module.requiredModules.every(requiredModule => moduleList.map(m => m.name).includes(requiredModule)));
 
+        let actionSeriesList = agenda.actionSeries.filter(grandchild => {
+            if (grandchild.platform[answers.platform] === 'required') {
+                return true;
+            } else if (grandchild.platform[answers.platform] === 'disabled') {
+                return false;
+            } else if (answers.actionSeries.includes(grandchild.name)) {
+                return true;
+            }
+        });
+
+        /* Remove any grandchildren that do not have their required modules running before them */
+        actionSeriesList = actionSeriesList.filter(module => module.requiredModules.every(requiredModule => moduleList.map(m => m.name).includes(requiredModule)));
+
         /* Gather options to prompt the user about */
         answers.options = [];
         for (var x = 0; x < moduleList.length; x++) {
@@ -67,8 +80,10 @@ function buildFullAgenda(answers) {
         }
 
         moduleList.forEach(module => module.run = require(module.name));
+        actionSeriesList = actionSeriesList.map(grandchild => grandchild.name);
 
         answers.fullAgenda = moduleList;
+        answers.fullActionSeries = actionSeriesList;
         resolve(answers);
     });
 }
@@ -152,6 +167,15 @@ module.exports = async () => {
         when: (answers) => getOptionalModules(agenda.cleanUp).length > 0
     });
 
+    /* Instructor Full Name for Campus */
+    enquirer.question('instructorName', 'Instructor Full Name:', {
+        errorMessage: 'Cannot be blank!',
+        validate: (input) => {
+            return input != '';
+        },
+        when: (answers) => answers.platform === 'campus'
+    });
+
     /* User Username */
     enquirer.question('username', 'Username:', {
         errorMessage: 'Cannot be blank!',
@@ -179,6 +203,7 @@ module.exports = async () => {
     await enquirer.ask('actionSeries');
     await enquirer.ask('cleanUp');
     await buildFullAgenda(enquirer.answers);
+    await enquirer.ask('instructorName');
     await enquirer.ask('username');
     await enquirer.ask('password');
 

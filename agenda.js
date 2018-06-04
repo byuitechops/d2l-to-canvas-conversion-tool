@@ -1,3 +1,4 @@
+// NOTE - PREPARATION
 module.exports.preparation = [{
     name: 'create-course-object',
     type: 'preparation',
@@ -44,6 +45,7 @@ module.exports.preparation = [{
     options: []
 }];
 
+// NOTE - PREIMPORT
 module.exports.preImport = [{
     name: 'question-issues-report',
     type: 'preImport',
@@ -145,6 +147,7 @@ module.exports.preImport = [{
     options: []
 }];
 
+// NOTE - IMPORT
 module.exports.import = [{
     name: 'create-course',
     type: 'import',
@@ -169,6 +172,7 @@ module.exports.import = [{
     options: []
 }];
 
+// NOTE - POSTIMPORT
 module.exports.postImport = [{
     name: './shellScripts/verifyCourseUpload.js',
     type: 'postImport',
@@ -213,30 +217,30 @@ module.exports.postImport = [{
     description: 'Restructures the folders in the course files.',
     requiredModules: [],
     options: [{
-        name: 'Create Archive Folder',
-        online: true,
-        pathway: true,
-        campus: false
-    },
-    {
-        name: 'Create Lesson Folders',
-        online: true,
-        pathway: true,
-        campus: false
-    },
-    {
-        name: 'Move Files/Folders to Top',
-        online: true,
-        pathway: true,
-        campus: false
-    }
+            name: 'Create Archive Folder',
+            online: true,
+            pathway: true,
+            campus: false
+        },
+        {
+            name: 'Create Lesson Folders',
+            online: false,
+            pathway: false,
+            campus: false
+        },
+        {
+            name: 'Move Files/Folders to Top',
+            online: true,
+            pathway: true,
+            campus: false
+        }
     ]
 }, {
     name: 'set-navigation-tabs',
     type: 'postImport',
     platform: {
-        online: 'required',
-        pathway: 'required',
+        online: 'default',
+        pathway: 'default',
         campus: 'default'
     },
     description: 'Sets the navigation tabs in Canvas to the standard.',
@@ -397,6 +401,17 @@ module.exports.postImport = [{
     requiredModules: [],
     options: []
 }, {
+    name: 'textbook-access',
+    type: 'postImport',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'default'
+    },
+    description: 'Creates a module called "Textbook Access."',
+    requiredModules: [],
+    options: []
+}, {
     name: 'course-make-backup',
     type: 'postImport',
     platform: {
@@ -409,8 +424,396 @@ module.exports.postImport = [{
     options: []
 }];
 
-module.exports.actionSeries = [];
+// NOTE - ACTION SERIES
+module.exports.actionSeries = [{
+    name: 'universal-styling-div',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'default'
+    },
+    description: 'Adds the needed "byui" div with the right classes for styling to take effect.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'universal-html-deprecated-tags',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Removes any deprecated HTML elements that use now-unused IDs.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'universal-rename',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Renames items from old standard names to new standard names.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'universal-references',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'default'
+    },
+    description: 'Identifies references to outdated resources.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'universal-target-attributes',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'default'
+    },
+    description: 'Sets all external links to open in a new tab.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'universal-alt-attribute',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'default'
+    },
+    description: 'Identifies all alt attributes that are missing text or do not exist.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'universal-set-external-links',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Sets external link module items from old URLs to new URLs.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'universal-err-links',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'default'
+    },
+    description: 'Identifies ERR URLs.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'universal-remove-banners',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Removes banners from everything except overview pages.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'universal-fix-dropbox-links',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'required'
+    },
+    description: 'Attempts to fix as many dropbox links as possible, which currently break on import.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'universal-html-replace-tags',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'default'
+    },
+    description: 'Replaces "i" tags with "em" tags, and "b" tags with "strong" tags.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'universal-description-quicklinks',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'required'
+    },
+    description: 'Attempts to fix broken quicklinks found in item descriptions.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'universal-html-empty-tags',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'default'
+    },
+    description: 'Removes empty HTML elements from the course.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'universal-table-classes',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Adds the standard classes to tables within HTML in the course.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'assignments-delete',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Deletes unneeded assignments.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'discussions-delete',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Deletes unneeded discussions.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'files-delete',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Deletes unneeded files.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'files-move',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Moves files into the newly created documents, media, and template folders.',
+    requiredModules: ['reorganize-file-structure'],
+    options: []
+}, {
+    name: 'files-naming-conventions',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Renames files according to the Online Learning naming conventions.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'files-report-videos',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Identifies video files being stored in the course.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'module-items-delete',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Deletes unneeded module items.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'module-items-external-urls',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Sets module item external URLS to new ones.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'module-items-naming-conventions',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Sets module item names to the Online Learning naming conventions.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'module-items-position',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Sets module item positions for specific items.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'module-items-publish-settings',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Sets whether certain module items are published or not.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'module-items-requirements',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Provides each module item with a requirement.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'modules-delete',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Provides each module item with a requirement.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'modules-naming-conventions',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Renames modules based on online learning naming conventions.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'modules-publish-settings',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: 'Handles module publish settings.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'pages-delete',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: '',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'pages-insert-template',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: '',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'quiz-questions-delete',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: '',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'quiz-questions-broken-quicklinks',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'default'
+    },
+    description: '',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'quiz-questions-match-swap',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'default'
+    },
+    description: '',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'quizzes-delete',
+    type: 'actionSeries',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'optional'
+    },
+    description: '',
+    requiredModules: [],
+    options: []
+}];
 
+
+// NOTE - CLEANUP
 module.exports.cleanUp = [{
     name: 'remove-files',
     type: 'cleanUp',
