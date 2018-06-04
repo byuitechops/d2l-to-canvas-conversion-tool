@@ -120,7 +120,18 @@ module.exports.preImport = [{
         pathway: 'default',
         campus: 'optional'
     },
-    description: 'Removes blank page headers created in place of module descriptions..',
+    description: 'Removes blank page headers created in place of module descriptions.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'random-sections-check',
+    type: 'preImport',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'required'
+    },
+    description: 'Identifies random sections within quizzes.',
     requiredModules: [],
     options: []
 }, {

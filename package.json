@@ -44,6 +44,7 @@
     "quiz-fix-overlay": "git+https://github.com/byuitechops/quiz-fix-overlay.git",
     "quiz-instructions": "github:byuitechops/quiz-instructions",
     "quiz-rel-cleaner": "git+https://github.com/byuitechops/quiz-rel-cleaner.git",
+    "random-sections-check": "github:byuitechops/random-sections-check",
     "remove-blank-page-headers": "git+https://github.com/byuitechops/remove-blank-page-headers.git",
     "remove-files": "git+https://github.com/byuitechops/remove-files.git",
     "reorganize-file-structure": "git+https://github.com/byuitechops/reorganize-file-structure.git",
