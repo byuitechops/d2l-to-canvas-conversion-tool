@@ -1,6 +1,6 @@
 /* eslint no-console:0 */
 
-const prompt = require('./prompt2.js');
+const prompt = require('./prompt.js');
 const downloader = require('d2l-course-downloader');
 const main = require('./main.js');
 
