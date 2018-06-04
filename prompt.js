@@ -1,6 +1,6 @@
 var Enquirer = require('enquirer');
 var enquirer = new Enquirer();
-var agenda = require('./agenda2.js');
+var agenda = require('./agenda.js');
 
 /* Returns the optional modules for a category */
 function getOptionalModules(modules) {
