@@ -124,6 +124,17 @@ module.exports.preImport = [{
     requiredModules: [],
     options: []
 }, {
+    name: 'mismatched-quiz-points',
+    type: 'preImport',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'required'
+    },
+    description: 'Identifies quizzes that will have a different grade value in Canvas vs. D2L.',
+    requiredModules: [],
+    options: []
+}, {
     name: 'random-sections-check',
     type: 'preImport',
     platform: {
@@ -365,6 +376,17 @@ module.exports.postImport = [{
         campus: 'optional'
     },
     description: 'Generates subheaders for "beginning of week", "middle of week", and "end of week" in each week module.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'question-count',
+    type: 'postImport',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'required'
+    },
+    description: 'Identifies all quizzes that have a different number of questions in Brightspace than in D2L.',
     requiredModules: [],
     options: []
 }, {
