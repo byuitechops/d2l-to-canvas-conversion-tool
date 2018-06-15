@@ -218,6 +218,17 @@ module.exports.postImport = [{
     requiredModules: [],
     options: []
 }, {
+    name: 'quiz-time-limit',
+    type: 'postImport',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'required'
+    },
+    description: 'Removes time limits from quizzes that shouldn\'t have them.',
+    requiredModules: [],
+    options: []
+}, {
     name: 'course-make-blueprint',
     type: 'postImport',
     platform: {
@@ -229,7 +240,7 @@ module.exports.postImport = [{
     requiredModules: [],
     options: []
 }, {
-    name: 'reorganize-file-structure',
+    name: 'build-file-structure',
     type: 'postImport',
     platform: {
         online: 'default',
@@ -239,23 +250,29 @@ module.exports.postImport = [{
     description: 'Restructures the folders in the course files.',
     requiredModules: [],
     options: [{
-            name: 'Create Archive Folder',
-            online: true,
-            pathway: true,
-            campus: false
-        },
-        {
-            name: 'Create Lesson Folders',
-            online: false,
-            pathway: false,
-            campus: false
-        },
-        {
-            name: 'Move Files/Folders to Top',
-            online: true,
-            pathway: true,
-            campus: false
-        }
+        name: 'Create three main folders',
+        online: true,
+        pathway: true,
+        campus: false
+    },
+    {
+        name: 'Move files into three main folders',
+        online: true,
+        pathway: true,
+        campus: false
+    },
+    {
+        name: 'Create Archive and archive unused files',
+        online: false,
+        pathway: false,
+        campus: false
+    },
+    {
+        name: 'Delete unused files',
+        online: true,
+        pathway: true,
+        campus: false
+    }
     ]
 }, {
     name: 'set-navigation-tabs',
@@ -362,7 +379,7 @@ module.exports.postImport = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Creates an icebreaker discussion board (renames existing ones).',
     requiredModules: [],
@@ -395,7 +412,7 @@ module.exports.postImport = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Creates a maintenance log LTI link in Instructor Resources.',
     requiredModules: [],
@@ -417,7 +434,7 @@ module.exports.postImport = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Locks most items in the course, if course is a blueprint.',
     requiredModules: ['course-make-blueprint'],
@@ -428,7 +445,7 @@ module.exports.postImport = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'optional'
+        campus: 'default'
     },
     description: 'Pins all discussion boards in order, so they stay in order.',
     requiredModules: [],
@@ -450,7 +467,7 @@ module.exports.postImport = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'If the course was turned into a blueprint course, this creates a backup that is synced to it.',
     requiredModules: ['course-make-blueprint'],
@@ -475,7 +492,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Removes any deprecated HTML elements that use now-unused IDs.',
     requiredModules: [],
@@ -519,7 +536,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Identifies all alt attributes that are missing text or do not exist.',
     requiredModules: [],
@@ -541,7 +558,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Identifies ERR URLs.',
     requiredModules: [],
@@ -618,7 +635,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Deletes unneeded assignments.',
     requiredModules: [],
@@ -629,7 +646,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Deletes unneeded discussions.',
     requiredModules: [],
@@ -640,12 +657,12 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Deletes unneeded files.',
     requiredModules: [],
     options: []
-}, {
+},/* {
     name: 'files-move',
     type: 'actionSeries',
     platform: {
@@ -656,7 +673,7 @@ module.exports.actionSeries = [{
     description: 'Moves files into the newly created documents, media, and template folders.',
     requiredModules: ['reorganize-file-structure'],
     options: []
-}, {
+},*/ {
     name: 'files-naming-conventions',
     type: 'actionSeries',
     platform: {
@@ -673,7 +690,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'required'
     },
     description: 'Identifies video files being stored in the course.',
     requiredModules: [],
@@ -728,7 +745,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Sets whether certain module items are published or not.',
     requiredModules: [],
@@ -739,7 +756,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'default'
     },
     description: 'Provides each module item with a requirement.',
     requiredModules: [],
@@ -750,7 +767,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Provides each module item with a requirement.',
     requiredModules: [],
@@ -783,7 +800,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: '',
     requiredModules: [],
@@ -805,7 +822,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'default'
     },
     description: '',
     requiredModules: [],
@@ -816,7 +833,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'default'
+        campus: 'required'
     },
     description: '',
     requiredModules: [],
@@ -838,7 +855,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: '',
     requiredModules: [],

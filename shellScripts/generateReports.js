@@ -35,7 +35,7 @@ module.exports = (course, stepCallback) => {
     if (course.info.prototypeOU) console.log(`PrototypeOU used: https://byui.instructure.com/accounts/${course.settings.accountID}/courses/${course.info.prototypeOU}`);
 
     // Set the report title
-    course.logger.reportTitle = course.info.courseCode;
+    course.logger.reportTitle = course.info.courseCode.replace('.zip', '') || course.info.instructorName || new Date().now();
     // Set the Report Header
     course.setReportHeader(headerTemplate);
     // Generate the Console Report
