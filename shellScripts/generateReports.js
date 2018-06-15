@@ -34,8 +34,12 @@ module.exports = (course, stepCallback) => {
     if (course.info.backupOU) console.log(`Backup course created at: https://byui.instructure.com/accounts/${course.settings.accountID}/courses/${course.info.backupOU}`);
     if (course.info.prototypeOU) console.log(`PrototypeOU used: https://byui.instructure.com/accounts/${course.settings.accountID}/courses/${course.info.prototypeOU}`);
 
+    console.log(course.info.courseCode);
     // Set the report title
-    course.logger.reportTitle = course.info.courseCode.replace('.zip', '') || course.info.instructorName || new Date().toString();
+    course.logger.reportTitle = course.info.courseCode;
+    if (!course.logger.reportTitle) {
+        course.logger.reportTitle = course.info.courseName;
+    }
     // Set the Report Header
     course.setReportHeader(headerTemplate);
     // Generate the Console Report
