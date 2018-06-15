@@ -34,7 +34,6 @@ module.exports = (course, stepCallback) => {
     if (course.info.backupOU) console.log(`Backup course created at: https://byui.instructure.com/accounts/${course.settings.accountID}/courses/${course.info.backupOU}`);
     if (course.info.prototypeOU) console.log(`PrototypeOU used: https://byui.instructure.com/accounts/${course.settings.accountID}/courses/${course.info.prototypeOU}`);
 
-    console.log(course.info.courseCode);
     // Set the report title
     course.logger.reportTitle = course.info.courseCode;
     if (!course.logger.reportTitle) {

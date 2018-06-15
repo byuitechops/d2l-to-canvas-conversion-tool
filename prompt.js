@@ -119,6 +119,15 @@ module.exports = async () => {
     let platform = await enquirer.ask('platform');
     let D2LOU = await enquirer.ask('D2LOU');
 
+    /* Campus course shell ID */
+    enquirer.question('canvasOU', 'Campus Course Shell ID:', {
+        errorMessage: 'Cannot be blank!',
+        validate: (input) => {
+            return input != '';
+        },
+        when: (answers) => answers.platform === 'campus'
+    });
+
     enquirer.question('preparation', {
         type: 'checkbox',
         message: 'Preparation Shell Modules:',
@@ -205,6 +214,7 @@ module.exports = async () => {
         when: (answers) => answers.postImport.includes('groups-bridge') || !process.argv.includes('-e')
     });
 
+    await enquirer.ask('canvasOU');
     await enquirer.ask('preparation');
     await enquirer.ask('preImport');
     await enquirer.ask('import');

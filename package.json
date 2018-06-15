@@ -10,6 +10,7 @@
     "assignment-categories": "github:byuitechops/assignment-categories",
     "async": "^2.6.0",
     "blueprint-lock-items": "github:byuitechops/blueprint-lock-items",
+    "build-file-structure": "github:byuitechops/build-file-structure",
     "canvas-course-scrubber": "github:byuitechops/canvas-course-scrubber",
     "canvas-wrapper": "github:byuitechops/canvas-wrapper",
     "chalk": "^2.3.0",

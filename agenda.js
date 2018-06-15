@@ -176,7 +176,7 @@ module.exports.import = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'required'
+        campus: 'optional'
     },
     description: 'Creates a new course in Canvas.',
     requiredModules: [],
