@@ -116,8 +116,8 @@ enquirer.question('D2LOU', 'Brightspace OU:', {
 });
 
 module.exports = async () => {
-    let platform = await enquirer.ask('platform');
-    let D2LOU = await enquirer.ask('D2LOU');
+    await enquirer.ask('platform');
+    await enquirer.ask('D2LOU');
 
     /* Campus course shell ID */
     enquirer.question('canvasOU', 'Campus Course Shell ID:', {
@@ -149,9 +149,6 @@ module.exports = async () => {
         message: 'Import Shell Modules:',
         default: getDefaultModules(agenda.import),
         choices: getOptionalModules(agenda.import),
-        validate: (input) => {
-            return true;
-        },
         when: (answers) => getOptionalModules(agenda.import).length > 0
     });
 
