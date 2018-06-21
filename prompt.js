@@ -123,7 +123,7 @@ module.exports = async () => {
     enquirer.question('canvasOU', 'Campus Course Shell ID:', {
         errorMessage: 'Cannot be blank!',
         validate: (input) => {
-            return input != '';
+            return input != undefined;
         },
         when: (answers) => answers.platform === 'campus'
     });
@@ -149,6 +149,9 @@ module.exports = async () => {
         message: 'Import Shell Modules:',
         default: getDefaultModules(agenda.import),
         choices: getOptionalModules(agenda.import),
+        validate: (input) => {
+            return true;
+        },
         when: (answers) => getOptionalModules(agenda.import).length > 0
     });
 
@@ -180,7 +183,7 @@ module.exports = async () => {
     enquirer.question('instructorName', 'Instructor Full Name:', {
         errorMessage: 'Cannot be blank!',
         validate: (input) => {
-            return input != '';
+            return input != ''; // doesn't work
         },
         when: (answers) => answers.platform === 'campus'
     });
@@ -189,7 +192,7 @@ module.exports = async () => {
     enquirer.question('instructorEmail', 'Instructor Email:', {
         errorMessage: 'Cannot be blank!',
         validate: (input) => {
-            return input != '';
+            return input != ''; // doesn't work
         },
         when: (answers) => answers.platform === 'campus'
     });
@@ -198,7 +201,7 @@ module.exports = async () => {
     enquirer.question('username', 'Username:', {
         errorMessage: 'Cannot be blank!',
         validate: (input) => {
-            return input != '';
+            return input != undefined;
         },
         when: (answers) => answers.postImport.includes('groups-bridge') || !process.argv.includes('-e')
     });
@@ -209,7 +212,7 @@ module.exports = async () => {
         message: 'Password:',
         errorMessage: 'Cannot be blank!',
         validate: (input) => {
-            return input != '';
+            return input != undefined;
         },
         when: (answers) => answers.postImport.includes('groups-bridge') || !process.argv.includes('-e')
     });
