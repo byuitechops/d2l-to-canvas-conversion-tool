@@ -429,17 +429,6 @@ module.exports.postImport = [{
     requiredModules: [],
     options: []
 }, {
-    name: 'blueprint-lock-items',
-    type: 'postImport',
-    platform: {
-        online: 'default',
-        pathway: 'default',
-        campus: 'disabled'
-    },
-    description: 'Locks most items in the course, if course is a blueprint.',
-    requiredModules: ['course-make-blueprint'],
-    options: []
-}, {
     name: 'pin-discussion-boards',
     type: 'postImport',
     platform: {
@@ -462,7 +451,29 @@ module.exports.postImport = [{
     requiredModules: [],
     options: []
 }, {
-    name: 'course-make-backup',
+    name: 'campus-standard-modules',
+    type: 'postImport',
+    platform: {
+        online: 'disabled',
+        pathway: 'disabled',
+        campus: 'required'
+    },
+    description: 'Creates "Additional Resources" & "Teacher Resources" modules',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'blueprint-lock-items', // RUN AT END
+    type: 'postImport',
+    platform: {
+        online: 'default',
+        pathway: 'default',
+        campus: 'disabled'
+    },
+    description: 'Locks most items in the course, if course is a blueprint.',
+    requiredModules: ['course-make-blueprint'],
+    options: []
+}, {
+    name: 'course-make-backup', // RUN AT END
     type: 'postImport',
     platform: {
         online: 'default',
