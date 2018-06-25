@@ -128,14 +128,14 @@ enquirer.question('D2LOU', 'Brightspace OU:', {
 });
 
 module.exports = async () => {
-    let platform = await enquirer.ask('platform');
-    let D2LOU = await enquirer.ask('D2LOU');
+    await enquirer.ask('platform');
+    await enquirer.ask('D2LOU');
 
     /* Campus course shell ID */
     enquirer.question('canvasOU', 'Campus Course Shell ID:', {
         errorMessage: 'Cannot be blank!',
         validate: (input) => {
-            return input != '';
+            return input != undefined;
         },
         when: (answers) => answers.platform === 'campus'
     });
@@ -192,7 +192,7 @@ module.exports = async () => {
     enquirer.question('instructorName', 'Instructor Full Name:', {
         errorMessage: 'Cannot be blank!',
         validate: (input) => {
-            return input != '';
+            return input != ''; // doesn't work
         },
         when: (answers) => answers.platform === 'campus'
     });
@@ -201,7 +201,7 @@ module.exports = async () => {
     enquirer.question('instructorEmail', 'Instructor Email:', {
         errorMessage: 'Cannot be blank!',
         validate: (input) => {
-            return input != '';
+            return input != ''; // doesn't work
         },
         when: (answers) => answers.platform === 'campus'
     });
@@ -210,7 +210,7 @@ module.exports = async () => {
     enquirer.question('username', 'Username:', {
         errorMessage: 'Cannot be blank!',
         validate: (input) => {
-            return input != '';
+            return input != undefined;
         },
         when: (answers) => answers.postImport.includes('groups-bridge') || !process.argv.includes('-e')
     });
@@ -221,7 +221,7 @@ module.exports = async () => {
         message: 'Password:',
         errorMessage: 'Cannot be blank!',
         validate: (input) => {
-            return input != '';
+            return input != undefined;
         },
         when: (answers) => answers.postImport.includes('groups-bridge') || !process.argv.includes('-e')
     });

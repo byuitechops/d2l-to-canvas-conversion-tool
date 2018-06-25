@@ -8,10 +8,14 @@
     "action-series-master": "github:byuitechops/action-series-master",
     "add-course-maintenance-log": "github:byuitechops/add-course-maintenance-log",
     "assignment-categories": "github:byuitechops/assignment-categories",
-    "async": "^2.6.0",
+    "async": "^2.6.1",
     "blueprint-lock-items": "github:byuitechops/blueprint-lock-items",
     "build-file-structure": "github:byuitechops/build-file-structure",
+<<<<<<< HEAD
     "campus-standard-modules": "github:byuitechops/campus-standard-modules",
+=======
+    "campus-standard-modules": "git+https://github.com/byuitechops/campus-standard-modules.git",
+>>>>>>> 245407e6b4bfa5efb232fcf0c4f2019abf631559
     "canvas-course-scrubber": "github:byuitechops/canvas-course-scrubber",
     "canvas-wrapper": "github:byuitechops/canvas-wrapper",
     "chalk": "^2.3.0",
@@ -40,7 +44,7 @@
     "mismatched-quiz-points": "github:byuitechops/mismatched-quiz-points",
     "pin-discussion-boards": "github:byuitechops/pin-discussion-boards",
     "prompt-confirm": "^1.2.0",
-    "prompt-list": "^3.1.2",
+    "prompt-list": "^3.2.0",
     "prompt-password": "^1.2.0",
     "prompt-radio": "^1.2.1",
     "question-count": "github:byuitechops/question-count",
