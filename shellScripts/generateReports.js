@@ -39,6 +39,9 @@ module.exports = (course, stepCallback) => {
     if (!course.logger.reportTitle) {
         course.logger.reportTitle = course.info.courseName;
     }
+    if (course.info.instructorName) {
+        course.logger.reportTitle += ' - ' + course.info.instructorName;
+    }
     // Set the Report Header
     course.setReportHeader(headerTemplate);
     // Generate the Console Report

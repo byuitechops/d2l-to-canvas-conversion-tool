@@ -62,11 +62,23 @@ function buildFullAgenda(answers) {
         answers.options = [];
         for (var x = 0; x < moduleList.length; x++) {
             for (var i = 0; i < moduleList[x].options.length; i++) {
-                enquirer.question(moduleList[x].options[i].name, {
-                    type: 'confirm',
-                    message: `${moduleList[x].name} | ${moduleList[x].options[i].name}`,
-                    default: moduleList[x].options[i][answers.platform],
-                });
+
+                if (moduleList[x].options[i].type !== undefined) {
+                    if (moduleList[x].options[i].platform === answers.platform) {
+                        enquirer.question(moduleList[x].options[i].name, {
+                            type: moduleList[x].options[i].type,
+                            default: moduleList[x].options[i].default,
+                            choices: moduleList[x].options[i].choices
+                        });
+                    }
+                } else {
+                    enquirer.question(moduleList[x].options[i].name, {
+                        type: 'confirm',
+                        message: `${moduleList[x].name} | ${moduleList[x].options[i].name}`,
+                        default: moduleList[x].options[i][answers.platform],
+                    });
+                }
+
 
                 await enquirer.ask(moduleList[x].options[i].name)
                     .then(answer => {

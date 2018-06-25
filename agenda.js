@@ -240,6 +240,17 @@ module.exports.postImport = [{
     requiredModules: [],
     options: []
 }, {
+    name: 'campus-standard-modules',
+    type: 'postImport',
+    platform: {
+        online: 'disabled',
+        pathway: 'disabled',
+        campus: 'required'
+    },
+    description: 'Creates student resources and instructor resources if missing.',
+    requiredModules: [],
+    options: []
+}, {
     name: 'build-file-structure',
     type: 'postImport',
     platform: {
@@ -262,7 +273,13 @@ module.exports.postImport = [{
         campus: false
     },
     {
-        name: 'Create Archive and archive unused files',
+        name: 'Create Archive',
+        online: false,
+        pathway: false,
+        campus: false
+    },
+    {
+        name: 'Archive unused files',
         online: false,
         pathway: false,
         campus: false
@@ -295,7 +312,26 @@ module.exports.postImport = [{
     },
     description: 'Creates the course homepage and inserts the template.',
     requiredModules: [],
-    options: [] // This will have options eventually!
+    options: [{
+        type: 'radio',
+        platform: 'campus',
+        name: 'campusTemplate',
+        default: 'Basic',
+        choices: [
+            'Basic',
+            'Basic Details',
+            'Lg Ends Details',
+            'Lg Ends Plain',
+            'Modules',
+            'Other',
+            'Full Pictures',
+            'Schedule',
+            'Small Pictures',
+            'Sm Weeks Auto',
+            'Syllabus',
+            'Weeks Auto'
+        ]
+    }]
 }, {
     name: 'course-settings',
     type: 'postImport',
