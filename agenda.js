@@ -80,17 +80,6 @@ module.exports.preImport = [{
     requiredModules: [],
     options: []
 }, {
-    name: 'files-find-used-content',
-    type: 'preImport',
-    platform: {
-        online: 'required',
-        pathway: 'required',
-        campus: 'required'
-    },
-    description: 'Identifies which files are used, and which are not.',
-    requiredModules: [],
-    options: []
-}, {
     name: 'report-html-tags',
     type: 'preImport',
     platform: {
@@ -204,6 +193,17 @@ module.exports.postImport = [{
         campus: 'required'
     },
     description: 'Verifies that the entire course has finished unpacking.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'files-find-used-content',
+    type: 'postImport',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'required'
+    },
+    description: 'Identifies which files are used, and which are not.',
     requiredModules: [],
     options: []
 }, {
