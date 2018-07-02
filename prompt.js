@@ -110,7 +110,7 @@ enquirer.register('confirm', require('prompt-confirm'));
 enquirer.question('platform', {
     type: 'radio',
     message: 'Platform:',
-    default: 'online',
+    default: 'campus',
     choices: [
         'online',
         'pathway',
