@@ -239,5 +239,9 @@ module.exports = async () => {
     await enquirer.ask('username');
     await enquirer.ask('password');
 
+    if (enquirer.answers.instructorEmail) {
+        enquirer.answers.instructorEmail = enquirer.answers.instructorEmail.replace('@byui.edu', '');
+    }
+
     return enquirer.answers;
 };
