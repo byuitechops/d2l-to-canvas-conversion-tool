@@ -236,9 +236,19 @@ module.exports = async () => {
     await buildFullAgenda(enquirer.answers);
     await enquirer.ask('instructorName');
     await enquirer.ask('instructorEmail');
-    await enquirer.ask('username');
-    await enquirer.ask('password');
 
+    /* Check env variable before asking for user credentials */
+    if (!process.env.USR)
+        await enquirer.ask('username');
+    else
+        enquirer.answers.username = process.env.USR;
+
+    if (!process.env.PASS)
+        await enquirer.ask('password');
+    else
+        enquirer.answers.password = process.env.PASS;
+
+    /* remove @byui.edu from email */
     if (enquirer.answers.instructorEmail) {
         enquirer.answers.instructorEmail = enquirer.answers.instructorEmail.replace('@byui.edu', '');
     }
