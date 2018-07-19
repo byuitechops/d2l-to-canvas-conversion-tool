@@ -39,6 +39,25 @@ The first step of the process asks you a variety of questions to determine what 
 7. (Required) What post-import child modules do you want to run?
 8. (Required) Do you want to create lesson folders in media/documents? (Y/N answer - Check the documentation for reorganize-file-structure)
 
+The typical answers for Campus courses are as follows. Please talk to a Lead before doing this for the first time:
+1. Platform: campus
+2. D2LOU: check spreadsheet
+2. CanvasID: check spreadsheet
+3. Pre-Import: leave as is
+4. Import: Only use create-ourse if there isn't a shell
+5. Post-Import: check spreadsheet (only "build-file-structure" would ever be used)
+6. Granchildren: leave as is
+7. Cleenup: leave as is
+8. Campus Template: check spreadsheet
+9. Instructor Name: First Last from spreadsheet
+10. Instructor Email: spreadsheet (exclude "@byui.edu")
+11. Your username and password
+
+After the conversion has completed for the Campus course, do the following:
+1. Move HTML report into Google Drive
+2. Remove yourself from the Trello Card
+3. Use card menu to move it to FTC Post Analysis
+
 **If the tool uses a Command Line Interface, provide a table with the flag, aliases, and description of each commandline parameter.**
 
 | Flag | Aliases | Description |
