@@ -115,7 +115,8 @@ enquirer.question('platform', {
         'online',
         'pathway',
         'campus'
-    ]
+    ],
+    when: (answers) => !process.argv.includes('-c')
 });
 
 /* Brightspace OU */

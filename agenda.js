@@ -107,7 +107,7 @@ module.exports.preImport = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Removes blank page headers created in place of module descriptions.',
     requiredModules: [],
@@ -917,7 +917,7 @@ module.exports.cleanUp = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Cleans up generated files from the conversion tool.',
     requiredModules: [],
@@ -928,7 +928,7 @@ module.exports.cleanUp = [{
     platform: {
         online: 'optional',
         pathway: 'optional',
-        campus: 'optional'
+        campus: 'required'
     },
     description: 'Deletes the course after running. Used in development only.',
     requiredModules: [],
