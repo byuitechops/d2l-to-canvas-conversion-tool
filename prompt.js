@@ -71,6 +71,9 @@ function buildFullAgenda(answers) {
                             choices: moduleList[x].options[i].choices
                         });
                     }
+                    else {
+                        continue;
+                    }
                 } else {
                     enquirer.question(moduleList[x].options[i].name, {
                         type: 'confirm',
