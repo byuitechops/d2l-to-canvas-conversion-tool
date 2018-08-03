@@ -254,7 +254,7 @@ module.exports = async () => {
 
     /* remove @byui.edu from email */
     if (enquirer.answers.instructorEmail) {
-        enquirer.answers.instructorEmail = enquirer.answers.instructorEmail.replace('@byui.edu', '');
+        enquirer.answers.instructorEmail = enquirer.answers.instructorEmail.replace(/@byui\.edu/i, '');
     }
 
     return enquirer.answers;
