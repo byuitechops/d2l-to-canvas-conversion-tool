@@ -71,6 +71,9 @@ function buildFullAgenda(answers) {
                             choices: moduleList[x].options[i].choices
                         });
                     }
+                    else {
+                        continue;
+                    }
                 } else {
                     enquirer.question(moduleList[x].options[i].name, {
                         type: 'confirm',
@@ -115,7 +118,8 @@ enquirer.question('platform', {
         'online',
         'pathway',
         'campus'
-    ]
+    ],
+    when: (answers) => !process.argv.includes('-c')
 });
 
 /* Brightspace OU */
@@ -250,7 +254,7 @@ module.exports = async () => {
 
     /* remove @byui.edu from email */
     if (enquirer.answers.instructorEmail) {
-        enquirer.answers.instructorEmail = enquirer.answers.instructorEmail.replace('@byui.edu', '');
+        enquirer.answers.instructorEmail = enquirer.answers.instructorEmail.replace(/@byui\.edu/i, '');
     }
 
     return enquirer.answers;
