@@ -18,7 +18,6 @@ function deleteEvent(event, cb) {
 
 
 function getEventIds(courseID) {
-    // var eventIDs = await getEventIds(courseID);
     canvas.get(`/api/v1/calendar_events?type=event&context_codes[]=course_${courseID}&all_events=1&excludes[]=assignment&excludes[]=description&excludes[]=child_events%27`, (err, allEvents) => {
         if (err) {
             console.error(err);
