@@ -196,6 +196,17 @@ module.exports.postImport = [{
     requiredModules: [],
     options: []
 }, {
+    name: 'remove-dateless-events',
+    type: 'postImport',
+    platform: {
+        online: 'default',
+        pathway: 'default',
+        campus: 'default'
+    },
+    description: 'Deletes calendar event without start & end dates.',
+    requiredModules: [],
+    options: []
+}, {
     name: 'files-find-used-content',
     type: 'postImport',
     platform: {
@@ -297,7 +308,7 @@ module.exports.postImport = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Sets the navigation tabs in Canvas to the standard.',
     requiredModules: [],
@@ -338,7 +349,7 @@ module.exports.postImport = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Sets the course settings to the standards for each respective platform.',
     requiredModules: [],
@@ -360,7 +371,7 @@ module.exports.postImport = [{
     platform: {
         online: 'default',
         pathway: 'disabled',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Retrieves the course description from byui.edu (does not work for pathway)',
     requiredModules: [],
@@ -382,7 +393,7 @@ module.exports.postImport = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Copies groups and group settings over from D2L.',
     requiredModules: [],
@@ -393,7 +404,7 @@ module.exports.postImport = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Identifies the welcome folder and moves its contents elsewhere. Removes the welcome folder.',
     requiredModules: [],
@@ -404,7 +415,7 @@ module.exports.postImport = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Creates the instructor resources module and moves the appropriate content into it. Removes any "Resources" modules.',
     requiredModules: [],
@@ -426,7 +437,7 @@ module.exports.postImport = [{
     platform: {
         online: 'optional',
         pathway: 'optional',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Generates subheaders for "beginning of week", "middle of week", and "end of week" in each week module.',
     requiredModules: [],
@@ -470,7 +481,7 @@ module.exports.postImport = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Pins all discussion boards in order, so they stay in order.',
     requiredModules: [],
@@ -481,7 +492,7 @@ module.exports.postImport = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Creates a module called "Textbook Access."',
     requiredModules: [],
@@ -528,7 +539,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Adds the needed "byui" div with the right classes for styling to take effect.',
     requiredModules: [],
@@ -550,7 +561,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Renames items from old standard names to new standard names.',
     requiredModules: [],
@@ -561,7 +572,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Identifies references to outdated resources.',
     requiredModules: [],
@@ -572,7 +583,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Sets all external links to open in a new tab.',
     requiredModules: [],
@@ -594,7 +605,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Sets external link module items from old URLs to new URLs.',
     requiredModules: [],
@@ -616,7 +627,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Removes banners from everything except overview pages.',
     requiredModules: [],
@@ -638,7 +649,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Replaces "i" tags with "em" tags, and "b" tags with "strong" tags.',
     requiredModules: [],
@@ -660,7 +671,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Removes empty HTML elements from the course.',
     requiredModules: [],
@@ -671,7 +682,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Adds the standard classes to tables within HTML in the course.',
     requiredModules: [],
@@ -726,7 +737,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Renames files according to the Online Learning naming conventions.',
     requiredModules: [],
@@ -748,7 +759,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Deletes unneeded module items.',
     requiredModules: [],
@@ -759,7 +770,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Sets module item external URLS to new ones.',
     requiredModules: [],
@@ -770,7 +781,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Sets module item names to the Online Learning naming conventions.',
     requiredModules: [],
@@ -781,7 +792,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Sets module item positions for specific items.',
     requiredModules: [],
@@ -803,7 +814,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Provides each module item with a requirement.',
     requiredModules: [],
@@ -825,7 +836,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Renames modules based on online learning naming conventions.',
     requiredModules: [],
@@ -836,7 +847,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: 'Handles module publish settings.',
     requiredModules: [],
@@ -858,7 +869,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'optional'
+        campus: 'disabled'
     },
     description: '',
     requiredModules: [],
@@ -869,7 +880,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'default'
+        campus: 'required'
     },
     description: '',
     requiredModules: [],
@@ -891,7 +902,7 @@ module.exports.actionSeries = [{
     platform: {
         online: 'required',
         pathway: 'required',
-        campus: 'default'
+        campus: 'required'
     },
     description: '',
     requiredModules: [],

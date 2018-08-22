@@ -15,6 +15,7 @@
     "canvas-course-scrubber": "github:byuitechops/canvas-course-scrubber",
     "canvas-wrapper": "github:byuitechops/canvas-wrapper",
     "chalk": "^2.3.0",
+    "child-template": "github:byuitechops/remove-dateless-events",
     "copy-a-canvas-course": "github:byuitechops/copy-a-canvas-course",
     "course-description": "github:byuitechops/course-description",
     "course-make-backup": "github:byuitechops/course-make-backup",
