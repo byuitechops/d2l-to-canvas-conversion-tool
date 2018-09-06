@@ -201,7 +201,7 @@ module.exports.postImport = [{
     platform: {
         online: 'default',
         pathway: 'default',
-        campus: 'default'
+        campus: 'required'
     },
     description: 'Deletes calendar event without start & end dates.',
     requiredModules: [],
