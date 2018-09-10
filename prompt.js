@@ -68,7 +68,9 @@ function buildFullAgenda(answers) {
                         enquirer.question(moduleList[x].options[i].name, {
                             type: moduleList[x].options[i].type,
                             default: moduleList[x].options[i].default,
-                            choices: moduleList[x].options[i].choices
+                            choices: moduleList[x].options[i].choices,
+                            validate: moduleList[x].options[i].validate,
+                            message:  moduleList[x].options[i].message,
                         });
                     }
                     else {

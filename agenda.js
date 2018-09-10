@@ -353,7 +353,15 @@ module.exports.postImport = [{
     },
     description: 'Sets the course settings to the standards for each respective platform.',
     requiredModules: [],
-    options: []
+    options: [{
+        type: 'input',
+        platform: 'campus',
+        name: 'term',
+        message: 'Enrollment Term:',
+        validate: (input) => {
+            return /(?:(?:Winter)|(?:Fall)|(?:Spring)|(?:Summer))\s\d{2}$/.test(input);
+        }
+    }]
 }, {
     name: 'assignment-categories',
     type: 'postImport',
