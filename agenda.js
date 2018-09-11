@@ -359,7 +359,7 @@ module.exports.postImport = [{
         name: 'term',
         message: 'Enrollment Term:',
         validate: (input) => {
-            return /(?:(?:Winter)|(?:Fall)|(?:Spring)|(?:Summer))\s\d{2}$/.test(input);
+            return /(?:(?:Winter)|(?:Fall)|(?:Spring)|(?:Summer))\s\d{2}$/.test(input) || input === undefined;
         }
     }]
 }, {
