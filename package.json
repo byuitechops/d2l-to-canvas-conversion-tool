@@ -56,6 +56,7 @@
     "remove-files": "git+https://github.com/byuitechops/remove-files.git",
     "reorganize-file-structure": "git+https://github.com/byuitechops/reorganize-file-structure.git",
     "report-html-tags": "github:byuitechops/report-html-tags",
+    "run-link-validator": "github:byuitechops/run-link-validator",
     "set-file-paths": "github:byuitechops/set-file-paths",
     "set-navigation-tabs": "github:byuitechops/set-navigation-tabs",
     "set-syllabus": "github:byuitechops/set-syllabus",

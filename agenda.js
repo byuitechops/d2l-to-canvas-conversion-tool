@@ -83,9 +83,9 @@ module.exports.preImport = [{
     name: 'report-html-tags',
     type: 'preImport',
     platform: {
-        online: 'required',
-        pathway: 'required',
-        campus: 'required'
+        online: 'disabled', // ERROR disabled until fixed. Breaks HTML report
+        pathway: 'disabled',
+        campus: 'disabled'
     },
     description: 'Identifies any script and style tags that will be stripped on import by Canvas.',
     requiredModules: [],
@@ -517,6 +517,17 @@ module.exports.postImport = [{
     requiredModules: [],
     options: []
 }, {
+    name: 'run-link-validator', // RUN AT END
+    type: 'postImport',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'required'
+    },
+    description: 'Start the Canvas link validaton tool',
+    requiredModules: [],
+    options: []
+}, {
     name: 'blueprint-lock-items', // RUN AT END
     type: 'postImport',
     platform: {
@@ -728,7 +739,8 @@ module.exports.actionSeries = [{
     description: 'Deletes unneeded files.',
     requiredModules: [],
     options: []
-},/* {
+},
+/* {
     name: 'files-move',
     type: 'actionSeries',
     platform: {
@@ -739,7 +751,8 @@ module.exports.actionSeries = [{
     description: 'Moves files into the newly created documents, media, and template folders.',
     requiredModules: ['reorganize-file-structure'],
     options: []
-},*/ {
+} */
+{
     name: 'files-naming-conventions',
     type: 'actionSeries',
     platform: {
@@ -926,7 +939,8 @@ module.exports.actionSeries = [{
     description: '',
     requiredModules: [],
     options: []
-}];
+}
+];
 
 
 // NOTE - CLEANUP
