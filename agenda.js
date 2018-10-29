@@ -83,9 +83,9 @@ module.exports.preImport = [{
     name: 'report-html-tags',
     type: 'preImport',
     platform: {
-        online: 'disabled', // ERROR disabled until fixed. Breaks HTML report
-        pathway: 'disabled',
-        campus: 'disabled'
+        online: 'required',
+        pathway: 'required',
+        campus: 'required'
     },
     description: 'Identifies any script and style tags that will be stripped on import by Canvas.',
     requiredModules: [],
