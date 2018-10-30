@@ -1,4 +1,4 @@
-// NOTE - PREPARATION
+// NOTE - PREPARATION (SHELL)
 module.exports.preparation = [{
     name: 'create-course-object',
     type: 'preparation',
@@ -41,6 +41,17 @@ module.exports.preparation = [{
         campus: 'required'
     },
     description: 'Indexes the downloaded, unzipped course and adds it to the Course object.',
+    requiredModules: [],
+    options: []
+}, {
+    name: 'course-has-content',
+    type: 'preparation',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'required'
+    },
+    description: 'Ensures the course has content so it can upload without breaking',
     requiredModules: [],
     options: []
 }];
@@ -965,6 +976,17 @@ module.exports.cleanUp = [{
     },
     description: 'Deletes the course after running. Used in development only.',
     requiredModules: [],
+    options: []
+}, {
+    name: './shellScripts/removeTempFile.js',
+    type: 'cleanUp',
+    platform: {
+        online: 'required',
+        pathway: 'required',
+        campus: 'required'
+    },
+    description: 'Deletes the temp file created by course-has-content',
+    requiredModules: ['course-has-content'],
     options: []
 }, {
     name: './shellScripts/generateReports.js',

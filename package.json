@@ -18,6 +18,7 @@
     "child-template": "github:byuitechops/remove-dateless-events",
     "copy-a-canvas-course": "github:byuitechops/copy-a-canvas-course",
     "course-description": "github:byuitechops/course-description",
+    "course-has-content": "github:byuitechops/course-has-content",
     "course-make-backup": "github:byuitechops/course-make-backup",
     "course-make-blueprint": "github:byuitechops/course-make-blueprint",
     "course-object-verifier": "git+https://github.com/byuitechops/course-object-verifier.git",
