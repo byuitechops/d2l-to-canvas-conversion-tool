@@ -978,17 +978,6 @@ module.exports.cleanUp = [{
     requiredModules: [],
     options: []
 }, {
-    name: './shellScripts/removeTempFile.js',
-    type: 'cleanUp',
-    platform: {
-        online: 'required',
-        pathway: 'required',
-        campus: 'required'
-    },
-    description: 'Deletes the temp file created by course-has-content',
-    requiredModules: ['course-has-content'],
-    options: []
-}, {
     name: './shellScripts/generateReports.js',
     type: 'cleanUp',
     platform: {
