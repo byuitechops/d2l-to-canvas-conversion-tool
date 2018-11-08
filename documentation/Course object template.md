@@ -7,31 +7,47 @@ The Logs array needs to be updated, but everything else is up to date
 ``` js
     /* Stores all logs, messages, warnings, errors, and fatal errors */
 'logs': [],
-    /* Stores various information bits that are used by the program, but are not determined by the user */
-'info': { 
+    /* Stores settings that are determined at runtime. Used to enable/disable features */
+'settings': { 
     'domain': '<string>'            // byui OR pathway
-    'migrationID': '<string>',      // ID for the course import migration
-    'fileName': '<string>',         // Name of the downloaded course zip
+    'platform': '<string>'          // Online, Campus, or Pathway
+    'accountID': '<string>'         // set to 19
+    'cookies': '<object>[]'         // D2L login cookies
+    'deleteCourse': '<bool>',       // Determines if course should be deleted at the end
+    'removeFiles': '<bool>'         // Determines if files generated in process should be kept
+    'reorganizeFiles': '<bool>'     // Determines if the reorganize-files child module runs
+    'lessonFolders': '<bool>'       // Determines whether or not lesson folders are created in media/documents when reorganizing course file structure
+    'pinDiscussionBoards': '<bool>' // Determines if the pin-discussion-boards child module runs
+    'blockCourse': '<bool>'         // Determines if the course is a block course
+    'targetAttributes': '<bool>'    // Determines if the target-attributes child module runs
+    'disableLogOutput': '<bool>'    // Determines if the log ouptut runs
+    'blueprintLockItems': '<bool>'  // Determines if the blueprint-lock-items child module runs
+    'moveUnusedToArchive': '<bool>' // Determines if unused files are moved to the archive folder
+    'renameFiles': '<bool>'         //
+    'moveFiles': '<bool>'           // Determines if files are sorted into the Documents, Media, and Template folders
+    'moduleItemNamingConventions': '<bool>' // Determines if the module-item-namin-conventions child module runs
+    'term': '<bool>'                // The term of the course 
+    'courseName': '<string>'        // Course Name without extension
+    'courseCode': '<string>'        // The course name + the course number
+},
+    /* Stores various information bits that are used by the program, but are not determined by the user */
+'info': {
+    'data': '<object>[]',           // Copy of object created by propmt. Kept as a backup. DO NOT USE
+    'username': '<string>',         // The users username. Required to download course from D2L
+    'password': '<string>',         // The users password. Required to download course from D2L
+    'instructorName': '<string>',   // Instructors first and last name
+    'instructorEmail': '<string>',  // Instructors email
+    'D2LOU': '<int>'                // D2L OU number
     'originalZipPath': '<string>',  // Absolute filepath to Where the original downloaded zip is
     'unzippedPath': '<string>',     // Absolute filepath to where the course is unzipped to
     'processedPath': '<string>',    // Absolute filepath to where the course files are written to after preImport
     'uploadZipPath': '<string>',    // Absolute filepath to where the unzipped course is zipped to
     'fileName': '<string>',         // Course name with extension("FDREL 121 Reference - blah blah.zip")
-    'courseName': '<string>'        // Course Name without extension
-    'courseCode': '<string>'        // The course name + the course number.
-    'linkCounter': 0,               // A counter used by quiz fix overlay to generate unique Id'savePreferences
     'childModules': '<string>[]'    // Array of the names of each child module that is turned on
-    'lessonFolders': '<bool>'       // Determines whether or not lesson folders are created in media/documents when reorganizing course file structure
-    'canvasOU': 0,                  // Canvas ID for the newly created canvas course (or target course)
-    'D2LOU': 0                      // D2L OU number
-},
-    /* Stores settings that are determined at runtime. Used to enable/disable features */
-'settings': {
-    'domain': '<string>'            // byui OR pathway (exists in 2 places, but it shouldn't)
-    'platform': '<string>'          // Online, Campus, or Pathway
-    'accountID': '<string>'         // set to 19
-    'deleteCourse': '<bool>',       // Determines if course should be deleted at the end
-    'keepFiles': '<bool>'           // determines if files generated in process should be kept
+    'canvasOU': '<int>',            // Canvas ID for the newly created canvas course (or target course)
+    'checkStandards': '<bool>',     // Enables course-standards-check. Always false
+    'linkCounter': '<int>',         // A counter used by quiz fix overlay to generate unique Id'savePreferences
+    'canvasFolders': '<object>',    // Contains ID's for Documents, Media, Template, and Archive folders
 },
     /* ALL files within a course are stored here as a flat array of file objects */
 'content': [{ 
