@@ -49,7 +49,7 @@ OR
 
 
 | Flag | Description |
-|------|---------|-------------|
+|------|-------------|
 | -e | Looks in the tool's `factory/originalZip` folder and uses the first zip it finds, instead of downloading a course |
 
 ## Prompt
