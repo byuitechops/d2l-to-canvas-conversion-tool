@@ -535,7 +535,7 @@ module.exports.postImport = [{
         pathway: 'required',
         campus: 'required'
     },
-    description: 'Start the Canvas link validaton tool',
+    description: 'Start the Canvas link validation tool',
     requiredModules: [],
     options: []
 }, {
