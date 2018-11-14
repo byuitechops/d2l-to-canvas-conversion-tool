@@ -26,6 +26,7 @@
     "create-course-object": "github:byuitechops/create-course-object",
     "create-homepage": "github:byuitechops/create-homepage",
     "d2l-course-downloader": "github:byuitechops/d2l-course-downloader",
+    "d2l-to-canvas-conversion-folder-setup": "github:byuitechops/d2l-to-canvas-conversion-folder-setup",
     "delete-course": "git+https://github.com/byuitechops/delete-course.git",
     "disperse-welcome-folder": "github:byuitechops/disperse-welcome-folder",
     "enquirer": "^1.0.3",
