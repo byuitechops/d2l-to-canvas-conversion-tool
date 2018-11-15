@@ -33,9 +33,8 @@ A general overview of the tool's process follows:
 To install, use this command:
 
 ```
-npm install byuitechops/d2l-to-canvas-conversion-tool
+git clone https://github.com/byuitechops/d2l-to-canvas-conversion-tool
 ```
-
 
 ## How to Run | CLI
 
@@ -52,9 +51,22 @@ OR
 |------|-------------|
 | -e | Looks in the tool's `factory/originalZip` folder and uses the first zip it finds, instead of downloading a course |
 
+## Trello
+We use Trello to organize conversion efforts with Campus & Online. 
+
+Before running a course do the following the trello card:
+1. Add your name to the trello card (so no one else tries to run the course at the same time)
+2. (campus only) Verify the link to Brightspace
+
+After the conversion has completed for a course, do the following:
+1. Move HTML report into Google Drive
+2. Remove yourself from the Trello Card
+3. Move the Trello card to the next column in line
+
+
 ## Prompt
 
-The first step of the process asks you a variety of questions to determine what and how the tool needs to run. If you save your username (USR) and or password (PASS) as environment variables you will not be prompted for them. The questions asked in the prompt vary on the chosen platform so you may or may not be asked all of the following:
+The first step of the process asks you a variety of questions to determine what and how the tool needs to run. If you save your username (USR) and or password (PASS) as environment variables you will not be prompted for them (more details in the setup section). The questions asked in the prompt vary on the chosen platform so you may or may not be asked all of the following:
 
 1. (Required) What platform is the course on? (Online, Pathway, Campus)
 2. (Required) What is the Brightspace OU?
@@ -70,6 +82,12 @@ The first step of the process asks you a variety of questions to determine what 
 12. What is your password? (CCT password. Must have admin rights in D2L)
 
 
+ #### Online
+ 
+To run an **online** course simply select the online platform, enter the Brightspace OU, and then use the default settings (spam enter). Because each online course is run using the same standards we use the same settings each time, and have set these values to the default for the online platform.
+
+#### Campus
+
 The typical answers for **Campus** courses are as follows. Please talk to a Lead before doing this for the first time:
 1. Platform: campus
 2. DBrightspace OU: check spreadsheet
@@ -83,19 +101,15 @@ The typical answers for **Campus** courses are as follows. Please talk to a Lead
 10. Your username and password (if needed)
 
 
-After the conversion has completed for the Campus course, do the following:
-1. Move HTML report into Google Drive
-2. Remove yourself from the Trello Card
-3. Use card menu to move it to FTC Post Analysis
-
-
 ### Outputs
 
-The tool provides two reports after it is finished.
+The tool provides Three reports after it is finished.
 
-In the console: A report indicating the number of errors, fatal errors, and warnings generates. It also gives the modules that caused those errors, fatal errors, and warnings.
+1. In the console: A report indicating the number of errors, fatal errors, and warnings generates. It also gives the modules that caused those errors, fatal errors, and warnings.
 
-As a JSON file: A report is generated in the tools `reports` folder as a JSON file. It contains every log generated during the process.
+2. As a JSON file: A report is generated in the tools `reports` folder as a JSON file. It contains every log generated during the process.
+
+3. An HTML file. This is essentially an HTML version of the JSON report. It needs to be uploaded to the google drive so that we have a permanent record of the transition. [Google Drive for Campus](https://drive.google.com/drive/u/1/folders/1L01Pt3KJB2LVr5yGPNU-qc4Qq6O0-B1c) | [Google Drive for Online](https://drive.google.com/drive/u/1/folders/1tH19uZyzasjRnxNeButi5hXdE9WR4AXL)
 
 
 ## Development
@@ -151,7 +165,10 @@ I'm sorry. Good luck.
 
 ## Child modules
 
-View child module development progress and descriptions here:
+Download [this repository](https://github.com/byuitechops/child-template) to use as a template to create your own child module.
 
+The [Child Development Kit](https://github.com/byuitechops/child-development-kit) was built to allow us to easily test child modules individually.
+
+View child module development progress and descriptions here:
 https://docs.google.com/spreadsheets/d/1k9AP3mxcDj_DOkcy7BUTOp_5FKZ0qJ4GX7YZx_rXZAo/edit#gid=47594566
 
