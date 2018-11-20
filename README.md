@@ -149,8 +149,8 @@ The following environment variables are used by the conversion tool. They are se
 | PASS | false | Your cct password |
 
 
-### Unit Tests
-I'm sorry. Good luck.
+### Testing
+4 Brightspace courses were created to test on. They are referred to as the gauntlet courses. Ideally they contain one of everything that breaks. We use these courses to test both the tool and individual child modules.  While we anticipated a need for 4 courses, for the most part we only need to use the first one. A copy of this course is kept up to date in Canvas. It is named Pristine Gauntlet 1 in the development sub-account. Any changes made to the gauntlet need to be made in Brightspace and then moved manually to Canvas by resetting the course content on the Canvas course and re-importing the D2L gauntlet course download. These gauntlets play a vital role in the [child development kit](https://github.com/byuitechops/child-development-kit) (CDK), a tool created to allow us to run/test child modules individually.
 
 
 ## Terms
