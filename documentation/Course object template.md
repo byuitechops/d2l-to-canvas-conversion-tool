@@ -32,7 +32,7 @@ The Logs array needs to be updated, but everything else is up to date
 },
     /* Stores various information bits that are used by the program, but are not determined by the user */
 'info': {
-    'data': '<object>[]',           // Copy of object created by propmt. Kept as a backup. DO NOT USE
+    'data': '<object>[]',           // Copy of object created by prompt. Kept as a backup. DO NOT USE
     'username': '<string>',         // The users username. Required to download course from D2L
     'password': '<string>',         // The users password. Required to download course from D2L
     'instructorName': '<string>',   // Instructors first and last name
