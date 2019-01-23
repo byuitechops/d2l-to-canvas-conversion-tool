@@ -528,6 +528,17 @@ module.exports.postImport = [{
     requiredModules: [],
     options: []
 }, {
+    name: 'create-feedback-module-items',
+    type: 'postImport',
+    platform: {
+        online: 'required',
+        pathway: 'disabled',
+        campus: 'disabled'
+    },
+    description: 'Creates W05 Student Feedback to Instructor, W12 Student Feedback to Instructor, and  W13 End-of-Course Evaluation.',
+    requiredModules: [],
+    options: []
+}, {
     name: 'run-link-validator', // RUN AT END
     type: 'postImport',
     platform: {
