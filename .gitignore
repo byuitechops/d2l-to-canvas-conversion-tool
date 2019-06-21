@@ -1,6 +1,7 @@
 *.json
 **/auth.json
 auth.txt
+auth.bat
 !package-lock.json
 !package.json
 node_modules/
