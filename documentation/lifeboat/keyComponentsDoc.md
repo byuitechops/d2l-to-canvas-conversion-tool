@@ -1,6 +1,6 @@
 # Key Components Doc for <Project>
-#### *Author: Your_Name_Here*
-#### *Date: Todays Date*
+#### *Author: Levi Stum, Cameron Thompson, Matt Wyndham*
+#### *Date: June 21, 2019*
 
 # Preliminary Design
 
