@@ -1,17 +1,21 @@
 # Key Components Doc for <Project>
-#### *Author: Your_Name_Here*
-#### *Date: Todays Date*
+#### *Author: Levi Stum, Cameron Thompson, Matt Wyndham*
+#### *Date: June 21, 2019*
 
 # Preliminary Design
 
 ## Magic Box Chart
 
-![alt text](linkToImage)
+![Design](design.jpg)
 
 <!-- Think through the process as much as makes sense, and then create a magic box chart with the whiteboard and place it here. -->
 
 ## Explanation of Design
 <!-- Add explanation of the Magic Boxes image above. Answers to the prompts below may also be appropriate to include here. -->
+
+- Get
+- Filt(er)
+- (con)Vert
 
 ### Used Libraries
 
