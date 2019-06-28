@@ -1,0 +1,826 @@
+code,id,name,instructorId,instructorName,instructorEmail
+Campus.2019.Spring.ACCTG100,542796,"ACCTG 100: 01,02 (Campus); Spring 2019",267247684,Darryl Foutz,foutzd@byui.edu
+Campus.2019.Winter.ACCTG100,513142,"ACCTG 100: 01,02 (Campus); Winter 2019",267247684|407865037,Darryl Foutz|Rob Clarke,foutzd@byui.edu|clarker@byui.edu
+Campus.2018.Fall.ACCTG100,469880,"ACCTG 100: 01,02 (Campus); Fall 2018",407865037,Rob Clarke,clarker@byui.edu
+Campus.2019.Winter.ACCTG180,534931,"ACCTG 180: 01,04 (Campus); Winter 2019",6793577,Gary Adna Ames,amesa@byui.edu
+Campus.2018.Spring.ACCTG180,424346,ACCTG 180: 09 (Campus); Spring 2018,282593233,Todd Blanchard,blanchardt@byui.edu
+Campus.2018.Fall.ACCTG201,469819,ACCTG 201: 17 (Campus); Fall 2018,129775513,Keith Patterson,pattersonk@byui.edu
+Campus.2018.Spring.ACCTG201,394814,ACCTG 201: 08 (Campus); Spring 2018,2519443,Kevin Packard,packardk@byui.edu
+Campus.2018.Spring.ACCTG202,424531,ACCTG 202: 06 (Campus); Spring 2018,209411115,Don Campbell,campbelld@byui.edu
+Campus.2018.Fall.ACCTG301,469832,ACCTG 301: 02 (Campus); Fall 2018,129775513,Keith Patterson,pattersonk@byui.edu
+Campus.2018.Spring.ACCTG302,394817,ACCTG 302: 02 (Campus); Spring 2018,2519443,Kevin Packard,packardk@byui.edu
+Campus.2018.Spring.ACCTG312,424537,"ACCTG 312: 01,02 (Campus); Spring 2018",209411115,Don Campbell,campbelld@byui.edu
+Campus.2018.Spring.ACCTG321,424349,"ACCTG 321: 01,03 (Campus); Spring 2018",282593233,Todd Blanchard,blanchardt@byui.edu
+Campus.2018.Winter.ACCTG321,347294,ACCTG 321: 01 (Campus); Winter 2018,257013032,Steve Snow,sno17009@byui.edu
+Campus.2018.Fall.ACCTG322,507500,ACCTG 322: 01 (Campus); Fall 2018,622999886,Patrick Walsh,walshp@byui.edu
+Campus.2018.Spring.ACCTG322,424363,ACCTG 322: 01 (Campus); Spring 2018,282593233,Todd Blanchard,blanchardt@byui.edu
+Campus.2019.Winter.ACCTG333,513442,ACCTG 333B: 01 (Campus); Winter 2019,374338047|407865037,Kevin Kimball|Rob Clarke,kimballk@byui.edu|clarker@byui.edu
+Campus.2018.Fall.ACCTG333,469905,ACCTG 333B: 02 (Campus); Fall 2018,209411115|407865037,Don Campbell|Rob Clarke,campbelld@byui.edu|clarker@byui.edu
+Campus.2018.Spring.ACCTG333,424543,ACCTG 333B: 02 (Campus); Spring 2018,209411115,Don Campbell,campbelld@byui.edu
+Campus.2019.Winter.ACCTG333A,513167,ACCTG 333A: 01 (Campus); Winter 2019,407865037,Rob Clarke,clarker@byui.edu
+Campus.2019.Winter.ACCTG344,534935,"ACCTG 344: 01,02 (Campus); Winter 2019",6793577,Gary Adna Ames,amesa@byui.edu
+Campus.2019.Spring.ACCTG398R,542818,ACCTG 398R: 01 (Campus); Spring 2019,267247684,Darryl Foutz,foutzd@byui.edu
+Campus.2019.Winter.ACCTG398R,513164,ACCTG 398R: 01 (Campus); Winter 2019,267247684|407865037,Darryl Foutz|Rob Clarke,foutzd@byui.edu|clarker@byui.edu
+Campus.2018.Fall.ACCTG398R,469877,ACCTG 398R: 01 (Campus); Fall 2018,407865037,Rob Clarke,clarker@byui.edu
+Campus.2018.Fall.ACCTG403,511624,ACCTG 403: 01 (Campus); Fall 2018,2519443,Kevin Packard,packardk@byui.edu
+Campus.2018.Fall.ACCTG440,470038,ACCTG 440: 01 (Campus); Fall 2018,696369407,Glade Tew,tewgl@byui.edu
+Campus.2018.Spring.ACCTG456,424185,"ACCTG 456: 01,02 (Campus); Spring 2018",374338047,Kevin Kimball,kimballk@byui.edu
+Campus.2019.Winter.ACCTG499,532162,ACCTG 499: 01 (Campus); Winter 2019,267247684,Darryl Foutz,foutzd@byui.edu
+Campus.2018.Winter.AGBUS100,380741,AGBUS 100: 01 (Campus); Winter 2018,815885906,Jeremy Slade,sladeje@byui.edu
+Campus.2018.Spring.AGBUS198R,429011,AGBUS 197R: 01 (Campus); Spring 2018,815885906,Jeremy Slade,sladeje@byui.edu
+Campus.2018.Winter.AGBUS201,380864,AGBUS 201: 01 (Campus); Winter 2018,815885906,Jeremy Slade,sladeje@byui.edu
+Campus.2018.Spring.AGBUS210,428929,AGBUS 210: 01 (Campus); Spring 2018,741828174,Allan Walburger,walburgera@byui.edu
+Campus.2019.Spring.AGBUS232,542991,APS 232: 01 (Campus); Spring 2019,287297549,Jerry Toll,tollj@byui.edu
+Campus.2018.Winter.AGBUS347,380867,AGBUS 347: 01 (Campus); Winter 2018,815885906,Jeremy Slade,sladeje@byui.edu
+Campus.2018.Spring.AGBUS398,429008,AGBUS 398: 01 (Campus); Spring 2018,815885906,Jeremy Slade,sladeje@byui.edu
+Campus.2018.Winter.AGBUS410,376719,AGBUS 410: 01 (Campus); Winter 2018,741828174,Allan Walburger,walburgera@byui.edu
+Campus.2018.Spring.AGBUS435,429203,ECON 390R: 01 (Campus); Spring 2018,815885906|906324829,Jeremy Slade|David Barrus,sladeje@byui.edu|barrusd@byui.edu
+Campus.2018.Winter.AGBUS440,380926,AGBUS 440: 01 (Campus); Winter 2018,815885906,Jeremy Slade,sladeje@byui.edu
+Campus.2018.Winter.AGBUS450,384701,AGBUS 450: 01 (Campus); Winter 2018,162759476,John Hibbard,hibbardjo@byui.edu
+Campus.2018.Winter.AGBUS498,386066,AGBUS 498: 01 (Campus); Winter 2018,815885906,Jeremy Slade,sladeje@byui.edu
+Campus.2018.Winter.AGRON321,383409,AGRON 321: 01 (Campus); Winter 2018,199351038,Jared Williams,williamsj@byui.edu
+Campus.2018.Spring.AGRON325,424904,AGRON 325: 01 (Campus); Spring 2018,715470610,Ross Spackman,spackmanr@byui.edu
+Campus.2018.Spring.AGRON330,434981,AGRON 330: 01 (Campus); Spring 2018,644819465,Chris Humphreys,humphreysc@byui.edu
+Campus.2018.Spring.AGRON425,393952,AGRON 425: 01 (Campus); Spring 2018,290457430,Nels Hansen,hansenn@byui.edu
+Campus.2018.Fall.AGRON435,507755,AGRON 435: 01 (Campus); Fall 2018,644819465,Chris Humphreys,humphreysc@byui.edu
+Campus.2018.Spring.AGRON440,428808,AGRON 440: 02 (Campus); Spring 2018,199351038,Jared Williams,williamsj@byui.edu
+Campus.2018.Winter.AGRON460,385874,AGRON 460: 01 (Campus); Winter 2018,290457430,Nels Hansen,hansenn@byui.edu
+Campus.2019.Winter.AGRON470,532252,AGRON 470: 01 (Campus); Winter 2019,728298223,Blake Willis,willisb@byui.edu
+Campus.2018.Spring.AGTEC122,429588,AGTEC 122: 01 (Campus); Spring 2018,178315995,Justin Maughan,maughanj@byui.edu
+Campus.2018.Spring.AGTEC124,429599,AGTEC 124: 01 (Campus); Spring 2018,178315995,Justin Maughan,maughanj@byui.edu
+Campus.2018.Spring.AGTEC125,435846,AGTEC 290R: 03 (Campus); Spring 2018,178315995,Justin Maughan,maughanj@byui.edu
+Campus.2018.Spring.AGTEC186,428799,AGTEC 186: 01 (Campus); Spring 2018,199351038,Jared Williams,williamsj@byui.edu
+Campus.2018.Fall.AGTEC220,507758,AGTEC 220: 01 (Campus); Fall 2018,644819465|679442073,Chris Humphreys|Lauren Gale,humphreysc@byui.edu|gal17010@byui.edu
+Campus.2018.Spring.AGTEC220,428415,AGTEC 220: 01 (Campus); Spring 2018,644819465,Chris Humphreys,humphreysc@byui.edu
+Campus.2018.Winter.AGTEC286,389910,AGTEC 286: 01 (Campus); Winter 2018,644819465,Chris Humphreys,humphreysc@byui.edu
+Campus.2018.Spring.AGTEC290R,429808,AGTEC 290R: 01 (Campus); Spring 2018,178315995,Justin Maughan,maughanj@byui.edu
+Campus.2018.Spring.AGTEC301,429622,AGTEC 301: 01 (Campus); Spring 2018,178315995,Justin Maughan,maughanj@byui.edu
+Campus.2018.Fall.AGTEC320,507761,AGTEC 320: 01 (Campus); Fall 2018,644819465,Chris Humphreys,humphreysc@byui.edu
+Campus.2018.Winter.AGTEC360,365278,AGTEC 360: 01 (Campus); Winter 2018,178315995,Justin Maughan,maughanj@byui.edu
+Campus.2018.Winter.AGTEC474,383646,AGTEC 474: 02 (Campus); Winter 2018,178315995,Justin Maughan,maughanj@byui.edu
+Campus.2018.Winter.AGTEC490,365288,AGTEC 490: 01 (Campus); Winter 2018,178315995,Justin Maughan,maughanj@byui.edu
+Campus.2018.Spring.APS 103,424907,APS 103: 04 (Campus); Spring 2018,715470610,Ross Spackman,spackmanr@byui.edu
+Campus.2019.Spring.APS 220L,542623,"APS 220L: 01,02 (Campus); Spring 2019",728298223,Blake Willis,willisb@byui.edu
+Campus.2018.Fall.APS 290R,507764,APS 290R: 01 (Campus); Fall 2018,644819465,Chris Humphreys,humphreysc@byui.edu
+Campus.2018.Fall.APS 397R,509207,APS 299R: 01 (Campus); Fall 2018,728298223,Blake Willis,willisb@byui.edu
+Campus.2019.Spring.APS 412,542627,APS 412: 01 (Campus); Spring 2019,728298223,Blake Willis,willisb@byui.edu
+Campus.2018.Spring.APS 412,435760,APS 412: 01 (Campus); Spring 2018,429106712,Reese Nelson,nelsonre@byui.edu
+Campus.2018.Fall.APS 465,469908,APS 465: 01 (Campus); Fall 2018,290457430,Nels Hansen,hansenn@byui.edu
+Campus.2018.Spring.ART 107,421765,ART 107: 09 (Campus); Spring 2018,84392143,Carla Jimison,jimisonc@byui.edu
+Campus.2019.Winter.ART 125,534910,ART 125: 01 (Campus); Winter 2019,676124384,Andrew Harris,harrisan@byui.edu
+Campus.2018.Spring.ART 130,429032,ART 130: 08 (Campus); Spring 2018,169450072,Brian Memmott,memmottb@byui.edu
+Campus.2019.Spring.ART 142,542543,ART 142: 02 (Campus); Spring 2019,676124384,Andrew Harris,harrisan@byui.edu
+Campus.2018.Spring.ART 160,436553,ART 160: 04 (Campus); Spring 2018,630801045,David Belka,belkad@byui.edu
+Campus.2018.Spring.ART 230,430935,ART 230: 05 (Campus); Spring 2018,850344786,Makayla Summers,summersma@byui.edu
+Campus.2018.Winter.ART 240,388304,ART 240: 01 (Campus); Winter 2018,676124384,Andrew Harris,harrisan@byui.edu
+Campus.2018.Spring.ART 251,434375,ART 251: 02 (Campus); Spring 2018,676124384,Andrew Harris,harrisan@byui.edu
+Campus.2018.Winter.ART 302,389798,ART 302: 01 (Campus); Winter 2018,625277555,Nicole Romney,romneyn@byui.edu
+Campus.2018.Fall.ART 331R,506550,ART  331R; Fall 2018 (No Sections),819343830,Shawn Randall,randalls@byui.edu
+Campus.2018.Spring.ART 342R,434455,ART 342R: 01 (Campus); Spring 2018,676124384,Andrew Harris,harrisan@byui.edu
+Campus.2018.Spring.ART 356R,437667,ART 356R: 01 (Campus); Spring 2018,949201234,Gerald Griffin,griffing@byui.edu
+Campus.2018.Spring.ART 395R,436557,ART 395A: 01 (Campus); Spring 2018,630801045,David Belka,belkad@byui.edu
+Campus.2018.Spring.ART 401,431685,ART 401: 01 (Campus); Spring 2018,772413344,Sharon Duque,duques@byui.edu
+Campus.2018.Spring.ART 430R,431733,ART 335R: 01 (Campus); Spring 2018,819343830,Shawn Randall,randalls@byui.edu
+Campus.2018.Spring.ART 436R,435543,ART 436R: 01 (Campus); Spring 2018,335946802,Tim Howe,howet@byui.edu
+Campus.2018.Spring.ART 456R,437670,ART 456R: 01 (Campus); Spring 2018,949201234,Gerald Griffin,griffing@byui.edu
+Campus.2019.Winter.ART 462R,534113,ART 462R: 01 (Campus); Winter 2019,126894885|615497259,Darren Clark|Shushana Rucker,clarkd@byui.edu|ruckers@byui.edu
+Campus.2018.Spring.ART 462R,434332,ART 462R: 01 (Campus); Spring 2018,094973912|126894885,Brian Atkinson|Darren Clark,atkinsonb@byui.edu|clarkd@byui.edu
+Campus.2018.Fall.ART 480R,510613,ART 480R: 01 (Campus); Fall 2018,884212847,Kody Keller,kellerw@byui.edu
+Campus.2018.Winter.AS 125,380616,AS 125: 01 (Campus); Winter 2018,788487525,Amy Baeza,baezaa@byui.edu
+Campus.2018.Fall.AS 215,492743,AS 215: 02 (Campus); Fall 2018,475501715,Zeph Quirl,quirlz@byui.edu
+Campus.2018.Fall.AS 215L,492746,"AS 215L: 01,02 (Campus); Fall 2018",475501715,Zeph Quirl,quirlz@byui.edu
+Campus.2018.Fall.AS 315,492750,AS 315: 01 (Campus); Fall 2018,475501715,Zeph Quirl,quirlz@byui.edu
+Campus.2018.Spring.AUTO 155,428734,AUTO 155: 01 (Campus); Spring 2018,528824009|292885791,Troy Spratling|Kaysie Larsen,spratlingt@byui.edu|lar15011@byui.edu
+Campus.2018.Summer.AUTO 298,470461,AUTO 298R: 01 (Campus); Summer 2018,815267882,Josh Tollefson,tollefsonj@byui.edu
+Campus.2018.Spring.AUTO 350,422773,AUTO 350: 01 (Campus); Spring 2018,11601384,Enrique Reyes,reyesen@byui.edu
+Campus.2018.Spring.B 101,422640,B 101: 12 (Campus); Spring 2018,487597423,Lane Muranaka,muranakal@byui.edu
+Campus.2018.Spring.B 183,393056,B    183; Spring 2018 (No Sections),200336655,Michael Hammond,hammondm@byui.edu
+Campus.2018.Spring.B 201,425568,B 201: 01 (Campus); Spring 2018,27804374,Mark Morris,morrisma@byui.edu
+Campus.2018.Winter.B 201,371607,B 201: 01 (Campus); Winter 2018,703838488,Jeff Morrin,morrinj@byui.edu
+Campus.2018.Spring.B 225,436444,B 225: 01 (Campus); Spring 2018,82470663,Kurt Holm,holmku@byui.edu
+Campus.2018.Summer.B 298R,439350,IDS 398R: 01 (Campus); Summer 2018,487597423,Lane Muranaka,muranakal@byui.edu
+Campus.2018.Winter.B 320,378788,B 320: 06 (Campus); Winter 2018,285200905,Alan Thompson,thompsonal@byui.edu
+Campus.2019.Winter.B 361,513693,B 361: 01 (Campus); Winter 2019,382884796|941938840,Mick Ward|Mark Nye,wardro@byui.edu|nyem@byui.edu
+Campus.2019.Winter.B 374,533310,B 374: 01 (Campus); Winter 2019,580246737,Mary Maroon,maroonma@byui.edu
+Campus.2018.Fall.B 374,470569,B 374: 01 (Campus); Fall 2018,745044346|580246737,Rob Tonks|Mary Maroon,tonksr@byui.edu|maroonma@byui.edu
+Campus.2018.Spring.B 374,435455,B 374: 03 (Campus); Spring 2018,745044346,Rob Tonks,tonksr@byui.edu
+Campus.2018.Spring.B 446,395050,B 446: 01 (Campus); Spring 2018,27804374,Mark Morris,morrisma@byui.edu
+Campus.2018.Winter.B 452,388786,B 452: 01 (Campus); Winter 2018,805414999,Redge Allen,allenredge@byui.edu
+Campus.2019.Winter.B 478,532084,B 478: 01 (Campus); Winter 2019,257157668,Jayson Kunzler,kunzlerj@byui.edu
+Campus.2018.Spring.B 483,428386,B 483: 07 (Campus); Spring 2018,243862721,Rob Tietjen,tietjenr@byui.edu
+Campus.2018.Fall.BIO 181L,510598,"BIO 181L: 08,09,10,11 (Campus); Fall 2018",365880852,Caden Schlund,schlundc@byui.edu
+Campus.2018.Spring.BIO 181L,433412,"BIO 181L: 08,09 (Campus); Spring 2018",329890692,Andria Lloyd,wellmana@byui.edu
+Campus.2018.Fall.BIO 199,511557,BIO 199: 01 (Campus); Fall 2018,626101585,Eric Billman,billmane@byui.edu
+Campus.2019.Winter.BIO 204,534243,BIO 204: 01 (Campus); Winter 2019,626101585,Eric Billman,billmane@byui.edu
+Campus.2018.Spring.BIO 204,393794,BIO 204: 01 (Campus); Spring 2018,123623002,Ehren Haderlie,haderliee@byui.edu
+Campus.2018.Winter.BIO 208,385918,"BIO 208: 01,02 (Campus); Winter 2018",890824437|895759249,Gene Weller|Anna Williams,wellerg@byui.edu|williamsan@byui.edu
+Campus.2019.Winter.BIO 209,532224,BIO 209: 01 (Campus); Winter 2019,159603895,Gary Baird,bairdg@byui.edu
+Campus.2018.Fall.BIO 210,503548,BIO 210: 01 (Campus); Fall 2018,159603895,Gary Baird,bairdg@byui.edu
+Campus.2019.Spring.BIO 222,542603,"BIO 222: 04,05,06,07,08 (Campus); Spring 2019",329890692,Andria Lloyd,wellmana@byui.edu
+Campus.2018.Winter.BIO 222,381019,"BIO 222: 05,06,08,09 (Campus); Winter 2018",578604192,Randie Vanorden,vanordenr@byui.edu
+Campus.2019.Winter.BIO 264L,533655,"BIO 264L: 10,16 (Campus); Winter 2019",318159350,McEwan Hopkins,hopkinsmc@byui.edu
+Campus.2018.Spring.BIO 265,427565,BIO 265: 04 (Campus); Spring 2018,003508406|434285223,Lanning Baker|Jason Shaw,bakerl@byui.edu|shawja@byui.edu
+Campus.2019.Winter.BIO 265L,533620,"BIO 265L: 01,02,03,04,05 (Campus); Winter 2019",817194308,Brandon Tewksbury,tew14001@byui.edu
+Campus.2018.Fall.BIO 352,507541,BIO 352: 01 (Campus); Fall 2018,774988995,Tate Carter,cartertw@byui.edu
+Campus.2018.Fall.BIO 360,511560,BIO 360: 01 (Campus); Fall 2018,626101585,Eric Billman,billmane@byui.edu
+Campus.2018.Fall.BIO 362,511563,BIO 362: 01 (Campus); Fall 2018,626101585,Eric Billman,billmane@byui.edu
+Campus.2019.Winter.BIO 376,533895,BIO 375: 03 (Campus); Winter 2019,903734623,Michael Terribilini,terribilinim@byui.edu
+Campus.2019.Winter.BIO 410,532368,BIO 410: 01 (Campus); Winter 2019,450979429,Cody Diehl,diehlc@byui.edu
+Campus.2019.Winter.BIO 445,534240,BIO 445: 01 (Campus); Winter 2019,626101585,Eric Billman,billmane@byui.edu
+Campus.2018.Winter.BIO 497,392919,BIO 497: 01 (Campus); Winter 2018,626101585,Eric Billman,billmane@byui.edu
+Campus.2018.Spring.CE 250L,429421,CE 250L: 01 (Campus); Spring 2018,923962946,Nathan Harris,harrisn@byui.edu
+Campus.2018.Fall.CE 361,469643,CE 361: 01 (Campus); Fall 2018,509708352,Jim Lawrence,lawrenceja@byui.edu
+Campus.2018.Fall.CHEM 106,509278,CHEM 106: 06 (Campus); Fall 2018,81733654,Ryan Sargeant,sargeantr@byui.edu
+Campus.2018.Winter.CHEM 106L,388374,CHEM 106L: 01 (Campus); Winter 2018,45807626,Matt Heywood,heywoodm@byui.edu
+Campus.2019.Winter.CHEM 352,533106,CHEM 352: 02 (Campus); Winter 2019,81733654,Ryan Sargeant,sargeantr@byui.edu
+Campus.2019.Winter.CHEM 352L,533112,CHEM 352L: 02 (Campus); Winter 2019,81733654,Ryan Sargeant,sargeantr@byui.edu
+Campus.2018.Fall.CHEM 391,505512,"CHEM 391: 01,02 (Campus); Fall 2018",711058358,Jared Bowden,bowdenj@byui.edu
+Campus.2019.Winter.CHILD120,534832,CHILD 120: 01 (Campus); Winter 2019,501484673,Kari Airth,airthk@byui.edu
+Campus.2018.Fall.CHILD150,509901,"CHILD 150: 01,02 (Campus); Fall 2018",317235305|377319754,Lynette Robertson|Kim Eagar,robertsonl@byui.edu|eagark@byui.edu
+Campus.2018.Spring.CHILD150,435717,"CHILD 150: 01,02 (Campus); Spring 2018",317235305,Lynette Robertson,robertsonl@byui.edu
+Campus.2019.Spring.CHILD210,542879,CHILD 210: 02 (Campus); Spring 2019,501484673,Kari Airth,airthk@byui.edu
+Campus.2019.Winter.CHILD210,532243,CHILD 210: 03 (Campus); Winter 2019,596076137,Lisa McLaughlin,mclaughlinl@byui.edu
+Campus.2018.Spring.CHILD210,425659,CHILD 210: 06 (Campus); Spring 2018,251030958,Liza Lawrence,lawrencee@byui.edu
+Campus.2018.Winter.CHILD210,381209,CHILD 210: 05 (Campus); Winter 2018,1166399,Mike Godfrey,godfreym@byui.edu
+Campus.2018.Spring.CHILD230,434320,CHILD 230: 01 (Campus); Spring 2018,740245617,Kaelin Olsen,olsenka@byui.edu
+Campus.2018.Spring.CHILD290R,428396,CHILD 290R: 01 (Campus); Spring 2018,785183210,Betty McQuain,mcquainb@byui.edu
+Campus.2019.Winter.CHILD300,534230,CHILD 300: 01 (Campus); Winter 2019,297711573,Cortney Evans,evansco@byui.edu
+Campus.2018.Spring.CHILD310,434888,CHILD 310: 03 (Campus); Spring 2018,928992280,Tom Rane,ranet@byui.edu
+Campus.2018.Fall.CHILD320,510006,CHILD 320: 01 (Campus); Fall 2018,828328921,Kelly McCoy,mccoyk@byui.edu
+Campus.2018.Spring.CHILD325,436319,CHILD 325: 01 (Campus); Spring 2018,828328921,Kelly McCoy,mccoyk@byui.edu
+Campus.2019.Winter.CHILD330,534449,CHILD 330: 02 (Campus); Winter 2019,297711573,Cortney Evans,evansco@byui.edu
+Campus.2018.Winter.CHILD330,390097,"CHILD 330: 01,02 (Campus); Winter 2018",527040576,Lynda Hawkes,hawkesl@byui.edu
+Campus.2018.Winter.CHILD340,390101,CHILD 340: 02 (Campus); Winter 2018,527040576,Lynda Hawkes,hawkesl@byui.edu
+Campus.2018.Fall.CHILD345A,509184,CHILD 345A: 01 (Campus); Fall 2018,928992280,Tom Rane,ranet@byui.edu
+Campus.2019.Winter.CHILD345B,534567,CHILD 345B: 01 (Campus); Winter 2019,928992280,Tom Rane,ranet@byui.edu
+Campus.2019.Winter.CHILD345L,534570,CHILD 345L: 01 (Campus); Winter 2019,928992280,Tom Rane,ranet@byui.edu
+Campus.2018.Fall.CHILD350,509905,CHILD 350: 01 (Campus); Fall 2018,317235305,Lynette Robertson,robertsonl@byui.edu
+Campus.2018.Fall.CHILD390R,510633,CHILD 390R: 02 (Campus); Fall 2018,317235305,Lynette Robertson,robertsonl@byui.edu
+Campus.2018.Winter.CHILD390R,377421,"FAML 390R: 01,02 (Campus); Winter 2018",206052710|023976821,Scott Gardner|Katy Priestley,gardners@byui.edu|priestleyk@byui.edu
+Campus.2018.Fall.CHILD400,509336,"CHILD 400: 01,02 (Campus); Fall 2018",828328921,Kelly McCoy,mccoyk@byui.edu
+Campus.2018.Fall.CHILD440,510664,CHILD 440: 01 (Campus); Fall 2018,501484673,Kari Airth,airthk@byui.edu
+Campus.2019.Winter.CHILD495,534376,CHILD 495: 01 (Campus); Winter 2019,828328921,Kelly McCoy,mccoyk@byui.edu
+Campus.2018.Fall.CHILD495,509313,CHILD 495: 01 (Campus); Fall 2018,828328921|928992280,Kelly McCoy|Tom Rane,mccoyk@byui.edu|ranet@byui.edu
+Campus.2018.Spring.CHILD495,434531,CHILD 495: 01 (Campus); Spring 2018,317235305,Lynette Robertson,robertsonl@byui.edu
+Campus.2018.Winter.CHILD495,387793,CHILD 495: 01 (Campus); Winter 2018,317235305|828328921,Lynette Robertson|Kelly McCoy,robertsonl@byui.edu|mccoyk@byui.edu
+Campus.2018.Fall.CHIN 201,510065,CHIN 201: 01 (Campus); Fall 2018,575106767,Trever McKay,mckaytr@byui.edu
+Campus.2019.Spring.CHIN 301,542553,CHIN 347: 01 (Campus); Spring 2019,575106767,Trever McKay,mckaytr@byui.edu
+Campus.2018.Winter.CHIN 302,373621,CHIN 302: 01 (Campus); Winter 2018,498197076,Lei Shen,shenl@byui.edu
+Campus.2018.Fall.CHIN 347,511543,CHIN 301: 01 (Campus); Fall 2018,747135492,Ming-Yeh Lee,leemi@byui.edu
+Campus.2018.Spring.CIT 111,433279,"CIT 111: 05,06 (Campus); Spring 2018",207067893,Brent Morring,morringb@byui.edu
+Campus.2018.Winter.CIT 262,390671,CIT 262: 01 (Campus); Winter 2018,811996188,Michael McLaughlin,mclaughlinm@byui.edu
+Campus.2018.Spring.CIT 270,433610,CIT  270; Spring 2018 (No Sections),768119708,Adam Hayes,hayesa@byui.edu
+Campus.2018.Winter.CIT 270,385549,CIT 270: 02 (Campus); Winter 2018,918846438|549980408,Kory Godfrey|Craig Lindstrom,godfreyko@byui.edu|lindstromc@byui.edu
+Campus.2018.Spring.CIT 301C,434897,CIT 366: 01 (Campus); Spring 2018,758900928,Kent Jackson,jacksonk@byui.edu
+Campus.2018.Spring.CIT 425,434894,CIT 425: 01 (Campus); Spring 2018,758900928,Kent Jackson,jacksonk@byui.edu
+Campus.2018.Spring.CIT 470,435667,CIT 470: 01 (Campus); Spring 2018,388795603,Steven Rigby,rigbys@byui.edu
+Campus.2018.Winter.CIT 470,380555,CIT 470: 01 (Campus); Winter 2018,388795603|918846438,Steven Rigby|Kory Godfrey,rigbys@byui.edu|godfreyko@byui.edu
+Campus.2018.Fall.CIT 495,510941,CIT 495: 02 (Campus); Fall 2018,659473383,Mark Olaveson,olavesonm@byui.edu
+Campus.2018.Spring.CIT 495,434946,CIT 495: 02 (Campus); Spring 2018,659473383|758900928,Mark Olaveson|Kent Jackson,olavesonm@byui.edu|jacksonk@byui.edu
+Campus.2018.Winter.COMM 102,341983,"COMM 102: 10,11 (Campus); Winter 2018",898384146,Carol Waite,waitec@byui.edu
+Campus.2018.Spring.COMM 130,433008,COMM 230: 02 (Campus); Spring 2018,878484193,Jason Reeder,reederj@byui.edu
+Campus.2018.Spring.COMM 150,394428,COMM 150: 07 (Campus); Spring 2018,610473431,Robyn Bergstrom,bergstromr@byui.edu
+Campus.2018.Winter.COMM 175,384080,COMM 175: 05 (Campus); Winter 2018,445961137,Jonathon Lawrence,lawrencej@byui.edu
+Campus.2018.Spring.COMM 235,432351,COMM 235: 02 (Campus); Spring 2018,139230262,Brett Sampson,sampsonb@byui.edu
+Campus.2018.Spring.COMM 260,387932,COMM 260: 01 (Campus); Spring 2018,333290627,Christian Mawlam,mawlamc@byui.edu
+Campus.2018.Winter.COMM 260,388607,COMM 260: 01 (Campus); Winter 2018,333290627|342014691|123860203,Christian Mawlam|Brian Howard|Brandon Isle,mawlamc@byui.edu|howardb@byui.edu|isleb@byui.edu
+Campus.2018.Spring.COMM 297R,432998,COMM 497R: 01 (Campus); Spring 2018,333290627,Christian Mawlam,mawlamc@byui.edu
+Campus.2018.Winter.COMM 297R,351821,COMM 497R: 01 (Campus); Winter 2018,333290627|342014691|975796747,Christian Mawlam|Brian Howard|Stephen Mendenhall,mawlamc@byui.edu|howardb@byui.edu|mendenhallst@byui.edu
+Campus.2018.Winter.COMM 310,381493,COMM 462: 01 (Campus); Winter 2018,171657421,James Rognon,rognonj@byui.edu
+Campus.2019.Winter.COMM 330,533254,COMM 330: 01 (Campus); Winter 2019,883226120,Beth Hendricks,hendricksb@byui.edu
+Campus.2018.Spring.COMM 335,435787,COMM 335: 01 (Campus); Spring 2018,127706416,Ward Hicks,hicksw@byui.edu
+Campus.2018.Spring.COMM 350,394529,"COMM 350: 01,02 (Campus); Spring 2018",610473431,Robyn Bergstrom,bergstromr@byui.edu
+Campus.2018.Winter.COMM 350,340375,COMM 350: 01 (Campus); Winter 2018,864497251|610473431,Jim Croasmun|Robyn Bergstrom,croasmunj@byui.edu|bergstromr@byui.edu
+Campus.2018.Spring.COMM 352,433291,COMM 352: 01 (Campus); Spring 2018,717887553,Andra Hansen,hansenan@byui.edu
+Campus.2019.Winter.COMM 380,533245,COMM 380: 01 (Campus); Winter 2019,883226120,Beth Hendricks,hendricksb@byui.edu
+Campus.2018.Spring.COMM 397R,428541,COMM 397R: 07 (Campus); Spring 2018,776335656,Lee Warnick,warnickl@byui.edu
+Campus.2018.Winter.COMM 397R,379011,COMM 397R: 04 (Campus); Winter 2018,827098823|171657421,Eric Lybbert|James Rognon,lybberte@byui.edu|rognonj@byui.edu
+Campus.2019.Winter.COMM 430,533248,COMM 430: 01 (Campus); Winter 2019,883226120,Beth Hendricks,hendricksb@byui.edu
+Campus.2018.Winter.COMM 490,372466,COMM 490: 01 (Campus); Winter 2018,170767228,Mike Cannon,cannonm@byui.edu
+Campus.2018.Winter.COMM 499,372469,COMM 499: 01 (Campus); Winter 2018,170767228,Mike Cannon,cannonm@byui.edu
+Campus.2018.Spring.CONST100,425976,CONST 100: 01 (Campus); Spring 2018,862239003,Adam Evarts,evartsa@byui.edu
+Campus.2018.Spring.CONST120,422474,"CONST 120: 01,02,03 (Campus); Spring 2018",076507560|381521221,Ron Kinville|Jedd Walker,kinviller@byui.edu|walkerje@byui.edu
+Campus.2018.Spring.CONST200,425656,CONST 200: 01 (Campus); Spring 2018,450362851,Shawn Jensen,jensensh@byui.edu
+Campus.2018.Spring.CONST235,422585,CONST 235: 01 (Campus); Spring 2018,450362851|997330441,Shawn Jensen|Pat Huish,jensensh@byui.edu|huishp@byui.edu
+Campus.2018.Winter.CONST235,383489,"CONST 235: 01,02 (Campus); Winter 2018",646596612|997330441,Ron Harker|Pat Huish,harkerr@byui.edu|huishp@byui.edu
+Campus.2018.Spring.CONST250,429477,CONST 250: 01 (Campus); Spring 2018,997330441,Pat Huish,huishp@byui.edu
+Campus.2018.Spring.CONST260,417234,CONST 260: 01 (Campus); Spring 2018,862239003,Adam Evarts,evartsa@byui.edu
+Campus.2018.Spring.CONST290R,425702,CONST 290R: 01 (Campus); Spring 2018,862239003,Adam Evarts,evartsa@byui.edu
+Campus.2018.Winter.CONST290R,391068,CONST 290R: 01 (Campus); Winter 2018,041147800|862239003,Mike Sessions|Adam Evarts,sessionsm@byui.edu|evartsa@byui.edu
+Campus.2018.Spring.CONST298,417240,CONST 298: 01 (Campus); Spring 2018,862239003,Adam Evarts,evartsa@byui.edu
+Campus.2019.Winter.CONST300,534097,CONST 300: 01 (Campus); Winter 2019,92367398,Brian Blaylock,blaylockb@byui.edu
+Campus.2018.Spring.CONST320,422479,CONST 320: 02 (Campus); Spring 2018,76507560,Ron Kinville,kinviller@byui.edu
+Campus.2019.Winter.CONST330,534091,CONST 330: 01 (Campus); Winter 2019,92367398,Brian Blaylock,blaylockb@byui.edu
+Campus.2018.Spring.CONST340,380367,"CONST 340: 01,02 (Campus); Spring 2018",281610169,Kim Leavitt,leavittki@byui.edu
+Campus.2018.Spring.CONST350,429501,CONST 350: 01 (Campus); Spring 2018,646596612,Ron Harker,harkerr@byui.edu
+Campus.2018.Winter.CONST350,381038,CONST 350: 01 (Campus); Winter 2018,450362851,Shawn Jensen,jensensh@byui.edu
+Campus.2018.Spring.CONST370,422482,"CONST 370: 01,02 (Campus); Spring 2018",76507560,Ron Kinville,kinviller@byui.edu
+Campus.2018.Winter.CONST370,381196,CONST 370: 01 (Campus); Winter 2018,862239003,Adam Evarts,evartsa@byui.edu
+Campus.2018.Spring.CONST380,422588,CONST 380: 01 (Campus); Spring 2018,41147800,Mike Sessions,sessionsm@byui.edu
+Campus.2018.Spring.CONST400,422582,CONST 400: 01 (Campus); Spring 2018,450362851,Shawn Jensen,jensensh@byui.edu
+Campus.2018.Spring.CONST420,417237,CONST 420: 01 (Campus); Spring 2018,862239003,Adam Evarts,evartsa@byui.edu
+Campus.2018.Fall.CONST430,509993,CONST 430: 01 (Campus); Fall 2018,557401242,Jason Rammell,rammellj@byui.edu
+Campus.2018.Spring.CONST430,424884,CONST 430: 01 (Campus); Spring 2018,041147800|557401242,Mike Sessions|Jason Rammell,sessionsm@byui.edu|rammellj@byui.edu
+Campus.2018.Winter.CONST430,341345,CONST 430: 01 (Campus); Winter 2018,041147800|745044346|557401242,Mike Sessions|Rob Tonks|Jason Rammell,sessionsm@byui.edu|tonksr@byui.edu|rammellj@byui.edu
+Campus.2019.Winter.CONST470,534094,CONST 470: 01 (Campus); Winter 2019,92367398,Brian Blaylock,blaylockb@byui.edu
+Campus.2018.Spring.CONST498,417243,CONST 498: 01 (Campus); Spring 2018,862239003,Adam Evarts,evartsa@byui.edu
+Campus.2018.Spring.CONST499,421512,CONST 499: 01 (Campus); Spring 2018,41147800,Mike Sessions,sessionsm@byui.edu
+Campus.2019.Spring.Converted Courses - Template,535593,MUSIC 319: 01 (Campus); Spring 2019,320411053,Randall Kempton,kemptonr@byui.edu
+Campus.2019.Winter.Converted Courses - Template,513090,TA 424: 01 (Campus); Winter 2019,746947026,Roger Merrill,merrillr@byui.edu
+Campus.2018.Fall.Converted Courses - Template,439117,CT_Converted; Fall 2018 (No Sections),258668661,Stephanie Hancock,hancockst@byui.edu
+Campus.2018.Summer.Converted Courses - Template,470566,SOC 498R: 01 (Campus); Summer 2018,851347432,Stephen Smith,smiths@byui.edu
+Campus.2018.Spring.Converted Courses - Template,394694,HIST 260: 01 (Campus); Spring 2018,854110007,Hyrum Lewis,lewish@byui.edu
+Campus.2018.Winter.Converted Courses - Template,338468,CHEM 106: 06 (Campus); Winter 2018,682120848,David Collins,collinsd@byui.edu
+Campus.2019.Winter.CS 213,532357,CS 213: 02 (Campus); Winter 2019,775310313,Scott Ercanbrack,ercanbracks@byui.edu
+Campus.2018.Spring.CS 241,432233,CS 241: 02 (Campus); Spring 2018,216702041,Scott Burton,burtons@byui.edu
+Campus.2018.Spring.CS 345,422863,CS 345: 02 (Campus); Spring 2018,285469802,Ron Jones,jonesro@byui.edu
+Campus.2018.Fall.CS 490R,466562,CS 490R: 03 (Campus); Fall 2018,818174099,Wayne Boyer,boyerw@byui.edu
+Campus.2018.Winter.CS 499,383094,"CS 499: 01,03 (Campus); CS 499B: 01,02 (Campus); CS 499S: 01,02 (Campus); Winter 2018",216702041,Scott Burton,burtons@byui.edu
+Campus.2018.Fall.DANCE103,508981,DANCE 103: 01 (Campus); Fall 2018,354443354|748808828,Ashley Storm|Joy Esplin,hoopesa@byui.edu|esplinj@byui.edu
+Campus.2018.Spring.DANCE103,434770,DANCE 103: 01 (Campus); Spring 2018,748808828|965017746,Joy Esplin|Elizabeth McChesney,esplinj@byui.edu|mcchesneye@byui.edu
+Campus.2018.Winter.DANCE103,371902,DANCE 103: 01 (Campus); Winter 2018,748808828,Joy Esplin,esplinj@byui.edu
+Campus.2018.Fall.DANCE131,469861,DANCE 131: 01 (Campus); Fall 2018,115952198,Wendy Bone,bonew@byui.edu
+Campus.2018.Fall.DANCE140,469867,DANCE 140: 01 (Campus); Fall 2018,115952198,Wendy Bone,bonew@byui.edu
+Campus.2018.Spring.DANCE170,433760,DANCE 170: 01 (Campus); Spring 2018,712021882,Gary Larsen,larseng@byui.edu
+Campus.2019.Winter.DANCE180M,533350,DANCE 180M: 01 (Campus); DANCE 180W: 01 (Campus); Winter 2019,398017933,Janie Fisher,fisherj@byui.edu
+Campus.2018.Fall.DANCE181M,508839,DANCE 181M: 01 (Campus); DANCE 181W: 01 (Campus); Fall 2018,117797729,Michelle Summers,summersmi@byui.edu
+Campus.2018.Fall.DANCE184M,509281,DANCE 184M: 01 (Campus); DANCE 184W: 01 (Campus); Fall 2018,283121530,Ashley Reed,andersenas@byui.edu
+Campus.2018.Fall.DANCE185M,510582,DANCE 285M: 01 (Campus); DANCE 285W: 01 (Campus); Fall 2018,965017746,Elizabeth McChesney,mcchesneye@byui.edu
+Campus.2018.Fall.DANCE190,510595,DANCE 190: 01 (Campus); Fall 2018,969391498,Patricia Dienhart,dienhartp@byui.edu
+Campus.2019.Winter.DANCE231R,532193,DANCE 240R: 01 (Campus); Winter 2019,214586758|548934301,Amy De Vera|Sarah Anderson,deveraa@byui.edu|andersonsa@byui.edu
+Campus.2018.Fall.DANCE231R,506444,DANCE 240R: 02 (Campus); Fall 2018,548934301,Sarah Anderson,andersonsa@byui.edu
+Campus.2018.Fall.DANCE235R,511619,DANCE 235R: 01 (Campus); Fall 2018,689385637,Alexis Ziga Miranda,zigamirandaa@byui.edu
+Campus.2018.Winter.DANCE235R,391985,DANCE 235R: 01 (Campus); Winter 2018,853795147,Katie Allred,allredka@byui.edu
+Campus.2019.Winter.DANCE240R,534129,DANCE 240R: 02 (Campus); Winter 2019,10664947,Diedre Sakota,murdochd@byui.edu
+Campus.2018.Spring.DANCE242,395032,DANCE 242: 01 (Campus); Spring 2018,354443354,Ashley Storm,hoopesa@byui.edu
+Campus.2018.Winter.DANCE271R,377407,DANCE 270R: 01 (Campus); Winter 2018,712021882,Gary Larsen,larseng@byui.edu
+Campus.2019.Winter.DANCE280,533825,DANCE 280M: 01 (Campus); DANCE 280W: 01 (Campus); Winter 2019,398017933,Janie Fisher,fisherj@byui.edu
+Campus.2018.Fall.DANCE281M,510981,DANCE 281M: 01 (Campus); Fall 2018,790281369,Terri Hess,hesst@byui.edu
+Campus.2018.Spring.DANCE281M,429804,DANCE 281M: 01 (Campus); DANCE 281W: 01 (Campus); Spring 2018,283121530,Ashley Reed,andersenas@byui.edu
+Campus.2018.Fall.DANCE281W,510984,DANCE 281W: 01 (Campus); Fall 2018,790281369,Terri Hess,hesst@byui.edu
+Campus.2018.Fall.DANCE310R,505558,DANCE 310R: 01 (Campus); Fall 2018,354443354,Ashley Storm,hoopesa@byui.edu
+Campus.2018.Fall.DANCE340R,469855,DANCE 340R: 01 (Campus); Fall 2018,115952198,Wendy Bone,bonew@byui.edu
+Campus.2018.Fall.DANCE342R,469858,DANCE 342R: 01 (Campus); Fall 2018,115952198,Wendy Bone,bonew@byui.edu
+Campus.2018.Winter.DANCE350,371905,DANCE 350: 01 (Campus); Winter 2018,748808828,Joy Esplin,esplinj@byui.edu
+Campus.2018.Fall.DANCE356,469849,DANCE 356: 01 (Campus); Fall 2018,115952198,Wendy Bone,bonew@byui.edu
+Campus.2019.Winter.DANCE358,533829,DANCE 358: 01 (Campus); Winter 2019,398017933,Janie Fisher,fisherj@byui.edu
+Campus.2018.Fall.DANCE390R,508978,DANCE 390R: 01 (Campus); Fall 2018,748808828,Joy Esplin,esplinj@byui.edu
+Campus.2018.Winter.DANCE390R,365476,DANCE 390R: 01 (Campus); Winter 2018,965017746,Elizabeth McChesney,mcchesneye@byui.edu
+Campus.2018.Winter.DANCE402,377376,DANCE 402: 01 (Campus); Winter 2018,712021882,Gary Larsen,larseng@byui.edu
+Campus.2018.Winter.DANCE442R,382268,DANCE 442R: 01 (Campus); Winter 2018,354443354,Ashley Storm,hoopesa@byui.edu
+Campus.2018.Winter.DANCE443R,391234,DANCE 443R: 01 (Campus); Winter 2018,354443354,Ashley Storm,hoopesa@byui.edu
+Campus.2018.Spring.DANCE478R,434776,DANCE 478R: 01 (Campus); Spring 2018,748808828,Joy Esplin,esplinj@byui.edu
+Campus.2018.Fall.DANCE488R,511610,DANCE 488R: 01 (Campus); Fall 2018,354443354,Ashley Storm,hoopesa@byui.edu
+Campus.2018.Spring.DCM 110,436452,DCM 225: 01 (Campus); Spring 2018,213170707,TL Julander,julandert@byui.edu
+Campus.2018.Summer.Devotional,439297,Devotional - Summer 2018,083260840|309096135,Trish Gannaway|Benjamin Yates,gannawayp@byui.edu|yatesb@byui.edu
+Campus.2019.Winter.ECEN 160,533409,ECEN 160: 02 (Campus); Winter 2019,285469802,Ron Jones,jonesro@byui.edu
+Campus.2018.Fall.ECEN 490R,508476,ECEN 490R: 02 (Campus); Fall 2018,431139535,Tom Baldwin,baldwinth@byui.edu
+Campus.2018.Fall.ECON 151,505151,ECON 151: 10 (Campus); Fall 2018,287615156,Craig Broadbent,broadbentcr@byui.edu
+Campus.2018.Winter.ECON 151,342776,ECON 151: 03 (Campus); Winter 2018,837438620,Rick Hirschi,hirschir@byui.edu
+Campus.2019.Winter.ECON 300,532249,ECON 300: 01 (Campus); Winter 2019,287615156,Craig Broadbent,broadbentcr@byui.edu
+Campus.2018.Spring.ECON 330,394649,ECON 330: 01 (Campus); Spring 2018,610074527,Kerry Webb,webbke@byui.edu
+Campus.2018.Winter.ECON 357,382255,ECON 357: 01 (Campus); Winter 2018,287615156,Craig Broadbent,broadbentcr@byui.edu
+Campus.2018.Spring.ECON 358,428932,ECON 358: 01 (Campus); Spring 2018,741828174,Allan Walburger,walburgera@byui.edu
+Campus.2018.Winter.ECON 381,380428,ECON 381: 01 (Campus); Winter 2018,833074109,Martin Ma,mama@byui.edu
+Campus.2018.Spring.ECON 388,394626,ECON 388: 01 (Campus); Spring 2018,906324829,David Barrus,barrusd@byui.edu
+Campus.2018.Winter.ECON 388,382189,ECON 388: 01 (Campus); Winter 2018,23584744,Daniel Moncayo,moncayod@byui.edu
+Campus.2018.Spring.ECON 450,424244,ECON 353: 01 (Campus); Spring 2018,610074527|287615156,Kerry Webb|Craig Broadbent,webbke@byui.edu|broadbentcr@byui.edu
+Campus.2018.Spring.ECON 475,429071,ECON 475: 01 (Campus); Spring 2018,780906544,Ron Nate,nater@byui.edu
+Campus.2018.Spring.ED 200,430812,ED 200: 05 (Campus); Spring 2018,916136466,Marcia McManus,mcmanusm@byui.edu
+Campus.2018.Fall.ED 202,506497,"ED 202: 02,03 (Campus); Fall 2018",599242068,Lorie Tobler,toblerl@byui.edu
+Campus.2018.Fall.ED 242,506414,ED 242: 01 (Campus); Fall 2018,916136466,Marcia McManus,mcmanusm@byui.edu
+Campus.2018.Winter.ED 242,378999,ED 242: 01 (Campus); Winter 2018,615865279|916136466,Levi Jaynes|Marcia McManus,jaynesl@byui.edu|mcmanusm@byui.edu
+Campus.2019.Winter.ED 243,534628,"ED 243: 04,07 (Campus); Winter 2019",509307061,Denae Love,loved@byui.edu
+Campus.2018.Winter.ED 243,340891,ED 243: 03 (Campus); Winter 2018,107489886,Shawna Sutton,suttons@byui.edu
+Campus.2018.Spring.ED 259,428422,ED 259: 05 (Campus); Spring 2018,589412497,Teri Gee,geete@byui.edu
+Campus.2018.Spring.ED 304,430821,ED 304: 07 (Campus); Spring 2018,916136466,Marcia McManus,mcmanusm@byui.edu
+Campus.2019.Winter.ED 304E,534189,ED 304: 07 (Campus); Winter 2019,221112193,Rochelle Ricks,ricksro@byui.edu
+Campus.2018.Winter.ED 341,379111,"ED 341: 01,02 (Campus); Winter 2018",202892287,Sherry Paulsen,paulsens@byui.edu
+Campus.2018.Fall.ED 424,506303,SPED 424: 01 (Campus); Fall 2018,942411344,Dean Cloward,clowardr@byui.edu
+Campus.2019.Winter.ED 443,534159,ED 443: 01 (Campus); Winter 2019,147153324,Kent Hayes,hayesk@byui.edu
+Campus.2018.Spring.ED 443,429683,ED 443: 01 (Campus); Spring 2018,796158309,Lary Duque,duquel@byui.edu
+Campus.2018.Winter.ED 444,381035,ED 444: 01 (Campus); Winter 2018,355132802,Deanna Hovey,hoveyd@byui.edu
+Campus.2019.Winter.ED 448,534106,ED 448: 01 (Campus); Winter 2019,120637163,Christine Brown,brownch@byui.edu
+Campus.2018.Fall.ED 448,508470,ED 448: 01 (Campus); Fall 2018,085667771|120637163,Matt Sellers|Christine Brown,sellersm@byui.edu|brownch@byui.edu
+Campus.2019.Winter.ED 449,534192,"ED 427: 05,06 (Campus); ED 449: 03 (Campus); Winter 2019",221112193,Rochelle Ricks,ricksro@byui.edu
+Campus.2019.Winter.ED 461,533358,ED 461: 01 (Campus); Winter 2019,45985494,Chris Wilson,wilsonc@byui.edu
+Campus.2018.Fall.ED 461,509076,"ED 361: 01,02,03 (Campus); Fall 2018",718336908,Curtis Chandler,chandlerc@byui.edu
+Campus.2018.Fall.ENG 102R,505265,ENG 102R: 01 (Campus); Fall 2018,784125238,Kristina Otinel,otinelk@byui.edu
+Campus.2018.Fall.ENG 106,505179,ENG 106: 15 (Campus); Fall 2018,3525985429063318,Janet Christensen,christensenj@byui.edu
+Campus.2019.Winter.ENG 151,534246,ENG 151: 01 (Campus); Winter 2019,527521202,Kristen Glenn,glennk@byui.edu
+Campus.2018.Winter.ENG 151,380340,ENG 151: 01 (Campus); Winter 2018,87381659,Don Hammar,hammard@byui.edu
+Campus.2018.Winter.ENG 218,372321,"ENG 218: 01,02 (Campus); Winter 2018",845196332,Matt Babcock,babcockm@byui.edu
+Campus.2018.Spring.ENG 252,424479,"ENG 252: 01,02 (Campus); Spring 2018",503291419,Becca Robinson,robinsonr@byui.edu
+Campus.2018.Fall.ENG 318R,508833,ENG 318R: 01 (Campus); Fall 2018,426079432,Josh Allen,allenj@byui.edu
+Campus.2018.Winter.ENG 318R,380674,ENG 318R: 01 (Campus); Winter 2018,171859206,Mark Bennion,bennionm@byui.edu
+Campus.2018.Spring.ENG 321,431082,"ENG 321: 01,02 (Campus); Spring 2018",836702938,Quinn Grover,groverq@byui.edu
+Campus.2018.Winter.ENG 321,389129,ENG 321: 01 (Campus); Winter 2018,264626138,Glenn Dayley,dayleyg@byui.edu
+Campus.2019.Winter.ENG 325,535227,ENG 325: 01 (Campus); Winter 2019,709972760,Braden Hepner,hepnerb@byui.edu
+Campus.2018.Winter.ENG 325,381324,ENG 325: 01 (Campus); Winter 2018,278191394,Kip Hartvigsen,hartvigsenk@byui.edu
+Campus.2018.Spring.ENG 328,437296,ENG 328: 01 (Campus); Spring 2018,775044541,Joseph Griffin,griffinj@byui.edu
+Campus.2018.Summer.ENG 332,438619,ENG 332: 01 (Campus); Summer 2018,611771116,Emily Grover,grovere@byui.edu
+Campus.2018.Spring.ENG 333,434797,ENG 333: 01 (Campus); Spring 2018,28880020,Anne Papworth,papwortha@byui.edu
+Campus.2018.Winter.ENG 334,389938,ENG 334: 01 (Campus); Winter 2018,793056751,Jason Williams,williamsja@byui.edu
+Campus.2018.Spring.ENG 335,431319,FDENG 301: 13 (Campus); Spring 2018,967641693,Scott Cameron,camerons@byui.edu
+Campus.2018.Winter.ENG 335,387433,"ENG 314: 01,06 (Campus); Winter 2018",324696279,Joelle Moen,moenj@byui.edu
+Campus.2018.Spring.ENG 350R,435099,ENG 350R: 01 (Campus); Spring 2018,278191394,Kip Hartvigsen,hartvigsenk@byui.edu
+Campus.2018.Winter.ENG 350R,385922,ENG 350R: 01 (Campus); Winter 2018,426079432,Josh Allen,allenj@byui.edu
+Campus.2018.Spring.ENG 351,433824,ENG 351: 01 (Campus); Spring 2018,87381659,Don Hammar,hammard@byui.edu
+Campus.2018.Spring.ENG 352,436441,ENG 352: 01 (Campus); Spring 2018,834014366,Jim Richards,richardsj@byui.edu
+Campus.2018.Fall.ENG 370R,511490,ENG 370R: 01 (Campus); Fall 2018,709972760,Braden Hepner,hepnerb@byui.edu
+Campus.2018.Winter.ENG 373,381312,ENG 373: 02 (Campus); Winter 2018,181996619,Robert Bird,birdr@byui.edu
+Campus.2018.Spring.ENG 418R,430710,ENG 418R: 01 (Campus); Spring 2018,834014366,Jim Richards,richardsj@byui.edu
+Campus.2018.Winter.ENG 430,384728,ENG 430: 02 (Campus); Winter 2018,991160185,John Poole,poolejo@byui.edu
+Campus.2018.Spring.ENG 452,428494,ENG 452: 01 (Campus); Spring 2018,744722445,Diantha Smith,smithdia@byui.edu
+Campus.2018.Spring.ENG 495,435115,ENG 495: 01 (Campus); Spring 2018,278191394,Kip Hartvigsen,hartvigsenk@byui.edu
+Campus.2018.Spring.ESS 100,395305,ESS 100: 01 (Campus); Spring 2018,840899762,Rachel Helfrich,helfrichr@byui.edu
+Campus.2018.Spring.ESS 101,422811,"ESS 101: 01,02 (Campus); Spring 2018",840899762,Rachel Helfrich,helfrichr@byui.edu
+Campus.2018.Fall.ESS 115,507767,ESS 115: 01 (Campus); Fall 2018,645620064,Brian Becktel,becktelb@byui.edu
+Campus.2018.Winter.ESS 115,347327,ESS 115: 01 (Campus); Winter 2018,932274264,Drew Kimmey,kimmeyd@byui.edu
+Campus.2018.Fall.ESS 141,510957,"ESS 141: 01,02 (Campus); Fall 2018",682981025,Trent Shippen,shippent@byui.edu
+Campus.2018.Fall.ESS 145,510578,ESS 145: 01 (Campus); Fall 2018,235654462|832949198,Kevin Redd|Shea Adams,reddk@byui.edu|tay16042@byui.edu
+Campus.2018.Spring.ESS 145,425717,ESS 145: 01 (Campus); Spring 2018,235654462|088213088,Kevin Redd|Elise Alverson,reddk@byui.edu|alv15010@byui.edu
+Campus.2018.Winter.ESS 145,373403,ESS 145: 02 (Campus); Winter 2018,235654462,Kevin Redd,reddk@byui.edu
+Campus.2018.Spring.ESS 160,410270,ESS 160: 01 (Campus); Spring 2018,840899762,Rachel Helfrich,helfrichr@byui.edu
+Campus.2018.Spring.ESS 161,434171,ESS 161: 01 (Campus); Spring 2018,840899762,Rachel Helfrich,helfrichr@byui.edu
+Campus.2018.Fall.ESS 299,510937,ESS 299: 01 (Campus); Fall 2018,560999286|840899762,Steve Kimpel|Rachel Helfrich,kimpels@byui.edu|helfrichr@byui.edu
+Campus.2018.Spring.ESS 299,436002,ESS 299: 02 (Campus); Spring 2018,840899762,Rachel Helfrich,helfrichr@byui.edu
+Campus.2018.Spring.ESS 343,429855,ESS 343: 01 (Campus); Spring 2018,687137049,Mark Berntsen,berntsenm@byui.edu
+Campus.2018.Winter.ESS 345,340925,ESS 345: 01 (Campus); Winter 2018,235654462,Kevin Redd,reddk@byui.edu
+Campus.2018.Winter.ESS 347,380148,ESS 347: 01 (Campus); Winter 2018,625702152,Lex Gidley,gidleya@byui.edu
+Campus.2018.Spring.ESS 465,429504,ESS 465: 01 (Campus); Spring 2018,625702152,Lex Gidley,gidleya@byui.edu
+Campus.2018.Spring.ESS 497,429521,ESS 497: 01 (Campus); Spring 2018,625702152,Lex Gidley,gidleya@byui.edu
+Campus.2018.Winter.ESS 498,386029,ESS 498: 01 (Campus); Winter 2018,550485953,Mark Coglianese,coglianesem@byui.edu
+Campus.2018.Spring.FAML 110,431114,FAML 110: 11 (Campus); Spring 2018,444291146,Kevin Green,greenk@byui.edu
+Campus.2018.Winter.FAML 150,382072,FAML 150: 10 (Campus); Winter 2018,444291146,Kevin Green,greenk@byui.edu
+Campus.2018.Winter.FAML 300,379645,FAML 110: 15 (Campus); Winter 2018,953773042,Julie Lundin,lundinj@byui.edu
+Campus.2018.Spring.FAML 390R,394942,FAML 490R: 01 (Campus); Spring 2018,50681071,Cole Ratcliffe,ratcliffeg@byui.edu
+Campus.2019.Winter.FAML 400,533617,FAML 400: 06 (Campus); Winter 2019,206052710,Scott Gardner,gardners@byui.edu
+Campus.2018.Winter.FAML 400,383224,FAML 400: 01 (Campus); Winter 2018,243616055,Derrel Higgins,higginsd@byui.edu
+Campus.2018.Winter.FAML 430,390104,FAML 430: 01 (Campus); Winter 2018,527040576,Lynda Hawkes,hawkesl@byui.edu
+Campus.2018.Spring.FCS 150,425510,FCS 150: 02 (Campus); Spring 2018,589519904|244653313|915641857,Kera Day|Anika Davidson|JoAnn Peters,dayk@byui.edu|davidsona@byui.edu|petersj@byui.edu
+Campus.2018.Fall.FCS 280,509965,FCS 280: 01 (Campus); Fall 2018,969962956,Wendy Harris,harrisw@byui.edu
+Campus.2018.Spring.FCS 450,379655,FCS 400: 01 (Campus); Spring 2018,112115383,Janiel Nelson,nelsonj@byui.edu
+Campus.2019.Spring.FDAMF101,542929,POLSC 110: 03 (Campus); Spring 2019,53980267,Trent Rose,roset@byui.edu
+Campus.2019.Winter.FDAMF101,533327,FDAMF 101: 07 (Campus); Winter 2019,346817551,Lynita Newswander,newswanderl@byui.edu
+Campus.2018.Fall.FDAMF101,438196,FDAMF101; Fall 2018 (No Sections),465248838,Eric Walz,walze@byui.edu
+Campus.2018.Winter.FDAMF101,377689,FDAMF 101: 10 (Campus); Winter 2018,575617976,Geoffrey Thomas,thomasg@byui.edu
+Campus.2018.Summer.FDCIV101,439410,FDCIV 101: 01 (Campus); Summer 2018,955220067,Krista Feinberg,feinbergk@byui.edu
+Campus.2018.Spring.FDCIV101,428443,FDCIV101; Spring 2018 (No Sections),003045822|200081484,Michael Lenhart|David Pulsipher,lenhartm@byui.edu|pulsipherd@byui.edu
+Campus.2018.Winter.FDCIV101,383559,FDCIV 101: 05 (Campus); Winter 2018,737337742,David Magleby,maglebyd@byui.edu
+Campus.2018.Spring.FDCS 100,432357,GS 106A: 02 (Campus); Spring 2018,113650771|872227228|941062040,Mark Orchard|Joshua Riding|Jaclyn Johnson,orchardm@byui.edu|rid15002@byui.edu|joh15002@byui.edu
+Campus.2018.Winter.FDCS 100,386434,GS 106A: 30 (Campus); Winter 2018,113650771|941062040|286587774|196530665|379971780,Mark Orchard|Jaclyn Johnson|Whitney Johnson|Kali Kelly|Forrest Brett Wood,orchardm@byui.edu|joh15002@byui.edu|joh12150@byui.edu|kel12014@byui.edu|woo16057@byui.edu
+Campus.2019.Spring.FDENG101,535777,"FDENG 101: 37,38 (Campus); Spring 2019",764898992,Alecia Green,greenal@byui.edu
+Campus.2019.Winter.FDENG101,534432,FDENG 101: 55 (Campus); Winter 2019,775044541,Joseph Griffin,griffinj@byui.edu
+Campus.2018.Fall.FDENG101,470813,FDENG 101: 01 (Campus); Fall 2018,148856011,Kendall Grant,grantk@byui.edu
+Campus.2018.Summer.FDENG101,469764,"FDENG 101: 01,02 (Campus); Summer 2018",991160185,John Poole,poolejo@byui.edu
+Campus.2018.Spring.FDENG101,393356,"FDENG 301: 27,28 (Campus); Spring 2018",706832542,Andrew Wells,wellsan@byui.edu
+Campus.2018.Winter.FDENG101,342918,"FDENG 101: 24,30,31 (Campus); Winter 2018",744722445,Diantha Smith,smithdia@byui.edu
+Campus.2018.Fall.FDENG201,511277,FDENG 301: 27 (Campus); Fall 2018,99876984,Ryan Hales,halesr@byui.edu
+Campus.2018.Winter.FDENG201,382399,ENG 400R: 01 (Campus); Winter 2018,836702938,Quinn Grover,groverq@byui.edu
+Campus.2019.Winter.FDENG301,535224,FDENG 301: 21 (Campus); Winter 2019,709972760,Braden Hepner,hepnerb@byui.edu
+Campus.2018.Fall.FDENG301,505377,FDENG 301: 29 (Campus); Fall 2018,793056751,Jason Williams,williamsja@byui.edu
+Campus.2018.Spring.FDENG301,394360,"FDENG 301: 04,05,06,07 (Campus); Spring 2018",40829357,Paula Soper,soperp@byui.edu
+Campus.2018.Winter.FDENG301,340225,"FDENG 301: 17,18 (Campus); Winter 2018",49158677,Steve Stewart,stewarts@byui.edu
+Campus.2018.Fall.FDHUM110,439201,FDHUM110; Fall 2018 (No Sections),424082244,Kevin Brower,browerk@byui.edu
+Campus.2018.Summer.FDHUM110,470367,FDHUM 110: 01 (Campus); Summer 2018,71364751,Christopher Williams,williamschr@byui.edu
+Campus.2018.Spring.FDHUM110,394706,FDHUM 110: 24 (Campus); Spring 2018,44554626,Jonathan Austad,austadj@byui.edu
+Campus.2018.Winter.FDHUM110,341387,FDHUM 110: 21 (Campus); Winter 2018,269829286,Michael Cornick,cornickm@byui.edu
+Campus.2018.Summer.FDHUM214,437203,FDHUM 214: 01 (Campus); Summer 2018,260559543,Susan Thomas,susanthomas@byui.edu
+Campus.2019.Winter.FDINT211,531039,FDINT 211: 03 (Campus); Winter 2019,690055700,Robert Wahlquist,wahlquistr@byui.edu
+Campus.2018.Fall.FDINT211,471184,FDINT 211: 13 (Campus); Fall 2018,394624956,David R. Peck,peckdr@byui.edu
+Campus.2018.Spring.FDINT212,422380,"FDINT 212: 01,03 (Campus); Spring 2018",611528516,Steve Hunsaker,hunsakers@byui.edu
+Campus.2018.Winter.FDINT212,341078,"FDINT 212: 03,04 (Campus); Winter 2018",611528516|514894567|903920637,Steve Hunsaker|Fernando Castro|Matt Alba,hunsakers@byui.edu|castrofr@byui.edu|albam@byui.edu
+Campus.2018.Spring.FDINT213,410124,"FDINT 213: 01,02 (Campus); Spring 2018",19312417,David Peck,peckdd@byui.edu
+Campus.2018.Winter.FDINT213,389056,"FDINT 213: 01,02 (Campus); Winter 2018",019312417|172795140,David Peck|Curtis Castillow,peckdd@byui.edu|castillowc@byui.edu
+Campus.2018.Spring.FDINT215,410180,FDINT 215: 02 (Campus); Spring 2018,444334878,David N. Campbell,campbellda@byui.edu
+Campus.2018.Summer.FDLIT216,424648,"FDLIT 216: 01,02 (Campus); Summer 2018",689398673,Eric Gee,geee@byui.edu
+Campus.2018.Spring.FDLIT216,424342,FDLIT 216: 03 (Campus); Spring 2018,472197179,Gary Purse,pursega@byui.edu
+Campus.2018.Summer.FDMAT108,470339,"FDMAT 108: 01,02 (Campus); Summer 2018",120164864|431600919,Elizabeth Crisp|Serena Roundy,crispe@byui.edu|roundys@byui.edu
+Campus.2018.Spring.FDMAT108,424112,FDMAT 108: 45 (Campus); Spring 2018,214105110,Heidi Turner,turnerh@byui.edu
+Campus.2018.Winter.FDMAT108,371753,"FDMAT 108: 73,74,77 (Campus); Winter 2018",237155983,Jen Baxter,baxterj@byui.edu
+Campus.2018.Winter.FDMAT110,371727,MATH 110X: 03 (Campus); Winter 2018,376295695,Paul Cox,coxp@byui.edu
+Campus.2018.Fall.FDMAT112,439214,FDMAT112; Fall 2018 (No Sections),456234273,Curtis Martin,martincu@byui.edu
+Campus.2018.Spring.FDMAT112,392802,"FDMAT 112: 05,06 (Campus); Spring 2018",372108308,Sahar Qumsiyeh,qumsiyehs@byui.edu
+Campus.2018.Winter.FDMAT112,341336,FDMAT 112: 03 (Campus); Winter 2018,994957538,Greg Cameron,camerong@byui.edu
+Campus.2018.Spring.FDREL100,430791,FDREL 100: 01 (Campus); Spring 2018,908624194,Nate Williams,williamsn@byui.edu
+Campus.2019.Winter.FDREL121,533334,FDREL 122: 06 (Campus); Winter 2019,251335688,Gary Chelson,chelsong@byui.edu
+Campus.2018.Fall.FDREL121,508743,FDREL 121: 21 (Campus); Fall 2018,540696788,Casey McDermott,mcdermottc@byui.edu
+Campus.2018.Spring.FDREL121,422486,"FDREL 275: 08,14 (Campus); Spring 2018",304642502,John Parker,parkerjo@byui.edu
+Campus.2018.Fall.FDREL122,507659,"FDREL 122: 11,12,13 (Campus); Fall 2018",540696788,Casey McDermott,mcdermottc@byui.edu
+Campus.2019.Winter.FDREL130,533564,"FDREL 130: 01,03 (Campus); Winter 2019",616163556,Greg Williams,williamsg@byui.edu
+Campus.2018.Spring.FDREL130,394163,FDREL 130: 06 (Campus); Spring 2018,105566501,Matt Taylor,taylormt@byui.edu
+Campus.2018.Winter.FDREL130,378313,"FDREL 130: 01,03 (Campus); Winter 2018",142700297|616163556,Todd Hammond|Greg Williams,hammondt@byui.edu|williamsg@byui.edu
+Campus.2018.Fall.FDREL200,466217,"FDREL 200: 19,24 (Campus); Fall 2018",767548613,Robert Chambers,chambersr@byui.edu
+Campus.2018.Summer.FDREL200,469811,FDREL 200: 01 (Campus); Summer 2018,196846915,Rex Butterfield,butterfieldr@byui.edu
+Campus.2018.Winter.FDREL200,340413,"FDREL 200: 19,25 (Campus); Winter 2018",561783325,Laryssa Waldron,waldronl@byui.edu
+Campus.2018.Fall.FDREL211,471128,FDREL 325: 04 (Campus); Fall 2018,544844731,Shawn Dorman,dormans@byui.edu
+Campus.2018.Winter.FDREL211,341380,FDREL 211: 09 (Campus); Winter 2018,105566501,Matt Taylor,taylormt@byui.edu
+Campus.2018.Spring.FDREL212,422207,"FDREL 212: 01,03 (Campus); Spring 2018",800136687,Torrey Morrill,morrillto@byui.edu
+Campus.2018.Fall.FDREL225,438846,"FDREL 225: 02,08,14 (Campus); Fall 2018",898019715,Thomas Chapman,chapmant@byui.edu
+Campus.2018.Summer.FDREL225,466256,FDREL 225: 01 (Campus); Summer 2018,835959136,Ryan Gardner,gardnerry@byui.edu
+Campus.2018.Spring.FDREL225,391323,"FDREL 225: 17,21 (Campus); Spring 2018",767548613,Robert Chambers,chambersr@byui.edu
+Campus.2018.Winter.FDREL225,339834,"FDREL 225: 06,12 (Campus); Winter 2018",363363885|767548613,Stan Kivett|Robert Chambers,kivetts@byui.edu|chambersr@byui.edu
+Campus.2018.Spring.FDREL234,431446,FDREL 122: 07 (Campus); Spring 2018,146927475,Aaron Christensen,christensena@byui.edu
+Campus.2018.Winter.FDREL234,340576,FDREL 234: 05 (Campus); Winter 2018,747439639,Steve Clark,clarks@byui.edu
+Campus.2018.Fall.FDREL235,507380,FDREL 235: 01 (Campus); Fall 2018,736392444,William Riggins,rigginsw@byui.edu
+Campus.2018.Spring.FDREL235,423615,FDREL 235: 03 (Campus); Spring 2018,50542414,Bruce Satterfield,satterfieldb@byui.edu
+Campus.2018.Winter.FDREL235,388408,FDREL 235: 01 (Campus); Winter 2018,385793530|736392444,Jeff Chapman|William Riggins,chapmanj@byui.edu|rigginsw@byui.edu
+Campus.2019.Winter.FDREL250,534799,FDREL 130: 08 (Campus); Winter 2019,736392444,William Riggins,rigginsw@byui.edu
+Campus.2018.Fall.FDREL250,471131,"FDREL 250: 11,21,26 (Campus); Fall 2018",544844731,Shawn Dorman,dormans@byui.edu
+Campus.2018.Summer.FDREL250,469776,FDREL 250: 01 (Campus); Summer 2018,394624956,David R. Peck,peckdr@byui.edu
+Campus.2018.Spring.FDREL250,393503,"FDREL 325: 04,06 (Campus); Spring 2018",363363885,Stan Kivett,kivetts@byui.edu
+Campus.2018.Winter.FDREL250,340553,"FDREL 250: 12,66 (Campus); Winter 2018",823920711,Ron Anderson,andersonr@byui.edu
+Campus.2018.Spring.FDREL261,423483,"FDREL 261: 01,02 (Campus); Spring 2018",561783325,Laryssa Waldron,waldronl@byui.edu
+Campus.2018.Winter.FDREL261,340812,FDREL 261: 01 (Campus); Winter 2018,363363885|561783325,Stan Kivett|Laryssa Waldron,kivetts@byui.edu|waldronl@byui.edu
+Campus.2019.Winter.FDREL275,533568,"FDREL 275: 15,26 (Campus); Winter 2019",616163556,Greg Williams,williamsg@byui.edu
+Campus.2018.Fall.FDREL275,438851,"FDREL 275: 06,14 (Campus); Fall 2018",898019715,Thomas Chapman,chapmant@byui.edu
+Campus.2018.Spring.FDREL275,394173,"FDREL 275: 03,04,13 (Campus); Spring 2018",690055700,Robert Wahlquist,wahlquistr@byui.edu
+Campus.2018.Winter.FDREL275,340579,"FDREL 275: 03,09 (Campus); Winter 2018",747439639,Steve Clark,clarks@byui.edu
+Campus.2018.Fall.FDREL301,504058,FDREL 301: 07 (Campus); Fall 2018,342702876,Layne Walker,walkerlay@byui.edu
+Campus.2018.Winter.FDREL301,340560,FDREL 301: 03 (Campus); Winter 2018,823920711,Ron Anderson,andersonr@byui.edu
+Campus.2018.Winter.FDREL302,340557,FDREL 302: 03 (Campus); Winter 2018,823920711,Ron Anderson,andersonr@byui.edu
+Campus.2018.Fall.FDREL324,466221,FDREL 211: 25 (Campus); Fall 2018,767548613,Robert Chambers,chambersr@byui.edu
+Campus.2018.Spring.FDREL324,393447,"FDREL 324: 02,07,08 (Campus); Spring 2018",965017494,Chris Allison,allisonc@byui.edu
+Campus.2018.Spring.FDREL325,395219,"FDREL 325: 02,07 (Campus); Spring 2018",835959136,Ryan Gardner,gardnerry@byui.edu
+Campus.2018.Winter.FDREL325,377526,"FDREL 301: 04,08,10 (Campus); Winter 2018",588009790,B J Rowe,roweb@byui.edu
+Campus.2018.Fall.FDREL327,511603,FDREL 327: 08 (Campus); Fall 2018,50542414,Bruce Satterfield,satterfieldb@byui.edu
+Campus.2018.Spring.FDREL327,410091,FDREL 327: 03 (Campus); Spring 2018,139534541,Philip Allred,allredp@byui.edu
+Campus.2018.Winter.FDREL327,379475,FDREL 327: 01 (Campus); Winter 2018,844342543,John Thomas,thomasj@byui.edu
+Campus.2019.Winter.FDREL333,533587,"FDREL 333: 03,06 (Campus); Winter 2019",616163556,Greg Williams,williamsg@byui.edu
+Campus.2018.Spring.FDREL333,391086,FDREL 333: 03 (Campus); Spring 2018,767548613,Robert Chambers,chambersr@byui.edu
+Campus.2018.Winter.FDREL333,342400,FDREL 333: 03 (Campus); Winter 2018,690055700,Robert Wahlquist,wahlquistr@byui.edu
+Campus.2018.Winter.FDREL341,380654,FDREL 341: 01 (Campus); Winter 2018,908624194,Nate Williams,williamsn@byui.edu
+Campus.2018.Winter.FDREL343,379472,FDREL 343: 01 (Campus); Winter 2018,844342543,John Thomas,thomasj@byui.edu
+Campus.2018.Spring.FDREL345,395223,FDREL 345: 01 (Campus); Spring 2018,835959136,Ryan Gardner,gardnerry@byui.edu
+Campus.2018.Fall.FDREL351,506985,FDREL 351: 04 (Campus); Fall 2018,208938152,Brian Kinghorn,kinghornbr@byui.edu
+Campus.2018.Winter.FDREL351,377379,FDREL 351: 01 (Campus); Winter 2018,671474151,Greg Venema,venemag@byui.edu
+Campus.2018.Fall.FDREL352,471193,FDREL 352: 01 (Campus); Fall 2018,394624956,David R. Peck,peckdr@byui.edu
+Campus.2018.Spring.FDREL352,428555,FDREL 352: 01 (Campus); Spring 2018,615953706,Brent Schmidt,schmidtbr@byui.edu
+Campus.2018.Winter.FDREL352,384536,FDREL 352: 01 (Campus); Winter 2018,517902295,Dale Sturm,sturmd@byui.edu
+Campus.2018.Winter.FDREL390R,371734,FDREL 390R: 01 (Campus); Winter 2018,196846915,Rex Butterfield,butterfieldr@byui.edu
+Campus.2018.Fall.FDREL404,506279,FDREL 404: 01 (Campus); Fall 2018,200391067,Shauna Seamons,seamonssh@byui.edu
+Campus.2018.Fall.FDREL431,511607,FDREL 431: 01 (Campus); Fall 2018,50542414,Bruce Satterfield,satterfieldb@byui.edu
+Campus.2018.Spring.FDREL431,421845,FDREL 431: 01 (Campus); Spring 2018,736392444,William Riggins,rigginsw@byui.edu
+Campus.2019.Winter.FDSCI101,532221,FDSCI 101: 22 (Campus); Winter 2019,159603895,Gary Baird,bairdg@byui.edu
+Campus.2018.Spring.FDSCI101,394461,FDSCI 101: 04 (Campus); Spring 2018,114966955,Alan Holyoak,holyoaka@byui.edu
+Campus.2018.Winter.FDSCI101,341663,FDSCI 101: 07 (Campus); Winter 2018,114966955|644819465,Alan Holyoak|Chris Humphreys,holyoaka@byui.edu|humphreysc@byui.edu
+Campus.2018.Spring.FDSCI200,424913,FDSCI 200: 03 (Campus); Spring 2018,715470610,Ross Spackman,spackmanr@byui.edu
+Campus.2018.Spring.FDSCI201,402203,FDSCI 201: 01 (Campus); Spring 2018,251738155,Robert Clayton,claytonr@byui.edu
+Campus.2018.Spring.FDSCI202,410051,FDSCI 202: 01 (Campus); Spring 2018,883919176,Evan Hansen,hansenev@byui.edu
+Campus.2019.Spring.FDSCI203,542619,"FDSCI 203: 06,07 (Campus); Spring 2019",728298223,Blake Willis,willisb@byui.edu
+Campus.2018.Fall.FDSCI203,506470,FDSCI 203: 01 (Campus); Fall 2018,83979527,Jeff Hamblin,hamblinj@byui.edu
+Campus.2018.Fall.FDSCI204,508522,FDSCI 204: 02 (Campus); Fall 2018,601053011|100003021,Shawn Fisher|Anna Felt,fishers@byui.edu|fel05004@byui.edu
+Campus.2018.Spring.FDSCI204,424796,FDSCI 204: 01 (Campus); Spring 2018,567236512,Jason Hunt,huntj@byui.edu
+Campus.2018.Winter.FDSCI204,372349,FDSCI 204: 02 (Campus); Winter 2018,434285223,Jason Shaw,shawja@byui.edu
+Campus.2018.Spring.FDSCI205,394657,"FDSCI 205: 02,03 (Campus); Spring 2018",195229138|450979429|334870262,Todd Kelson|Cody Diehl|Elizabeth Bell,kelsont@byui.edu|diehlc@byui.edu|bellel@byui.edu
+Campus.2018.Winter.FDSCI205,384101,FDSCI 205: 03 (Campus); Winter 2018,531946167|450979429|334870262,Holden Higginbotham|Cody Diehl|Elizabeth Bell,higginbothamh@byui.edu|diehlc@byui.edu|bellel@byui.edu
+Campus.2018.Spring.FDSCI206,428186,FDSCI 206: 01 (Campus); Spring 2018,179171102,Todd Lines,linest@byui.edu
+Campus.2018.Winter.FDSCI206,383255,FDSCI 206: 01 (Campus); Winter 2018,853964419,Clair Eckersell,eckersellc@byui.edu
+Campus.2018.Spring.FDSCI208,435163,FDSCI 208: 01 (Campus); Spring 2018,645822122,Jon Paul Johnson,johnsonjo@byui.edu
+Campus.2018.Winter.FDSCI208,380701,FDSCI 208: 02 (Campus); Winter 2018,392362771|957309966,Stephen Turcotte|Adam Dean,turcottes@byui.edu|deana@byui.edu
+Campus.2018.Fall.FDSCI209,470680,FDSCI 209: 02 (Campus); Fall 2018,983413518,Brian Tonks,tonksb@byui.edu
+Campus.2018.Winter.FDSCI209,342503,"FDSCI 209: 01,02 (Campus); Winter 2018",759463743,Dan Moore,moored@byui.edu
+Campus.2019.Winter.FDSCI210,533865,FDSCI 210: 01 (Campus); Winter 2019,614645308,John Griffith,griffithjo@byui.edu
+Campus.2018.Spring.FDSCI212,435303,FDSCI 212: 03 (Campus); Spring 2018,213170707|343419841|381521221,TL Julander|J. Hathaway|Jedd Walker,julandert@byui.edu|hathawayj@byui.edu|walkerje@byui.edu
+Campus.2018.Winter.FDSCI212,389444,FDSCI 212: 02 (Campus); Winter 2018,213170707|381521221,TL Julander|Jedd Walker,julandert@byui.edu|walkerje@byui.edu
+Campus.2018.Spring.FDSCI213,423473,FDSCI 213: 03 (Campus); Spring 2018,668096898,Casey Ann Hurley,hurleyc@byui.edu
+Campus.2018.Winter.FDSCI213,379485,FDSCI 213: 02 (Campus); Winter 2018,844342543,John Thomas,thomasj@byui.edu
+Campus.2018.Fall.FDWLD101,470154,FDWLD101; Fall 2018 (No Sections),948667004,Devan Barker,barkerde@byui.edu
+Campus.2018.Winter.FDWLD101,377497,FDWLD 101: 01 (Campus); Winter 2018,928992280,Tom Rane,ranet@byui.edu
+Campus.2019.Winter.FDWLD201,533346,"FDWLD 201: 03,04 (Campus); Winter 2019",892309283,Terry Gorton,gortont@byui.edu
+Campus.2018.Spring.FDWLD201,429750,FDWLD 201: 15 (Campus); Spring 2018,799796583,David Rock,rockd@byui.edu
+Campus.2018.Winter.FR 101,388433,FR 101: 01 (Campus); Winter 2018,959706779,Ray Swanson,swansonr@byui.edu
+Campus.2018.Spring.FR 102,434785,FR 102: 01 (Campus); Spring 2018,959706779,Ray Swanson,swansonr@byui.edu
+Campus.2018.Spring.FR 201,434779,FR 201: 01 (Campus); Spring 2018,959706779,Ray Swanson,swansonr@byui.edu
+Campus.2018.Fall.FR 377,470486,FR 377: 01 (Campus); GER 377: 01 (Campus); SPAN 377: 01 (Campus); TESOL 377: 01 (Campus); Fall 2018,843851840,John Ivers,iversj@byui.edu
+Campus.2019.Spring.FS 350,542600,FS 350: 01 (Campus); Spring 2019,413275473,Kerry Huber,huberk@byui.edu
+Campus.2019.Winter.FS 360,533331,FS 360: 01 (Campus); Winter 2019,538218325,Russell Thurston,thurstonr@byui.edu
+Campus.2019.Winter.FS 440,513722,FS 440: 01 (Campus); Winter 2019,435127019,Neal Ricks,ricksn@byui.edu
+Campus.2018.Spring.FTC Template,394078,ECD 350B: 01 (Campus); Spring 2018,911154068,Jillisa Cranmer,cranmerj@byui.edu
+Campus.2018.Fall.GEOG 110,511086,GEOG 110: 03 (Campus); Fall 2018,081196657|322629074,Theron Josephson|Laura Johnston,josephsont@byui.edu|cox14001@byui.edu
+Campus.2018.Winter.GEOL 335,382063,GEOL 335: 01 (Campus); Winter 2018,654413156|495093397,Julie Willis|Coreen Huggins,willisj@byui.edu|hurstc@byui.edu
+Campus.2018.Winter.GEOL 341,393254,GEOL 341: 01 (Campus); Winter 2018,837464217,Mark Lovell,lovellm@byui.edu
+Campus.2018.Winter.GEOL 352,385758,GEOL 352: 01 (Campus); Winter 2018,654131946,Greg Roselle,roselleg@byui.edu
+Campus.2018.Winter.GEOL 405,383720,BIO 405: 01 (Campus); CHEM 405: 01 (Campus); GEOL 405: 01 (Campus); PH 403: 01 (Campus); Winter 2018,123623002,Ehren Haderlie,haderliee@byui.edu
+Campus.2018.Spring.GER 101,435952,GER 101: 02 (Campus); Spring 2018,977061182,Brian McDermott,mcdermottb@byui.edu
+Campus.2018.Spring.GER 102,435955,GER 102: 01 (Campus); Spring 2018,977061182,Brian McDermott,mcdermottb@byui.edu
+Campus.2018.Winter.GER 201,372131,GER 201: 01 (Campus); Winter 2018,977061182,Brian McDermott,mcdermottb@byui.edu
+Campus.2018.Spring.GER 202,435958,GER 202: 01 (Campus); Spring 2018,977061182,Brian McDermott,mcdermottb@byui.edu
+Campus.2018.Spring.GREEK101,428544,GREEK 101: 01 (Campus); Spring 2018,615953706,Brent Schmidt,schmidtbr@byui.edu
+Campus.2018.Fall.GS 103D,506405,GS 108D: 01 (Campus); Fall 2018,154529936|125089152,Daniel Baird|Landon Mackay,bairdd@byui.edu|mac16015@byui.edu
+Campus.2018.Spring.HEB 101,424823,HEB 101: 01 (Campus); Spring 2018,940158073,Ross Baron,baronr@byui.edu
+Campus.2018.Fall.HFED 110,470757,"FCS 240: 03,04 (Campus); Fall 2018",589519904,Kera Day,dayk@byui.edu
+Campus.2018.Fall.HFED 140,509960,"FCS 140: 01,02,03 (Campus); Fall 2018",969962956,Wendy Harris,harrisw@byui.edu
+Campus.2018.Spring.HFED 150,433517,FCS 150: 01 (Campus); Spring 2018,589519904|244653313|915641857,Kera Day|Anika Davidson|JoAnn Peters,dayk@byui.edu|davidsona@byui.edu|petersj@byui.edu
+Campus.2018.Spring.HFED 160,431625,FCS 160: 01 (Campus); Spring 2018,112115383,Janiel Nelson,nelsonj@byui.edu
+Campus.2018.Winter.HFED 207,383594,FCS 207: 06 (Campus); Winter 2018,290107081|554807873|651018635|771554335|915641857,Marilyn Clark|Kara Williams|Teresa Blakely|Julann Blake|JoAnn Peters,clarkma@byui.edu|williamskara@byui.edu|blakelyt@byui.edu|blakej@byui.edu|petersj@byui.edu
+Campus.2018.Spring.HFED 235,429306,"FCS 235: 01,02 (Campus); Spring 2018",651018635,Teresa Blakely,blakelyt@byui.edu
+Campus.2018.Spring.HFED 240,436076,FCS 364: 02 (Campus); Spring 2018,324012676,Lori Chavez,chavezl@byui.edu
+Campus.2019.Winter.HFED 245,534153,FCS 245: 02 (Campus); Winter 2019,959264784,Genet Orme,ormeg@byui.edu
+Campus.2019.Winter.HFED 340,533859,FCS 340: 12 (Campus); Winter 2019,926808537,Camille Pardo,pardoc@byui.edu
+Campus.2018.Spring.HFED 340,425648,"FCS 340: 06,07,08 (Campus); Spring 2018",787619395|926808537,Tracie Simon|Camille Pardo,simont@byui.edu|pardoc@byui.edu
+Campus.2018.Winter.HFED 340,342982,FCS 340: 02 (Campus); Winter 2018,787619395|476415111,Tracie Simon|Craig Cobia,simont@byui.edu|cobiacr@byui.edu
+Campus.2018.Spring.HFED 351,435745,FCS 351: 01 (Campus); Spring 2018,252146022,Cheryl Empey,empeyc@byui.edu
+Campus.2018.Spring.HFED 360,435742,FCS 360: 01 (Campus); Spring 2018,252146022,Cheryl Empey,empeyc@byui.edu
+Campus.2018.Spring.HFED 490R,431698,FCS 490R: 02 (Campus); Spring 2018,663313243,Sharon Carpenter,carpentersh@byui.edu
+Campus.2018.Winter.HFED 490R,390204,FCS 490R: 01 (Campus); Winter 2018,959264784,Genet Orme,ormeg@byui.edu
+Campus.2018.Fall.HFED 498R,466534,FCS 498R: 01 (Campus); Fall 2018,252146022,Cheryl Empey,empeyc@byui.edu
+Campus.2018.Winter.HIST 260,383218,HIST 262: 01 (Campus); Winter 2018,48035966,Shawn Johansen,johansens@byui.edu
+Campus.2018.Spring.HIST 262,429250,"HIST 262: 02,03 (Campus); Spring 2018",633523334,Kevin Coles,colesk@byui.edu
+Campus.2018.Winter.HIST 262,392650,HIST 262: 02 (Campus); Winter 2018,200081484|633523334,David Pulsipher|Kevin Coles,pulsipherd@byui.edu|colesk@byui.edu
+Campus.2018.Spring.HIST 308,431887,HIST 308: 01 (Campus); Spring 2018,723596669,David Pigott,pigottd@byui.edu
+Campus.2018.Winter.HIST 310,389471,HIST 310: 01 (Campus); HIST 290R: 02 (Campus); Winter 2018,955220067,Krista Feinberg,feinbergk@byui.edu
+Campus.2019.Winter.HIST 340,534074,HIST 340: 01 (Campus); Winter 2019,955220067,Krista Feinberg,feinbergk@byui.edu
+Campus.2018.Fall.HIST 378,507936,HIST 378: 01 (Campus); Fall 2018,3045822,Michael Lenhart,lenhartm@byui.edu
+Campus.2018.Spring.HIST 380,436490,HIST 380: 01 (Campus); Spring 2018,19312417,David Peck,peckdd@byui.edu
+Campus.2018.Spring.HIST 392,424357,HIST 392: 01 (Campus); Spring 2018,200081484,David Pulsipher,pulsipherd@byui.edu
+Campus.2018.Spring.HORT 297R,435754,HORT 297R: 02 (Campus); Spring 2018,429106712,Reese Nelson,nelsonre@byui.edu
+Campus.2018.Fall.HORT 319,511247,HORT 319: 01 (Campus); Fall 2018,429106712,Reese Nelson,nelsonre@byui.edu
+Campus.2018.Winter.HORT 340,390737,HORT 350R: 01 (Campus); Winter 2018,979499753,Skyler Westergard,westergards@byui.edu
+Campus.2019.Winter.HORT 375,535006,HORT 375: 01 (Campus); Winter 2019,287297549,Jerry Toll,tollj@byui.edu
+Campus.2018.Winter.HORT 437,381721,HORT 436: 01 (Campus); Winter 2018,376814079,Ben Romney,romneyb@byui.edu
+Campus.2018.Fall.HRHP 131,507929,"HRHP 131: 03,21 (Campus); Fall 2018",687137049,Mark Berntsen,berntsenm@byui.edu
+Campus.2018.Winter.HRHP 131,389891,HRHP 131: 17 (Campus); Winter 2018,464393483,Tyler Watson,watsont@byui.edu
+Campus.2019.Winter.HRHP 343,531007,"ED 348: 02,03 (Campus); Winter 2019",957378919,Mike Sweet,sweetm@byui.edu
+Campus.2018.Spring.HRHP 343,433727,ED 348: 01 (Campus); Spring 2018,835940610,Debbie Miles,milesf@byui.edu
+Campus.2018.Spring.HS 223,437648,HS 223: 01 (Campus); Spring 2018,128379485,Kelly Evans,evansk@byui.edu
+Campus.2018.Spring.HS 305,435215,HS 305: 01 (Campus); Spring 2018,613831365,John Gibson,gibsonjo@byui.edu
+Campus.2018.Winter.HS 305,388827,HS 305: 02 (Campus); Winter 2018,128379485,Kelly Evans,evansk@byui.edu
+Campus.2018.Fall.HS 331,510882,HS 331: 01 (Campus); Fall 2018,923144171,Natalie Taylor,taylorna@byui.edu
+Campus.2018.Spring.HS 351,433101,HS 351: 01 (Campus); Spring 2018,341952965,Timalee Geisler,geislert@byui.edu
+Campus.2018.Fall.HS 378,506643,HS 378: 01 (Campus); Fall 2018,86203303,Matt Dixon,dixonma@byui.edu
+Campus.2018.Spring.HS 378,434202,HS 378: 01 (Campus); Spring 2018,594743410,Angelia Watkins,watkinsa@byui.edu
+Campus.2019.Spring.HS 391,541427,HS 391: 08 (Campus); Spring 2019,514595802,Merle Benedict,benedictme@byui.edu
+Campus.2018.Spring.HS 420,433056,HS 420: 01 (Campus); Spring 2018,341952965,Timalee Geisler,geislert@byui.edu
+Campus.2018.Fall.HS 430,510925,HS 430: 01 (Campus); Fall 2018,785842874,John Lewis,lewisj@byui.edu
+Campus.2018.Fall.HS 488,507389,HS 488: 01 (Campus); Fall 2018,514595802,Merle Benedict,benedictme@byui.edu
+Campus.2018.Winter.HUM 316,385565,HUM 316: 01 (Campus); Winter 2018,308284539,Vaughn Stephenson,stephensonv@byui.edu
+Campus.2018.Spring.HUM 350R,435468,HUM 350R: 02 (Campus); Spring 2018,044554626|056300782|927770928,Jonathan Austad|Jason Flora|Brian Merrill,austadj@byui.edu|floraj@byui.edu|merrillb@byui.edu
+Campus.2018.Winter.HUM 350R,391208,HUM 497R: 01 (Campus); Winter 2018,702225123,Derek Jensen,jensender@byui.edu
+Campus.2018.Spring.HUM 385,439382,HUM 385: 01 (Campus); Spring 2018,308284539,Vaughn Stephenson,stephensonv@byui.edu
+Campus.2018.Spring.ID 251,437166,ID 251: 01 (Campus); Spring 2018,969962956,Wendy Harris,harrisw@byui.edu
+Campus.2018.Winter.IDS 297R,351873,IDS 290R: 01 (Campus); Winter 2018,424082244,Kevin Brower,browerk@byui.edu
+Campus.2018.Spring.IDS 499,428167,IDS 499: 02 (Campus); Spring 2018,060486722|916302833,Danae Romrell|Adam Lloyd,romrelld@byui.edu|lloyda@byui.edu
+Campus.2018.Winter.IDS 499,385898,"IDS 499: 01,02 (Campus); Winter 2018",60486722,Danae Romrell,romrelld@byui.edu
+Campus.2018.Spring.INTST300,430716,INTST 300: 01 (Campus); Spring 2018,843851840,John Ivers,iversj@byui.edu
+Campus.2018.Winter.INTST347,341666,INTST 347: 01 (Campus); Winter 2018,838355162|574863880,Michael Paul|Katelyn McMaster,paulm@byui.edu|mcm14005@byui.edu
+Campus.2018.Spring.INTST349,431890,INTST 349: 01 (Campus); Spring 2018,723596669,David Pigott,pigottd@byui.edu
+Campus.2019.Winter.INTST350,532403,INTST 350: 01 (Campus); Winter 2019,109742946,Robert Colvin,colvinr@byui.edu
+Campus.2018.Summer.INTST398R,466211,INTST 398R: 01 (Campus); Summer 2018,838355162,Michael Paul,paulm@byui.edu
+Campus.2018.Spring.INTST398R,428117,INTST 398R: 01 (Campus); Spring 2018,838355162|162607207,Michael Paul|Rachel Hilsinger,paulm@byui.edu|mci14004@byui.edu
+Campus.2018.Fall.INTST499,507696,INTST 499: 01 (Campus); Fall 2018,838355162,Michael Paul,paulm@byui.edu
+Campus.2018.Spring.INTST499,432267,INTST 499: 01 (Campus); Spring 2018,039460504|838355162,Jeremy Lamoreaux|Michael Paul,lamoreauxj@byui.edu|paulm@byui.edu
+Campus.2018.Winter.INTST499,340018,INTST 499: 01 (Campus); Winter 2018,314272723,Larry Shaw,shawla@byui.edu
+Campus.2018.Spring.LATIN101,417287,LATIN 101: 02 (Campus); Spring 2018,948001293,Antonia Clifford,clifforda@byui.edu
+Campus.2018.Winter.LATIN101,387491,LATIN 101: 01 (Campus); Winter 2018,625835255,Murray Hunt,huntm@byui.edu
+Campus.2018.Fall.LATIN102,509087,LATIN 102: 01 (Campus); Fall 2018,625835255,Murray Hunt,huntm@byui.edu
+Campus.2018.Winter.MA 298,389674,MA   298; Winter 2018 (No Sections),707095138,Aimee Johnson,johnsonai@byui.edu
+Campus.2018.Fall.MATH 101,508729,MATH 101: 08 (Campus); Fall 2018,431600919,Serena Roundy,roundys@byui.edu
+Campus.2018.Spring.MATH 101,431203,MATH 101: 06 (Campus); Spring 2018,324997888,David Stohel,stoheld@byui.edu
+Campus.2018.Fall.MATH 109,505142,"MATH 109: 01,04 (Campus); Fall 2018",324997888,David Stohel,stoheld@byui.edu
+Campus.2018.Fall.MATH 111,492622,MATH 111: 03 (Campus); Fall 2018,753546773,Carol Wise,wisec@byui.edu
+Campus.2018.Spring.MATH 111,395280,MATH 111: 04 (Campus); Spring 2018,089157530|753546773,Brad Garner|Carol Wise,garnerb@byui.edu|wisec@byui.edu
+Campus.2018.Winter.MATH 111,339555,MATH 111: 03 (Campus); Winter 2018,89157530,Brad Garner,garnerb@byui.edu
+Campus.2018.Spring.MATH 214,395194,MATH 214: 01 (Campus); Spring 2018,650974126,Curtis Nelson,nelsoncu@byui.edu
+Campus.2018.Fall.MATH 214E,506426,MATH 214E: 01 (Campus); Fall 2018,137993569,Paul Johanson,johansonp@byui.edu
+Campus.2018.Spring.MATH 221A,395144,MATH 221C: 08 (Campus); Spring 2018,263521929,Ryan Cromar,cromarr@byui.edu
+Campus.2018.Spring.MATH 221B,428524,"MATH 325: 01,02 (Campus); Spring 2018",388237677,Garrett Saunders,saundersg@byui.edu
+Campus.2018.Spring.MATH 241,395069,MATH 241: 01 (Campus); Spring 2018,376295695,Paul Cox,coxp@byui.edu
+Campus.2018.Spring.MATH 242,395075,MATH 242: 01 (Campus); Spring 2018,376295695,Paul Cox,coxp@byui.edu
+Campus.2018.Winter.MATH 242,382214,MATH 242: 01 (Campus); Winter 2018,049412643|376295695,Susan Orme|Paul Cox,ormes@byui.edu|coxp@byui.edu
+Campus.2018.Spring.MATH 285,432933,MATH 350: 01 (Campus); Spring 2018,204377295,Jackie Nygaard,nygaardr@byui.edu
+Campus.2018.Winter.MATH 301,383584,MATH 301: 01 (Campus); Winter 2018,730105030,Bonnie Moon,moonb@byui.edu
+Campus.2018.Fall.MATH 316,507339,MATH 316: 02 (Campus); Fall 2018,730105030,Bonnie Moon,moonb@byui.edu
+Campus.2018.Spring.MATH 316,431051,MATH 316: 03 (Campus); Spring 2018,466339919,Matthew Lewis,lewisma@byui.edu
+Campus.2018.Winter.MATH 340,377290,MATH 101: 10 (Campus); Winter 2018,89157530,Brad Garner,garnerb@byui.edu
+Campus.2018.Winter.MATH 411,382066,MATH 412: 01 (Campus); Winter 2018,406976995,Lawrence Chilton,chiltonl@byui.edu
+Campus.2018.Winter.MATH 423,374437,MATH 424: 01 (Campus); Winter 2018,516704447,Craig Johnson,johnsonc@byui.edu
+Campus.2018.Winter.MATH 462,343924,MATH 462: 01 (Campus); Winter 2018,527812198,Kent Bessey,besseyk@byui.edu
+Campus.2018.Winter.MATH 495R,390163,MATH 495R: 01 (Campus); Winter 2018,406976995,Lawrence Chilton,chiltonl@byui.edu
+Campus.2018.Spring.MATH 499R,395201,MATH 499R: 03 (Campus); Spring 2018,650974126,Curtis Nelson,nelsoncu@byui.edu
+Campus.2018.Spring.Math Courses,430644,"MATH 110X: 02,03,05 (Campus); Spring 2018",485257113,Richard Pieper,pieperr@byui.edu
+Campus.2018.Winter.Math Courses,382402,MATH 110X: 07 (Campus); Winter 2018,466339919,Matthew Lewis,lewisma@byui.edu
+Campus.2018.Spring.ME 101,432026,ME 101: 01 (Campus); Spring 2018,335959332,Russell Daines,dainesr@byui.edu
+Campus.2018.Fall.ME 204,503708,ME 204: 01 (Campus); Fall 2018,247104076,Keith Bourgeous,bourgeousk@byui.edu
+Campus.2018.Winter.ME 231,389243,ME 231: 01 (Campus); Winter 2018,222133695,Mark Jaster,jasterm@byui.edu
+Campus.2019.Winter.ME 250,532301,"ME 250: 01,02 (Campus); Winter 2019",206305315,David Johnson,johnsondav@byui.edu
+Campus.2018.Winter.ME 250,381799,ME 250: 02 (Campus); Winter 2018,80475266,Greg Roach,roachg@byui.edu
+Campus.2018.Fall.ME 250L,508952,"ME 250L: 01,03 (Campus); Fall 2018",206305315,David Johnson,johnsondav@byui.edu
+Campus.2018.Spring.ME 299,429430,ME 299: 01 (Campus); Spring 2018,923962946,Nathan Harris,harrisn@byui.edu
+Campus.2018.Spring.ME 337,398038,ME 337: 01 (Campus); Spring 2018,80475266,Greg Roach,roachg@byui.edu
+Campus.2018.Winter.ME 380,388298,"ME 380: 01,02 (Campus); Winter 2018",248395432,Thomas Blackham,blackhamt@byui.edu
+Campus.2018.Spring.ME 490R,429061,ME 490R: 02 (Campus); Spring 2018,957309966,Adam Dean,deana@byui.edu
+Campus.2018.Winter.ME 490R,377878,CE 490R: 01 (Campus); Winter 2018,923962946,Nathan Harris,harrisn@byui.edu
+Campus.2018.Fall.ME 495R,510085,ME 490R: 01 (Campus); Fall 2018,746371855,Aaron Schellenberg,schellenberga@byui.edu
+Campus.2018.Fall.MS 101,506741,MS 101: 01 (Campus); Fall 2018,469357945,Gregory Wilson,wilsong@byui.edu
+Campus.2018.Winter.MS 101,387889,MS 101: 01 (Campus); Winter 2018,469357945|568221091,Gregory Wilson|Tiffany Abriam,wilsong@byui.edu|abriamt@byui.edu
+Campus.2018.Winter.MS 102,387892,MS 102: 01 (Campus); Winter 2018,568221091,Tiffany Abriam,abriamt@byui.edu
+Campus.2018.Winter.MS 115R,387895,MS 115R: 01 (Campus); Winter 2018,568221091,Tiffany Abriam,abriamt@byui.edu
+Campus.2019.Winter.MS 201,533292,MS 101: 01 (Campus); Winter 2019,932274264|645620064,Drew Kimmey|Brian Becktel,kimmeyd@byui.edu|becktelb@byui.edu
+Campus.2018.Fall.MS 201,466214,MS 301: 01 (Campus); Fall 2018,932274264,Drew Kimmey,kimmeyd@byui.edu
+Campus.2018.Winter.MS 201,347300,MS 202: 01 (Campus); Winter 2018,365563915|395626956,Keith Grover|Jerry Abriam,groverk@byui.edu|abr15007@byui.edu
+Campus.2018.Spring.MUSIC102,434181,"MUSIC 102: 01,02 (Campus); Spring 2018",236700683,Susan Neimoyer,neimoyers@byui.edu
+Campus.2018.Spring.MUSIC104,430808,MUSIC 104: 01 (Campus); Spring 2018,285735979,Atina Coates,coatesa@byui.edu
+Campus.2018.Fall.MUSIC105,438812,"MUSIC 105: 02,03 (Campus); Fall 2018",825374789,Karrine Morris,morrisk@byui.edu
+Campus.2018.Spring.MUSIC105,428497,MUSIC 105: 05 (Campus); Spring 2018,468789363,Lisa Hansen,hansenli@byui.edu
+Campus.2018.Spring.MUSIC106,439314,MUSIC 106: 01 (Campus); Spring 2018,397390780,Rebecca Parkinson,parkinsonre@byui.edu
+Campus.2018.Spring.MUSIC107,428500,MUSIC 107: 01 (Campus); Spring 2018,468789363,Lisa Hansen,hansenli@byui.edu
+Campus.2019.Spring.MUSIC109,542988,MUSIC 109: 04 (Campus); Spring 2019,95972678,Barbara Wayne,wayneb@byui.edu
+Campus.2018.Spring.MUSIC109,429480,"MUSIC 109: 05,06 (Campus); Spring 2018",952018742,Ed May,maye@byui.edu
+Campus.2018.Fall.MUSIC113,506930,MUSIC 113: 01 (Campus); Fall 2018,95972678,Barbara Wayne,wayneb@byui.edu
+Campus.2018.Spring.MUSIC155,436691,MUSIC 155: 01 (Campus); Spring 2018,810924874,Eda Ashby,ashbye@byui.edu
+Campus.2018.Spring.MUSIC156,434390,MUSIC 156: 01 (Campus); Spring 2018,468789363,Lisa Hansen,hansenli@byui.edu
+Campus.2018.Winter.MUSIC156,378541,MUSIC 156: 01 (Campus); Winter 2018,825374789,Karrine Morris,morrisk@byui.edu
+Campus.2018.Spring.MUSIC158B,423927,MUSIC 158B: 01 (Campus); Spring 2018,157177371,Daniel Kerr,kerrd@byui.edu
+Campus.2018.Spring.MUSIC158M,422955,MUSIC 158M: 01 (Campus); Spring 2018,921297535,Adam Ballif,ballifa@byui.edu
+Campus.2018.Spring.MUSIC160B,423930,MUSIC 161B: 01 (Campus); MUSIC 260B: 01 (Campus); MUSIC 261B: 01 (Campus); MUSIC 361B: 01 (Campus); MUSIC 462B: 01 (Campus); Spr,157177371,Daniel Kerr,kerrd@byui.edu
+Campus.2018.Spring.MUSIC160J,433040,MUSIC 160J: 01 (Campus); MUSIC 161J: 01 (Campus); Spring 2018,932960900,Nadine Luke,luken@byui.edu
+Campus.2018.Spring.MUSIC160M,422951,MUSIC 160M: 01 (Campus); MUSIC 161M: 01 (Campus); Spring 2018,921297535,Adam Ballif,ballifa@byui.edu
+Campus.2018.Spring.MUSIC165A,431800,MUSIC 165A: 01 (Campus); Spring 2018,320411053,Randall Kempton,kemptonr@byui.edu
+Campus.2018.Fall.MUSIC165B,511445,MUSIC 165B: 01 (Campus); Fall 2018,401747022,Paul Busselberg,busselbergp@byui.edu
+Campus.2018.Spring.MUSIC173,394259,MUSIC 173: 02 (Campus); Spring 2018,767697238,Nori Brower,browern@byui.edu
+Campus.2018.Fall.MUSIC185,509310,MUSIC 185: 01 (Campus); Fall 2018,60969828,Mindy Davis,davisme@byui.edu
+Campus.2018.Spring.MUSIC190,436175,MUSIC 190: 02 (Campus); Spring 2018,109920077,David Taylor,taylord@byui.edu
+Campus.2018.Spring.MUSIC209,431390,"MUSIC 209: 01,02 (Campus); Spring 2018",978914534,Elizabeth Crawford,crawforde@byui.edu
+Campus.2019.Spring.MUSIC212,541399,MUSIC 212: 01 (Campus); Spring 2019,229614026,Kristina Horrocks,horrockskr@byui.edu
+Campus.2018.Fall.MUSIC212,504073,MUSIC 212: 01 (Campus); Fall 2018,128490262,Jessi Murdock,murdockj@byui.edu
+Campus.2018.Spring.MUSIC213,423924,MUSIC 213: 01 (Campus); Spring 2018,157177371,Daniel Kerr,kerrd@byui.edu
+Campus.2018.Fall.MUSIC256,504076,MUSIC 256: 02 (Campus); Fall 2018,128490262,Jessi Murdock,murdockj@byui.edu
+Campus.2018.Fall.MUSIC260A,507225,MUSIC 160A: 01 (Campus); MUSIC 161A: 01 (Campus); MUSIC 260A: 01 (Campus); MUSIC 261A: 01 (Campus); MUSIC 360A: 01 (Campus); MUS,861297358,Stephen Thomas,thomasst@byui.edu
+Campus.2019.Winter.MUSIC260D,513262,MUSIC260D; Winter 2019 (No Sections),225230747,Evan Dunn,dunne@byui.edu
+Campus.2018.Spring.MUSIC260J,433044,MUSIC 260J: 01 (Campus); MUSIC 261J: 01 (Campus); Spring 2018,932960900,Nadine Luke,luken@byui.edu
+Campus.2018.Winter.MUSIC260M,371662,MUSIC 260M: 01 (Campus); MUSIC 261M: 01 (Campus); Winter 2018,921297535,Adam Ballif,ballifa@byui.edu
+Campus.2019.Winter.MUSIC260N,535267,MUSIC 158N: 01 (Campus); MUSIC 160N: 01 (Campus); MUSIC 161N: 01 (Campus); MUSIC 260N: 01 (Campus); MUSIC 261N: 01 (Campus); MUS,798490677,Mark Watkins,watkinsm@byui.edu
+Campus.2018.Spring.MUSIC265,423848,MUSIC 265: 01 (Campus); Spring 2018,128490262,Jessi Murdock,murdockj@byui.edu
+Campus.2018.Winter.MUSIC265,387464,MUSIC 265: 01 (Campus); Winter 2018,380129773,Michael McQuay,mcquaym@byui.edu
+Campus.2018.Winter.MUSIC270,378785,MUSIC 270: 01 (Campus); Winter 2018,268182316,Kristi Ballif,ballifk@byui.edu
+Campus.2018.Spring.MUSIC290,434408,MUSIC 130: 01 (Campus); Spring 2018,2472512,Matt Moore,moorem@byui.edu
+Campus.2018.Fall.MUSIC291,507517,MUSIC 291: 01 (Campus); Fall 2018,128490262,Jessi Murdock,murdockj@byui.edu
+Campus.2018.Winter.MUSIC299,384357,MUSIC 299: 01 (Campus); Winter 2018,654383628,Tyler McNiven,mcnivent@byui.edu
+Campus.2018.Spring.MUSIC300,435479,MUSIC 300: 01 (Campus); Spring 2018,654383628,Tyler McNiven,mcnivent@byui.edu
+Campus.2018.Spring.MUSIC301,433034,MUSIC 301: 01 (Campus); Spring 2018,932960900,Nadine Luke,luken@byui.edu
+Campus.2018.Spring.MUSIC302,432749,MUSIC 302: 01 (Campus); Spring 2018,236700683,Susan Neimoyer,neimoyers@byui.edu
+Campus.2018.Spring.MUSIC303,425653,MUSIC 303: 01 (Campus); Spring 2018,280866448,Jessica Mecham,mechamj@byui.edu
+Campus.2018.Spring.MUSIC308,424518,MUSIC 308: 01 (Campus); Spring 2018,713190069,Rebecca Smith,lordr@byui.edu
+Campus.2018.Spring.MUSIC310,424524,MUSIC 310: 01 (Campus); Spring 2018,713190069,Rebecca Smith,lordr@byui.edu
+Campus.2018.Spring.MUSIC313,430805,MUSIC 313: 01 (Campus); Spring 2018,285735979,Atina Coates,coatesa@byui.edu
+Campus.2018.Spring.MUSIC314,436694,MUSIC 314: 01 (Campus); Spring 2018,810924874,Eda Ashby,ashbye@byui.edu
+Campus.2018.Spring.MUSIC316,424527,MUSIC 315: 01 (Campus); Spring 2018,713190069,Rebecca Smith,lordr@byui.edu
+Campus.2018.Spring.MUSIC319,431803,MUSIC 319: 01 (Campus); Spring 2018,320411053,Randall Kempton,kemptonr@byui.edu
+Campus.2018.Spring.MUSIC325,436183,MUSIC 325: 01 (Campus); MUSIC 327: 01 (Campus); Spring 2018,109920077,David Taylor,taylord@byui.edu
+Campus.2018.Spring.MUSIC328,436029,MUSIC 328: 01 (Campus); Spring 2018,383550845,Randy Brady,bradyra@byui.edu
+Campus.2018.Spring.MUSIC329,436023,MUSIC 329: 01 (Campus); Spring 2018,383550845,Randy Brady,bradyra@byui.edu
+Campus.2018.Fall.MUSIC331,511212,MUSIC 331: 01 (Campus); Fall 2018,678824571,Diane Soelberg,soelbergd@byui.edu
+Campus.2018.Fall.MUSIC340,509000,MUSIC 340: 01 (Campus); Fall 2018,908769070,Becky Roesler,roeslerr@byui.edu
+Campus.2018.Spring.MUSIC346,433037,MUSIC 346: 01 (Campus); Spring 2018,932960900,Nadine Luke,luken@byui.edu
+Campus.2018.Spring.MUSIC360J,433048,MUSIC 360J: 01 (Campus); MUSIC 361J: 01 (Campus); Spring 2018,932960900,Nadine Luke,luken@byui.edu
+Campus.2018.Spring.MUSIC360M,422958,MUSIC 360M: 01 (Campus); MUSIC 361M: 01 (Campus); Spring 2018,921297535,Adam Ballif,ballifa@byui.edu
+Campus.2018.Winter.MUSIC363A,387470,MUSIC 363A: 01 (Campus); Winter 2018,380129773,Michael McQuay,mcquaym@byui.edu
+Campus.2018.Spring.MUSIC364,439307,MUSIC 364: 01 (Campus); Spring 2018,683427295,Dallin Hansen,hansend@byui.edu
+Campus.2018.Spring.MUSIC367,434760,MUSIC 367: 01 (Campus); Spring 2018,921297535,Adam Ballif,ballifa@byui.edu
+Campus.2018.Spring.MUSIC371,436697,MUSIC 371: 01 (Campus); Spring 2018,810924874,Eda Ashby,ashbye@byui.edu
+Campus.2018.Spring.MUSIC372,433802,MUSIC 372: 01 (Campus); Spring 2018,798490677,Mark Watkins,watkinsm@byui.edu
+Campus.2018.Spring.MUSIC374A,436178,MUSIC 374A: 01 (Campus); MUSIC 374C: 01 (Campus); MUSIC 470: 01 (Campus); Spring 2018,109920077,David Taylor,taylord@byui.edu
+Campus.2018.Spring.MUSIC375,437039,MUSIC 375: 01 (Campus); Spring 2018,908769070,Becky Roesler,roeslerr@byui.edu
+Campus.2018.Winter.MUSIC381,380456,MUSIC 381: 01 (Campus); Winter 2018,383550845,Randy Brady,bradyra@byui.edu
+Campus.2018.Fall.MUSIC383A,510844,MUSIC 383A: 01 (Campus); Fall 2018,115231766,Steve Dresen,dresens@byui.edu
+Campus.2018.Winter.MUSIC385A,380463,MUSIC 385A: 01 (Campus); Winter 2018,383550845,Randy Brady,bradyra@byui.edu
+Campus.2018.Spring.MUSIC385B,436026,MUSIC 385B: 01 (Campus); Spring 2018,383550845,Randy Brady,bradyra@byui.edu
+Campus.2018.Spring.MUSIC387,431394,MUSIC 387: 01 (Campus); Spring 2018,978914534,Elizabeth Crawford,crawforde@byui.edu
+Campus.2018.Winter.MUSIC401,389865,MUSIC 401: 01 (Campus); Winter 2018,798490677,Mark Watkins,watkinsm@byui.edu
+Campus.2018.Fall.MUSIC404,508571,MUSIC 404: 01 (Campus); Fall 2018,860696834,David Olsen,olsenda@byui.edu
+Campus.2018.Winter.MUSIC460J,379230,MUSIC 460J: 01 (Campus); MUSIC 462J: 01 (Campus); Winter 2018,932960900,Nadine Luke,luken@byui.edu
+Campus.2018.Spring.MUSIC465A,422962,MUSIC 462M: 01 (Campus); Spring 2018,921297535,Adam Ballif,ballifa@byui.edu
+Campus.2019.Winter.MUSIC466,534654,MUSIC 466: 01 (Campus); Winter 2019,860696834,David Olsen,olsenda@byui.edu
+Campus.2018.Fall.MUSIC487,505271,MUSIC 487: 01 (Campus); Fall 2018,908769070,Becky Roesler,roeslerr@byui.edu
+Campus.2018.Fall.Non-Academic,506476,FS 498R: 01 (Campus); Fall 2018,83979527,Jeff Hamblin,hamblinj@byui.edu
+Campus.2018.Fall.NURS 105,492712,NURS 105: 03 (Campus); Fall 2018,68515282,Margaret Parson,parsonm@byui.edu
+Campus.2018.Spring.NURS 310,421131,NURS 310: 02 (Campus); Spring 2018,94161821,Tina Robins,robinst@byui.edu
+Campus.2018.Fall.NURS 433,510777,"NURS 433: 01,02 (Campus); Fall 2018",890321152,Jo Ann Dalling,dallingj@byui.edu
+Campus.2018.Spring.NURS 433,421121,NURS 433; Spring 2018 (No Sections),444670442,Linda Orchard,orchardl@byui.edu
+Campus.2018.Fall.NURSF110,507611,NURSF 110: 01 (Campus); Fall 2018,261611684,Kathleen Barnhill,barnhillk@byui.edu
+Campus.2018.Winter.NUTR 120,380299,NUTR 120: 01 (Campus); Winter 2018,6391998,Susan Clark,clarksu@byui.edu
+Campus.2018.Spring.NUTR 150,428234,NUTR 150: 10 (Campus); Spring 2018,526293647|427780595,Jay Keller|John Fisher,kellerja@byui.edu|fisherjt@byui.edu
+Campus.2018.Spring.PH 106,425426,PH 106: 01 (Campus); Spring 2018,998495401,Richard Datwyler,datwylerr@byui.edu
+Campus.2018.Spring.PH 123,434134,PH 106: 02 (Campus); Spring 2018,22739673,David Oliphant,oliphantd@byui.edu
+Campus.2018.Winter.PH 123,388623,PH 123: 01 (Campus); Winter 2018,191414870,Richard Hatt,hattr@byui.edu
+Campus.2018.Spring.PH 220,410048,PH 220: 01 (Campus); Spring 2018,883919176,Evan Hansen,hansenev@byui.edu
+Campus.2018.Fall.PH 223,507866,PH 223: 01 (Campus); Fall 2018,191414870,Richard Hatt,hattr@byui.edu
+Campus.2018.Winter.PH 223,341162,PH 279: 01 (Campus); Winter 2018,284481895,Kevin Kelley,kelleyk@byui.edu
+Campus.2018.Spring.PH 295,433815,PH 295: 01 (Campus); Spring 2018,392362771,Stephen Turcotte,turcottes@byui.edu
+Campus.2018.Winter.PH 374,391019,PH 374: 01 (Campus); Winter 2018,580108822,Stephen McNeil,mcneils@byui.edu
+Campus.2018.Fall.PH 390R,511506,PH 390R: 01 (Campus); Fall 2018,580108822,Stephen McNeil,mcneils@byui.edu
+Campus.2018.Fall.PH 412,507869,PH 412: 01 (Campus); Fall 2018,191414870,Richard Hatt,hattr@byui.edu
+Campus.2018.Winter.PH 488,384793,PH 488: 01 (Campus); Winter 2018,179171102,Todd Lines,linest@byui.edu
+Campus.2018.Spring.PHIL 202,432790,PHIL 202: 01 (Campus); Spring 2018,927770928,Brian Merrill,merrillb@byui.edu
+Campus.2018.Spring.PHIL 305,424820,PHIL 305: 01 (Campus); Spring 2018,940158073,Ross Baron,baronr@byui.edu
+Campus.2018.Winter.PHIL 313,365389,PHIL 313: 01 (Campus); Winter 2018,567236512|940158073,Jason Hunt|Ross Baron,huntj@byui.edu|baronr@byui.edu
+Campus.2018.Fall.PHIL 315,504119,PHIL 315: 01 (Campus); Fall 2018,927770928,Brian Merrill,merrillb@byui.edu
+Campus.2018.Fall.POLSC110,509047,"POLSC 110: 01,02 (Campus); Fall 2018",669692576,Jill Kirkham,kirkhamj@byui.edu
+Campus.2018.Winter.POLSC110,372137,POLSC 110: 03 (Campus); Winter 2018,276282682,Chad Newswander,newswanderc@byui.edu
+Campus.2019.Winter.POLSC150,534943,POLSC 150: 01 (Campus); Winter 2019,39460504,Jeremy Lamoreaux,lamoreauxj@byui.edu
+Campus.2018.Spring.POLSC150,428361,"POLSC 150: 02,03 (Campus); Spring 2018",502245386,Neal Carter,cartern@byui.edu
+Campus.2018.Spring.POLSC170,434688,POLSC 170: 02 (Campus); Spring 2018,468593516,Duane Adamson,adamsond@byui.edu
+Campus.2018.Spring.POLSC200,424072,POLSC 200: 01 (Campus); Spring 2018,697653759,Matt Miles,milesma@byui.edu
+Campus.2018.Fall.POLSC280,509111,POLSC 316: 01 (Campus); Fall 2018,937819250,Mike Kirkham,kirkhamm@byui.edu
+Campus.2018.Spring.POLSC311,402601,POLSC 311: 01 (Campus); Spring 2018,862962104,Travis Smith,smithtra@byui.edu
+Campus.2019.Winter.POLSC314,534886,POLSC 314: 01 (Campus); Winter 2019,53980267,Trent Rose,roset@byui.edu
+Campus.2018.Winter.POLSC314,381863,POLSC 314: 01 (Campus); Winter 2018,697653759,Matt Miles,milesma@byui.edu
+Campus.2019.Spring.POLSC315,542932,POLSC 315: 01 (Campus); Spring 2019,53980267,Trent Rose,roset@byui.edu
+Campus.2018.Spring.POLSC315,435984,POLSC 315: 01 (Campus); Spring 2018,053980267|270238340,Trent Rose|Janica Murphy,roset@byui.edu|alb15005@byui.edu
+Campus.2018.Fall.POLSC320,511120,POLSC 497R: 02 (Campus); Fall 2018,53980267,Trent Rose,roset@byui.edu
+Campus.2018.Spring.POLSC320,424069,POLSC 320: 01 (Campus); Spring 2018,697653759,Matt Miles,milesma@byui.edu
+Campus.2019.Spring.POLSC330,542935,POLSC 331: 01 (Campus); Spring 2019,53980267,Trent Rose,roset@byui.edu
+Campus.2018.Spring.POLSC330,435990,POLSC 330: 01 (Campus); Spring 2018,053980267|270238340,Trent Rose|Janica Murphy,roset@byui.edu|alb15005@byui.edu
+Campus.2018.Spring.POLSC335,423937,POLSC 335: 01 (Campus); Spring 2018,276282682,Chad Newswander,newswanderc@byui.edu
+Campus.2018.Winter.POLSC340,372174,POLSC 340: 01 (Campus); Winter 2018,276282682,Chad Newswander,newswanderc@byui.edu
+Campus.2018.Spring.POLSC345,423944,POLSC 345: 01 (Campus); Spring 2018,276282682,Chad Newswander,newswanderc@byui.edu
+Campus.2018.Spring.POLSC350,435462,POLSC 350: 01 (Campus); Spring 2018,502245386,Neal Carter,cartern@byui.edu
+Campus.2018.Winter.POLSC360,357012,POLSC 360: 01 (Campus); Winter 2018,502245386,Neal Carter,cartern@byui.edu
+Campus.2018.Winter.POLSC372,340907,POLSC 372: 01 (Campus); Winter 2018,444334878,David N. Campbell,campbellda@byui.edu
+Campus.2018.Spring.POLSC375,394334,POLSC 497R: 01 (Campus); Spring 2018,444334878,David N. Campbell,campbellda@byui.edu
+Campus.2019.Winter.POLSC377,534952,POLSC 394: 01 (Campus); Winter 2019,39460504,Jeremy Lamoreaux,lamoreauxj@byui.edu
+Campus.2018.Fall.POLSC377,510764,INTST 343: 01 (Campus); Fall 2018,412959863,Nicholas Dyerly,dyerlyn@byui.edu
+Campus.2018.Spring.POLSC380,421145,POLSC 360: 01 (Campus); Spring 2018,862962104|584512620,Travis Smith|Amber Taylor,smithtra@byui.edu|ald15011@byui.edu
+Campus.2019.Winter.POLSC390,534940,POLSC 390: 01 (Campus); Winter 2019,39460504,Jeremy Lamoreaux,lamoreauxj@byui.edu
+Campus.2018.Winter.POLSC390,371746,POLSC 390: 01 (Campus); Winter 2018,468593516,Duane Adamson,adamsond@byui.edu
+Campus.2019.Winter.POLSC392,534883,POLSC 392: 01 (Campus); Winter 2019,53980267,Trent Rose,roset@byui.edu
+Campus.2018.Spring.POLSC392,435987,POLSC 392: 01 (Campus); Spring 2018,053980267|270238340,Trent Rose|Janica Murphy,roset@byui.edu|alb15005@byui.edu
+Campus.2018.Winter.POLSC392,340910,POLSC 392: 01 (Campus); Winter 2018,444334878,David N. Campbell,campbellda@byui.edu
+Campus.2018.Winter.POLSC497R,371743,POLSC 497R: 02 (Campus); Winter 2018,468593516,Duane Adamson,adamsond@byui.edu
+Campus.2018.Fall.POLSC498R,511117,POLSC 498R: 01 (Campus); Fall 2018,53980267,Trent Rose,roset@byui.edu
+Campus.2018.Fall.PSYCH111,503504,"PSYCH 111: 04,05 (Campus); Fall 2018",389076997,Fred Woolley,woolleyf@byui.edu
+Campus.2018.Spring.PSYCH111,394508,PSYCH 111: 03 (Campus); Spring 2018,102106363,Rob Wright,wrightro@byui.edu
+Campus.2018.Spring.PSYCH201,423548,PSYCH 201: 05 (Campus); Spring 2018,147333851|213883773,Hannah Johnson|Jennifer Perkes,hel12009@byui.edu|lindsayj@byui.edu
+Campus.2018.Winter.PSYCH201,382477,PSYCH 201: 05 (Campus); Winter 2018,213883773|404678966,Jennifer Perkes|Charlie Larson,lindsayj@byui.edu|lar16041@byui.edu
+Campus.2018.Spring.PSYCH302,435136,"PSYCH 302: 01,02 (Campus); Spring 2018",594833761,Scott Martin,martinsc@byui.edu
+Campus.2018.Spring.PSYCH310,425670,"PSYCH 310: 01,02 (Campus); Spring 2018",535997701,Matthew Whoolery,whoolerym@byui.edu
+Campus.2018.Spring.PSYCH311,425816,"PSYCH 311: 01,02 (Campus); Spring 2018",4502248,Yohan Delton,deltony@byui.edu
+Campus.2018.Spring.PSYCH322,431933,PSYCH 322: 01 (Campus); Spring 2018,915951505,Heidi Higgins,higginsh@byui.edu
+Campus.2018.Spring.PSYCH341,425674,PSYCH 341: 01 (Campus); Spring 2018,535997701,Matthew Whoolery,whoolerym@byui.edu
+Campus.2019.Spring.PSYCH342,542888,PSYCH 342: 03 (Campus); Spring 2019,134986248,Dan Barnes,barnesd@byui.edu
+Campus.2019.Winter.PSYCH342,533901,"PSYCH 342: 01,02 (Campus); Winter 2019",339798291,Richard Cluff,cluffr@byui.edu
+Campus.2018.Spring.PSYCH350,423844,"PSYCH 350: 01,02 (Campus); Spring 2018",385188405,Samuel Clay,clays@byui.edu
+Campus.2018.Spring.PSYCH355,425820,PSYCH 445: 01 (Campus); Spring 2018,4502248,Yohan Delton,deltony@byui.edu
+Campus.2018.Spring.PSYCH361,431936,"PSYCH 361: 01,02 (Campus); Spring 2018",915951505,Heidi Higgins,higginsh@byui.edu
+Campus.2018.Spring.PSYCH365,423841,PSYCH 365: 01 (Campus); Spring 2018,385188405,Samuel Clay,clays@byui.edu
+Campus.2018.Spring.PSYCH370,394728,PSYCH 370: 01 (Campus); Spring 2018,947315672,Christopher Lowry,lowryc@byui.edu
+Campus.2018.Spring.PSYCH376,423009,PSYCH 376: 01 (Campus); Spring 2018,147333851|213883773,Hannah Johnson|Jennifer Perkes,hel12009@byui.edu|lindsayj@byui.edu
+Campus.2018.Winter.PSYCH376,383449,PSYCH 376: 01 (Campus); Winter 2018,213883773|729295835,Jennifer Perkes|Brett Perkes,lindsayj@byui.edu|per16060@byui.edu
+Campus.2018.Spring.PSYCH378,424652,PSYCH 378: 01 (Campus); Spring 2018,689398673,Eric Gee,geee@byui.edu
+Campus.2018.Winter.PSYCH380,351839,PSYCH 380: 01 (Campus); Winter 2018,385188405,Samuel Clay,clays@byui.edu
+Campus.2019.Winter.PSYCH390R,534165,PSYCH 390R: 01 (Campus); Winter 2019,981430211,Andrew Crossman,crossmana@byui.edu
+Campus.2018.Winter.PSYCH390R,386349,PSYCH 390R: 02 (Campus); Winter 2018,213883773,Jennifer Perkes,lindsayj@byui.edu
+Campus.2018.Fall.PSYCH435,439470,"PSYCH 435: 01,02 (Campus); Fall 2018",102106363,Rob Wright,wrightro@byui.edu
+Campus.2018.Fall.PSYCH485,439474,PSYCH 485: 03 (Campus); Fall 2018,102106363,Rob Wright,wrightro@byui.edu
+Campus.2018.Spring.PSYCH485,435129,"PSYCH 485: 01,02,03 (Campus); Spring 2018",594833761,Scott Martin,martinsc@byui.edu
+Campus.2018.Winter.PSYCH485,390175,PSYCH 485: 01 (Campus); Winter 2018,102106363|518796877|594833761,Rob Wright|Brady Wiggins|Scott Martin,wrightro@byui.edu|wigginsb@byui.edu|martinsc@byui.edu
+Campus.2018.Spring.PSYCH498,434856,PSYCH 498: 05 (Campus); Spring 2018,524113775,Kynda Roberts,robertsk@byui.edu
+Campus.2018.Fall.PTA 100,507878,PTA 100: 01 (Campus); Fall 2018,550485953,Mark Coglianese,coglianesem@byui.edu
+Campus.2018.Fall.PTA 105,506757,PTA 105: 01 (Campus); Fall 2018,346478348,Brian Schaat,schaatb@byui.edu
+Campus.2018.Fall.PTA 215,510804,PTA 215: 01 (Campus); Fall 2018,62736346,Lynn Perkes,perkesl@byui.edu
+Campus.2018.Fall.PTA 298,469738,PTA 298: 01 (Campus); Fall 2018,346478348,Brian Schaat,schaatb@byui.edu
+Campus.2018.Fall.PTA 369,507881,PTA 369: 01 (Campus); Fall 2018,550485953,Mark Coglianese,coglianesem@byui.edu
+Campus.2018.Fall.PTA 369L,507884,PTA 369L: 01 (Campus); Fall 2018,550485953,Mark Coglianese,coglianesem@byui.edu
+Campus.2018.Spring.RM 307,434344,RM 307: 02 (Campus); Spring 2018,507933107,Keith Barney,barneyk@byui.edu
+Campus.2018.Winter.RM 343,388278,RM 343: 04 (Campus); Winter 2018,941494967,Michelle Parker,parkermi@byui.edu
+Campus.2018.Spring.RM 370,425276,RM 370: 01 (Campus); Spring 2018,69615092,Janell Greenwood,greenwoodj@byui.edu
+Campus.2018.Fall.RM 483,508990,RM 483: 01 (Campus); Fall 2018,990038280,Jason Thornton,thorntonja@byui.edu
+Campus.2018.Spring.RM 499R,432972,RM 499R: 02 (Campus); Spring 2018,118820196|990038280,Morris Christensen|Jason Thornton,christensenmo@byui.edu|thorntonja@byui.edu
+Campus.2019.Winter.Sandbox Courses - Template,534168,FDREL 121: 05 (Campus); Winter 2019,321144841,James Williams,williamsjam@byui.edu
+Campus.2018.Fall.Sandbox Courses - Template,469745,ART 412R: 01 (Campus); Fall 2018,203073748,Joshua Abegglen,abegglenj@byui.edu
+Campus.2018.Spring.Sandbox Courses - Template,424466,SPAN 490R: 01 (Campus); Spring 2018,903920637,Matt Alba,albam@byui.edu
+Campus.2018.Fall.SOC 295R,507648,SOC 295R: 01 (Campus); Fall 2018,601232391|064626494,Nathan Meeker|Tom Withers,meekern@byui.edu|wit11006@byui.edu
+Campus.2018.Spring.SOC 295R,436609,SOC 295R: 03 (Campus); Spring 2018,601232391,Nathan Meeker,meekern@byui.edu
+Campus.2018.Spring.SOC 330,424380,SOC 330: 01 (Campus); Spring 2018,144554747,Kristie Lords,lordsk@byui.edu
+Campus.2018.Winter.SOC 340,340888,SOC 340: 01 (Campus); Winter 2018,296742631,Jeffrey Oliver,oliverj@byui.edu
+Campus.2018.Spring.SOC 490R,429950,SOC 490R: 01 (Campus); Spring 2018,851347432,Stephen Smith,smiths@byui.edu
+Campus.2018.Winter.SOC 490R,386297,SOC 490R: 01 (Campus); Winter 2018,230869340,Andrew Burger,burgera@byui.edu
+Campus.2018.Winter.SOC 495,391225,SOC 495: 01 (Campus); Winter 2018,156789965,Mike Abel,abelm@byui.edu
+Campus.2018.Fall.SPAN 378,470492,SPAN 378: 01 (Campus); TESOL 378: 01 (Campus); Fall 2018,843851840,John Ivers,iversj@byui.edu
+Campus.2019.Winter.SPAN 441,532409,SPAN 441: 01 (Campus); Winter 2019,109742946,Robert Colvin,colvinr@byui.edu
+Campus.2018.Spring.SPAN 497,429756,SPAN 497: 01 (Campus); Spring 2018,799796583,David Rock,rockd@byui.edu
+Campus.2019.Winter.SPED 200,513432,"SPED 200: 01,02 (Campus); Winter 2019",942411344,Dean Cloward,clowardr@byui.edu
+Campus.2018.Fall.SPED 200,503678,SPED 200: 01 (Campus); Fall 2018,120637163,Christine Brown,brownch@byui.edu
+Campus.2018.Winter.SPED 200,383406,SPED 200: 01 (Campus); Winter 2018,120637163|942411344,Christine Brown|Dean Cloward,brownch@byui.edu|clowardr@byui.edu
+Campus.2018.Winter.SPED 360,379006,"SPED 360: 01,02 (Campus); Winter 2018",916136466,Marcia McManus,mcmanusm@byui.edu
+Campus.2018.Spring.SW 340,433195,SW 340: 01 (Campus); Spring 2018,732750220,Mindy Jensen,jensenmi@byui.edu
+Campus.2018.Winter.SW 365,389968,SW 365: 01 (Campus); Winter 2018,99762518,Don Fryberger,frybergerd@byui.edu
+Campus.2018.Winter.SW 400,381016,SW 400: 01 (Campus); Winter 2018,470138548,Megan Urick,urickm@byui.edu
+Campus.2018.Spring.SW 464,435939,SW 464: 01 (Campus); Spring 2018,552127259,Kimberly Ovard,ovardk@byui.edu
+Campus.2018.Spring.TA 116,437077,TA 116: 03 (Campus); Spring 2018,690118806,Justin Bates,batesj@byui.edu
+Campus.2018.Spring.TESOL200,425678,TESOL 200: 01 (Campus); Spring 2018,981512305,Dana Johnson,johnsonda@byui.edu
+Campus.2018.Winter.TESOL200,377926,TESOL 200: 01 (Campus); Winter 2018,838355162|645875623,Michael Paul|Melodee Mueller,paulm@byui.edu|muellerm@byui.edu
+Campus.2018.Spring.TESOL213,429765,TESOL 213: 01 (Campus); Spring 2018,645875623,Melodee Mueller,muellerm@byui.edu
+Campus.2018.Winter.TESOL213,342001,TESOL 213: 01 (Campus); Winter 2018,838355162|645875623,Michael Paul|Melodee Mueller,paulm@byui.edu|muellerm@byui.edu
+Campus.2018.Spring.TESOL497,429759,TESOL 497: 01 (Campus); Spring 2018,645875623,Melodee Mueller,muellerm@byui.edu
+Campus.2018.Winter.TESOL497,347286,TESOL 497: 01 (Campus); Winter 2018,838355162|645875623,Michael Paul|Melodee Mueller,paulm@byui.edu|muellerm@byui.edu
+Campus.2019.Winter.WDD 100,522220,WDD 100: 01 (Campus); Winter 2019,676451202,Randy Somsen,somsenr@byui.edu
+Campus.2018.Winter.WDD 100,343876,"WDD 100: 01,03 (Campus); Winter 2018",637053294,Shane Thompson,thompsonda@byui.edu
+Campus.2018.Spring.WDD 398,394422,CIT 261: 03 (Campus); Spring 2018,637053294,Shane Thompson,thompsonda@byui.edu
+Campus.2018.Spring.WELD 101,433180,WELD 170: 01 (Campus); Spring 2018,016092149|937181818|942652225,Kevin Orme|Clay Rasmussen|Andrew Wilson,ormek@byui.edu|rasmussenc@byui.edu|wilsonand@byui.edu
+Campus.2018.Winter.WELD 101,385398,WELD 170: 01 (Campus); Winter 2018,942652225,Andrew Wilson,wilsonand@byui.edu
+Campus.2018.Spring.WELD 120,434174,WELD 243: 01 (Campus); Spring 2018,16092149,Kevin Orme,ormek@byui.edu
+Campus.2018.Spring.WELD 123,433177,WELD 224: 01 (Campus); Spring 2018,016092149|937181818|942652225,Kevin Orme|Clay Rasmussen|Andrew Wilson,ormek@byui.edu|rasmussenc@byui.edu|wilsonand@byui.edu
+Campus.2018.Winter.WELD 280,380951,"WELD 480: 01,02 (Campus); Winter 2018",016092149|937181818,Kevin Orme|Clay Rasmussen,ormek@byui.edu|rasmussenc@byui.edu

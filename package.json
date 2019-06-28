@@ -14,7 +14,7 @@
     "campus-standard-modules": "github:byuitechops/campus-standard-modules",
     "canvas-course-scrubber": "github:byuitechops/canvas-course-scrubber",
     "canvas-wrapper": "github:byuitechops/canvas-wrapper",
-    "chalk": "^2.3.0",
+    "chalk": "^2.4.2",
     "copy-a-canvas-course": "github:byuitechops/copy-a-canvas-course",
     "course-description": "github:byuitechops/course-description",
     "course-has-content": "github:byuitechops/course-has-content",
