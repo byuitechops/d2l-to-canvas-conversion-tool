@@ -1,16 +1,4 @@
 orgUnitID,instructorName,instructorEmail
-424185,"Kimball, Kevin",kimballk@byui.edu
-424904,"Spackman, Ross",spackmanr@byui.edu
-434981,"Humphreys, Chris",humphreysc@byui.edu
-393952,"Hansen, Nels",hansenn@byui.edu
-532162,"Foutz, Darryl",foutzd@byui.edu
-380741,"Slade, Jeremy",sladeje@byui.edu
-429011,"Slade, Jeremy",sladeje@byui.edu
-380864,"Slade, Jeremy",sladeje@byui.edu
-428929,"Walburger, Allan",walburgera@byui.edu
-542991,"Toll, Jerry",tollj@byui.edu
-380867,"Slade, Jeremy",sladeje@byui.edu
-429008,"Slade, Jeremy",sladeje@byui.edu
 376719,"Walburger, Allan",walburgera@byui.edu
 429203,"Slade, Jeremy~Barrus, David",sladeje@byui.edu~barrusd@byui.edu
 380926,"Slade, Jeremy",sladeje@byui.edu
@@ -72,16 +60,8 @@ orgUnitID,instructorName,instructorEmail
 393056,"Hammond, Michael",hammondm@byui.edu
 425568,"Morris, Mark",morrisma@byui.edu
 371607,"Morrin, Jeff",morrinj@byui.edu
-436444,"Holm, Kurt",holmku@byui.edu
-439350,"Muranaka, Lane",muranakal@byui.edu
-378788,"Thompson, Alan",thompsonal@byui.edu
-513693,"Ward, Mick~Nye, Mark",wardro@byui.edu~nyem@byui.edu
-533310,"Maroon, Mary",maroonma@byui.edu
 470569,"Tonks, Rob~Maroon, Mary",tonksr@byui.edu~maroonma@byui.edu
 435455,"Tonks, Rob",tonksr@byui.edu
-395050,"Morris, Mark",morrisma@byui.edu
-388786,"Allen, Redge",allenredge@byui.edu
-532084,"Kunzler, Jayson",kunzlerj@byui.edu
 428386,"Tietjen, Rob",tietjenr@byui.edu
 510598,"Schlund, Caden",schlundc@byui.edu
 433412,"Lloyd, Andria",wellmana@byui.edu
@@ -171,13 +151,6 @@ orgUnitID,instructorName,instructorEmail
 379011,"Lybbert, Eric~Rognon, James",lybberte@byui.edu~rognonj@byui.edu
 533248,"Hendricks, Beth",hendricksb@byui.edu
 372466,"Cannon, Mike",cannonm@byui.edu
-372469,"Cannon, Mike",cannonm@byui.edu
-425976,"Evarts, Adam",evartsa@byui.edu
-422474,"Kinville, Ron~Walker, Jedd",kinviller@byui.edu~walkerje@byui.edu
-425656,"Jensen, Shawn",jensensh@byui.edu
-422585,"Jensen, Shawn~Huish, Pat",jensensh@byui.edu~huishp@byui.edu
-383489,"Harker, Ron~Huish, Pat",harkerr@byui.edu~huishp@byui.edu
-429477,"Huish, Pat",huishp@byui.edu
 417234,"Evarts, Adam",evartsa@byui.edu
 425702,"Evarts, Adam",evartsa@byui.edu
 391068,"Sessions, Mike~Evarts, Adam",sessionsm@byui.edu~evartsa@byui.edu
@@ -204,20 +177,11 @@ orgUnitID,instructorName,instructorEmail
 470566,"Smith, Stephen",smiths@byui.edu
 394694,"Lewis, Hyrum",lewish@byui.edu
 338468,"Collins, David",collinsd@byui.edu
-532357,"Ercanbrack, Scott",ercanbracks@byui.edu
-432233,"Burton, Scott",burtons@byui.edu
-422863,"Jones, Ron",jonesro@byui.edu
-466562,"Boyer, Wayne",boyerw@byui.edu
-383094,"Burton, Scott",burtons@byui.edu
 508981,"Storm, Ashley~Esplin, Joy",hoopesa@byui.edu~esplinj@byui.edu
 434770,"Esplin, Joy~McChesney, Elizabeth",esplinj@byui.edu~mcchesneye@byui.edu
 371902,"Esplin, Joy",esplinj@byui.edu
 469861,"Bone, Wendy",bonew@byui.edu
 469867,"Bone, Wendy",bonew@byui.edu
-433760,"Larsen, Gary",larseng@byui.edu
-533350,"Fisher, Janie",fisherj@byui.edu
-508839,"Summers, Michelle",summersmi@byui.edu
-509281,"Reed, Ashley",andersenas@byui.edu
 510582,"McChesney, Elizabeth",mcchesneye@byui.edu
 510595,"Dienhart, Patricia",dienhartp@byui.edu
 532193,"Vera, De, Amy~Anderson, Sarah",deveraa@byui.edu~andersonsa@byui.edu
@@ -755,26 +719,3 @@ orgUnitID,instructorName,instructorEmail
 470492,"Ivers, John",iversj@byui.edu
 532409,"Colvin, Robert",colvinr@byui.edu
 429756,"Rock, David",rockd@byui.edu
-513432,"Cloward, Dean",clowardr@byui.edu
-503678,"Brown, Christine",brownch@byui.edu
-383406,"Brown, Christine~Cloward, Dean",brownch@byui.edu~clowardr@byui.edu
-379006,"McManus, Marcia",mcmanusm@byui.edu
-433195,"Jensen, Mindy",jensenmi@byui.edu
-389968,"Fryberger, Don",frybergerd@byui.edu
-381016,"Urick, Megan",urickm@byui.edu
-435939,"Ovard, Kimberly",ovardk@byui.edu
-437077,"Bates, Justin",batesj@byui.edu
-425678,"Johnson, Dana",johnsonda@byui.edu
-377926,"Paul, Michael~Mueller, Melodee",paulm@byui.edu~muellerm@byui.edu
-429765,"Mueller, Melodee",muellerm@byui.edu
-342001,"Paul, Michael~Mueller, Melodee",paulm@byui.edu~muellerm@byui.edu
-429759,"Mueller, Melodee",muellerm@byui.edu
-347286,"Paul, Michael~Mueller, Melodee",paulm@byui.edu~muellerm@byui.edu
-522220,"Somsen, Randy",somsenr@byui.edu
-343876,"Thompson, Shane",thompsonda@byui.edu
-394422,"Thompson, Shane",thompsonda@byui.edu
-433180,"Orme, Kevin~Rasmussen, Clay~Wilson, Andrew",ormek@byui.edu~rasmussenc@byui.edu~wilsonand@byui.edu
-385398,"Wilson, Andrew",wilsonand@byui.edu
-434174,"Orme, Kevin",ormek@byui.edu
-433177,"Orme, Kevin~Rasmussen, Clay~Wilson, Andrew",ormek@byui.edu~rasmussenc@byui.edu~wilsonand@byui.edu
-380951,"Orme, Kevin~Rasmussen, Clay",ormek@byui.edu~rasmussenc@byui.edu

@@ -39,12 +39,12 @@ function doWhenDone(data, err) {
 async function doStuffMagicFunTime(data) {
     return new Promise(async (resolve, reject) => {
         try {
-            Promise.resolve(folderSetup(data))
+            await Promise.resolve(folderSetup(data))
             .then(folderSetup)
             .then(downloader)
             .then(makeFile)
-            .then(await main)
-            .then(resolve(doWhenDone(data)))
+            .then(main)
+            resolve(doWhenDone(data))
         } catch (err) {
             resolve(doWhenDone(data, err))
         }
@@ -61,7 +61,7 @@ async function test() {
     // console.log(newCourseList);
     
     const report = await pMap(data, doStuffMagicFunTime, {
-        concurrency: 2
+        concurrency: 1
     });
 
     writeItDown(report)
