@@ -38,6 +38,7 @@
     "groups-bridge": "github:byuitechops/groups-bridge",
     "icebreaker-discussion": "github:byuitechops/icebreaker-discussion",
     "index-directory": "github:byuitechops/index-directory",
+    "inquirer": "^6.4.1",
     "lodash": "^4.17.10",
     "match-question-answers": "github:byuitechops/match-question-answers",
     "mismatched-quiz-points": "github:byuitechops/mismatched-quiz-points",
