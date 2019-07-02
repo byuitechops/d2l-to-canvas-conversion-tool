@@ -1,4 +1,5 @@
 *.json
+!defaultAnsOBJ.json
 **/auth.json
 auth.txt
 auth.bat

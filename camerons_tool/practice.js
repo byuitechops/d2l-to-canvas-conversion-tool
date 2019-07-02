@@ -26,14 +26,14 @@ async function getUserInfo() {
             type: 'input',
             name: 'username',
             message: "What's your Brightspace CCT username?",
-            default: process.env.MYUSERNAME || ""
+            default: process.env.USR || ""
         },
         {
             type: 'password',
             name: 'password',
             message: "What's your Brightspace CCT password?",
             mask: '*',
-            default: process.env.MYPASSWORD || ""
+            default: process.env.PASS || ""
         }
     ]
 
