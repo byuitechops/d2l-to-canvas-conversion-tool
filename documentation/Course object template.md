@@ -27,8 +27,6 @@ The Logs array needs to be updated, but everything else is up to date
     'moveFiles': '<bool>'           // Determines if files are sorted into the Documents, Media, and Template folders
     'moduleItemNamingConventions': '<bool>' // Determines if the module-item-namin-conventions child module runs
     'term': '<bool>'                // The term of the course 
-    'courseName': '<string>'        // Course Name without extension
-    'courseCode': '<string>'        // The course name + the course number
 },
     /* Stores various information bits that are used by the program, but are not determined by the user */
 'info': {
@@ -37,6 +35,8 @@ The Logs array needs to be updated, but everything else is up to date
     'password': '<string>',         // The users password. Required to download course from D2L
     'instructorName': '<string>',   // Instructors first and last name
     'instructorEmail': '<string>',  // Instructors email
+    'courseName': '<string>'        // Course Name without extension
+    'courseCode': '<string>'        // The course name + the course number
     'D2LOU': '<int>'                // D2L OU number
     'originalZipPath': '<string>',  // Absolute filepath to Where the original downloaded zip is
     'unzippedPath': '<string>',     // Absolute filepath to where the course is unzipped to
@@ -45,6 +45,8 @@ The Logs array needs to be updated, but everything else is up to date
     'fileName': '<string>',         // Course name with extension("FDREL 121 Reference - blah blah.zip")
     'childModules': '<string>[]'    // Array of the names of each child module that is turned on
     'canvasOU': '<int>',            // Canvas ID for the newly created canvas course (or target course)
+    'bannerDashBoardImagesType': '<String' // Necessary property for course dashboard image/home banner
+    'bannerDashboardImagesFileLocation': '<String>' // Necessary property for course dashboard image/home banner
     'checkStandards': '<bool>',     // Enables course-standards-check. Always false
     'linkCounter': '<int>',         // A counter used by quiz fix overlay to generate unique Id'savePreferences
     'canvasFolders': '<object>',    // Contains ID's for Documents, Media, Template, and Archive folders
