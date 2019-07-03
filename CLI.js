@@ -18,7 +18,7 @@ function makeFile(data){
 
 function writeItDown(data) {
 
-    fs.writeFileSync('../heyTheseFailed.json', JSON.stringify(data), 'utf8');
+    fs.writeFileSync(`../heyTheseFailed${data[0].id}.json`, JSON.stringify(data), 'utf8');
 }
 
 function doWhenDone(data, err) {
