@@ -10,15 +10,16 @@ var moment = require('moment');
 require('moment-precise-range-plugin');
 const fs = require('fs');
 
-function makeFile(data){
-    fs.writeFileSync("ourData.json",JSON.stringify(data,null, 4));
+function makeFile(data) {
+    fs.writeFileSync("ourData.json", JSON.stringify(data, null, 4));
     return data;
 }
 
 
-function writeItDown(data) {
-
-    fs.writeFileSync(`../heyTheseFailed${data[0].id}.json`, JSON.stringify(data), 'utf8');
+function writeItDown(data, fileName) {
+    var fileNumber = fileName.replace(/^\D+/g, '');
+    fs.writeFileSync(`../report${fileNumber}.json`, JSON.stringify(data), 'utf8');
+    console.log(`Report created as report${fileNumber}.json`);
 }
 
 function doWhenDone(data, err) {
@@ -26,12 +27,13 @@ function doWhenDone(data, err) {
         id: data.D2LOU,
         instructor: data.instructorName,
         instructorEmail: data.instructorEmail,
-        message: "Hey this worked"
+        message: "No Issues"
     }
-    if (err){
+    if (err) {
         report.messsage = err.messsage
         report.stack = err.stack
     }
+
     return report;
 }
 
@@ -40,16 +42,16 @@ async function doStuffMagicFunTime(data) {
     return new Promise(async (resolve, reject) => {
         try {
             await Promise.resolve(folderSetup(data))
-            .then(folderSetup)
-            .then(downloader)
-            .then(makeFile)
-            .then(main)
+                .then(folderSetup)
+                .then(downloader)
+                .then(makeFile)
+                .then(main)
             resolve(doWhenDone(data))
         } catch (err) {
             resolve(doWhenDone(data, err))
         }
     })
-    
+
 }
 
 async function test() {
@@ -59,12 +61,12 @@ async function test() {
     //let courseNumber = Math.floor((data.length - 2) * Math.random());
     //let newCourseList = data.slice(courseNumber, courseNumber + 1);
     // console.log(newCourseList);
-    
-    const report = await pMap(data, doStuffMagicFunTime, {
+
+    const report = await pMap(data.courses, doStuffMagicFunTime, {
         concurrency: 1
     });
 
-    writeItDown(report)
+    writeItDown(report, data.fileName)
 
     var end = moment()
     console.log(moment(start).preciseDiff(end));

@@ -34,7 +34,7 @@ async function main() {
 
 
     var courses = makeCourseObj(userData, D2LCourses);
-    return courses;
+    return { courses: courses, fileName: userData.csvLocation };
 }
 
 module.exports = main;
