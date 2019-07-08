@@ -9,6 +9,7 @@ const promptReplacement = require('./camerons_tool/main');
 var moment = require('moment');
 require('moment-precise-range-plugin');
 const fs = require('fs');
+const path = require('path');
 
 function makeFile(data) {
     fs.writeFileSync("ourData.json", JSON.stringify(data, null, 4));
@@ -16,9 +17,11 @@ function makeFile(data) {
 }
 
 
-function writeItDown(data, fileName) {
+function writeItDown(data, filePath) {
     // Extracts the number from the file name
-    var fileNumber = fileName.replace(/^\D+/g, '').replace('.csv', '');
+    // var fileName = "C:\\Users\\levistum\\Downloads\\filesToConvert\\In Progress\\batch20.csv";
+    var fileName = path.basename(filePath, '.csv');
+    var fileNumber = fileName.replace(/^\D+/g, '');
 
     // Writes report to a file called report## where ## is the original batch number
     fs.writeFileSync(`../Reports/report${fileNumber}.json`, JSON.stringify(data), 'utf8');
@@ -65,7 +68,7 @@ async function test() {
         concurrency: 1
     });
 
-    writeItDown(report, data.fileName)
+    writeItDown(report, data.filePath)
 
     var end = moment()
     console.log(moment(start).preciseDiff(end));
