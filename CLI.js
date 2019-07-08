@@ -17,8 +17,11 @@ function makeFile(data) {
 
 
 function writeItDown(data, fileName) {
-    var fileNumber = fileName.replace(/^\D+/g, '');
-    fs.writeFileSync(`../report${fileNumber}.json`, JSON.stringify(data), 'utf8');
+    // Extracts the number from the file name
+    var fileNumber = fileName.replace(/^\D+/g, '').replace('.csv', '');
+
+    // Writes report to a file called report## where ## is the original batch number
+    fs.writeFileSync(`../Reports/report${fileNumber}.json`, JSON.stringify(data), 'utf8');
     console.log(`Report created as report${fileNumber}.json`);
 }
 
@@ -57,11 +60,7 @@ async function doStuffMagicFunTime(data) {
 async function test() {
     let data = await promptReplacement();
     var start = moment();
-    console.log(start)
-    //let courseNumber = Math.floor((data.length - 2) * Math.random());
-    //let newCourseList = data.slice(courseNumber, courseNumber + 1);
-    // console.log(newCourseList);
-
+    // console.log(start)
     const report = await pMap(data.courses, doStuffMagicFunTime, {
         concurrency: 1
     });
@@ -70,11 +69,6 @@ async function test() {
 
     var end = moment()
     console.log(moment(start).preciseDiff(end));
-    // console.log(result);
-
-    // for (let index = 0; index < newCourseList.length; index++) {
-    //     await doStuffMagicFunTime(newCourseList[index]);
-    // }
 }
 
 test()
