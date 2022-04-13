@@ -8,7 +8,7 @@
     "action-series-master": "github:byuitechops/action-series-master",
     "add-course-maintenance-log": "github:byuitechops/add-course-maintenance-log",
     "assignment-categories": "github:byuitechops/assignment-categories",
-    "async": "^2.6.1",
+    "async": "^3.2.2",
     "blueprint-lock-items": "github:byuitechops/blueprint-lock-items",
     "build-file-structure": "github:byuitechops/build-file-structure",
     "campus-standard-modules": "github:byuitechops/campus-standard-modules",
